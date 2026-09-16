@@ -1,0 +1,615 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Georgia", serif;
+
+    color: #222;
+
+    background-color: #faf8f5;
+
+    line-height: 1.6;
+}
+
+
+
+h1,
+h2,
+h3 {
+
+    font-family: "Times New Roman", serif;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+h1 {
+
+    font-size: 55px;
+
+}
+
+
+h2 {
+
+    font-size: 35px;
+
+}
+
+
+
+p {
+
+    font-size: 18px;
+
+}
+
+
+
+/* =========================
+   HEADER & NAVIGATION
+========================= */
+
+
+#main-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 25px 60px;
+
+    background-color: white;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+
+
+.logo a {
+
+    text-decoration: none;
+
+    color: black;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+}
+
+
+
+
+
+.navbar {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+
+
+.navbar a {
+
+    text-decoration: none;
+
+    color: black;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
+}
+
+
+
+
+
+.navbar a:hover {
+
+    color: darkred;
+
+}
+
+
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+.button {
+
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    margin: 10px;
+
+    background-color: black;
+
+    color: white;
+
+    text-decoration: none;
+
+    border: 1px solid black;
+
+    transition: 0.3s;
+
+}
+
+
+
+.button:hover {
+
+    background-color: darkred;
+
+}
+
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+
+.hero {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    padding: 70px;
+
+}
+
+
+
+
+.hero-text {
+
+    width: 45%;
+
+}
+
+
+
+
+.hero-image {
+
+    width: 40%;
+
+}
+
+
+
+.hero-image img {
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+
+
+
+.subtitle {
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 14px;
+
+}
+
+
+
+
+
+/* =========================
+   PRODUCT CARDS
+========================= */
+
+
+.collection {
+
+    padding: 60px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+.products {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+
+
+
+
+.card {
+
+    background-color: white;
+
+    width: 300px;
+
+    padding: 20px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+
+
+.card img {
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+}
+
+
+
+
+
+.card a {
+
+    color: darkred;
+
+    text-decoration: none;
+
+}
+
+
+
+
+
+.card a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+
+
+/* =========================
+   DESIGN SECTION
+========================= */
+
+
+#design-section {
+
+    background-color: #111;
+
+    color: white;
+
+    padding: 70px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+/* =========================
+   LISTS
+========================= */
+
+
+.features {
+
+    padding: 50px;
+
+}
+
+
+
+
+
+.features li {
+
+    margin: 10px;
+
+    font-size: 18px;
+
+}
+
+
+
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+
+.page-title {
+
+    text-align: center;
+
+    padding: 50px;
+
+}
+
+
+
+
+
+/* =========================
+   FORMS
+========================= */
+
+
+.design-form {
+
+    width: 60%;
+
+    margin: auto;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+
+
+.design-form input,
+.design-form select,
+.design-form textarea {
+
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 10px 0 20px;
+
+    border: 1px solid #aaa;
+
+}
+
+
+
+
+
+.design-form textarea {
+
+    height: 120px;
+
+}
+
+
+
+
+
+.design-form button {
+
+    padding: 15px 35px;
+
+    background-color: black;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+
+
+
+.design-form button:hover {
+
+    background-color: darkred;
+
+}
+
+
+
+
+/* =========================
+   TABLE
+========================= */
+
+
+.table-section {
+
+    padding: 50px;
+
+}
+
+
+
+
+table {
+
+    width: 80%;
+
+    margin: auto;
+
+    border-collapse: collapse;
+
+    background-color: white;
+
+}
+
+
+
+
+
+th,
+td {
+
+    border: 1px solid #aaa;
+
+    padding: 15px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+th {
+
+    background-color: black;
+
+    color: white;
+
+}
+
+
+
+
+
+/* =========================
+   TEAM
+========================= */
+
+
+.team {
+
+    padding: 50px;
+
+    text-align: center;
+
+}
+
+
+
+
+
+.team-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+
+
+
+.team-card {
+
+    width: 250px;
+
+}
+
+
+
+
+
+.team-card img {
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+}
+
+
+
+
+
+/* =========================
+   INFO BOX
+========================= */
+
+
+.info-box {
+
+    padding: 40px;
+
+    margin: 40px;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+
+    text-align: center;
+
+}
+
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+
+    background-color: black;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px;
+
+    margin-top: 50px;
+
+}
