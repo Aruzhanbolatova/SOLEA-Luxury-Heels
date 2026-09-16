@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">SOLEA Hero</title>
+  <desc id="desc">Stylized luxury heel illustration for the SOLEA storefront.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f9f5f1"/>
+      <stop offset="100%" stop-color="#e9d7c7"/>
+    </linearGradient>
+    <linearGradient id="shoe" x1="0" x2="1">
+      <stop offset="0%" stop-color="#1b1b1b"/>
+      <stop offset="100%" stop-color="#4a2b2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <circle cx="620" cy="170" r="110" fill="#e3c5ae" opacity="0.68"/>
+  <g transform="translate(90 120)">
+    <path d="M120 500 C 190 370, 280 260, 430 210 L 570 210 C 650 210, 690 250, 680 310 L 650 510 C 642 575, 590 620, 530 620 L 180 620 C 126 620, 90 576, 92 520 Z" fill="url(#shoe)"/>
+    <path d="M215 615 L 520 615 L 560 760 L 170 760 Z" fill="#171717"/>
+    <path d="M285 610 L 415 610 L 440 760 L 255 760 Z" fill="#d7b9a3" opacity="0.9"/>
+    <path d="M155 500 L 245 350" stroke="#d7b9a3" stroke-width="14" stroke-linecap="round"/>
+    <path d="M260 370 L 410 205" stroke="#d7b9a3" stroke-width="14" stroke-linecap="round"/>
+    <path d="M468 312 L 615 255" stroke="#d7b9a3" stroke-width="14" stroke-linecap="round"/>
+    <path d="M198 355 L 300 350" stroke="#d7b9a3" stroke-width="7" stroke-linecap="round"/>
+    <path d="M312 350 L 395 250" stroke="#d7b9a3" stroke-width="7" stroke-linecap="round"/>
+    <path d="M470 290 L 585 278" stroke="#d7b9a3" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="925" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#201d1d" letter-spacing="8">SOLEA</text>
+</svg>

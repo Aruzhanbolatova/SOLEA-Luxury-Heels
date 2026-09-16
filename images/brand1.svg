@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Classic Elegance</title>
+  <desc id="desc">Luxury red heel photograph-inspired vector illustration.</desc>
+  <defs>
+    <linearGradient id="bg1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5d5d5"/>
+      <stop offset="100%" stop-color="#dfb6ae"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg1)"/>
+  <circle cx="620" cy="110" r="90" fill="#e7b0a7" opacity="0.7"/>
+  <g transform="translate(115 70)">
+    <path d="M80 320 C 170 190, 295 120, 445 120 L 540 120 C 590 120, 625 150, 620 200 L 590 320 C 582 365, 540 388, 488 388 L 115 388 C 84 388, 60 360, 62 328 Z" fill="#a71829"/>
+    <path d="M155 388 L 470 388 L 520 500 L 122 500 Z" fill="#3b1117"/>
+    <path d="M242 382 L 377 382 L 402 500 L 220 500 Z" fill="#f2d9d6" opacity="0.8"/>
+    <path d="M125 325 L 220 200" stroke="#f2d9d6" stroke-width="12" stroke-linecap="round"/>
+    <path d="M265 205 L 410 125" stroke="#f2d9d6" stroke-width="12" stroke-linecap="round"/>
+    <path d="M495 188 L 575 150" stroke="#f2d9d6" stroke-width="12" stroke-linecap="round"/>
+  </g>
+</svg>

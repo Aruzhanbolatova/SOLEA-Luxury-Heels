@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">PEARL ELEGANCE</title>
+  <desc id="desc">White luxury evening heel illustration.</desc>
+  <defs>
+    <linearGradient id="w1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f7f7f7"/>
+      <stop offset="100%" stop-color="#d5d5d5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#f7f5f2"/>
+  <g transform="translate(105 75)">
+    <path d="M130 535 C 200 340, 290 250, 430 220 L 550 220 C 635 220, 680 260, 670 320 L 635 530 C 628 592, 582 638, 514 638 L 180 638 C 124 638, 90 592, 100 536 Z" fill="url(#w1)"/>
+    <path d="M188 638 L 520 638 L 570 778 L 165 778 Z" fill="#111"/>
+    <path d="M255 610 L 420 610 L 445 778 L 232 778 Z" fill="#ecdfd5" opacity="0.8"/>
+    <path d="M180 520 L 258 350" stroke="#e6d3c6" stroke-width="14" stroke-linecap="round"/>
+    <path d="M290 370 L 410 212" stroke="#e6d3c6" stroke-width="14" stroke-linecap="round"/>
+    <path d="M500 315 L 610 248" stroke="#e6d3c6" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="930" text-anchor="middle" font-family="Georgia, serif" font-size="56" fill="#1d1b1b" letter-spacing="5">PEARL</text>
+</svg>
