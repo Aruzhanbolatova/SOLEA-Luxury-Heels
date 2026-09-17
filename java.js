@@ -1,7 +1,3 @@
-// ============================================================
-// HOME PAGE ONLY — carousel + FAQ accordion
-// Loaded only by index.html, doesn't affect other pages.
-// ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
     // ---- Product carousel ----
