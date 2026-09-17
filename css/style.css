@@ -1,6 +1,7 @@
 /* =========================
-   GLOBAL STYLE
+   SOLEA LUXURY BRAND STYLE
 ========================= */
+
 
 * {
     box-sizing: border-box;
@@ -9,16 +10,17 @@
 
 body {
 
-    margin: 0;
-    padding: 0;
+    margin:0;
 
-    font-family: "Georgia", serif;
+    background:#f8f6f2;
 
-    color: #222;
+    color:#111;
 
-    background-color: #faf8f5;
+    font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 
-    line-height: 1.6;
 }
 
 
@@ -27,24 +29,13 @@ h1,
 h2,
 h3 {
 
-    font-family: "Times New Roman", serif;
+    font-family:
+    "Times New Roman",
+    serif;
 
-    letter-spacing: 1px;
+    font-weight:400;
 
-}
-
-
-
-h1 {
-
-    font-size: 55px;
-
-}
-
-
-h2 {
-
-    font-size: 35px;
+    letter-spacing:3px;
 
 }
 
@@ -52,82 +43,90 @@ h2 {
 
 p {
 
-    font-size: 18px;
+    color:#555;
+
+    line-height:1.8;
 
 }
 
 
 
 /* =========================
-   HEADER & NAVIGATION
+HEADER
 ========================= */
 
 
 #main-header {
 
-    display: flex;
+    height:95px;
 
-    justify-content: space-between;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    padding: 25px 60px;
+    justify-content:space-between;
 
-    background-color: white;
+    padding:0 70px;
 
-    border-bottom: 1px solid #ddd;
+    background:#fff;
+
+    border-bottom:1px solid #ddd;
 
 }
-
 
 
 
 .logo a {
 
-    text-decoration: none;
+    text-decoration:none;
 
-    color: black;
+    color:#111;
 
-    font-size: 35px;
+    font-size:38px;
 
-    font-weight: bold;
+    letter-spacing:10px;
 
 }
-
-
 
 
 
 .navbar {
 
-    display: flex;
+    display:flex;
 
-    gap: 25px;
+    gap:40px;
 
 }
-
 
 
 
 .navbar a {
 
-    text-decoration: none;
+    text-decoration:none;
 
-    color: black;
+    color:#111;
 
-    font-size: 16px;
+    text-transform:uppercase;
 
-    transition: 0.3s;
+    font-size:12px;
+
+    letter-spacing:2px;
 
 }
-
-
 
 
 
 .navbar a:hover {
 
-    color: darkred;
+    color:#9b0000;
+
+}
+
+
+
+.icons {
+
+    font-size:20px;
 
 }
 
@@ -136,72 +135,27 @@ p {
 
 
 /* =========================
-   BUTTONS
+HERO
 ========================= */
 
 
-.button {
+.luxury-hero {
 
-    display: inline-block;
+    height:90vh;
 
-    padding: 14px 30px;
+    position:relative;
 
-    margin: 10px;
-
-    background-color: black;
-
-    color: white;
-
-    text-decoration: none;
-
-    border: 1px solid black;
-
-    transition: 0.3s;
+    overflow:hidden;
 
 }
-
-
-
-.button:hover {
-
-    background-color: darkred;
-
-}
-
-
-
-/* =========================
-   HERO SECTION
-========================= */
-
-
-.hero {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-around;
-
-    padding: 70px;
-
-}
-
-
-
-
-.hero-text {
-
-    width: 45%;
-
-}
-
 
 
 
 .hero-image {
 
-    width: 40%;
+    width:100%;
+
+    height:100%;
 
 }
 
@@ -209,9 +163,53 @@ p {
 
 .hero-image img {
 
-    width: 100%;
+    width:100%;
 
-    height: auto;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+.hero-overlay {
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.hero-overlay p {
+
+    color:white;
+
+    letter-spacing:6px;
+
+    font-size:13px;
+
+}
+
+
+
+.hero-overlay h1 {
+
+    font-size:75px;
+
+    color:white;
+
+    line-height:1.1;
 
 }
 
@@ -219,96 +217,168 @@ p {
 
 
 
-.subtitle {
+/* BUTTON */
 
-    text-transform: uppercase;
 
-    letter-spacing: 3px;
+.button {
 
-    font-size: 14px;
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:17px 45px;
+
+    background:white;
+
+    color:black;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    transition:.3s;
 
 }
 
 
+
+.button:hover {
+
+    background:#9b0000;
+
+    color:white;
+
+}
 
 
 
 /* =========================
-   PRODUCT CARDS
+SIGNATURE
 ========================= */
 
 
-.collection {
+.signature {
 
-    padding: 60px;
+    padding:120px 200px;
 
-    text-align: center;
+    text-align:center;
 
 }
 
 
+
+.small-title {
+
+    letter-spacing:5px;
+
+    font-size:12px;
+
+}
+
+
+
+.signature h2 {
+
+    font-size:45px;
+
+}
+
+
+
+/* =========================
+PRODUCTS
+========================= */
+
+
+.featured {
+
+    padding:100px 70px;
+
+    text-align:center;
+
+}
+
+
+
+.featured h2 {
+
+    font-size:45px;
+
+}
 
 
 
 .products {
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    gap: 30px;
+    gap:45px;
+
+    margin-top:60px;
 
 }
-
-
 
 
 
 .card {
 
-    background-color: white;
+    background:white;
 
-    width: 300px;
+    width:330px;
 
-    padding: 20px;
+    padding-bottom:35px;
 
-    border: 1px solid #ddd;
+    transition:.4s;
 
 }
 
 
+
+.card:hover {
+
+    transform:translateY(-15px);
+
+}
 
 
 
 .card img {
 
-    width: 100%;
+    width:100%;
 
-    height: 300px;
+    height:380px;
 
-    object-fit: cover;
-
-}
-
-
-
-
-
-.card a {
-
-    color: darkred;
-
-    text-decoration: none;
+    object-fit:contain;
 
 }
 
 
 
+.card h3 {
+
+    font-size:23px;
+
+}
 
 
-.card a:hover {
 
-    text-decoration: underline;
+.card p {
+
+    font-size:14px;
+
+}
+
+
+
+.card span {
+
+    font-size:18px;
 
 }
 
@@ -317,299 +387,548 @@ p {
 
 
 /* =========================
-   DESIGN SECTION
+DARK BANNER
 ========================= */
 
 
-#design-section {
+.dark-banner {
 
-    background-color: #111;
 
-    color: white;
+    background:#111;
 
-    padding: 70px;
+    color:white;
 
-    text-align: center;
+    padding:120px 50px;
+
+    text-align:center;
+
+}
+
+
+
+.dark-banner h2 {
+
+    color:white;
+
+    font-size:50px;
+
+}
+
+
+
+.dark-banner p {
+
+    color:#ccc;
 
 }
 
 
 
 
+.dark-banner .button {
+
+    background:white;
+
+}
+
+
 
 /* =========================
-   LISTS
+CATEGORIES
 ========================= */
 
 
-.features {
+.categories {
 
-    padding: 50px;
+    padding:100px 70px;
+
+    text-align:center;
+
+}
+
+
+
+.category-box {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
 
 }
 
 
 
+.category-box div {
 
+    width:300px;
 
-.features li {
+    height:200px;
 
-    margin: 10px;
+    background:white;
 
-    font-size: 18px;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
 }
 
 
+
+.category-box h3 {
+
+    font-size:28px;
+
+}
 
 
 
 /* =========================
-   PAGE TITLE
-========================= */
-
-
-.page-title {
-
-    text-align: center;
-
-    padding: 50px;
-
-}
-
-
-
-
-
-/* =========================
-   FORMS
-========================= */
-
-
-.design-form {
-
-    width: 60%;
-
-    margin: auto;
-
-    background-color: white;
-
-    padding: 40px;
-
-    border: 1px solid #ddd;
-
-}
-
-
-
-
-.design-form input,
-.design-form select,
-.design-form textarea {
-
-
-    width: 100%;
-
-    padding: 12px;
-
-    margin: 10px 0 20px;
-
-    border: 1px solid #aaa;
-
-}
-
-
-
-
-
-.design-form textarea {
-
-    height: 120px;
-
-}
-
-
-
-
-
-.design-form button {
-
-    padding: 15px 35px;
-
-    background-color: black;
-
-    color: white;
-
-    border: none;
-
-    cursor: pointer;
-
-}
-
-
-
-
-
-.design-form button:hover {
-
-    background-color: darkred;
-
-}
-
-
-
-
-/* =========================
-   TABLE
-========================= */
-
-
-.table-section {
-
-    padding: 50px;
-
-}
-
-
-
-
-table {
-
-    width: 80%;
-
-    margin: auto;
-
-    border-collapse: collapse;
-
-    background-color: white;
-
-}
-
-
-
-
-
-th,
-td {
-
-    border: 1px solid #aaa;
-
-    padding: 15px;
-
-    text-align: center;
-
-}
-
-
-
-
-
-th {
-
-    background-color: black;
-
-    color: white;
-
-}
-
-
-
-
-
-/* =========================
-   TEAM
-========================= */
-
-
-.team {
-
-    padding: 50px;
-
-    text-align: center;
-
-}
-
-
-
-
-
-.team-container {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
-
-}
-
-
-
-
-.team-card {
-
-    width: 250px;
-
-}
-
-
-
-
-
-.team-card img {
-
-    width: 150px;
-
-    height: 150px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-}
-
-
-
-
-
-/* =========================
-   INFO BOX
-========================= */
-
-
-.info-box {
-
-    padding: 40px;
-
-    margin: 40px;
-
-    background-color: white;
-
-    border: 1px solid #ddd;
-
-    text-align: center;
-
-}
-
-
-
-
-
-/* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 
 footer {
 
-    background-color: black;
+    background:#111;
 
-    color: white;
+    color:white;
 
-    text-align: center;
+    padding:60px;
 
-    padding: 40px;
+    text-align:center;
 
-    margin-top: 50px;
+}
+
+
+
+footer h2 {
+
+    color:white;
+
+}
+
+
+
+footer p {
+
+    color:#aaa;
+
+}
+/* =========================
+CUSTOM STUDIO
+========================= */
+
+
+.custom-hero {
+
+    padding:120px 80px;
+
+    text-align:center;
+
+}
+
+
+
+.custom-hero h1 {
+
+    font-size:70px;
+
+}
+
+
+
+.custom-container {
+
+    display:flex;
+
+    gap:80px;
+
+    padding:80px;
+
+    align-items:center;
+
+}
+
+
+
+.custom-image {
+
+    width:50%;
+
+}
+
+
+
+.custom-image img {
+
+    width:100%;
+
+}
+
+
+
+
+
+.custom-form {
+
+    width:45%;
+
+    background:white;
+
+    padding:50px;
+
+}
+
+
+
+
+
+.custom-form h2 {
+
+    font-size:35px;
+
+}
+
+
+
+.custom-form label {
+
+    display:block;
+
+    margin-top:20px;
+
+    margin-bottom:10px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+.custom-form input,
+.custom-form select,
+.custom-form textarea {
+
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    background:#faf8f5;
+
+}
+
+
+
+.custom-form textarea {
+
+    height:120px;
+
+}
+
+
+
+.custom-form .choice {
+
+    display:inline-block;
+
+    margin-right:20px;
+
+}
+
+
+
+.custom-form .choice input {
+
+    width:auto;
+
+}
+
+
+
+.custom-form button {
+
+
+    margin-top:30px;
+
+    padding:18px 40px;
+
+    background:#111;
+
+    color:white;
+
+    border:none;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+}
+
+
+
+.custom-form button:hover {
+
+    background:#900000;
+
+}
+/* =========================
+SIZE GUIDE
+========================= */
+
+
+.size-hero {
+
+    text-align:center;
+
+    padding:100px 50px;
+
+}
+
+
+
+.size-hero h1 {
+
+    font-size:65px;
+
+}
+
+
+
+.size-content {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:70px;
+
+    padding:80px;
+
+}
+
+
+
+.size-image {
+
+    width:40%;
+
+}
+
+
+
+.size-image img {
+
+    width:100%;
+
+}
+
+
+
+.size-table {
+
+    width:50%;
+
+}
+
+
+
+.size-table h2 {
+
+    font-size:35px;
+
+}
+
+
+
+table {
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+}
+
+
+
+th {
+
+    background:#111;
+
+    color:white;
+
+    padding:18px;
+
+    letter-spacing:2px;
+
+}
+
+
+
+td {
+
+    padding:18px;
+
+    border-bottom:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+
+
+tr:hover {
+
+    background:#f5eee5;
+
+}
+
+
+
+.fit-banner {
+
+    background:#111;
+
+    color:white;
+
+    text-align:center;
+
+    padding:100px 50px;
+
+}
+
+
+
+.fit-banner h2 {
+
+    color:white;
+
+    font-size:45px;
+
+}
+
+
+
+.fit-banner p {
+
+    color:#ddd;
+
+}
+/* =========================
+ABOUT PAGE
+========================= */
+
+
+.about-hero {
+
+    text-align:center;
+
+    padding:120px 80px;
+
+}
+
+
+
+.about-hero h1 {
+
+    font-size:65px;
+
+}
+
+
+
+.brand-story {
+
+    padding:100px 200px;
+
+    text-align:center;
+
+}
+
+
+
+.brand-story h2 {
+
+    font-size:45px;
+
+}
+
+
+
+.brand-story p {
+
+    max-width:800px;
+
+    margin:25px auto;
+
+}
+
+
+
+
+
+.team-section {
+
+    padding:100px 80px;
+
+    text-align:center;
+
+}
+
+
+
+.team-container {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:50px;
+
+    margin-top:50px;
+
+}
+
+
+
+.team-card {
+
+    background:white;
+
+    width:260px;
+
+    padding:35px;
+
+}
+
+
+
+.team-card img {
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+
+
+.team-card h3 {
+
+    margin-top:25px;
 
 }

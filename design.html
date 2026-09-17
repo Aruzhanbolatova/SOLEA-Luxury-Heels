@@ -3,18 +3,22 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--
-    Team: SOLEA
-    Members: Student 1, Student 2, Student 3
-    Assignment 1: HTML & CSS Basics
-    -->
 
-    <title>SOLEA | Design Your Pair</title>
+<!--
+Team: SOLEA
+Members: Student 1, Student 2, Student 3
+Assignment 1: HTML & CSS Basics
+-->
 
-    <link rel="stylesheet" href="css/style.css">
+
+<title>SOLEA | Custom Studio</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
 
 </head>
 
@@ -26,19 +30,28 @@
 
 
 <div class="logo">
-    <a href="index.html">SOLEA</a>
+
+<a href="index.html">
+SOLEA
+</a>
+
 </div>
 
 
 
 <nav class="navbar">
 
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="brand.html">Brands</a>
-    <a href="design.html">Design Your Pair</a>
-    <a href="size-guide.html">Size Guide</a>
-    <a href="about.html">About Us</a>
+<a href="index.html">Home</a>
+
+<a href="shop.html">Collection</a>
+
+<a href="brands.html">Designers</a>
+
+<a href="design.html">Custom</a>
+
+<a href="size-guide.html">Size Guide</a>
+
+<a href="about.html">About</a>
 
 </nav>
 
@@ -49,19 +62,36 @@
 
 
 
+
+
 <main>
 
 
-<section class="page-title">
+<section class="custom-hero">
+
+
+<div>
+
+
+<p class="subtitle">
+SOLEA ATELIER
+</p>
+
 
 <h1>
-DESIGN YOUR PAIR
+CREATE YOUR
+SIGNATURE PAIR
 </h1>
 
 
 <p>
-Create heels that match your personality.
+Design heels that reflect your personality.
+Choose every detail from shape to color.
 </p>
+
+
+</div>
+
 
 
 </section>
@@ -71,55 +101,94 @@ Create heels that match your personality.
 
 
 
-<section class="design-form">
 
 
-<form id="custom-form">
+
+<section class="custom-container">
+
+
+<div class="custom-image">
+
+
+<img src="images/heel1.svg"
+alt="Custom luxury heel">
+
+
+</div>
+
+
+
+
+
+
+<div class="custom-form">
+
+
+
+<form>
+
 
 
 <h2>
-Choose Your Style
+Customize Your Heels
 </h2>
 
 
 
-<label>
-Name:
-</label>
-
-<input type="text" placeholder="Enter your name">
-
-
-
-
 
 <label>
-Email:
-</label>
-
-<input type="email" placeholder="Enter your email">
-
-
-
-
-
-
-<label>
-Choose heel type:
+Choose Style
 </label>
 
 
 <select>
 
-<option>Stiletto</option>
+<option>
+Stiletto
+</option>
 
-<option>Pumps</option>
+<option>
+Classic Pump
+</option>
 
-<option>Platform</option>
+<option>
+Platform
+</option>
 
-<option>Slingback</option>
+<option>
+Slingback
+</option>
+
 
 </select>
+
+
+
+
+
+
+
+<label>
+Material
+</label>
+
+
+<select>
+
+<option>
+Luxury Leather
+</option>
+
+<option>
+Suede
+</option>
+
+<option>
+Satin
+</option>
+
+</select>
+
 
 
 
@@ -128,25 +197,36 @@ Choose heel type:
 
 
 <h3>
-Choose color
+Color
 </h3>
 
 
-<label>
+<label class="choice">
+
 <input type="radio" name="color">
+
 Black
+
 </label>
 
 
-<label>
+
+<label class="choice">
+
 <input type="radio" name="color">
+
 Red
+
 </label>
 
 
-<label>
+
+<label class="choice">
+
 <input type="radio" name="color">
-White
+
+Nude
+
 </label>
 
 
@@ -155,12 +235,41 @@ White
 
 
 
-<label>
-Select custom color:
+
+<h3>
+Heel Height
+</h3>
+
+
+
+<label class="choice">
+
+<input type="radio" name="height">
+
+7 cm
+
 </label>
 
 
-<input type="color">
+
+<label class="choice">
+
+<input type="radio" name="height">
+
+10 cm
+
+</label>
+
+
+
+<label class="choice">
+
+<input type="radio" name="height">
+
+12 cm
+
+</label>
+
 
 
 
@@ -169,21 +278,31 @@ Select custom color:
 
 
 <label>
-Choose size:
+Size
 </label>
 
 
 <select>
 
-<option>36</option>
+<option>
+36
+</option>
 
-<option>37</option>
+<option>
+37
+</option>
 
-<option>38</option>
+<option>
+38
+</option>
 
-<option>39</option>
+<option>
+39
+</option>
 
-<option>40</option>
+<option>
+40
+</option>
 
 </select>
 
@@ -193,26 +312,44 @@ Choose size:
 
 
 
-
 <label>
-Your message:
+Your Details
 </label>
 
 
-<textarea placeholder="Describe your dream heels"></textarea>
+<input 
+type="text"
+placeholder="Full Name">
+
+
+
+<input
+type="email"
+placeholder="Email">
+
+
+
+
+
+<textarea placeholder="Describe your dream heels">
+</textarea>
 
 
 
 
 
 
-<button type="submit">
+<button>
 CREATE MY PAIR
 </button>
 
 
 
+
 </form>
+
+
+</div>
 
 
 </section>
@@ -221,17 +358,18 @@ CREATE MY PAIR
 
 
 
-<section class="info-box">
+
+<section class="dark-banner">
 
 
 <h2>
-Your Design Journey
+YOUR VISION.
+YOUR DESIGN.
 </h2>
 
 
 <p>
-Select the details of your dream heels and
-create a unique fashion statement.
+Every pair tells a different story.
 </p>
 
 
@@ -239,9 +377,7 @@ create a unique fashion statement.
 
 
 
-
 </main>
-
 
 
 
@@ -257,7 +393,7 @@ SOLEA
 
 
 <p>
-Step into your own style.
+Luxury heels created for your story.
 </p>
 
 
@@ -268,12 +404,11 @@ Student 1, Student 2, Student 3
 
 
 <p>
-© 2026 SOLEA Educational Project
+© 2026 SOLEA
 </p>
 
 
 </footer>
-
 
 
 </body>
