@@ -3,309 +3,900 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+    Team: SOLEA
+    Members: Ardak, Aruzhan, Aiym
+    Assignment 1: HTML & CSS Basics
+    -->
+
+    <title>SOLEA | About Us</title>
+
+    <link rel="stylesheet" href="css/style.css">
 
 
-<!--
-Team: SOLEA
-Members: Student 1, Student 2, Student 3
-Assignment 1: HTML & CSS Basics
--->
+    <style>
+
+        /* =========================================
+           SOLEA ABOUT PAGE
+        ========================================= */
+
+        .about-page {
+            background: #050505;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
 
-<title>SOLEA | About</title>
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .about-page #main-header {
+            background: #050505;
+            border-bottom: 1px solid #222;
+        }
+
+        .about-page .logo a,
+        .about-page .navbar a {
+            color: #ffffff;
+        }
 
 
-<link rel="stylesheet" href="css/style.css">
+        /* =========================================
+           HERO
+        ========================================= */
 
+        .about-hero-new {
+            min-height: 680px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 8%;
+            overflow: hidden;
+        }
+
+
+        .hero-small-text {
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 35px;
+            color: #bcbcbc;
+        }
+
+
+        .about-hero-new h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(55px, 9vw, 135px);
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: -5px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+
+        .hero-description {
+            max-width: 430px;
+            margin-top: 45px;
+            color: #a7a7a7;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        .hero-button {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid #ffffff;
+            border-radius: 30px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+
+        .hero-button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+
+        /* Decorative circles */
+
+        .hero-circle {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 1px solid #282828;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+
+        .hero-circle::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 1px solid #333;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .about-hero-new h1,
+        .hero-small-text,
+        .hero-description,
+        .hero-button {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================================
+           ABOUT + STATS
+        ========================================= */
+
+        .about-intro {
+            max-width: 1300px;
+            margin: auto;
+            padding: 120px 8%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+
+        .about-intro h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: clamp(50px, 7vw, 95px);
+            font-weight: 300;
+            line-height: 0.9;
+            margin: 0;
+            letter-spacing: -4px;
+            text-transform: uppercase;
+        }
+
+
+        .about-label {
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 30px;
+        }
+
+
+        .about-text p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 480px;
+            margin-bottom: 18px;
+        }
+
+
+        /* Statistics */
+
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+
+        .stat {
+            border-top: 1px solid #555;
+            padding-top: 20px;
+        }
+
+
+        .stat-number {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 50px;
+            margin-bottom: 8px;
+        }
+
+
+        .stat-title {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================
+           PHILOSOPHY
+        ========================================= */
+
+        .philosophy-new {
+            max-width: 1300px;
+            margin: auto;
+            padding: 100px 8% 140px;
+        }
+
+
+        .philosophy-new h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(55px, 9vw, 120px);
+            font-weight: 400;
+            line-height: 0.9;
+            margin: 0 0 70px;
+            text-transform: uppercase;
+        }
+
+
+        .philosophy-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: end;
+        }
+
+
+        .philosophy-quote {
+            font-size: 22px;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+
+
+        .philosophy-description {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 430px;
+        }
+
+
+        /* =========================================
+           TEAM
+        ========================================= */
+
+        .team-new {
+            padding: 120px 8%;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+
+        .team-title {
+            max-width: 1300px;
+            margin: 0 auto 70px;
+        }
+
+
+        .team-title h2 {
+            font-size: clamp(50px, 7vw, 90px);
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+        }
+
+
+        .team-grid {
+            max-width: 1300px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        .team-member {
+            border: 1px solid #333;
+            padding: 18px;
+            transition: 0.3s;
+        }
+
+
+        .team-member:hover {
+            border-color: #ffffff;
+            transform: translateY(-5px);
+        }
+
+
+        .team-member img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background: #101010;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+
+        .member-number {
+            font-size: 10px;
+            color: #777;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+
+        .team-member h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           SPECIAL OFFER / FINAL SECTION
+        ========================================= */
+
+        .special-offer {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .offer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .offer-label {
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+
+        .special-offer h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 400;
+            font-size: clamp(60px, 9vw, 125px);
+            line-height: 0.85;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+
+        .offer-text {
+            max-width: 430px;
+            margin: 45px auto 30px;
+            color: #888;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        .offer-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 13px 30px;
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+
+        .offer-button:hover {
+            background: #bbbbbb;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .about-page footer {
+            background: #050505;
+            border-top: 1px solid #222;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+
+        .about-page footer h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 50px;
+            font-weight: 400;
+            letter-spacing: 8px;
+        }
+
+
+        .about-page footer p {
+            color: #777;
+            font-size: 12px;
+            margin: 12px;
+        }
+
+
+        .footer-line {
+            width: 80px;
+            height: 1px;
+            background: #444;
+            margin: 30px auto;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .about-intro {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .statistics {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .philosophy-bottom {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-member img {
+                height: 240px;
+            }
+
+            .about-hero-new {
+                min-height: 600px;
+            }
+
+            .hero-circle {
+                width: 250px;
+                height: 250px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .statistics {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .about-hero-new h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-intro h2 {
+                letter-spacing: -2px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 
-<body>
+<body class="about-page">
 
+
+<!-- =========================================
+     HEADER
+========================================= -->
 
 <header id="main-header">
 
+    <div class="logo">
 
-<div class="logo">
+        <a href="index.html">
+            SOLEA
+        </a>
 
-<a href="index.html">
-SOLEA
-</a>
-
-</div>
-
+    </div>
 
 
+    <nav class="navbar">
 
-<nav class="navbar">
+        <a href="index.html">
+            Home
+        </a>
 
+        <a href="shop.html">
+            Collection
+        </a>
 
-<a href="index.html">
-Home
-</a>
+        <a href="brands.html">
+            Designers
+        </a>
 
+        <a href="design.html">
+            Custom
+        </a>
 
-<a href="shop.html">
-Collection
-</a>
+        <a href="size-guide.html">
+            Size Guide
+        </a>
 
+        <a href="about.html">
+            About
+        </a>
 
-<a href="brands.html">
-Designers
-</a>
-
-
-<a href="design.html">
-Custom
-</a>
-
-
-<a href="size-guide.html">
-Size Guide
-</a>
-
-
-<a href="about.html">
-About
-</a>
-
-
-</nav>
-
+    </nav>
 
 </header>
-
-
-
-
 
 
 
 <main>
 
 
+<!-- =========================================
+     HERO
+========================================= -->
 
-<section class="about-hero">
+<section class="about-hero-new">
 
-
-<p class="subtitle">
-THE STORY BEHIND SOLEA
-</p>
-
-
-<h1>
-CREATED FOR ELEGANCE
-</h1>
+    <div class="hero-circle"></div>
 
 
-<p>
-SOLEA is a modern luxury footwear concept
-where design, individuality and confidence meet.
-</p>
+    <p class="hero-small-text">
+        THE STORY BEHIND SOLEA
+    </p>
+
+
+    <h1>
+        CREATED<br>
+        FOR ELEGANCE
+    </h1>
+
+
+    <p class="hero-description">
+
+        A modern luxury footwear concept
+        where timeless design, individuality
+        and confidence come together.
+
+    </p>
+
+
+    <a href="shop.html" class="hero-button">
+        EXPLORE COLLECTION
+    </a>
+
+</section>
+
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section class="about-intro">
+
+
+    <div>
+
+        <p class="about-label">
+            ABOUT SOLEA
+        </p>
+
+
+        <h2>
+            MORE<br>
+            THAN<br>
+            HEELS
+        </h2>
+
+    </div>
+
+
+
+    <div class="about-text">
+
+        <p>
+            SOLEA was created with a simple idea:
+            luxury should feel personal.
+        </p>
+
+
+        <p>
+            We believe that footwear is not only
+            an accessory. It is a form of expression
+            that reflects personality, confidence
+            and individuality.
+        </p>
+
+
+        <p>
+            Our designs combine timeless silhouettes
+            with modern details, creating elegant
+            pieces made for women who want to
+            express their own style.
+        </p>
+
+
+        <div class="statistics">
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    01
+                </div>
+
+                <div class="stat-title">
+                    Vision
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    03
+                </div>
+
+                <div class="stat-title">
+                    Creators
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    ∞
+                </div>
+
+                <div class="stat-title">
+                    Possibilities
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 
 </section>
 
 
 
+<!-- =========================================
+     PHILOSOPHY
+========================================= -->
+
+<section class="philosophy-new">
 
 
+    <p class="about-label">
+        OUR PHILOSOPHY
+    </p>
 
 
+    <h2>
+        ELEGANCE<br>
+        IS AN<br>
+        ATTITUDE
+    </h2>
 
 
-<section class="brand-story">
+    <div class="philosophy-bottom">
 
 
-<div>
+        <p class="philosophy-quote">
+
+            "The perfect pair is not only
+            beautiful. It feels like you."
+
+        </p>
 
 
-<h2>
-Our Philosophy
-</h2>
+        <p class="philosophy-description">
+
+            SOLEA combines refined aesthetics
+            with personalization. Every detail
+            is designed to create a feeling of
+            confidence and individuality.
+
+            <br><br>
+
+            Because true luxury is not about
+            following a trend. It is about
+            creating something that feels
+            uniquely yours.
+
+        </p>
 
 
-<p>
-We believe that heels are more than fashion.
-They represent personality, confidence and
-the unique story of every woman.
-</p>
-
-
-<p>
-SOLEA combines timeless silhouettes with
-modern customization, allowing every customer
-to create a pair that feels personal.
-</p>
-
-
-</div>
+    </div>
 
 
 </section>
 
 
 
+<!-- =========================================
+     TEAM
+========================================= -->
+
+<section class="team-new">
+
+
+    <div class="team-title">
+
+        <p class="about-label">
+            THE PEOPLE BEHIND SOLEA
+        </p>
+
+        <h2>
+            MEET OUR TEAM
+        </h2>
+
+    </div>
 
 
 
+    <div class="team-grid">
+
+
+        <!-- MEMBER 1 -->
+
+        <div class="team-member">
+
+            <img
+                src="images/member1.svg"
+                alt="Ardak"
+            >
+
+            <p class="member-number">
+                01
+            </p>
+
+            <h3>
+                Ardak
+            </h3>
+
+        </div>
 
 
 
-<section class="team-section">
+        <!-- MEMBER 2 -->
 
+        <div class="team-member">
 
-<h2>
-MEET OUR TEAM
-</h2>
+            <img
+                src="images/member2.svg"
+                alt="Aruzhan"
+            >
 
+            <p class="member-number">
+                02
+            </p>
 
+            <h3>
+                Aruzhan
+            </h3>
 
-<div class="team-container">
-
-
-
-
-
-<div class="team-card">
-
-
-<img src="images/member1.svg"
-alt="Team member">
-
-
-<h3>
-Student 1
-</h3>
-
-
-<p>
-Frontend Developer
-</p>
-
-
-</div>
+        </div>
 
 
 
+        <!-- MEMBER 3 -->
+
+        <div class="team-member">
+
+            <img
+                src="images/member3.svg"
+                alt="Aiym"
+            >
+
+            <p class="member-number">
+                03
+            </p>
+
+            <h3>
+                Aiym
+            </h3>
+
+        </div>
 
 
-
-
-<div class="team-card">
-
-
-<img src="images/member2.svg"
-alt="Team member">
-
-
-<h3>
-Student 2
-</h3>
-
-
-<p>
-UI Designer
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="team-card">
-
-
-<img src="images/member3.svg"
-alt="Team member">
-
-
-<h3>
-Student 3
-</h3>
-
-
-<p>
-Content Creator
-</p>
-
-
-</div>
-
-
-
-
-
-
-</div>
+    </div>
 
 
 </section>
 
-
-
-
-
-
-
+<!-- ================= SPECIAL OFFER ================= -->
 
 <section class="dark-banner">
 
+    <div class="banner-content">
 
-<h2>
-SOLEA EXPERIENCE
-</h2>
+        <p class="section-label">
+            A SPECIAL MOMENT FOR YOU
+        </p>
 
+        <h2>
+            SPECIAL OFFER<br>
+            FOR NEW CLIENTS
+        </h2>
 
-<p>
-Luxury begins with a detail.
-</p>
+        <p class="banner-text">
+            Discover the SOLEA experience with a special offer
+            created for our new clients. Find your perfect pair
+            and make your first SOLEA purchase truly memorable.
+        </p>
 
+        <a href="shop.html" class="banner-button">
+            DISCOVER THE OFFER
+        </a>
+
+    </div>
 
 </section>
-
-
 
 </main>
 
 
 
-
-
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
 
-<h2>
-SOLEA
-</h2>
+    <h2>
+        SOLEA
+    </h2>
 
 
-<p>
-Luxury heels created for your story.
-</p>
+    <p>
+        Luxury heels created for your story.
+    </p>
 
 
-<p>
-Team members:
-Student 1, Student 2, Student 3
-</p>
+    <div class="footer-line"></div>
 
 
-<p>
-© 2026 SOLEA
-</p>
+    <p>
+        © 2026 SOLEA · Assignment 1
+    </p>
 
 
 </footer>
-
 
 
 </body>
