@@ -1,348 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<!--
-Team: SOLEA
-Members: Student 1, Student 2, Student 3
-Assignment 1: HTML & CSS Basics
--->
-
-
 <title>SOLEA | Shop</title>
-
-
 <link rel="stylesheet" href="css/style.css">
-
-
 </head>
-
-
-
 <body>
 
-
 <header id="main-header">
-
-
-<div class="logo">
-
-<a href="index.html">
-SOLEA
-</a>
-
-</div>
-
-
-
-<nav class="navbar">
-
-
-<a href="index.html">Home</a>
-
-<a href="shop.html">Shop</a>
-
-<a href="brands.html">Brands</a>
-
-<a href="design.html">Customize</a>
-
-<a href="size-guide.html">Size Guide</a>
-
-<a href="about.html">About</a>
-
-
-</nav>
-
-
+    <div class="logo">
+        <a href="index.html">SOLEA</a>
+    </div>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="shop.html" class="active">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="design.html">Customize</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="about.html">About</a>
+    </nav>
 </header>
-
-
-
-
 
 <main>
 
-
-
-<section class="page-title">
-
-
-<h1>
-THE COLLECTION
-</h1>
-
-
-<p>
-Discover elegant heels created for every occasion.
-</p>
-
-
+<!-- PAGE TITLE -->
+<section class="shop-hero">
+    <h1>High Heels Collection</h1>
+    <p>36 products</p>
 </section>
 
-
-
-
-
-
-
-<section class="categories">
-
-
-<h2>
-SHOP BY CATEGORY
-</h2>
-
-
-
-<div class="category-box">
-
-
-<div>
-
-<h3>
-Stilettos
-</h3>
-
-<p>
-Elegant high heels with timeless silhouette.
-</p>
-
-</div>
-
-
-
-
-
-<div>
-
-<h3>
-Pumps
-</h3>
-
-<p>
-Classic designs for everyday luxury.
-</p>
-
-</div>
-
-
-
-
-
-<div>
-
-<h3>
-Platforms
-</h3>
-
-<p>
-Bold styles with modern attitude.
-</p>
-
-</div>
-
-
-
-</div>
-
-
+<!-- CATEGORIES -->
+<section class="shop-categories">
+    <h2>Shop by Category</h2>
+    <div class="cat-grid">
+        <a href="#" class="cat-card">
+            <h3>Stilettos</h3>
+            <p>Elegant high heels with timeless silhouette.</p>
+        </a>
+        <a href="#" class="cat-card">
+            <h3>Pumps</h3>
+            <p>Classic designs for everyday luxury.</p>
+        </a>
+        <a href="#" class="cat-card">
+            <h3>Platforms</h3>
+            <p>Bold styles with modern attitude.</p>
+        </a>
+    </div>
 </section>
 
-
-
-
-
-
-
-<section class="collection">
-
-
-<h2>
-Featured Heels
-</h2>
-
-
-
-<div class="products">
-
-
-
-<div class="card">
-
-
-<img src="images/heel1.svg"
-alt="Black luxury heels">
-
-
-<h3>
-Noir Essence
-</h3>
-
-
-<p>
-Black leather stiletto
-</p>
-
-
-<p>
-$250
-</p>
-
-
-<a class="button" href="design.html">
-Customize
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<img src="images/heel2.svg"
-alt="Red luxury heels">
-
-
-<h3>
-Rouge Signature
-</h3>
-
-
-<p>
-Red statement heels
-</p>
-
-
-<p>
-$320
-</p>
-
-
-<a class="button" href="design.html">
-Customize
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<img src="images/heel3.svg"
-alt="White luxury heels">
-
-
-<h3>
-Pearl Grace
-</h3>
-
-
-<p>
-Elegant evening shoes
-</p>
-
-
-<p>
-$280
-</p>
-
-
-<a class="button" href="design.html">
-Customize
-</a>
-
-
-</div>
-
-
-
-
-</div>
-
-
+<!-- PRODUCT GRID -->
+<section class="shop-grid-section">
+    <div class="shop-toolbar">
+        <span id="product-count">36 products</span>
+        <div class="sort">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A–Z</option>
+                <option value="name-desc">Name: Z–A</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+
+        <!-- 1 -->
+        <article class="product-card" data-name="Noir Essence" data-price="250">
+            <div class="product-image">
+                <span class="badge">-12%</span>
+                <img src="images/c11.jpg" alt="Noir Essence">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Noir Essence</h3>
+                <p class="desc">Black leather stiletto</p>
+                <p class="price"><span class="now">$250</span><span class="was">$285</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="product-card" data-name="Rouge Signature" data-price="320">
+            <div class="product-image">
+                <span class="badge">-18%</span>
+                <img src="images/c12.jpeg" alt="Rouge Signature">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Rouge Signature</h3>
+                <p class="desc">Red statement heels</p>
+                <p class="price"><span class="now">$320</span><span class="was">$390</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="product-card" data-name="Pearl Grace" data-price="280">
+            <div class="product-image">
+                <span class="badge">-15%</span>
+                <img src="images/c13.jpeg" alt="Pearl Grace">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Pearl Grace</h3>
+                <p class="desc">Elegant evening shoes</p>
+                <p class="price"><span class="now">$280</span><span class="was">$330</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="product-card" data-name="Velvet Rise" data-price="295">
+            <div class="product-image">
+                <span class="badge">-20%</span>
+                <img src="images/c14.jpeg" alt="Velvet Rise">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Velvet Rise</h3>
+                <p class="desc">Statement platform, matte finish</p>
+                <p class="price"><span class="now">$295</span><span class="was">$370</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="product-card" data-name="Gilded Strap" data-price="265">
+            <div class="product-image">
+                <span class="badge">-10%</span>
+                <img src="images/c15.jpeg" alt="Gilded Strap">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Gilded Strap</h3>
+                <p class="desc">Minimal straps, maximum shine</p>
+                <p class="price"><span class="now">$265</span><span class="was">$295</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="product-card" data-name="Crystal Arch" data-price="340">
+            <div class="product-image">
+                <span class="badge">-25%</span>
+                <img src="images/c16.jpeg" alt="Crystal Arch">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Crystal Arch</h3>
+                <p class="desc">Crystal embellished pump</p>
+                <p class="price"><span class="now">$340</span><span class="was">$450</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="product-card" data-name="Midnight Ballet" data-price="310">
+            <div class="product-image">
+                <span class="badge">-14%</span>
+                <img src="images/c17.jpeg" alt="Midnight Ballet">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Midnight Ballet</h3>
+                <p class="desc">Satin lace-up heels</p>
+                <p class="price"><span class="now">$310</span><span class="was">$360</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="product-card" data-name="Shadowheart" data-price="355">
+            <div class="product-image">
+                <span class="badge">-22%</span>
+                <img src="images/c18.jpeg" alt="Shadowheart">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Shadowheart</h3>
+                <p class="desc">Platform with gold hardware</p>
+                <p class="price"><span class="now">$355</span><span class="was">$455</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="product-card" data-name="Glass Rose" data-price="375">
+            <div class="product-image">
+                <span class="badge">-16%</span>
+                <img src="images/c19.jpeg" alt="Glass Rose">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Glass Rose</h3>
+                <p class="desc">Transparent heel, rose details</p>
+                <p class="price"><span class="now">$375</span><span class="was">$445</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="product-card" data-name="Spikes Heels" data-price="290">
+            <div class="product-image">
+                <span class="badge">-30%</span>
+                <img src="images/c120.jpeg" alt="Spikes Heels">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Spikes Heels</h3>
+                <p class="desc">Edgy studded platform</p>
+                <p class="price"><span class="now">$290</span><span class="was">$415</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 11 -->
+        <article class="product-card" data-name="Batbite Marys" data-price="270">
+            <div class="product-image">
+                <span class="badge">-19%</span>
+                <img src="images/121.jpeg" alt="Batbite Marys">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Batbite Marys</h3>
+                <p class="desc">Mary Jane with chain detail</p>
+                <p class="price"><span class="now">$270</span><span class="was">$335</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+        <!-- 12 -->
+        <article class="product-card" data-name="Crimson Rose" data-price="305">
+            <div class="product-image">
+                <span class="badge">-21%</span>
+                <img src="images/122.jpeg" alt="Crimson Rose">
+            </div>
+            <div class="product-info">
+                <p class="brand">SOLEA</p>
+                <h3>Crimson Rose</h3>
+                <p class="desc">Patent leather with crystal</p>
+                <p class="price"><span class="now">$305</span><span class="was">$385</span></p>
+                <a href="design.html" class="btn-outline">Customize</a>
+            </div>
+        </article>
+
+    </div>
 </section>
 
-
-
-
-
-
-
-
-<section id="design-section">
-
-
-<h2>
-FIND YOUR PERFECT PAIR
-</h2>
-
-
-<p>
-Choose your color, size and design preferences.
-</p>
-
-
-<a class="button" href="design.html">
-CREATE NOW
-</a>
-
-
+<!-- CTA -->
+<section class="shop-cta">
+    <h2>Find Your Perfect Pair</h2>
+    <p>Choose your color, size and design preferences.</p>
+    <a class="button" href="design.html">Create Now</a>
 </section>
-
-
 
 </main>
 
-
-
-
-
-
 <footer>
-
-
-<h2>
-SOLEA
-</h2>
-
-
-<p>
-Luxury heels made for your style.
-</p>
-
-
-<p>
-Team members:
-Student 1, Student 2, Student 3
-</p>
-
-
-<p>
-© 2026 SOLEA
-</p>
-
-
+    <h2>SOLEA</h2>
+    <p>Luxury heels made for your style.</p>
+    <p>Team members: Student 1, Student 2, Student 3</p>
+    <p>© 2026 SOLEA</p>
 </footer>
+<script>
+const grid = document.getElementById('product-grid');
+const select = document.getElementById('sort-select');
+const countEl = document.getElementById('product-count');
 
+function sortProducts(type) {
+    const cards = Array.from(grid.querySelectorAll('.product-card'));
 
+    cards.sort((a, b) => {
+        const nameA = a.dataset.name.toLowerCase();
+        const nameB = b.dataset.name.toLowerCase();
+        const priceA = Number(a.dataset.price);
+        const priceB = Number(b.dataset.price);
 
+        if (type === 'price-asc')  return priceA - priceB;
+        if (type === 'price-desc') return priceB - priceA;
+        if (type === 'name-asc')   return nameA.localeCompare(nameB);
+        if (type === 'name-desc')  return nameB.localeCompare(nameA);
+        return 0; // featured — оставляем как есть
+    });
+
+    // очищаем и вставляем заново
+    grid.innerHTML = '';
+    cards.forEach(card => grid.appendChild(card));
+}
+
+select.addEventListener('change', () => {
+    sortProducts(select.value);
+});
+
+// обновляем счётчик
+countEl.textContent = grid.querySelectorAll('.product-card').length + ' products';
+</script>
 </body>
-
 </html>
