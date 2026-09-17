@@ -676,13 +676,29 @@ SIZE GUIDE
 
 
 .size-hero {
+    text-align: center;
+    padding: 100px 50px;
 
-    text-align:center;
+    background-image: url("../images/лео.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    padding:100px 50px;
-
+    color: white;
 }
 
+.size-hero h1 {
+    font-size: 65px;
+    color: white;
+}
+
+.size-hero p {
+    color: white;
+}
+
+.size-hero .subtitle {
+    color: white;
+}
 
 
 .size-hero h1 {
@@ -703,7 +719,12 @@ SIZE GUIDE
 
     gap:70px;
 
-    padding:80px;
+    padding:100px 80px;
+
+    background-image: url("../images/круж.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
 }
 
