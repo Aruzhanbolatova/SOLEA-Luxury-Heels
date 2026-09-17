@@ -262,7 +262,7 @@
 <footer>
     <h2>SOLEA</h2>
     <p>Luxury heels made for your style.</p>
-    <p>Team members: Student 1, Student 2, Student 3</p>
+    <p>Team members: Aiym,aruzhan,Ardak</p>
     <p>© 2026 SOLEA</p>
 </footer>
 <script>
@@ -283,10 +283,9 @@ function sortProducts(type) {
         if (type === 'price-desc') return priceB - priceA;
         if (type === 'name-asc')   return nameA.localeCompare(nameB);
         if (type === 'name-desc')  return nameB.localeCompare(nameA);
-        return 0; // featured — оставляем как есть
+        return 0; 
     });
 
-    // очищаем и вставляем заново
     grid.innerHTML = '';
     cards.forEach(card => grid.appendChild(card));
 }
@@ -295,7 +294,6 @@ select.addEventListener('change', () => {
     sortProducts(select.value);
 });
 
-// обновляем счётчик
 countEl.textContent = grid.querySelectorAll('.product-card').length + ' products';
 </script>
 </body>
