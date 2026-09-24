@@ -455,59 +455,57 @@
            RESPONSIVE
         ========================================= */
 
-        @media (max-width: 800px) {
+        /* Структура страницы */
+.about-page main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
 
-            .about-intro {
-                grid-template-columns: 1fr;
-                gap: 60px;
-            }
+/* Две колонки истории бренда */
+.about-intro {
+    width: 100%;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 100px);
+}
 
+/* Две колонки раздела философии */
+.philosophy-bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(32px, 6vw, 100px);
+}
 
-            .statistics {
-                grid-template-columns: repeat(3, 1fr);
-            }
+/* Светлая цитата на тёмном фоне */
+.philosophy-quote {
+    color: #eee;
+}
 
+/* Адаптивность */
+@media (max-width: 800px) {
+    .about-intro,
+    .philosophy-bottom {
+        grid-template-columns: minmax(0, 1fr);
+    }
 
-            .philosophy-bottom {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+    .about-intro,
+    .philosophy-new {
+        padding: 80px 6%;
+    }
 
+    .about-hero-new {
+        padding: 70px 6%;
+        min-height: 560px;
+    }
 
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
+    .about-hero-new h1 {
+        font-size: clamp(42px, 9vw, 72px);
+        letter-spacing: -2px;
+    }
 
-
-            .team-member img {
-                height: 250px;
-            }
-
-
-            .about-hero-new {
-                min-height: 600px;
-            }
-
-        }
-
-
-        @media (max-width: 500px) {
-
-            .statistics {
-                grid-template-columns: 1fr;
-            }
-
-
-            .about-hero-new h1 {
-                letter-spacing: -2px;
-            }
-
-
-            .about-intro h2 {
-                letter-spacing: -2px;
-            }
-
-        }
+    .philosophy-new h2 {
+        font-size: clamp(42px, 9vw, 72px);
+        margin-bottom: 45px;
+    }
+}
 
     </style>
 

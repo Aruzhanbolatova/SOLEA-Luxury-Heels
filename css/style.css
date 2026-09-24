@@ -55,23 +55,20 @@ p {
 HEADER
 ========================= */
 
-
 #main-header {
+    min-height: 95px;
+    height: auto;
 
-    height:95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-    display:flex;
+    gap: 20px;
+    padding: 20px clamp(20px, 5vw, 70px);
 
-    align-items:center;
-
-    justify-content:space-between;
-
-    padding:0 70px;
-
-    background:#fff;
-
-    border-bottom:1px solid #ddd;
-
+    background: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 
@@ -91,11 +88,12 @@ HEADER
 
 
 .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
 
-    display:flex;
-
-    gap:40px;
-
+    gap: clamp(14px, 2.5vw, 40px);
 }
 
 
@@ -1443,4 +1441,32 @@ DESIGNERS PAGE
         height: 300px;
     }
 
+}
+/* Адаптивность общей шапки */
+@media (max-width: 1000px) {
+    #main-header {
+        justify-content: center;
+    }
+
+    #main-header .navbar {
+        width: 100%;
+        justify-content: center;
+        gap: 8px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-header {
+        padding: 18px 20px;
+        gap: 12px;
+    }
+
+    #main-header .navbar {
+        gap: 2px 18px;
+    }
+
+    #main-header .navbar a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
 }
