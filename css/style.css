@@ -1994,3 +1994,452 @@ DESIGNERS PAGE
         width: 100%;
     }
 }
+
+
+/* =========================================
+   ASSIGNMENT 2 - SIZE GUIDE
+   GRID AREAS + FLEXBOX + RESPONSIVE
+   ========================================= */
+
+/*
+   These styles are intended for the Assignment 2
+   Size Guide HTML structure:
+
+   <div class="page-layout">
+       <header id="main-header">...</header>
+       <aside class="size-sidebar">...</aside>
+       <main class="size-main">...</main>
+       <footer>...</footer>
+   </div>
+*/
+
+.page-layout {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 250px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+
+/* HEADER */
+
+.page-layout #main-header {
+    grid-area: header;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* NAVIGATION - FLEXBOX */
+
+.page-layout .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+.page-layout .navbar a {
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.page-layout .navbar a:hover {
+    color: #9b0000;
+}
+
+
+/* SIDEBAR */
+
+.size-sidebar {
+    grid-area: sidebar;
+
+    padding: 35px 25px;
+
+    background: #f3efe9;
+
+    border-right: 1px solid #ddd;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.size-sidebar h2 {
+    margin: 0 0 8px;
+
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.sidebar-box {
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #e4dfd8;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.sidebar-box:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #900000;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.sidebar-box h3 {
+    margin: 0 0 10px;
+
+    font-size: 20px;
+}
+
+.sidebar-box p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.sidebar-tip {
+    margin-top: auto;
+
+    padding: 20px;
+
+    background: #111;
+
+    color: white;
+}
+
+.sidebar-tip strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: white;
+
+    letter-spacing: 2px;
+}
+
+.sidebar-tip p {
+    margin: 0;
+
+    color: #ccc;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* MAIN */
+
+.size-main {
+    grid-area: main;
+
+    min-width: 0;
+}
+
+
+/* HERO */
+
+.size-main .size-hero {
+    padding: 90px 50px;
+
+    text-align: center;
+}
+
+
+/* IMAGE + TABLE - CSS GRID */
+
+.size-main .size-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.9fr)
+        minmax(350px, 1.1fr);
+
+    align-items: center;
+
+    gap: 60px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px;
+}
+
+
+/* IMAGE */
+
+.size-main .size-image {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.size-main .size-image img {
+    display: block;
+
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.size-main .size-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* TABLE */
+
+.size-main .size-table {
+    width: 100%;
+}
+
+.size-main .size-table h2 {
+    margin-bottom: 25px;
+
+    font-size: 35px;
+}
+
+.size-main .size-table table {
+    width: 100%;
+
+    min-width: 500px;
+
+    border-collapse: collapse;
+
+    background: white;
+}
+
+.size-main .size-table th,
+.size-main .size-table td {
+    padding: 18px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.size-main .size-table tbody tr {
+    transition: background 0.25s ease;
+}
+
+.size-main .size-table tbody tr:hover {
+    background: #f5eee5;
+}
+
+
+/* FIT BANNER */
+
+.size-main .fit-banner {
+    padding: 80px 40px;
+
+    text-align: center;
+
+    background: #111;
+}
+
+.size-main .fit-banner h2 {
+    color: white;
+}
+
+.size-main .fit-banner p {
+    color: #ccc;
+}
+
+
+/* FOOTER */
+
+.page-layout footer {
+    grid-area: footer;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .page-layout {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+            auto auto 1fr auto;
+
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .size-sidebar {
+        border-right: none;
+
+        border-bottom: 1px solid #ddd;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .size-sidebar h2 {
+        grid-column: 1 / -1;
+    }
+
+    .sidebar-tip {
+        margin-top: 0;
+    }
+
+    .size-main .size-content {
+        grid-template-columns: 1fr;
+
+        max-width: 850px;
+    }
+
+    .size-main .size-image img {
+        height: 450px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .page-layout #main-header {
+        height: auto;
+
+        padding: 25px 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .page-layout .navbar {
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 12px 18px;
+    }
+
+    .page-layout .navbar a {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .size-sidebar {
+        grid-template-columns: 1fr;
+
+        padding: 25px 20px;
+    }
+
+    .size-sidebar h2 {
+        grid-column: auto;
+    }
+
+    .size-main .size-hero {
+        padding: 70px 25px;
+    }
+
+    .size-main .size-hero h1 {
+        font-size: 45px;
+    }
+
+    .size-main .size-content {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 50px 20px;
+    }
+
+    .size-main .size-image img {
+        height: 350px;
+    }
+
+    .size-main .size-table {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .size-main .size-table table {
+        min-width: 500px;
+    }
+
+    .size-main .fit-banner {
+        padding: 70px 25px;
+    }
+
+    .page-layout footer {
+        padding: 50px 20px;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .page-layout .navbar {
+        gap: 10px 14px;
+    }
+
+    .page-layout .navbar a {
+        font-size: 9px;
+    }
+
+    .size-main .size-hero h1 {
+        font-size: 36px;
+    }
+
+    .size-main .size-content {
+        padding: 40px 15px;
+    }
+
+    .size-main .size-image img {
+        height: 300px;
+    }
+}
