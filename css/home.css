@@ -105,10 +105,15 @@
 }
 .carousel-track {
     display: flex;
+    align-items: stretch;
     gap: 25px;
+
+    min-width: 0;
     overflow-x: auto;
+
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+
     padding: 10px 5px 20px;
     flex: 1;
 }
@@ -119,27 +124,29 @@
     background-color: #ccc;
 }
 .carousel-card {
-    flex: 0 0 260px;
+    display: flex;
+    flex-direction: column;
+
+    flex: 0 0 calc((100% - 50px) / 3);
+    min-width: 0;
+
     scroll-snap-align: start;
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .carousel-card .media-placeholder {
-    position: relative;
+    display: block;
     width: 100%;
     height: 300px;
+
+    object-fit: contain;
     background-color: #eee;
-    border: 1px dashed #999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #888;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
+    border: 0;
+
     margin-bottom: 15px;
 }
 .carousel-card .media-placeholder .play-icon {
@@ -156,6 +163,20 @@
 }
 .carousel-card .price {
     font-size: 16px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+.carousel-card .card-button {
+    margin-top: 6px;
+    padding: 16px 10px;
+    border: 1px solid #111;
+    letter-spacing: 1.5px;
+}
+
+.carousel-card:hover,
+.carousel-card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px #00000014;
 }
 .carousel-card .price .was {
     text-decoration: line-through;
@@ -187,13 +208,13 @@
 
 /* ---------- Split image banner ---------- */
 .split-banner {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .split-banner .banner-half {
     position: relative;
-    width: 50%;
-    min-height: 900px;          
+    width: 100%;
+    min-height: 650px;
     overflow: hidden;
 }
 .split-banner .banner-half img,
@@ -253,16 +274,16 @@
     text-align: center;
 }
 .reviews-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
-    flex-wrap: wrap;
     padding: 0 60px;
 }
 .review-card {
     background-color: #faf8f5;
     border: 1px solid #ddd;
-    width: 320px;
+    width: auto;
+min-width: 0;
     padding: 25px;
     text-align: left;
 }
@@ -294,17 +315,17 @@
 
 /* ---------- FAQ + Newsletter ---------- */
 .faq-newsletter {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
+
     background-color: #111;
     color: #fff;
     padding: 60px;
 }
 .faq-newsletter .faq-col,
 .faq-newsletter .newsletter-col {
-    flex: 1;
-    min-width: 280px;
+    min-width: 0;
 }
 .faq-item {
     border-bottom: 1px solid #333;
@@ -399,14 +420,131 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 800px) {
-    .split-banner .banner-half {
-        width: 100%;
+/* Основная структура главной */
+.home-page main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+/* Размер первого экрана */
+.hero-banner {
+    min-height: 680px;
+    min-height: min(850px, 90svh);
+}
+
+.hero-banner .hero-content > p:not(.subtitle) {
+    color: #eee;
+}
+
+/* Текст и кнопка раздела Design */
+#design-section {
+    padding: 65px 24px;
+    text-align: center;
+    background: #111;
+    color: #fff;
+}
+
+#design-section p {
+    color: #ddd;
+}
+
+/* Фотографии покупателей */
+.ugc-track {
+    justify-content: flex-start;
+}
+
+.ugc-track img.media-placeholder {
+    width: 200px;
+    object-fit: cover;
+    border: 0;
+}
+
+.newsletter-form input {
+    min-width: 0;
+}
+
+/* Планшеты */
+@media (max-width: 1000px) {
+    .carousel-wrapper {
+        padding: 0 24px;
     }
-    .hero-banner .hero-content {
-        padding: 40px;
+
+    .reviews-grid {
+        padding: 0 24px;
+        gap: 16px;
     }
+
     .faq-newsletter {
-        padding: 40px 30px;
+        padding: 50px 24px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-banner {
+        min-height: 620px;
+    }
+
+    .hero-banner .hero-content {
+        padding: 40px 24px;
+    }
+
+    .hero-banner h1 {
+        font-size: clamp(32px, 7vw, 46px);
+    }
+
+    .carousel-card {
+        flex-basis: calc((100% - 25px) / 2);
+    }
+
+    .split-banner,
+    .reviews-grid,
+    .faq-newsletter {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .split-banner .banner-half {
+        min-height: 520px;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 520px) {
+    .carousel-wrapper {
+        padding: 0 12px;
+        gap: 4px;
+    }
+
+    .carousel-btn {
+        width: 30px;
+        height: 40px;
+    }
+
+    .carousel-card {
+        flex-basis: 100%;
+    }
+
+    .carousel-card .media-placeholder {
+        height: 260px;
+    }
+
+    .hero-banner .button {
+        padding: 16px 24px;
+        letter-spacing: 2px;
+    }
+
+    .ugc-track {
+        padding-left: 24px;
+        padding-right: 24px;
+        gap: 20px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .home-page footer {
+        padding: 50px 24px;
     }
 }
