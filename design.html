@@ -1,411 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>SOLEA | Custom Studio</title>
-
-
-<link rel="stylesheet" href="css/style.css">
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLEA | Custom Studio</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
+<body class="assignment-page design-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<body>
+  <header id="main-header">
+    <div class="logo">
+      <a href="index.html">SOLEA</a>
+    </div>
 
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="brands.html">Brands</a>
+      <a href="design.html" aria-current="page">Design your pair</a>
+      <a href="size-guide.html">Size Guide</a>
+      <a href="about.html">About us</a>
+    </nav>
+  </header>
 
-<header id="main-header">
+  <main id="main-content">
+    <section class="custom-hero">
+      <p class="subtitle">SOLEA ATELIER</p>
+      <h1>CREATE YOUR<br>SIGNATURE PAIR</h1>
+      <p>
+        Design heels that reflect your personality.<br>
+        Find your style, color and preferred size.
+      </p>
+      <a class="studio-link" href="#inspiration">
+        Find your inspiration ↓
+      </a>
+    </section>
 
+    <section
+      class="inspiration-section"
+      id="inspiration"
+      aria-labelledby="inspiration-title"
+    >
+      <div class="section-heading">
+        <div>
+          <p class="subtitle">THE MOODBOARD</p>
+          <h2 id="inspiration-title">A detail to fall for.</h2>
+        </div>
+        <p>
+          Explore designs from our shop.<br>
+          Explore a silhouette, then make it yours.
+        </p>
+      </div>
 
-<div class="logo">
+      <!-- Grid gallery: nine images -->
+      <div class="inspiration-gallery">
 
-<a href="index.html">
-SOLEA
-</a>
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/louboutin.jpg"
+            alt="Black pumps with signature red soles"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Red-sole classics ↗</span>
+        </a>
 
-</div>
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/jimmy chooo.jpq.jpg"
+            alt="Black heels with sculptural leaf details"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Sculptural details ↗</span>
+        </a>
 
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/Manolo Blahnik.jpg"
+            alt="Navy satin pumps with jewelled buckles"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Jewelled satin ↗</span>
+        </a>
 
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/caovilla.jpg"
+            alt="Black and gold evening heels"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Evening elegance ↗</span>
+        </a>
 
-<nav class="navbar">
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/aquazzura.jpg"
+            alt="Strappy heels with metallic details"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Metallic accents ↗</span>
+        </a>
 
-<a href="index.html">Home</a>
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/Valentino Garavani.jpg"
+            alt="Valentino Garavani heels"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Delicate straps ↗</span>
+        </a>
 
-<a href="shop.html">Shop</a>
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/Gianvito Rossi.jpg"
+            alt="Black lace heels with ankle ties"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Lace textures ↗</span>
+        </a>
 
-<a href="brands.html">Brands</a>
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/Amina Muaddi.jpg"
+            alt="Black heels with crystal ankle straps"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Crystal accents ↗</span>
+        </a>
+        <a class="inspiration-card" href="#customize">
+          <img
+            src="images/Stuart Weitzman .jpg"
+            alt="Black sandals with delicate embellishments"
+            loading="lazy"
+          >
+          <span class="gallery-caption">Minimal silhouettes ↗</span>
+        </a>
 
-<a href="design.html">Design your pair</a>
+      </div>
+    </section>
 
-<a href="size-guide.html">Size Guide</a>
+    <!-- Grid areas: image and form -->
+    <section
+  class="custom-container"
+  id="customize"
+  aria-labelledby="customize-title"
+>
+  <div class="custom-image catalog-preview">
+    <img id="pair-image" alt="" hidden>
 
-<a href="about.html">About us</a>
+    <p class="subtitle">SOLEA COLLECTION</p>
+    <h2 id="pair-name">Choose your pair</h2>
+    <p id="pair-price"></p>
+    <p id="pair-details"></p>
+  </div>
 
-</nav>
+  <div class="custom-form">
+    <h2 id="customize-title">Find Your Signature Pair</h2>
 
+    <p>
+      Choose a style and color to explore matching designs
+      from our shop.
+    </p>
 
-</header>
+    <label for="pair-type">Style</label>
+    <select id="pair-type" disabled>
+      <option value="">All styles</option>
+    </select>
 
+    <label for="pair-color">Color</label>
+    <select id="pair-color" disabled>
+      <option value="">All colors</option>
+    </select>
 
+    <label for="pair-model">Matching models</label>
+    <select id="pair-model" disabled></select>
 
+    <label for="pair-size">Your size (EU)</label>
+    <select id="pair-size">
+      <option value="">Select your size</option>
+      <option>36</option>
+      <option>37</option>
+      <option>38</option>
+      <option>39</option>
+      <option>40</option>
+    </select>
 
+    <p>
+      Size availability is not listed in our catalog.
+      Your selection records your preferred size.
+    </p>
 
+    <button id="reset-pair" type="button">
+      RESET FILTERS
+    </button>
 
+    <p id="pair-status" role="status" aria-live="polite">
+      Loading the collection…
+    </p>
 
-<main>
+    <a class="designer-link" href="shop.html">
+      Back to Shop
+    </a>
 
-
-<section class="custom-hero">
-
-
-<div>
-
-
-<p class="subtitle">
-SOLEA ATELIER
-</p>
-
-
-<h1>
-CREATE YOUR
-SIGNATURE PAIR
-</h1>
-
-
-<p>
-Design heels that reflect your personality.
-Choose every detail from shape to color.
-</p>
-
-
-</div>
-
-
-
+    <noscript>
+      Enable JavaScript to use the catalog selector.
+    </noscript>
+  </div>
 </section>
 
+    <section class="dark-banner">
+      <h2>YOUR VISION.<br>YOUR DESIGN.</h2>
+      <p>Every pair tells a different story.</p>
+    </section>
+  </main>
+
+  <footer>
+    <h2>SOLEA</h2>
+    <p>Luxury heels created for your story.</p>
+    <p>Team members: Aruzhan Bolatova, Ardak Korabay, Aiym Rakhat</p>
+    <p>© 2026 SOLEA</p>
+  </footer>
+
+  <script>
+  // Categories describe the existing product photographs.
+  // Names, prices and images are read directly from shop.html.
+  const categories = {
+    "c11.jpg": ["Sandals", "Black"],
+    "c12.jpeg": ["Sandals", "Black / Gold"],
+    "c13.jpeg": ["Sandals", "Black"],
+    "c14.jpeg": ["Sandals", "Black / Red"],
+    "c15.jpeg": ["Pumps", "Black / Gold"],
+    "c16.jpeg": ["Pumps", "Pink"],
+    "c17.jpeg": ["Pumps", "Black / Gold"],
+    "c18.jpeg": ["Sandals", "Red"],
+    "c19.jpeg": ["Sandals", "Nude"],
+    "c120.jpeg": ["Slingbacks", "Black"],
+    "121.jpeg": ["Sandals", "Black"],
+    "122.jpeg": ["Boots", "Black"]
+  };
+
+  const typeSelect = document.querySelector("#pair-type");
+  const colorSelect = document.querySelector("#pair-color");
+  const modelSelect = document.querySelector("#pair-model");
+  const sizeSelect = document.querySelector("#pair-size");
+  const statusText = document.querySelector("#pair-status");
+  const preview = document.querySelector("#pair-image");
+  const gallery = document.querySelector(".inspiration-gallery");
+
+  let products = [];
+
+  function fillOptions(select, values, label) {
+    select.replaceChildren(new Option(label, ""));
+
+    values.forEach(function (value) {
+      select.add(new Option(value, value));
+    });
+
+    select.disabled = false;
+  }
+
+  function showPair() {
+    const product = products.find(function (item) {
+      return item.id === modelSelect.value;
+    });
+
+    if (!product) {
+      preview.hidden = true;
+      preview.removeAttribute("src");
+
+      document.querySelector("#pair-name").textContent =
+        "No matching models";
+
+      document.querySelector("#pair-price").textContent = "";
+      document.querySelector("#pair-details").textContent = "";
+      statusText.textContent =
+        "Try another style or color, or reset the filters.";
+
+      return;
+    }
+
+    preview.src = product.image;
+    preview.alt = product.name;
+    preview.hidden = false;
+
+    document.querySelector("#pair-name").textContent =
+      product.name;
+
+    document.querySelector("#pair-price").textContent =
+      product.price;
+
+    document.querySelector("#pair-details").textContent =
+      product.type + " · " + product.color;
+
+    const sizeText = sizeSelect.value
+      ? " · Preferred size: EU " + sizeSelect.value
+      : " · Select your size.";
+
+    statusText.textContent =
+      product.name + " · " + product.color + sizeText;
+  }
+
+  function applyFilters() {
+    const previousModel = modelSelect.value;
+
+    const matches = products.filter(function (product) {
+      const matchesType =
+        !typeSelect.value ||
+        product.type === typeSelect.value;
+
+      const matchesColor =
+        !colorSelect.value ||
+        product.color === colorSelect.value;
 
+      return matchesType && matchesColor;
+    });
 
+    modelSelect.replaceChildren();
 
+    matches.forEach(function (product) {
+      modelSelect.add(new Option(product.name, product.id));
+    });
 
+    modelSelect.disabled = matches.length === 0;
+
+    if (matches.some(product => product.id === previousModel)) {
+      modelSelect.value = previousModel;
+    }
+
+    showPair();
+  }
+
+  function chooseProduct(product) {
+    typeSelect.value = product.type;
+    colorSelect.value = product.color;
+
+    applyFilters();
 
+    modelSelect.value = product.id;
+    showPair();
+  }
 
+  function renderGallery() {
+    if (!gallery) return;
+
+    gallery.replaceChildren();
 
-
-<section class="custom-container">
-
-
-<div class="custom-image">
-
-
-<img src="images/A.jpg"
-alt="Custom luxury heel">
-
-
-</div>
-
-
-
-
-
-
-<div class="custom-form">
-
-
-
-<form>
-
-
-
-<h2>
-Customize Your Heels
-</h2>
-
-
-
-
-<label>
-Choose Style
-</label>
-
-
-<select>
-
-<option>
-Stiletto
-</option>
-
-<option>
-Classic Pump
-</option>
-
-<option>
-Platform
-</option>
-
-<option>
-Slingback
-</option>
-
-
-</select>
-
-
-
-
-
-
-
-<label>
-Material
-</label>
-
-
-<select>
-
-<option>
-Luxury Leather
-</option>
-
-<option>
-Suede
-</option>
-
-<option>
-Satin
-</option>
-
-</select>
-
-
-
-
-
-
-
-
-<h3>
-Color
-</h3>
-
-
-<label class="choice">
-
-<input type="radio" name="color">
-
-Black
-
-</label>
-
-
-
-<label class="choice">
-
-<input type="radio" name="color">
-
-Red
-
-</label>
-
-
-
-<label class="choice">
-
-<input type="radio" name="color">
-
-Nude
-
-</label>
-
-
-
-
-
-
-
-
-<h3>
-Heel Height
-</h3>
-
-
-
-<label class="choice">
-
-<input type="radio" name="height">
-
-7 cm
-
-</label>
-
-
-
-<label class="choice">
-
-<input type="radio" name="height">
-
-10 cm
-
-</label>
-
-
-
-<label class="choice">
-
-<input type="radio" name="height">
-
-12 cm
-
-</label>
-
-
-
-
-
-
-
-
-<label>
-Size
-</label>
-
-
-<select>
-
-<option>
-36
-</option>
-
-<option>
-37
-</option>
-
-<option>
-38
-</option>
-
-<option>
-39
-</option>
-
-<option>
-40
-</option>
-
-</select>
-
-
-
-
-
-
-
-<label>
-Your Details
-</label>
-
-
-<input 
-type="text"
-placeholder="Full Name">
-
-
-
-<input
-type="email"
-placeholder="Email">
-
-
-
-
-
-<textarea placeholder="Describe your dream heels">
-</textarea>
-
-
-
-
-
-
-<button>
-CREATE MY PAIR
-</button>
-
-
-
-
-</form>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section class="dark-banner">
-
-
-<h2>
-YOUR VISION.
-YOUR DESIGN.
-</h2>
-
-
-<p>
-Every pair tells a different story.
-</p>
-
-
-</section>
-
-
-
-</main>
-
-
-
-
-
-
-<footer>
-
-
-<h2>
-SOLEA
-</h2>
-
-
-<p>
-Luxury heels created for your story.
-</p>
-
-
-<p>
-Team members:
-Aruzhan Bolatova,
-Ardak Korabay,
-Aiym Rakhat
-</p>
-
-
-<p>
-© 2026 SOLEA
-</p>
-
-
-</footer>
-
-
+    products.forEach(function (product) {
+      const link = document.createElement("a");
+      link.className = "inspiration-card";
+      link.href = "#customize";
+
+      const image = document.createElement("img");
+      image.src = product.image;
+      image.alt = product.name;
+      image.loading = "lazy";
+
+      const caption = document.createElement("span");
+      caption.className = "gallery-caption";
+      caption.textContent =
+        product.name + " · " + product.price;
+
+      link.append(image, caption);
+
+      link.addEventListener("click", function () {
+        chooseProduct(product);
+      });
+
+      gallery.append(link);
+    });
+  }
+
+  async function loadCatalog() {
+    try {
+      const response = await fetch("shop.html");
+
+      if (!response.ok) {
+        throw new Error("Catalog unavailable");
+      }
+
+      const html = await response.text();
+
+      const shop = new DOMParser().parseFromString(
+        html,
+        "text/html"
+      );
+
+      products = [...shop.querySelectorAll(".product-card")]
+        .map(function (card) {
+          const image = card.querySelector("img")
+            ?.getAttribute("src");
+
+          const name = card.querySelector("h3")
+            ?.textContent.trim();
+
+          if (!image || !name) return null;
+
+          const filename = decodeURIComponent(
+            image.split("/").pop()
+          );
+
+          const [type, color] = categories[filename] || [
+            "Other",
+            "Not specified"
+          ];
+
+          return {
+            id: filename,
+            name: name,
+            type: type,
+            color: color,
+            image: new URL(
+              image,
+              response.url || location.href
+            ).href,
+            price: card.querySelector(".price .now")
+              ?.textContent.trim() || ""
+          };
+        })
+        .filter(Boolean);
+
+      if (products.length === 0) {
+        throw new Error("No products");
+      }
+
+      const types = [...new Set(
+        products.map(product => product.type)
+      )];
+
+      const colors = [...new Set(
+        products.map(product => product.color)
+      )];
+
+      fillOptions(typeSelect, types, "All styles");
+      fillOptions(colorSelect, colors, "All colors");
+
+      applyFilters();
+      renderGallery();
+
+      const requested = new URLSearchParams(
+        location.search
+      ).get("product");
+      const selected = products.find(function (product) {
+        return product.id === requested;
+      });
+
+      if (selected) {
+        chooseProduct(selected);
+      }
+    } catch (error) {
+      document.querySelector("#pair-name").textContent =
+        "Collection unavailable";
+
+      statusText.textContent =
+        location.protocol === "file:"
+          ? "Open the website with Live Server so the catalog can load."
+          : "The collection could not load. Reload the page or visit Shop.";
+    }
+  }
+
+  typeSelect.addEventListener("change", applyFilters);
+  colorSelect.addEventListener("change", applyFilters);
+  modelSelect.addEventListener("change", showPair);
+  sizeSelect.addEventListener("change", showPair);
+
+  document.querySelector("#reset-pair")
+    .addEventListener("click", function () {
+      if (!products.length) return;
+
+      typeSelect.value = "";
+      colorSelect.value = "";
+      sizeSelect.value = "";
+
+      applyFilters();
+    });
+
+  loadCatalog();
+</script>
 </body>
-
 </html>
