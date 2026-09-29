@@ -1,481 +1,859 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOLEA | Custom Studio</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SOLEA | Design your pair</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="assignment-page design-page">
-  <a class="skip-link" href="#main-content">Skip to content</a>
+<body class="a3-page">
 
-  <header id="main-header">
-    <div class="logo">
-      <a href="index.html">SOLEA</a>
-    </div>
+<a class="visually-hidden-focusable d-inline-block bg-white text-dark p-3"
+   href="#main-content">
+    Skip to content
+</a>
 
-    <nav class="navbar" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="brands.html">Brands</a>
-      <a href="design.html" aria-current="page">Design your pair</a>
-      <a href="size-guide.html">Size Guide</a>
-      <a href="about.html">About us</a>
-    </nav>
-  </header>
+<header class="bg-white border-bottom">
+    <nav class="navbar navbar-expand-lg bg-white py-3 py-lg-4"
+         aria-label="Main navigation">
 
-  <main id="main-content">
-    <section class="custom-hero">
-      <p class="subtitle">SOLEA ATELIER</p>
-      <h1>CREATE YOUR<br>SIGNATURE PAIR</h1>
-      <p>
-        Design heels that reflect your personality.<br>
-        Find your style, color and preferred size.
-      </p>
-      <a class="studio-link" href="#inspiration">
-        Find your inspiration ↓
-      </a>
-    </section>
+        <div class="container px-3 px-sm-4">
+            <a class="navbar-brand solea-logo me-4" href="index.html">
+                SOLEA
+            </a>
 
-    <section
-      class="inspiration-section"
-      id="inspiration"
-      aria-labelledby="inspiration-title"
-    >
-      <div class="section-heading">
-        <div>
-          <p class="subtitle">THE MOODBOARD</p>
-          <h2 id="inspiration-title">A detail to fall for.</h2>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#soleaNav"
+                    aria-controls="soleaNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="soleaNav">
+                <ul class="navbar-nav ms-auto gap-lg-3 pt-3 pt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="brands.html">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           href="design.html"
+                           aria-current="page">Design your pair</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="size-guide.html">Size Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <p>
-          Explore designs from our shop.<br>
-          Explore a silhouette, then make it yours.
-        </p>
-      </div>
+    </nav>
+</header>
 
-      <!-- Grid gallery: nine images -->
-      <div class="inspiration-gallery">
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/louboutin.jpg"
-            alt="Black pumps with signature red soles"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Red-sole classics ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/jimmy chooo.jpq.jpg"
-            alt="Black heels with sculptural leaf details"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Sculptural details ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/Manolo Blahnik.jpg"
-            alt="Navy satin pumps with jewelled buckles"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Jewelled satin ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/caovilla.jpg"
-            alt="Black and gold evening heels"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Evening elegance ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/aquazzura.jpg"
-            alt="Strappy heels with metallic details"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Metallic accents ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/Valentino Garavani.jpg"
-            alt="Valentino Garavani heels"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Delicate straps ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/Gianvito Rossi.jpg"
-            alt="Black lace heels with ankle ties"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Lace textures ↗</span>
-        </a>
-
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/Amina Muaddi.jpg"
-            alt="Black heels with crystal ankle straps"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Crystal accents ↗</span>
-        </a>
-        <a class="inspiration-card" href="#customize">
-          <img
-            src="images/Stuart Weitzman .jpg"
-            alt="Black sandals with delicate embellishments"
-            loading="lazy"
-          >
-          <span class="gallery-caption">Minimal silhouettes ↗</span>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- Grid areas: image and form -->
-    <section
-  class="custom-container"
-  id="customize"
-  aria-labelledby="customize-title"
->
-  <div class="custom-image catalog-preview">
-    <img id="pair-image" alt="" hidden>
-
-    <p class="subtitle">SOLEA COLLECTION</p>
-    <h2 id="pair-name">Choose your pair</h2>
-    <p id="pair-price"></p>
-    <p id="pair-details"></p>
-  </div>
-
-  <div class="custom-form">
-    <h2 id="customize-title">Find Your Signature Pair</h2>
-
-    <p>
-      Choose a style and color to explore matching designs
-      from our shop.
+<main id="main-content">
+  <section class="container px-3 px-sm-4 pt-5 pb-3 text-center">
+    <p class="eyebrow mb-3">
+        SOLEA / YOUR PERSONAL EDIT
     </p>
 
-    <label for="pair-type">Style</label>
-    <select id="pair-type" disabled>
-      <option value="">All styles</option>
-    </select>
+    <h1 class="page-title studio-title mb-3">
+        Find the pair that feels like you.
+    </h1>
 
-    <label for="pair-color">Color</label>
-    <select id="pair-color" disabled>
-      <option value="">All colors</option>
-    </select>
-
-    <label for="pair-model">Matching models</label>
-    <select id="pair-model" disabled></select>
-
-    <label for="pair-size">Your size (EU)</label>
-    <select id="pair-size">
-      <option value="">Select your size</option>
-      <option>36</option>
-      <option>37</option>
-      <option>38</option>
-      <option>39</option>
-      <option>40</option>
-    </select>
-
-    <p>
-      Size availability is not listed in our catalog.
-      Your selection records your preferred size.
+    <p class="intro-copy text-secondary mb-0">
+        Your style. Your colour. Your signature.
     </p>
-
-    <button id="reset-pair" type="button">
-      RESET FILTERS
-    </button>
-
-    <p id="pair-status" role="status" aria-live="polite">
-      Loading the collection…
-    </p>
-
-    <a class="designer-link" href="shop.html">
-      Back to Shop
-    </a>
-
-    <noscript>
-      Enable JavaScript to use the catalog selector.
-    </noscript>
-  </div>
 </section>
 
-    <section class="dark-banner">
-      <h2>YOUR VISION.<br>YOUR DESIGN.</h2>
-      <p>Every pair tells a different story.</p>
+    <section class="container px-3 px-sm-4 py-5 text-center">
+        <p class="eyebrow mb-3">SOLEA ATELIER</p>
+        <h1 class="page-title mb-3">Your signature pair.</h1>
+
+        <p class="intro-copy text-secondary mb-4">
+            Explore the collection. Find your shape, color and fit.
+        </p>
+
+        <a class="btn btn-dark btn-lg rounded-0 px-4" href="#customize">
+            Find my pair
+        </a>
     </section>
-  </main>
 
-  <footer>
-    <h2>SOLEA</h2>
-    <p>Luxury heels created for your story.</p>
-    <p>Team members: Aruzhan Bolatova, Ardak Korabay, Aiym Rakhat</p>
-    <p>© 2026 SOLEA</p>
-  </footer>
+    <section class="container px-3 px-sm-4 pb-5"
+             aria-labelledby="lookbook-title">
 
-  <script>
-  // Categories describe the existing product photographs.
-  // Names, prices and images are read directly from shop.html.
-  const categories = {
-    "c11.jpg": ["Sandals", "Black"],
-    "c12.jpeg": ["Sandals", "Black / Gold"],
-    "c13.jpeg": ["Sandals", "Black"],
-    "c14.jpeg": ["Sandals", "Black / Red"],
-    "c15.jpeg": ["Pumps", "Black / Gold"],
-    "c16.jpeg": ["Pumps", "Pink"],
-    "c17.jpeg": ["Pumps", "Black / Gold"],
-    "c18.jpeg": ["Sandals", "Red"],
-    "c19.jpeg": ["Sandals", "Nude"],
-    "c120.jpeg": ["Slingbacks", "Black"],
-    "121.jpeg": ["Sandals", "Black"],
-    "122.jpeg": ["Boots", "Black"]
-  };
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
 
-  const typeSelect = document.querySelector("#pair-type");
-  const colorSelect = document.querySelector("#pair-color");
-  const modelSelect = document.querySelector("#pair-model");
-  const sizeSelect = document.querySelector("#pair-size");
-  const statusText = document.querySelector("#pair-status");
-  const preview = document.querySelector("#pair-image");
-  const gallery = document.querySelector(".inspiration-gallery");
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+                    <div>
+                        <p class="eyebrow mb-2">THE LOOKBOOK</p>
+                        <h2 class="section-title mb-0" id="lookbook-title">
+                            Twelve ways to stand out.
+                        </h2>
+                    </div>
 
-  let products = [];
+                    <p class="small text-secondary mb-0">
+                        Browse with the arrows or slide indicators.
+                    </p>
+                </div>
 
-  function fillOptions(select, values, label) {
-    select.replaceChildren(new Option(label, ""));
+                <!-- Bootstrap carousel -->
+                <div id="soleaCarousel"
+                     class="carousel slide bg-white border"
+                     data-bs-theme="dark"
+                     data-bs-interval="false"
+                     role="region"
+                     aria-roledescription="carousel"
+                     aria-label="SOLEA product lookbook">
 
-    values.forEach(function (value) {
-      select.add(new Option(value, value));
-    });
+                    <div class="carousel-indicators mb-2">
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1: Noir Essence"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="1" aria-label="Slide 2: Rouge Signature"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="2" aria-label="Slide 3: Pearl Grace"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="3" aria-label="Slide 4: Velvet Rise"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="4" aria-label="Slide 5: Gilded Strap"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="5" aria-label="Slide 6: Crystal Arch"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="6" aria-label="Slide 7: Midnight Ballet"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="7" aria-label="Slide 8: Shadowheart"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="8" aria-label="Slide 9: Glass Rose"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="9" aria-label="Slide 10: Spikes Heels"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="10" aria-label="Slide 11: Batbite Marys"></button>
+                        <button type="button" data-bs-target="#soleaCarousel" data-bs-slide-to="11" aria-label="Slide 12: Crimson Rose"></button>
+                    </div>
 
-    select.disabled = false;
-  }
+                    <div class="carousel-inner">
 
-  function showPair() {
-    const product = products.find(function (item) {
-      return item.id === modelSelect.value;
-    });
+                        <div class="carousel-item active" role="group" aria-roledescription="slide" aria-label="1 of 12">
+                            <img src="images/c11.jpg" class="d-block w-100 lookbook-photo" alt="Noir Essence">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">01 / 12</p>
+                                <h3 class="h3 mb-2">Noir Essence</h3>
+                                <p class="text-secondary mb-3">Sandals · Black · $250</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c11.jpg">Select this model</a>
+                            </div>
+                        </div>
 
-    if (!product) {
-      preview.hidden = true;
-      preview.removeAttribute("src");
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="2 of 12">
+                            <img src="images/c12.jpeg" class="d-block w-100 lookbook-photo" alt="Rouge Signature">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">02 / 12</p>
+                                <h3 class="h3 mb-2">Rouge Signature</h3>
+                                <p class="text-secondary mb-3">Sandals · Black / Gold · $320</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c12.jpeg">Select this model</a>
+                            </div>
+                        </div>
 
-      document.querySelector("#pair-name").textContent =
-        "No matching models";
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="3 of 12">
+                            <img src="images/c13.jpeg" class="d-block w-100 lookbook-photo" alt="Pearl Grace">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">03 / 12</p>
+                                <h3 class="h3 mb-2">Pearl Grace</h3>
+                                <p class="text-secondary mb-3">Sandals · Black · $280</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c13.jpeg">Select this model</a>
+                            </div>
+                        </div>
 
-      document.querySelector("#pair-price").textContent = "";
-      document.querySelector("#pair-details").textContent = "";
-      statusText.textContent =
-        "Try another style or color, or reset the filters.";
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="4 of 12">
+                            <img src="images/c14.jpeg" class="d-block w-100 lookbook-photo" alt="Velvet Rise">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">04 / 12</p>
+                                <h3 class="h3 mb-2">Velvet Rise</h3>
+                                <p class="text-secondary mb-3">Sandals · Black / Red · $295</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c14.jpeg">Select this model</a>
+                            </div>
+                        </div>
 
-      return;
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="5 of 12">
+                            <img src="images/c15.jpeg" class="d-block w-100 lookbook-photo" alt="Gilded Strap">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">05 / 12</p>
+                                <h3 class="h3 mb-2">Gilded Strap</h3>
+                                <p class="text-secondary mb-3">Pumps · Black / Gold · $265</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c15.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="6 of 12">
+                            <img src="images/c16.jpeg" class="d-block w-100 lookbook-photo" alt="Crystal Arch">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">06 / 12</p>
+                                <h3 class="h3 mb-2">Crystal Arch</h3>
+                                <p class="text-secondary mb-3">Pumps · Pink · $340</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c16.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="7 of 12">
+                            <img src="images/c17.jpeg" class="d-block w-100 lookbook-photo" alt="Midnight Ballet">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">07 / 12</p>
+                                <h3 class="h3 mb-2">Midnight Ballet</h3>
+                                <p class="text-secondary mb-3">Pumps · Black / Gold · $310</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c17.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="8 of 12">
+                            <img src="images/c18.jpeg" class="d-block w-100 lookbook-photo" alt="Shadowheart">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">08 / 12</p>
+                                <h3 class="h3 mb-2">Shadowheart</h3>
+                                <p class="text-secondary mb-3">Sandals · Red · $355</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c18.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="9 of 12">
+                            <img src="images/c19.jpeg" class="d-block w-100 lookbook-photo" alt="Glass Rose">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">09 / 12</p>
+                                <h3 class="h3 mb-2">Glass Rose</h3>
+                                <p class="text-secondary mb-3">Sandals · Nude · $375</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c19.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="10 of 12">
+                            <img src="images/c120.jpeg" class="d-block w-100 lookbook-photo" alt="Spikes Heels">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">10 / 12</p>
+                                <h3 class="h3 mb-2">Spikes Heels</h3>
+                                <p class="text-secondary mb-3">Slingbacks · Black · $290</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="c120.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="11 of 12">
+                            <img src="images/121.jpeg" class="d-block w-100 lookbook-photo" alt="Batbite Marys">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">11 / 12</p>
+                                <h3 class="h3 mb-2">Batbite Marys</h3>
+                                <p class="text-secondary mb-3">Sandals · Black · $270</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="121.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="12 of 12">
+                            <img src="images/122.jpeg" class="d-block w-100 lookbook-photo" alt="Crimson Rose">
+                            <div class="text-center px-5 pt-3 pb-5">
+                                <p class="eyebrow small mb-2">12 / 12</p>
+                                <h3 class="h3 mb-2">Crimson Rose</h3>
+                                <p class="text-secondary mb-3">Boots · Black · $305</p>
+                                <a class="btn btn-outline-dark btn-sm rounded-0" href="#customize" data-choose="122.jpeg">Select this model</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#soleaCarousel"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous model</span>
+                    </button>
+
+                    <button class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#soleaCarousel"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next model</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap two-column layout and responsive form -->
+    <section id="customize"
+             class="container px-3 px-sm-4 py-5 border-top"
+             aria-labelledby="customize-title">
+
+        <div class="row g-4 g-lg-5 align-items-start">
+
+            <div class="col-12 col-lg-6">
+                <div class="card rounded-0 border-0 bg-white">
+                    <img id="pair-image"
+                         class="card-img-top rounded-0 preview-photo"
+                         src="images/c11.jpg"
+                         alt="Noir Essence">
+
+                    <div class="card-body text-center p-4">
+                        <p class="eyebrow mb-2">YOUR SELECTION</p>
+                        <h2 id="pair-name" class="h3 mb-2">Noir Essence</h2>
+                        <p id="pair-price" class="price-text fs-4 mb-2">$250</p>
+                        <p id="pair-details" class="text-secondary mb-0">
+                            Sandals · Black
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="bg-white border p-4 p-lg-5">
+                    <p class="eyebrow mb-2">MAKE IT YOURS</p>
+
+                    <h2 class="section-title mb-3" id="customize-title">
+                        Find your perfect pair.
+                    </h2>
+
+                    <form id="pair-form">
+                        <div class="row g-3">
+
+                            <div class="col-12 col-sm-6">
+                                <label for="pair-type" class="form-label">Style</label>
+                                <select class="form-select" id="pair-type"></select>
+                            </div>
+
+                            <div class="col-12 col-sm-6">
+                                <label for="pair-color" class="form-label">Color</label>
+                                <select class="form-select" id="pair-color"></select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="pair-model" class="form-label">
+                                    Matching models
+                                </label>
+                                <select class="form-select" id="pair-model"></select>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="pair-size" class="form-label">
+                                    Preferred size
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text" id="size-unit">EU</span>
+
+                                    <select class="form-select"
+                                            id="pair-size"
+                                            required
+                                            aria-describedby="size-unit size-note">
+                                        <option value="">Select your size</option>
+                                        <option>35</option>
+                                        <option>36</option>
+                                        <option>37</option>
+                                        <option>38</option>
+                                        <option>39</option>
+                                        <option>40</option>
+                                        <option>41</option>
+                                        <option>42</option>
+                                    </select>
+                                </div>
+
+                                <p class="form-text mb-0" id="size-note">
+                                    This records your preferred size.
+                                    Size availability is not listed in the catalog.
+                                </p>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="pair-notes" class="form-label">
+                                    Your notes
+                                    <span class="text-secondary">(optional)</span>
+                                </label>
+
+                                <textarea id="pair-notes"
+                                          class="form-control"
+                                          rows="3"
+                                          maxlength="300"
+                                          placeholder="Occasion or styling preferences"></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           id="occasion">
+                                    <label class="form-check-label" for="occasion">
+                                        I am choosing a pair for a special occasion.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 d-grid">
+                                <button id="save-pair"
+                                        class="btn btn-dark btn-lg rounded-0"
+                                        type="submit">
+                                    Review my selection
+                                </button>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="btn-group w-100"
+                                     role="group"
+                                     aria-label="Selection actions">
+
+                                    <button class="btn btn-outline-dark rounded-0"
+                                            id="reset-pair"
+                                            type="button">
+                                        Reset
+                                    </button>
+
+                                    <a class="btn btn-outline-dark rounded-0" href="shop.html">
+                                        Back to Shop
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p id="pair-status"
+                           class="small text-secondary mt-3 mb-0"
+                           role="status"
+                           aria-live="polite"></p>
+
+                        <div id="pair-summary"
+                             class="alert alert-light border mt-3 mb-0"
+                             role="status"
+                             hidden></div>
+
+                        <p class="form-text mt-3 mb-0">
+                            Preview only. No order is placed and your notes are not sent.
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container px-3 px-sm-4 py-5"
+             aria-labelledby="steps-title">
+
+        <h2 class="section-title text-center mb-4" id="steps-title">
+            From inspiration to your pair.
+        </h2>
+
+        <div class="card-group row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card h-100 rounded-0 p-4">
+                    <p class="eyebrow mb-3">01</p>
+                    <h3 class="h4 mb-3">Find your silhouette</h3>
+                    <p class="text-secondary mb-0">
+                        Browse the lookbook and compare the models in our collection.
+                    </p>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card h-100 rounded-0 p-4">
+                    <p class="eyebrow mb-3">02</p>
+                    <h3 class="h4 mb-3">Choose your details</h3>
+                    <p class="text-secondary mb-0">
+                        Filter by style and color, then record your preferred size.
+                    </p>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card h-100 rounded-0 p-4">
+                    <p class="eyebrow mb-3">03</p>
+                    <h3 class="h4 mb-3">Review your selection</h3>
+                    <p class="text-secondary mb-0">
+                        Check the model and notes before returning to the shop.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-dark text-white text-center py-5 mt-5">
+    <div class="container px-3 px-sm-4">
+        <h2 class="solea-logo mb-3">SOLEA</h2>
+        <p class="mb-2">Luxury heels created for your story.</p>
+        <p class="small text-white-50 mb-2">
+            Team: Aruzhan Bolatova, Ardak Korabay, Aiym Rakhat
+        </p>
+        <p class="small text-white-50 mb-0">© 2026 SOLEA</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Saved catalog: also works when opened as a local HTML file.
+    const fallbackProducts = [
+        {
+            id: "c11.jpg",
+            name: "Noir Essence",
+            image: "images/c11.jpg",
+            price: "$250",
+            type: "Sandals",
+            color: "Black"
+        },
+        {
+            id: "c12.jpeg",
+            name: "Rouge Signature",
+            image: "images/c12.jpeg",
+            price: "$320",
+            type: "Sandals",
+            color: "Black / Gold"
+        },
+        {
+            id: "c13.jpeg",
+            name: "Pearl Grace",
+            image: "images/c13.jpeg",
+            price: "$280",
+            type: "Sandals",
+            color: "Black"
+        },
+        {
+            id: "c14.jpeg",
+            name: "Velvet Rise",
+            image: "images/c14.jpeg",
+            price: "$295",
+            type: "Sandals",
+            color: "Black / Red"
+        },
+        {
+            id: "c15.jpeg",
+            name: "Gilded Strap",
+            image: "images/c15.jpeg",
+            price: "$265",
+            type: "Pumps",
+            color: "Black / Gold"
+        },
+        {
+            id: "c16.jpeg",
+            name: "Crystal Arch",
+            image: "images/c16.jpeg",
+            price: "$340",
+            type: "Pumps",
+            color: "Pink"
+        },
+        {
+            id: "c17.jpeg",
+            name: "Midnight Ballet",
+            image: "images/c17.jpeg",
+            price: "$310",
+            type: "Pumps",
+            color: "Black / Gold"
+        },
+        {
+            id: "c18.jpeg",
+            name: "Shadowheart",
+            image: "images/c18.jpeg",
+            price: "$355",
+            type: "Sandals",
+            color: "Red"
+        },
+        {
+            id: "c19.jpeg",
+            name: "Glass Rose",
+            image: "images/c19.jpeg",
+            price: "$375",
+            type: "Sandals",
+            color: "Nude"
+        },
+        {
+            id: "c120.jpeg",
+            name: "Spikes Heels",
+            image: "images/c120.jpeg",
+            price: "$290",
+            type: "Slingbacks",
+            color: "Black"
+        },
+        {
+            id: "121.jpeg",
+            name: "Batbite Marys",
+            image: "images/121.jpeg",
+            price: "$270",
+            type: "Sandals",
+            color: "Black"
+        },
+        {
+            id: "122.jpeg",
+            name: "Crimson Rose",
+            image: "images/122.jpeg",
+            price: "$305",
+            type: "Boots",
+            color: "Black"
+        }
+    ];
+
+    const categories = {
+        "c11.jpg": ["Sandals", "Black"],
+        "c12.jpeg": ["Sandals", "Black / Gold"],
+        "c13.jpeg": ["Sandals", "Black"],
+        "c14.jpeg": ["Sandals", "Black / Red"],
+        "c15.jpeg": ["Pumps", "Black / Gold"],
+        "c16.jpeg": ["Pumps", "Pink"],
+        "c17.jpeg": ["Pumps", "Black / Gold"],
+        "c18.jpeg": ["Sandals", "Red"],
+        "c19.jpeg": ["Sandals", "Nude"],
+        "c120.jpeg": ["Slingbacks", "Black"],
+        "121.jpeg": ["Sandals", "Black"],
+        "122.jpeg": ["Boots", "Black"]
+    };
+
+    const typeSelect = document.querySelector('#pair-type');
+    const colorSelect = document.querySelector('#pair-color');
+    const modelSelect = document.querySelector('#pair-model');
+    const sizeSelect = document.querySelector('#pair-size');
+    const preview = document.querySelector('#pair-image');
+    const statusText = document.querySelector('#pair-status');
+    const summary = document.querySelector('#pair-summary');
+    const form = document.querySelector('#pair-form');
+
+    let products = fallbackProducts;
+    let sourceNote = '';
+
+    function fillOptions(select, values, label) {
+        select.replaceChildren(new Option(label, ''));
+
+        values.forEach(value => {
+            select.add(new Option(value, value));
+        });
     }
 
-    preview.src = product.image;
-    preview.alt = product.name;
-    preview.hidden = false;
-
-    document.querySelector("#pair-name").textContent =
-      product.name;
-
-    document.querySelector("#pair-price").textContent =
-      product.price;
-
-    document.querySelector("#pair-details").textContent =
-      product.type + " · " + product.color;
-
-    const sizeText = sizeSelect.value
-      ? " · Preferred size: EU " + sizeSelect.value
-      : " · Select your size.";
-
-    statusText.textContent =
-      product.name + " · " + product.color + sizeText;
-  }
-
-  function applyFilters() {
-    const previousModel = modelSelect.value;
-
-    const matches = products.filter(function (product) {
-      const matchesType =
-        !typeSelect.value ||
-        product.type === typeSelect.value;
-
-      const matchesColor =
-        !colorSelect.value ||
-        product.color === colorSelect.value;
-
-      return matchesType && matchesColor;
-    });
-
-    modelSelect.replaceChildren();
-
-    matches.forEach(function (product) {
-      modelSelect.add(new Option(product.name, product.id));
-    });
-
-    modelSelect.disabled = matches.length === 0;
-
-    if (matches.some(product => product.id === previousModel)) {
-      modelSelect.value = previousModel;
+    function clearSummary() {
+        summary.hidden = true;
+        summary.textContent = '';
     }
 
-    showPair();
-  }
+    function showPair() {
+        clearSummary();
 
-  function chooseProduct(product) {
-    typeSelect.value = product.type;
-    colorSelect.value = product.color;
+        const product = products.find(item => item.id === modelSelect.value);
 
-    applyFilters();
+        document.querySelector('#save-pair').disabled = !product;
 
-    modelSelect.value = product.id;
-    showPair();
-  }
+        if (!product) {
+            preview.hidden = true;
+            preview.removeAttribute('src');
 
-  function renderGallery() {
-    if (!gallery) return;
+            document.querySelector('#pair-name').textContent = 'No matching models';
+            document.querySelector('#pair-price').textContent = '';
+            document.querySelector('#pair-details').textContent = '';
 
-    gallery.replaceChildren();
+            statusText.textContent =
+                'Try another style or color, or reset the filters.';
 
-    products.forEach(function (product) {
-      const link = document.createElement("a");
-      link.className = "inspiration-card";
-      link.href = "#customize";
+            return;
+        }
 
-      const image = document.createElement("img");
-      image.src = product.image;
-      image.alt = product.name;
-      image.loading = "lazy";
+        preview.hidden = false;
+        preview.src = product.image;
+        preview.alt = product.name;
 
-      const caption = document.createElement("span");
-      caption.className = "gallery-caption";
-      caption.textContent =
-        product.name + " · " + product.price;
+        document.querySelector('#pair-name').textContent = product.name;
+        document.querySelector('#pair-price').textContent = product.price;
+        document.querySelector('#pair-details').textContent =
+            product.type + ' · ' + product.color;
 
-      link.append(image, caption);
-
-      link.addEventListener("click", function () {
-        chooseProduct(product);
-      });
-
-      gallery.append(link);
-    });
-  }
-
-  async function loadCatalog() {
-    try {
-      const response = await fetch("shop.html");
-
-      if (!response.ok) {
-        throw new Error("Catalog unavailable");
-      }
-
-      const html = await response.text();
-
-      const shop = new DOMParser().parseFromString(
-        html,
-        "text/html"
-      );
-
-      products = [...shop.querySelectorAll(".product-card")]
-        .map(function (card) {
-          const image = card.querySelector("img")
-            ?.getAttribute("src");
-
-          const name = card.querySelector("h3")
-            ?.textContent.trim();
-
-          if (!image || !name) return null;
-
-          const filename = decodeURIComponent(
-            image.split("/").pop()
-          );
-
-          const [type, color] = categories[filename] || [
-            "Other",
-            "Not specified"
-          ];
-
-          return {
-            id: filename,
-            name: name,
-            type: type,
-            color: color,
-            image: new URL(
-              image,
-              response.url || location.href
-            ).href,
-            price: card.querySelector(".price .now")
-              ?.textContent.trim() || ""
-          };
-        })
-        .filter(Boolean);
-
-      if (products.length === 0) {
-        throw new Error("No products");
-      }
-
-      const types = [...new Set(
-        products.map(product => product.type)
-      )];
-
-      const colors = [...new Set(
-        products.map(product => product.color)
-      )];
-
-      fillOptions(typeSelect, types, "All styles");
-      fillOptions(colorSelect, colors, "All colors");
-
-      applyFilters();
-      renderGallery();
-
-      const requested = new URLSearchParams(
-        location.search
-      ).get("product");
-      const selected = products.find(function (product) {
-        return product.id === requested;
-      });
-
-      if (selected) {
-        chooseProduct(selected);
-      }
-    } catch (error) {
-      document.querySelector("#pair-name").textContent =
-        "Collection unavailable";
-
-      statusText.textContent =
-        location.protocol === "file:"
-          ? "Open the website with Live Server so the catalog can load."
-          : "The collection could not load. Reload the page or visit Shop.";
+        statusText.textContent =
+            product.name +
+            (sizeSelect.value
+                ? ' · Preferred size: EU ' + sizeSelect.value
+                : ' · Choose your size.') +
+            sourceNote;
     }
-  }
 
-  typeSelect.addEventListener("change", applyFilters);
-  colorSelect.addEventListener("change", applyFilters);
-  modelSelect.addEventListener("change", showPair);
-  sizeSelect.addEventListener("change", showPair);
+    function applyFilters() {
+        const previous = modelSelect.value;
 
-  document.querySelector("#reset-pair")
-    .addEventListener("click", function () {
-      if (!products.length) return;
+        const matches = products.filter(product =>
+            (!typeSelect.value || product.type === typeSelect.value) &&
+            (!colorSelect.value || product.color === colorSelect.value)
+        );
 
-      typeSelect.value = "";
-      colorSelect.value = "";
-      sizeSelect.value = "";
+        modelSelect.replaceChildren();
 
-      applyFilters();
+        matches.forEach(product => {
+            modelSelect.add(new Option(product.name, product.id));
+        });
+
+        modelSelect.disabled = matches.length === 0;
+
+        if (matches.some(product => product.id === previous)) {
+            modelSelect.value = previous;
+        }
+
+        showPair();
+    }
+
+    function chooseProduct(id) {
+        const product = products.find(item => item.id === id);
+
+        if (!product) return;
+
+        typeSelect.value = product.type;
+        colorSelect.value = product.color;
+
+        applyFilters();
+
+        modelSelect.value = product.id;
+        showPair();
+    }
+
+    function initializeCatalog() {
+        const selected = modelSelect.value;
+
+        fillOptions(
+            typeSelect,
+            [...new Set(products.map(product => product.type))],
+            'All styles'
+        );
+
+        fillOptions(
+            colorSelect,
+            [...new Set(products.map(product => product.color))],
+            'All colors'
+        );
+
+        applyFilters();
+
+        const requested = new URLSearchParams(location.search).get('product');
+        chooseProduct(requested || selected);
+    }
+
+    // Through Live Server or GitHub Pages, refresh models from Shop.
+    async function refreshCatalog() {
+        if (location.protocol === 'file:') {
+            sourceNote =
+                ' · Saved catalog preview; use Live Server for current Shop data.';
+
+            showPair();
+            return;
+        }
+
+        try {
+            const response = await fetch('shop.html');
+
+            if (!response.ok) {
+                throw new Error('Shop unavailable');
+            }
+
+            const shop = new DOMParser().parseFromString(
+                await response.text(),
+                'text/html'
+            );
+
+            const current = [...shop.querySelectorAll('.product-card')]
+                .map(card => {
+                    const image = card.querySelector('img')?.getAttribute('src');
+                    const name = card.querySelector('h3')?.textContent.trim();
+
+                    if (!image || !name) return null;
+
+                    const id = decodeURIComponent(image.split('/').pop());
+
+                    const [type, color] =
+                        categories[id] || ['Other', 'Not specified'];
+
+                    return {
+                        id,
+                        name,
+                        type,
+                        color,
+                        image: new URL(
+                            image,
+                            response.url || location.href
+                        ).href,
+                        price: card.querySelector('.price .now')
+                            ?.textContent.trim() || ''
+                    };
+                })
+                .filter(Boolean);
+
+            if (!current.length) {
+                throw new Error('Empty catalog');
+            }
+
+            products = current;
+            initializeCatalog();
+
+        } catch (error) {
+            sourceNote =
+                ' · Shop could not refresh; showing the saved catalog.';
+
+            showPair();
+        }
+    }
+
+    typeSelect.addEventListener('change', applyFilters);
+    colorSelect.addEventListener('change', applyFilters);
+    modelSelect.addEventListener('change', showPair);
+    sizeSelect.addEventListener('change', showPair);
+
+    form.addEventListener('input', clearSummary);
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        const product = products.find(item => item.id === modelSelect.value);
+
+        if (!product) return;
+
+        const notes = document.querySelector('#pair-notes').value.trim();
+        const occasion = document.querySelector('#occasion').checked;
+
+        summary.textContent =
+            product.name + ' · ' +
+            product.color + ' · EU ' +
+            sizeSelect.value + ' · ' +
+            product.price +
+            (occasion ? ' · Special occasion' : '') +
+            (notes ? '. Notes: ' + notes : '') +
+            '. Preview only; no order has been placed.';
+
+        summary.hidden = false;
     });
 
-  loadCatalog();
+    document.querySelector('#reset-pair').addEventListener('click', () => {
+        form.reset();
+        typeSelect.value = '';
+        colorSelect.value = '';
+        applyFilters();
+    });
+
+    document.querySelectorAll('[data-choose]').forEach(link => {
+        link.addEventListener('click', () => {
+            chooseProduct(link.dataset.choose);
+        });
+    });
+
+    initializeCatalog();
+    refreshCatalog();
+</script>
+<script>
+    const selectionSection = document.querySelector('#customize');
+    const lookbookSection = document
+        .querySelector('#soleaCarousel')
+        ?.closest('section');
+
+    if (selectionSection && lookbookSection) {
+        lookbookSection.before(selectionSection);
+
+        selectionSection.classList.remove('py-5', 'border-top');
+        selectionSection.classList.add('pt-3', 'pb-5');
+    }
 </script>
 </body>
 </html>
+
