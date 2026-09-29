@@ -1103,12 +1103,12 @@ DESIGNERS PAGE
 
     display: grid;
 
-    grid-template-columns: 230px 1fr;
+    grid-template-columns: 1fr 230px;
     grid-template-rows: auto 1fr auto;
 
     grid-template-areas:
         "header header"
-        "sidebar main"
+        " main sidebar"
         "footer footer";
 }
 

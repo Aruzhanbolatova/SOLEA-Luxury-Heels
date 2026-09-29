@@ -11,16 +11,390 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- BOOTSTRAP -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           ASSIGNMENT 3 — RESPONSIVE TYPOGRAPHY
+        ===================================================== */
+
+        /* DESKTOP */
+
+        .assignment3 h1 {
+            font-size: 48px;
+            line-height: 1.1;
+        }
+
+        .assignment3 h2 {
+            font-size: 34px;
+            line-height: 1.2;
+        }
+
+        .assignment3 h3 {
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .assignment3 p,
+        .assignment3 label,
+        .assignment3 input,
+        .assignment3 select,
+        .assignment3 textarea,
+        .assignment3 button {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+
+
+        /* =====================================================
+           ASSIGNMENT 3 — SIZE CONTENT
+        ===================================================== */
+
+        .size-guide-a3 .size-content {
+            display: block;
+            width: 100%;
+        }
+
+
+        .size-guide-a3 .a3-size-container {
+            width: 100%;
+        }
+
+
+        .size-guide-a3 .a3-size-row {
+            width: 100%;
+        }
+
+
+        .size-guide-a3 .measurement-column,
+        .size-guide-a3 .table-column {
+            min-width: 0;
+        }
+
+
+
+        /* =====================================================
+           MEASUREMENT CARD
+        ===================================================== */
+
+        .size-guide-a3 .measurement-card {
+         width: 100%;
+         min-height: 0;
+          height: auto;
+
+         padding: 35px;
+
+         background: #333333;
+         color: #ffffff;
+
+        border: none;
+        }
+
+
+        .size-guide-a3 .measurement-card h3 {
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+
+        .size-guide-a3 .measurement-steps {
+            padding-left: 25px;
+
+            margin-bottom: 0;
+        }
+
+
+        .size-guide-a3 .measurement-steps li {
+            margin-bottom: 18px;
+
+            line-height: 1.7;
+            color: #ffffff;
+        }
+
+
+        .size-guide-a3 .measurement-tip {
+            margin-top: 25px;
+
+            padding: 18px;
+
+            background: #444444;
+            color: #ffffff;
+
+            border-left: 3px solid #ffffff;
+        }
+
+
+
+        /* =====================================================
+           RESPONSIVE TABLE
+        ===================================================== */
+
+        .size-guide-a3 .table-responsive {
+            width: 100%;
+
+            overflow-x: auto;
+        }
+
+
+        .size-guide-a3 .table-responsive table {
+            width: 100%;
+
+            min-width: 500px;
+        }
+
+
+
+        /* =====================================================
+           BOOTSTRAP TABLE
+        ===================================================== */
+
+        .size-guide-a3 .table {
+            margin-bottom: 0;
+
+            background: #ffffff;
+        }
+
+
+        .size-guide-a3 .table th {
+            background: #111111;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            white-space: nowrap;
+        }
+
+
+        .size-guide-a3 .table td {
+            text-align: center;
+
+            vertical-align: middle;
+        }
+
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .size-guide-a3 .size-form-section {
+            margin-top: 60px;
+
+            padding: 0 5%;
+        }
+
+
+        .size-guide-a3 .size-form-container {
+            max-width: 800px;
+
+            margin: 0 auto;
+        }
+
+
+        .size-guide-a3 .size-form {
+            margin-top: 30px;
+        }
+
+
+        .size-guide-a3 .size-form .form-label {
+            font-weight: 600;
+        }
+
+
+        .size-guide-a3 .size-form .form-control,
+        .size-guide-a3 .size-form .form-select {
+            width: 100%;
+
+            box-sizing: border-box;
+        }
+
+
+        .size-guide-a3 .size-form textarea {
+            resize: vertical;
+        }
+
+
+        .size-guide-a3 .size-form .btn {
+            padding: 12px 28px;
+
+            letter-spacing: 1px;
+        }
+
+
+
+        /* =====================================================
+           ACCESSIBILITY
+        ===================================================== */
+
+        .size-guide-a3 input:focus,
+        .size-guide-a3 select:focus,
+        .size-guide-a3 textarea:focus,
+        .size-guide-a3 button:focus {
+            outline: 2px solid #111111;
+
+            outline-offset: 2px;
+        }
+
+
+        .size-guide-a3 img {
+            max-width: 100%;
+
+            height: auto;
+        }
+
+
+        /* Prevent overflow */
+
+        .size-guide-a3 {
+            overflow-x: hidden;
+        }
+
+
+        .size-guide-a3 .container,
+        .size-guide-a3 .container-fluid,
+        .size-guide-a3 .row,
+        .size-guide-a3 .col,
+        .size-guide-a3 [class*="col-"] {
+            min-width: 0;
+        }
+
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 991px) {
+
+            .assignment3 h1 {
+                font-size: 40px;
+            }
+
+
+            .assignment3 h2 {
+                font-size: 30px;
+            }
+
+
+            .assignment3 h3 {
+                font-size: 20px;
+            }
+
+
+            .assignment3 p,
+            .assignment3 label,
+            .assignment3 input,
+            .assignment3 select,
+            .assignment3 textarea,
+            .assignment3 button {
+                font-size: 15px;
+            }
+
+
+            .size-guide-a3 .measurement-card {
+                padding: 25px;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 576px) {
+
+            .assignment3 h1 {
+                font-size: 30px;
+            }
+
+
+            .assignment3 h2 {
+                font-size: 25px;
+            }
+
+
+            .assignment3 h3 {
+                font-size: 18px;
+            }
+
+
+            .assignment3 p,
+            .assignment3 label,
+            .assignment3 input,
+            .assignment3 select,
+            .assignment3 textarea,
+            .assignment3 button {
+                font-size: 14px;
+            }
+
+
+            .size-guide-a3 .measurement-card {
+                padding: 20px;
+            }
+
+
+            .size-guide-a3 .size-form-section {
+                margin-top: 40px;
+
+                padding: 0 20px;
+            }
+
+
+            .size-guide-a3 .table-responsive table {
+                min-width: 450px;
+            }
+
+        }
+
+
+
+        /* =====================================================
+           VERY SMALL SCREEN
+        ===================================================== */
+
+        @media (max-width: 400px) {
+
+            .assignment3 h1 {
+                font-size: 27px;
+            }
+
+
+            .assignment3 h2 {
+                font-size: 22px;
+            }
+
+
+            .assignment3 h3 {
+                font-size: 17px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
-<body>
+
+<body class="assignment3 size-guide-a3">
 
 
 <div class="page-layout">
 
 
-    <!-- HEADER -->
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
 
     <header id="main-header">
 
@@ -65,7 +439,9 @@
 
 
 
-    <!-- SIDEBAR -->
+    <!-- =====================================================
+         SIDEBAR
+    ===================================================== -->
 
     <aside class="size-sidebar">
 
@@ -152,12 +528,16 @@
 
 
 
-    <!-- MAIN CONTENT -->
+    <!-- =====================================================
+         MAIN CONTENT
+    ===================================================== -->
 
     <main class="size-main">
 
 
-        <!-- HERO -->
+        <!-- =================================================
+             HERO
+        ================================================= -->
 
         <section class="size-hero">
 
@@ -180,242 +560,526 @@
 
 
 
-        <!-- SIZE CONTENT -->
+        <!-- =================================================
+             SIZE CONTENT
+             BOOTSTRAP GRID
+        ================================================= -->
 
         <section class="size-content">
 
+            <div class="container-fluid a3-size-container">
 
-            <!-- IMAGE AREA -->
+                <div class="row g-4 a3-size-row">
 
-            <div class="size-image">
+
+                    <!-- =====================================
+                         LEFT BOOTSTRAP COLUMN
+                         INSTRUCTIONS
+                    ====================================== -->
+
+                    <div class="col-lg-6 measurement-column">
+
+                        <div class="measurement-card">
+
+
+                            <h3>
+                                HOW TO MEASURE YOUR FOOT
+                            </h3>
+
+
+                            <ol class="measurement-steps">
+
+                                <li>
+                                    Place your foot on a piece
+                                    of paper.
+                                </li>
+
+
+                                <li>
+                                    Mark the longest point of
+                                    your foot from heel to toe.
+                                </li>
+
+
+                                <li>
+                                    Measure the distance between
+                                    the heel and the longest toe.
+                                </li>
+
+
+                                <li>
+                                    Compare your measurement
+                                    with the SOLEA size chart.
+                                </li>
+
+
+                            </ol>
+
+
+                            <div class="measurement-tip">
+
+                                <strong>
+                                    TIP:
+                                </strong>
+
+                                If you are between two sizes,
+                                choose the larger size for
+                                a more comfortable fit.
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         RIGHT BOOTSTRAP COLUMN
+                         SIZE TABLE
+                    ====================================== -->
+
+                    <div class="col-lg-6 table-column">
+
+
+                        <div class="size-table">
+
+
+                            <h2>
+                                SOLEA SIZE GUIDE
+                            </h2>
+
+
+                            <div class="table-responsive">
+
+
+                                <table class="table table-bordered table-hover">
+
+
+                                    <thead>
+
+                                        <tr>
+
+                                            <th scope="col">
+                                                EU
+                                            </th>
+
+                                            <th scope="col">
+                                                US
+                                            </th>
+
+                                            <th scope="col">
+                                                UK
+                                            </th>
+
+                                            <th scope="col">
+                                                FOOT LENGTH
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+
+
+                                    <tbody>
+
+
+                                        <tr>
+
+                                            <td>
+                                                35
+                                            </td>
+
+                                            <td>
+                                                5
+                                            </td>
+
+                                            <td>
+                                                2
+                                            </td>
+
+                                            <td>
+                                                22.5 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                36
+                                            </td>
+
+                                            <td>
+                                                6
+                                            </td>
+
+                                            <td>
+                                                3
+                                            </td>
+
+                                            <td>
+                                                23 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                37
+                                            </td>
+
+                                            <td>
+                                                7
+                                            </td>
+
+                                            <td>
+                                                4
+                                            </td>
+
+                                            <td>
+                                                23.5 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                38
+                                            </td>
+
+                                            <td>
+                                                8
+                                            </td>
+
+                                            <td>
+                                                5
+                                            </td>
+
+                                            <td>
+                                                24 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                39
+                                            </td>
+
+                                            <td>
+                                                9
+                                            </td>
+
+                                            <td>
+                                                6
+                                            </td>
+
+                                            <td>
+                                                25 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                40
+                                            </td>
+
+                                            <td>
+                                                10
+                                            </td>
+
+                                            <td>
+                                                7
+                                            </td>
+
+                                            <td>
+                                                25.5 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                41
+                                            </td>
+
+                                            <td>
+                                                11
+                                            </td>
+
+                                            <td>
+                                                8
+                                            </td>
+
+                                            <td>
+                                                26 cm
+                                            </td>
+
+                                        </tr>
+
+
+
+                                        <tr>
+
+                                            <td>
+                                                42
+                                            </td>
+
+                                            <td>
+                                                12
+                                            </td>
+
+                                            <td>
+                                                9
+                                            </td>
+
+                                            <td>
+                                                26.5 cm
+                                            </td>
+
+                                        </tr>
+
+
+                                    </tbody>
+
+
+                                </table>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
             </div>
 
-
-
-            <!-- SIZE TABLE -->
-
-            <div class="size-table">
-
-
-                <h2>
-                    SOLEA SIZE GUIDE
-                </h2>
-
-
-                <div class="table-wrapper">
-
-
-                    <table>
-
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    EU
-                                </th>
-
-                                <th>
-                                    US
-                                </th>
-
-                                <th>
-                                    UK
-                                </th>
-
-                                <th>
-                                    FOOT LENGTH
-                                </th>
-
-                            </tr>
-
-                        </thead>
+        </section>
 
 
 
-                        <tbody>
+        <!-- =================================================
+             BOOTSTRAP FORM
+        ================================================= -->
+
+        <section class="size-form-section">
 
 
-                            <tr>
+            <div class="container-fluid">
 
-                                <td>
+
+                <div class="size-form-container">
+
+
+                    <h2>
+                        FIND YOUR PERFECT FIT
+                    </h2>
+
+
+                    <p>
+                        Need help choosing your size?
+                        Send us your measurements and
+                        our team will help you.
+                    </p>
+
+
+
+                    <form class="size-form">
+
+
+                        <!-- NAME -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="customerName"
+                                class="form-label"
+                            >
+                                Your Name
+                            </label>
+
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="customerName"
+                                name="customerName"
+                                placeholder="Enter your name"
+                            >
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="customerEmail"
+                                class="form-label"
+                            >
+                                Email
+                            </label>
+
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="customerEmail"
+                                name="customerEmail"
+                                placeholder="Enter your email"
+                            >
+
+                        </div>
+
+
+
+                        <!-- SIZE SELECT -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="shoeSize"
+                                class="form-label"
+                            >
+                                Your EU Size
+                            </label>
+
+
+                            <select
+                                class="form-select"
+                                id="shoeSize"
+                                name="shoeSize"
+                            >
+
+                                <option selected>
+                                    Choose your size
+                                </option>
+
+                                <option value="35">
                                     35
-                                </td>
+                                </option>
 
-                                <td>
-                                    5
-                                </td>
-
-                                <td>
-                                    2
-                                </td>
-
-                                <td>
-                                    22.5 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="36">
                                     36
-                                </td>
+                                </option>
 
-                                <td>
-                                    6
-                                </td>
-
-                                <td>
-                                    3
-                                </td>
-
-                                <td>
-                                    23 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="37">
                                     37
-                                </td>
+                                </option>
 
-                                <td>
-                                    7
-                                </td>
-
-                                <td>
-                                    4
-                                </td>
-
-                                <td>
-                                    23.5 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="38">
                                     38
-                                </td>
+                                </option>
 
-                                <td>
-                                    8
-                                </td>
-
-                                <td>
-                                    5
-                                </td>
-
-                                <td>
-                                    24 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="39">
                                     39
-                                </td>
+                                </option>
 
-                                <td>
-                                    9
-                                </td>
-
-                                <td>
-                                    6
-                                </td>
-
-                                <td>
-                                    25 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="40">
                                     40
-                                </td>
+                                </option>
 
-                                <td>
-                                    10
-                                </td>
-
-                                <td>
-                                    7
-                                </td>
-
-                                <td>
-                                    25.5 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="41">
                                     41
-                                </td>
+                                </option>
 
-                                <td>
-                                    11
-                                </td>
-
-                                <td>
-                                    8
-                                </td>
-
-                                <td>
-                                    26 cm
-                                </td>
-
-                            </tr>
-
-
-
-                            <tr>
-
-                                <td>
+                                <option value="42">
                                     42
-                                </td>
+                                </option>
 
-                                <td>
-                                    12
-                                </td>
+                            </select>
 
-                                <td>
-                                    9
-                                </td>
-
-                                <td>
-                                    26.5 cm
-                                </td>
-
-                            </tr>
+                        </div>
 
 
-                        </tbody>
+
+                        <!-- FOOT LENGTH -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="footLength"
+                                class="form-label"
+                            >
+                                Foot Length
+                            </label>
 
 
-                    </table>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="footLength"
+                                name="footLength"
+                                placeholder="For example: 24.5 cm"
+                            >
+
+                        </div>
+
+
+
+                        <!-- QUESTION -->
+
+                        <div class="mb-3">
+
+                            <label
+                                for="question"
+                                class="form-label"
+                            >
+                                Your Question
+                            </label>
+
+
+                            <textarea
+                                class="form-control"
+                                id="question"
+                                name="question"
+                                rows="4"
+                                placeholder="Tell us how we can help"
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="btn btn-dark"
+                        >
+                            SEND REQUEST
+                        </button>
+
+
+                    </form>
 
 
                 </div>
@@ -428,7 +1092,9 @@
 
 
 
-        <!-- CTA -->
+        <!-- =================================================
+             CTA
+        ================================================= -->
 
         <section class="fit-banner">
 
@@ -459,7 +1125,9 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
 
     <footer>
 
@@ -491,6 +1159,13 @@
 
 
 </div>
+
+
+<!-- BOOTSTRAP JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
 
 
 </body>
