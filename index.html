@@ -16,6 +16,7 @@
     style.css is shared, so editing it changes every other page too.
     -->
     <title>SOLEA | Luxury Heels</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -23,16 +24,37 @@
 
 
 <header id="main-header">
-    <div class="logo">
-        <a href="index.html">SOLEA</a>
-    </div>
-    <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="brands.html">Brands</a>
-        <a href="design.html">Design Your Pair</a>
-        <a href="size-guide.html">Size Guide</a>
-        <a href="about.html">About Us</a>
+    <nav class="navbar navbar-expand-lg w-100" aria-label="Main navigation">
+        <div class="container-fluid p-0">
+
+            <div class="logo">
+                <a href="index.html">SOLEA</a>
+            </div>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#homeMenu"
+                aria-controls="homeMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="homeMenu">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="shop.html">Shop</a>
+                    <a class="nav-link" href="brands.html">Brands</a>
+                    <a class="nav-link" href="design.html">Design Your Pair</a>
+                    <a class="nav-link" href="size-guide.html">Size Guide</a>
+                    <a class="nav-link" href="about.html">About Us</a>
+                </div>
+            </div>
+
+        </div>
     </nav>
 </header>
 
@@ -43,8 +65,8 @@
 <p class="subtitle">LUXURY COLLECTION</p>
 <h1>DEFINE YOUR HEIGHT.</h1>
 <p>Discover elegant heels from iconic fashion houses and create a style that represents you.</p>
-<a class="button" href="shop.html">SHOP COLLECTION</a>
-<a class="button" href="design.html">CREATE YOUR PAIR</a>
+<a class="button btn btn-dark rounded-0 px-4 py-3 my-2" href="shop.html">SHOP COLLECTION</a>
+<a class="button btn btn-dark rounded-0 px-4 py-3 my-2" href="design.html">CREATE YOUR PAIR</a>
 </div>
 </section>
 
@@ -65,116 +87,126 @@ entirely your own — from the model down to the heel height.
      Each .media-placeholder can become a photo or a short video:
      <video class="media-placeholder" src="images/heel1.mp4" autoplay muted loop playsinline></video>
 -->
-<section class="carousel-section">
-<h2>NEW ARRIVALS</h2>
-<div class="carousel-wrapper">
-<button class="carousel-btn prev" aria-label="Previous product">‹</button>
-<div class="carousel-track">
+<section class="carousel-section container py-5">
+    <h2 class="text-center mb-4">NEW ARRIVALS</h2>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c11.jpg" alt="Noir Stiletto">
-<h3>NOIR STILETTO</h3>
-<p>Classic black designer heel.</p>
-<p class="price"><span class="was">$210</span><span class="now">$168</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+    <div
+        id="homeCarousel"
+        class="carousel slide carousel-dark"
+        data-bs-interval="false"
+        role="region"
+        aria-label="New arrivals"
+    >
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Photo 1"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Photo 2"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Photo 3"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Photo 4"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Photo 5"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="5" aria-label="Photo 6"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="6" aria-label="Photo 7"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="7" aria-label="Photo 8"></button>
+            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="8" aria-label="Photo 9"></button>
+        </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c12.jpeg">
-<h3>ROUGE ICON</h3>
-<p>Bold red statement heel.</p>
-<p class="price"><span class="was">$240</span><span class="now">$192</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/c11.jpg" class="d-block w-100" alt="Noir Essence heels">
+            </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c13.jpeg">
-<h3>PEARL ELEGANCE</h3>
-<p>Elegant evening collection.</p>
-<p class="price"><span class="was">$260</span><span class="now">$208</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+            <div class="carousel-item">
+                <img src="images/c12.jpeg" class="d-block w-100" alt="Rouge Signature heels">
+            </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c14.jpeg">
-<h3>VELVET RISE</h3>
-<p>Statement platform, matte finish.</p>
-<p class="price"><span class="was">$280</span><span class="now">$224</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+            <div class="carousel-item">
+                <img src="images/c13.jpeg" class="d-block w-100" alt="Pearl Grace heels">
+            </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c15.jpeg">
-<h3>GILDED STRAP</h3>
-<p>Minimal straps, maximum shine.</p>
-<p class="price"><span class="was">$195</span><span class="now">$156</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+            <div class="carousel-item">
+                <img src="images/c14.jpeg" class="d-block w-100" alt="Velvet Rise heels">
+            </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c16.jpeg">
-<h3>GLITTER DIVA</h3>
-<p>Mqwerrr, maximum shine.</p>
-<p class="price"><span class="was">$305</span><span class="now">$199</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+            <div class="carousel-item">
+                <img src="images/c15.jpeg" class="d-block w-100" alt="Gilded Strap heels">
+            </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c17.jpeg">
-<h3>SNINE</h3>
-<p>MOfuduidcd</p>
-<p class="price"><span class="was">$342</span><span class="now">$116</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+            <div class="carousel-item">
+                <img src="images/c16.jpeg" class="d-block w-100" alt="Crystal Arch heels">
+            </div>
 
-<div class="carousel-card">
-<img class="media-placeholder" src="images/c18.jpeg">
-<h3>MOGNY</h3>
-<p>Metalic shine hueyyeded</p>
-<p class="price"><span class="was">$670</span><span class="now">$167</span></p>
-<a class="button card-button" href="shop.html">
-    SHOP COLLECTION
-</a>
-</div>
+            <div class="carousel-item">
+                <img src="images/c17.jpeg" class="d-block w-100" alt="Midnight Ballet heels">
+            </div>
 
-</div>
-<button class="carousel-btn next" aria-label="Next product">›</button>
-</div>
+            <div class="carousel-item">
+                <img src="images/c18.jpeg" class="d-block w-100" alt="Shadowheart heels">
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/c19.jpeg" class="d-block w-100" alt="Glass Rose heels">
+            </div>
+        </div>
+
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide="prev"
+        >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous photo</span>
+        </button>
+
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide="next"
+        >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next photo</span>
+        </button>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="shop.html" class="btn btn-dark rounded-0 px-4 py-3">
+            SHOP COLLECTION
+        </a>
+    </div>
 </section>
 
 <!-- ============ DESIGN CTA ============ -->
 <section id="design-section">
 <h2>YOUR HEELS. YOUR RULES.</h2>
 <p>Choose your model, color, material and heel height.</p>
-<a class="button" href="design.html">START DESIGNING</a>
+<a class="button btn btn-dark rounded-0 px-4 py-3 my-2" href="design.html">START DESIGNING</a>
 </section>
 
 <!-- ============ SPLIT IMAGE BANNER ============
      Replace each placeholder div with:
      <img src="images/banner1.jpg" alt="...">
 -->
-<section class="split-banner">
-    <div class="banner-half">
-        <img src="images/s2.jpeg" alt="Shop Heels">
-        <a class="button" href="shop.html">SHOP HEELS</a>
-    </div>
-    <div class="banner-half">
-        <img src="images/s1.jpg" alt="Shop Accessories">
-        <a class="button" href="brands.html">SHOP ACCESSORIES</a>
+<section class="split-banner container-fluid p-0">
+    <div class="row g-0">
+
+        <div class="col-lg-6">
+            <div class="banner-half">
+                <img src="images/s2.jpeg" alt="Shop Heels">
+                <a class="button btn btn-light rounded-0 px-4 py-3" href="shop.html">
+                    SHOP HEELS
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="banner-half">
+                <img src="images/s1.jpg" alt="Shop Accessories">
+                <a class="button btn btn-light rounded-0 px-4 py-3" href="brands.html">
+                    SHOP ACCESSORIES
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -299,7 +331,7 @@ Aiym Rakhat
 
 
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="java.js"></script>
 </body>
 </html>

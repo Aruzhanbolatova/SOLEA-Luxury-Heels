@@ -1,1247 +1,764 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SOLEA | Shop</title>
 
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    >
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+        /* Только Shop: совместимость старых стилей с Bootstrap. */
+        .shop-page .shop-page-layout {
+            grid-template-columns: minmax(0, 1fr);
+            grid-template-areas:
+                "header"
+                "main"
+                "sidebar"
+                "footer";
+            grid-template-rows: auto 1fr auto auto;
+        }
+
+        .shop-page .shop-main .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .shop-page .shop-main .product-grid > [class*="col-"] {
+            min-width: 0;
+        }
+
+        .shop-page .shop-main .product-card {
+            width: 100%;
+        }
+
+        .shop-page .shop-hero,
+        .shop-page .shop-categories,
+        .shop-page .shop-grid-section {
+            padding-left: clamp(16px, 3vw, 48px);
+            padding-right: clamp(16px, 3vw, 48px);
+        }
+
+        .shop-page .shop-toolbar {
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .shop-page .sort {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .shop-page .sort label {
+            white-space: nowrap;
+        }
+
+        .shop-page .sort select {
+            min-width: 0;
+        }
+
+        @media (min-width: 1200px) {
+            .shop-page .shop-page-layout {
+                grid-template-columns: minmax(0, 1fr) 230px;
+                grid-template-areas:
+                    "header header"
+                    "main sidebar"
+                    "footer footer";
+                grid-template-rows: auto 1fr auto;
+            }
+        }
+    </style>
 </head>
 
-
-<body>
-
+<body class="shop-page">
 
 <div class="shop-page-layout">
 
-
-    <!-- =========================
-         HEADER
-         ========================= -->
-
+    <!-- HEADER -->
     <header id="main-header">
-
         <div class="logo">
-
-            <a href="index.html">
-                SOLEA
-            </a>
-
+            <a href="index.html">SOLEA</a>
         </div>
 
-
-        <nav class="navbar">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="shop.html" class="active">
-                Shop
-            </a>
-
-            <a href="brands.html">
-                Brands
-            </a>
-
-            <a href="design.html">
-                Design your pair
-            </a>
-
-            <a href="size-guide.html">
-                Size Guide
-            </a>
-
-            <a href="about.html">
-                About us
-            </a>
-
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="shop.html" class="active" aria-current="page">Shop</a>
+            <a href="brands.html">Brands</a>
+            <a href="design.html">Design your pair</a>
+            <a href="size-guide.html">Size Guide</a>
+            <a href="about.html">About us</a>
         </nav>
-
     </header>
 
-
-
-    <!-- =========================
-         SIDEBAR
-         ========================= -->
-
+    <!-- SIDEBAR -->
     <aside class="shop-sidebar">
-
-
-        <h2>
-            SHOP
-        </h2>
-
+        <h2>SHOP</h2>
 
         <div class="shop-side-block">
-
-            <h3>
-                Categories
-            </h3>
-
-            <a href="#stilettos">
-                Stilettos
-            </a>
-
-            <a href="#pumps">
-                Pumps
-            </a>
-
-            <a href="#platforms">
-                Platforms
-            </a>
-
+            <h3>Categories</h3>
+            <a href="#stilettos">Stilettos</a>
+            <a href="#pumps">Pumps</a>
+            <a href="#platforms">Platforms</a>
         </div>
 
-
-
         <div class="shop-side-block">
-
-            <h3>
-                Collection
-            </h3>
-
+            <h3>Collection</h3>
             <p>
                 Discover SOLEA heels created
                 for different styles, occasions
                 and stories.
             </p>
-
         </div>
 
-
-
         <div class="shop-side-tip">
-
-            <strong>
-                STYLE TIP
-            </strong>
-
+            <strong>STYLE TIP</strong>
             <p>
                 Choose a pair that matches
                 your personality and make it
                 your own.
             </p>
-
         </div>
-
-
     </aside>
 
-
-
-    <!-- =========================
-         MAIN CONTENT
-         ========================= -->
-
+    <!-- MAIN CONTENT -->
     <main class="shop-main">
 
-
         <!-- SHOP HERO -->
-
         <section class="shop-hero">
-
-            <h1>
-                High Heels Collection
-            </h1>
-
-            <p>
-                36 products
-            </p>
-
+            <h1>High Heels Collection</h1>
+            <p>12 products</p>
         </section>
 
-
-
-        <!-- =========================
-             CATEGORY CARDS
-             FLEXBOX
-             ========================= -->
-
+        <!-- EXISTING CATEGORIES -->
         <section class="shop-categories">
-
-
-            <h2>
-                Shop by Category
-            </h2>
-
+            <h2>Shop by Category</h2>
 
             <div class="cat-grid">
-
-
                 <a
                     href="#product-grid"
                     class="cat-card"
                     id="stilettos"
                 >
-
-                    <h3>
-                        Stilettos
-                    </h3>
-
+                    <h3>Stilettos</h3>
                     <p>
                         Elegant high heels with
                         timeless silhouette.
                     </p>
-
                 </a>
-
-
 
                 <a
                     href="#product-grid"
                     class="cat-card"
                     id="pumps"
                 >
-
-                    <h3>
-                        Pumps
-                    </h3>
-
+                    <h3>Pumps</h3>
                     <p>
                         Classic designs for
                         everyday luxury.
                     </p>
-
                 </a>
-
-
 
                 <a
                     href="#product-grid"
                     class="cat-card"
                     id="platforms"
                 >
-
-                    <h3>
-                        Platforms
-                    </h3>
-
+                    <h3>Platforms</h3>
                     <p>
                         Bold styles with
                         modern attitude.
                     </p>
-
                 </a>
-
-
             </div>
-
-
         </section>
 
+        <!-- PRODUCT SECTION -->
+        <section class="shop-grid-section" aria-label="Products">
 
+            <!-- BOOTSTRAP BUTTON GROUP -->
+            <div
+                class="btn-group d-flex flex-wrap mb-4"
+                role="group"
+                aria-label="Quick product sorting"
+            >
+                <button
+                    type="button"
+                    class="btn btn-outline-dark rounded-0 active"
+                    data-shop-sort="featured"
+                    aria-pressed="true"
+                >
+                    Featured
+                </button>
 
-        <!-- =========================
-             PRODUCT SECTION
-             ========================= -->
+                <button
+                    type="button"
+                    class="btn btn-outline-dark rounded-0"
+                    data-shop-sort="price-asc"
+                    aria-pressed="false"
+                >
+                    Price: Low to High
+                </button>
 
-        <section class="shop-grid-section">
-
+                <button
+                    type="button"
+                    class="btn btn-outline-dark rounded-0"
+                    data-shop-sort="price-desc"
+                    aria-pressed="false"
+                >
+                    Price: High to Low
+                </button>
+            </div>
 
             <!-- TOOLBAR -->
-
             <div class="shop-toolbar">
-
-
-                <span id="product-count">
+                <span
+                    id="product-count"
+                    role="status"
+                    aria-live="polite"
+                >
                     12 products
                 </span>
 
-
                 <div class="sort">
+                    <label for="sort-select">Sort by:</label>
 
-                    <label for="sort-select">
-                        Sort by:
-                    </label>
-
-
-                    <select id="sort-select">
-
-                        <option value="featured">
-                            Featured
-                        </option>
-
-                        <option value="price-asc">
-                            Price: Low to High
-                        </option>
-
-                        <option value="price-desc">
-                            Price: High to Low
-                        </option>
-
-                        <option value="name-asc">
-                            Name: A–Z
-                        </option>
-
-                        <option value="name-desc">
-                            Name: Z–A
-                        </option>
-
+                    <select
+                        id="sort-select"
+                        class="form-select rounded-0"
+                    >
+                        <option value="featured">Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A–Z</option>
+                        <option value="name-desc">Name: Z–A</option>
                     </select>
-
                 </div>
-
-
             </div>
 
+            <!--
+                Bootstrap grid:
+                phone — 1 column
+                tablet — 2 columns
+                desktop — 3 columns
 
-
-            <!-- =========================
-                 PRODUCT GRID
-                 CSS GRID
-                 ========================= -->
-
-            <div
-                class="product-grid"
-                id="product-grid"
-            >
-
-
+                Keep product-card, h3, price and now:
+                Design uses them to load the catalog.
+            -->
+            <div class="product-grid row g-4" id="product-grid">
 
                 <!-- PRODUCT 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Noir Essence"
+                        data-price="250"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-12%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c11.jpg"
+                                alt="Noir Essence"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Noir Essence"
-                    data-price="250"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Noir Essence</h3>
+                            <p class="desc card-text">
+                                Black leather stiletto
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$250</span>
+                                <span class="was">$285</span>
+                            </p>
 
-                        <span class="badge">
-                            -12%
-                        </span>
-
-                        <img
-                            src="images/c11.jpg"
-                            alt="Noir Essence"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Noir Essence
-                        </h3>
-
-                        <p class="desc">
-                            Black leather stiletto
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $250
-                            </span>
-
-                            <span class="was">
-                                $285
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c11.jpg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Rouge Signature"
+                        data-price="320"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-18%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c12.jpeg"
+                                alt="Rouge Signature"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Rouge Signature"
-                    data-price="320"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Rouge Signature</h3>
+                            <p class="desc card-text">
+                                Red statement heels
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$320</span>
+                                <span class="was">$390</span>
+                            </p>
 
-                        <span class="badge">
-                            -18%
-                        </span>
-
-                        <img
-                            src="images/c12.jpeg"
-                            alt="Rouge Signature"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Rouge Signature
-                        </h3>
-
-                        <p class="desc">
-                            Red statement heels
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $320
-                            </span>
-
-                            <span class="was">
-                                $390
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c12.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Pearl Grace"
+                        data-price="280"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-15%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c13.jpeg"
+                                alt="Pearl Grace"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Pearl Grace"
-                    data-price="280"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Pearl Grace</h3>
+                            <p class="desc card-text">
+                                Elegant evening shoes
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$280</span>
+                                <span class="was">$330</span>
+                            </p>
 
-                        <span class="badge">
-                            -15%
-                        </span>
-
-                        <img
-                            src="images/c13.jpeg"
-                            alt="Pearl Grace"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Pearl Grace
-                        </h3>
-
-                        <p class="desc">
-                            Elegant evening shoes
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $280
-                            </span>
-
-                            <span class="was">
-                                $330
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c13.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Velvet Rise"
+                        data-price="295"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-20%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c14.jpeg"
+                                alt="Velvet Rise"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Velvet Rise"
-                    data-price="295"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Velvet Rise</h3>
+                            <p class="desc card-text">
+                                Statement platform, matte finish
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$295</span>
+                                <span class="was">$370</span>
+                            </p>
 
-                        <span class="badge">
-                            -20%
-                        </span>
-
-                        <img
-                            src="images/c14.jpeg"
-                            alt="Velvet Rise"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Velvet Rise
-                        </h3>
-
-                        <p class="desc">
-                            Statement platform,
-                            matte finish
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $295
-                            </span>
-
-                            <span class="was">
-                                $370
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c14.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Gilded Strap"
+                        data-price="265"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-10%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c15.jpeg"
+                                alt="Gilded Strap"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Gilded Strap"
-                    data-price="265"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Gilded Strap</h3>
+                            <p class="desc card-text">
+                                Minimal straps, maximum shine
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$265</span>
+                                <span class="was">$295</span>
+                            </p>
 
-                        <span class="badge">
-                            -10%
-                        </span>
-
-                        <img
-                            src="images/c15.jpeg"
-                            alt="Gilded Strap"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Gilded Strap
-                        </h3>
-
-                        <p class="desc">
-                            Minimal straps,
-                            maximum shine
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $265
-                            </span>
-
-                            <span class="was">
-                                $295
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c15.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Crystal Arch"
+                        data-price="340"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-25%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c16.jpeg"
+                                alt="Crystal Arch"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Crystal Arch"
-                    data-price="340"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Crystal Arch</h3>
+                            <p class="desc card-text">
+                                Crystal embellished pump
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$340</span>
+                                <span class="was">$450</span>
+                            </p>
 
-                        <span class="badge">
-                            -25%
-                        </span>
-
-                        <img
-                            src="images/c16.jpeg"
-                            alt="Crystal Arch"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Crystal Arch
-                        </h3>
-
-                        <p class="desc">
-                            Crystal embellished pump
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $340
-                            </span>
-
-                            <span class="was">
-                                $450
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c16.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 7 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Midnight Ballet"
+                        data-price="310"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-14%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c17.jpeg"
+                                alt="Midnight Ballet"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Midnight Ballet"
-                    data-price="310"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Midnight Ballet</h3>
+                            <p class="desc card-text">
+                                Satin lace-up heels
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$310</span>
+                                <span class="was">$360</span>
+                            </p>
 
-                        <span class="badge">
-                            -14%
-                        </span>
-
-                        <img
-                            src="images/c17.jpeg"
-                            alt="Midnight Ballet"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Midnight Ballet
-                        </h3>
-
-                        <p class="desc">
-                            Satin lace-up heels
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $310
-                            </span>
-
-                            <span class="was">
-                                $360
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c17.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 8 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Shadowheart"
+                        data-price="355"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-22%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c18.jpeg"
+                                alt="Shadowheart"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Shadowheart"
-                    data-price="355"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Shadowheart</h3>
+                            <p class="desc card-text">
+                                Platform with gold hardware
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$355</span>
+                                <span class="was">$455</span>
+                            </p>
 
-                        <span class="badge">
-                            -22%
-                        </span>
-
-                        <img
-                            src="images/c18.jpeg"
-                            alt="Shadowheart"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Shadowheart
-                        </h3>
-
-                        <p class="desc">
-                            Platform with gold hardware
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $355
-                            </span>
-
-                            <span class="was">
-                                $455
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c18.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 9 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Glass Rose"
+                        data-price="375"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-16%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c19.jpeg"
+                                alt="Glass Rose"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Glass Rose"
-                    data-price="375"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Glass Rose</h3>
+                            <p class="desc card-text">
+                                Transparent heel, rose details
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$375</span>
+                                <span class="was">$445</span>
+                            </p>
 
-                        <span class="badge">
-                            -16%
-                        </span>
-
-                        <img
-                            src="images/c19.jpeg"
-                            alt="Glass Rose"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Glass Rose
-                        </h3>
-
-                        <p class="desc">
-                            Transparent heel,
-                            rose details
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $375
-                            </span>
-
-                            <span class="was">
-                                $445
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c19.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 10 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Spikes Heels"
+                        data-price="290"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-30%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/c120.jpeg"
+                                alt="Spikes Heels"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Spikes Heels"
-                    data-price="290"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Spikes Heels</h3>
+                            <p class="desc card-text">
+                                Edgy studded platform
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$290</span>
+                                <span class="was">$415</span>
+                            </p>
 
-                        <span class="badge">
-                            -30%
-                        </span>
-
-                        <img
-                            src="images/c120.jpeg"
-                            alt="Spikes Heels"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Spikes Heels
-                        </h3>
-
-                        <p class="desc">
-                            Edgy studded platform
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $290
-                            </span>
-
-                            <span class="was">
-                                $415
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=c120.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 11 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Batbite Marys"
+                        data-price="270"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-19%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/121.jpeg"
+                                alt="Batbite Marys"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Batbite Marys"
-                    data-price="270"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Batbite Marys</h3>
+                            <p class="desc card-text">
+                                Mary Jane with chain detail
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$270</span>
+                                <span class="was">$335</span>
+                            </p>
 
-                        <span class="badge">
-                            -19%
-                        </span>
-
-                        <img
-                            src="images/121.jpeg"
-                            alt="Batbite Marys"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Batbite Marys
-                        </h3>
-
-                        <p class="desc">
-                            Mary Jane with chain detail
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $270
-                            </span>
-
-                            <span class="was">
-                                $335
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                            <a
+                                href="design.html?product=121.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
                 <!-- PRODUCT 12 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article
+                        class="product-card card h-100 rounded-0"
+                        data-name="Crimson Rose"
+                        data-price="305"
+                    >
+                        <div class="product-image">
+                            <span class="badge">-21%</span>
+                            <img
+                                class="card-img-top rounded-0"
+                                src="images/122.jpeg"
+                                alt="Crimson Rose"
+                                loading="lazy"
+                            >
+                        </div>
 
-                <article
-                    class="product-card"
-                    data-name="Crimson Rose"
-                    data-price="305"
-                >
+                        <div class="product-info card-body">
+                            <p class="brand">SOLEA</p>
+                            <h3 class="card-title">Crimson Rose</h3>
+                            <p class="desc card-text">
+                                Patent leather with crystal
+                            </p>
 
-                    <div class="product-image">
+                            <p class="price">
+                                <span class="now">$305</span>
+                                <span class="was">$385</span>
+                            </p>
 
-                        <span class="badge">
-                            -21%
-                        </span>
-
-                        <img
-                            src="images/122.jpeg"
-                            alt="Crimson Rose"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <p class="brand">
-                            SOLEA
-                        </p>
-
-                        <h3>
-                            Crimson Rose
-                        </h3>
-
-                        <p class="desc">
-                            Patent leather with crystal
-                        </p>
-
-                        <p class="price">
-
-                            <span class="now">
-                                $305
-                            </span>
-
-                            <span class="was">
-                                $385
-                            </span>
-
-                        </p>
-
-                        <a
-                            href="design.html"
-                            class="btn-outline"
-                        >
-                            Customize
-                        </a>
-
-                    </div>
-
-                </article>
-
+                            <a
+                                href="design.html?product=122.jpeg"
+                                class="btn-outline btn btn-outline-dark rounded-0"
+                            >
+                                Customize
+                            </a>
+                        </div>
+                    </article>
+                </div>
 
             </div>
-
         </section>
 
-
-
-        <!-- =========================
-             CTA
-             ========================= -->
-
+        <!-- CTA -->
         <section class="shop-cta">
-
-            <h2>
-                Find Your Perfect Pair
-            </h2>
-
+            <h2>Find Your Perfect Pair</h2>
             <p>
                 Choose your color, size and
                 design preferences.
             </p>
 
             <a
-                class="button"
+                class="button btn btn-dark rounded-0 px-4 py-3"
                 href="design.html"
             >
                 Create Now
             </a>
-
         </section>
-
 
     </main>
 
-
-
-    <!-- =========================
-         FOOTER
-         ========================= -->
-
+    <!-- FOOTER -->
     <footer>
+        <h2>SOLEA</h2>
 
-
-        <h2>
-            SOLEA
-        </h2>
-
+        <p>Luxury heels created for your story.</p>
 
         <p>
-            Luxury heels created for your story.
-        </p>
-
-
-        <p>
-
             Team members:
-
             Aruzhan Bolatova,
-
             Ardak Korabay,
-
             Aiym Rakhat
-
         </p>
 
-
-        <p>
-            © 2026 SOLEA
-        </p>
-
-
+        <p>© 2026 SOLEA</p>
     </footer>
-
 
 </div>
 
-
-
-<!-- =========================
-     SORTING JAVASCRIPT
-     ========================= -->
-
-<script>
-
-
-const grid =
-    document.getElementById(
-        'product-grid'
-    );
-
-
-const select =
-    document.getElementById(
-        'sort-select'
-    );
-
-
-const countEl =
-    document.getElementById(
-        'product-count'
-    );
-
-
-
-function sortProducts(type) {
-
-
-    const cards =
-        Array.from(
-            grid.querySelectorAll(
-                '.product-card'
-            )
-        );
-
-
-    cards.sort((a, b) => {
-
-
-        const nameA =
-            a.dataset.name.toLowerCase();
-
-
-        const nameB =
-            b.dataset.name.toLowerCase();
-
-
-        const priceA =
-            Number(a.dataset.price);
-
-
-        const priceB =
-            Number(b.dataset.price);
-
-
-
-        if (
-            type === 'price-asc'
-        ) {
-            return priceA - priceB;
-        }
-
-
-        if (
-            type === 'price-desc'
-        ) {
-            return priceB - priceA;
-        }
-
-
-        if (
-            type === 'name-asc'
-        ) {
-            return nameA.localeCompare(
-                nameB
-            );
-        }
-
-
-        if (
-            type === 'name-desc'
-        ) {
-            return nameB.localeCompare(
-                nameA
-            );
-        }
-
-
-        return 0;
-
-    });
-
-
-
-    grid.innerHTML = '';
-
-
-    cards.forEach(card => {
-
-        grid.appendChild(card);
-
-    });
-
-}
-
-
-
-select.addEventListener(
-    'change',
-    () => sortProducts(
-        select.value
-    )
-);
-
-
-
-countEl.textContent =
-    grid.querySelectorAll(
-        '.product-card'
-    ).length + ' products';
-
-
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="java.js"></script>
 
 </body>
-
 </html>

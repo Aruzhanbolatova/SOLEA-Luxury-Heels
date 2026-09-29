@@ -40,3 +40,65 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+// Shop: sort Bootstrap columns without breaking the card layout.
+document.addEventListener("DOMContentLoaded", function () {
+    const grid = document.getElementById("product-grid");
+    const select = document.getElementById("sort-select");
+    const count = document.getElementById("product-count");
+
+    // The same file is also loaded on Home.
+    if (!grid || !select) return;
+
+    const originalColumns = Array.from(grid.children);
+    const buttons = document.querySelectorAll("[data-shop-sort]");
+
+    function sortProducts(type) {
+        const columns = [...originalColumns];
+
+        columns.sort(function (columnA, columnB) {
+            const a = columnA.querySelector(".product-card");
+            const b = columnB.querySelector(".product-card");
+
+            if (type === "price-asc") {
+                return Number(a.dataset.price) - Number(b.dataset.price);
+            }
+
+            if (type === "price-desc") {
+                return Number(b.dataset.price) - Number(a.dataset.price);
+            }
+
+            if (type === "name-asc") {
+                return a.dataset.name.localeCompare(b.dataset.name);
+            }
+
+            if (type === "name-desc") {
+                return b.dataset.name.localeCompare(a.dataset.name);
+            }
+
+            return 0;
+        });
+
+        grid.replaceChildren(...columns);
+        select.value = type;
+
+        buttons.forEach(function (button) {
+            const active = button.dataset.shopSort === type;
+            button.classList.toggle("active", active);
+            button.setAttribute("aria-pressed", String(active));
+        });
+    }
+
+    select.addEventListener("change", function () {
+        sortProducts(select.value);
+    });
+
+    buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            sortProducts(button.dataset.shopSort);
+        });
+    });
+
+    if (count) {
+        count.textContent = originalColumns.length + " products";
+    }
+});

@@ -548,3 +548,39 @@ min-width: 0;
         padding: 50px 24px;
     }
 }
+/* Bootstrap navigation on Home */
+.home-page #main-header .navbar {
+    padding: 0;
+    gap: 0;
+}
+
+.home-page #main-header .navbar > .container-fluid {
+    justify-content: space-between;
+}
+
+.home-page #main-header .navbar-nav {
+    gap: 8px;
+    padding-top: 16px;
+}
+
+@media (min-width: 992px) {
+    .home-page #main-header .navbar-nav {
+        padding-top: 0;
+    }
+}
+
+/* Bootstrap carousel */
+.home-page #homeCarousel {
+    background: #eeeae4;
+}
+
+.home-page #homeCarousel .carousel-item img {
+    height: clamp(300px, 55vw, 560px);
+    object-fit: contain;
+    padding: 24px 45px 55px;
+}
+
+/* Bootstrap row now controls the two banner columns */
+.home-page .split-banner {
+    display: block;
+}
