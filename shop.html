@@ -11,6 +11,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     >
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home-shop.css">
 
     <style>
         /* Только Shop: совместимость старых стилей с Bootstrap. */
@@ -131,10 +132,24 @@
     <main class="shop-main">
 
         <!-- SHOP HERO -->
-        <section class="shop-hero">
-            <h1>High Heels Collection</h1>
-            <p>12 products</p>
-        </section>
+       <section class="shop-hero">
+    <h1>High Heels Collection</h1>
+    <p>12 products</p>
+
+    <div class="shop-extras">
+        <div>
+            <span>Your local date and time:</span>
+            <br>
+            <time id="shop-clock"></time>
+        </div>
+
+        <button type="button" id="change-background" class="club-button">
+            Change background
+        </button>
+
+        <span id="background-status" role="status">Palette: Ivory</span>
+    </div>
+</section>
 
         <!-- EXISTING CATEGORIES -->
         <section class="shop-categories">
@@ -759,6 +774,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="java.js"></script>
+<script src="home-shop.js"></script>
 
 </body>
 </html>
