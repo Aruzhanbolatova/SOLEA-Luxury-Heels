@@ -313,7 +313,7 @@
     color: #dddddd !important;
 }
 
-     
+
 
 
 
@@ -1309,6 +1309,7 @@
 
     </style>
 
+<link rel="stylesheet" href="css/ardak-interactions.css">
 </head>
 
 
@@ -1528,7 +1529,7 @@
             </div>
 
 
-        
+
 
 
         </div>
@@ -2049,6 +2050,47 @@
 </section>
 
 
+
+<section class="solea-interactive solea-invitation" aria-labelledby="circle-title">
+  <span class="solea-eyebrow">STAY INSPIRED</span>
+  <h2 id="circle-title">THE SOLEA CIRCLE</h2>
+  <p>A space for those who appreciate thoughtful design and beautiful shoes.</p>
+  <button type="button" class="solea-button" data-open-circle>JOIN THE CIRCLE</button>
+</section>
+<dialog class="solea-dialog" aria-labelledby="circle-dialog-title">
+  <div class="solea-dialog-content">
+    <button type="button" class="solea-close" aria-label="Close subscription form">×</button>
+    <span class="solea-eyebrow">YOU ARE INVITED</span>
+    <h2 id="circle-dialog-title">Join the SOLEA Circle</h2>
+    <p>Create your demo membership. All fields are required.</p>
+    <form data-solea-form novalidate>
+      <label for="circleName">Your name</label>
+      <input id="circleName" name="name" autocomplete="name" required maxlength="80" data-rule="name" aria-describedby="circleName-error">
+      <p class="solea-error" id="circleName-error"></p>
+      <label for="circleEmail">Email</label>
+      <input id="circleEmail" name="email" type="email" autocomplete="email" required data-rule="email" aria-describedby="circleEmail-error">
+      <p class="solea-error" id="circleEmail-error"></p>
+      <label for="circlePassword">Password</label>
+      <input id="circlePassword" name="password" type="password" autocomplete="new-password" required minlength="8" data-rule="password" aria-describedby="password-hint circlePassword-error">
+      <small id="password-hint">Use at least 8 characters. Please use a sample password for this demo.</small>
+      <p class="solea-error" id="circlePassword-error"></p>
+      <label for="circleConfirm">Confirm password</label>
+      <input id="circleConfirm" name="confirmPassword" type="password" autocomplete="new-password" required data-rule="confirm" aria-describedby="circleConfirm-error">
+      <p class="solea-error" id="circleConfirm-error"></p>
+      <button type="submit" class="solea-button">VALIDATE MEMBERSHIP</button>
+      <p class="solea-form-status" role="status"></p>
+      <small>Student project demo. No account is created and no data is sent or saved.</small>
+    </form>
+  </div>
+</dialog>
+
+<section class="solea-interactive solea-tools" aria-label="Page preferences">
+  <div><span class="solea-eyebrow">MAKE YOURSELF AT HOME</span>
+  <p>Choose the shade of your SOLEA experience.</p></div>
+  <button type="button" class="solea-button" data-change-background>CHANGE BACKGROUND · IVORY</button>
+  <p class="solea-clock">Your local time<br><time data-live-clock></time></p>
+</section>
+
 </main>
 
 
@@ -2094,6 +2136,7 @@
 ></script>
 
 
+<script src="ardak-interactions.js" defer></script>
 </body>
 
 </html>
