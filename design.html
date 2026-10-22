@@ -68,11 +68,15 @@
     </nav>
 </header>
 
-<main id="main-content">
+ <main id="main-content">
+    
   <section class="container px-3 px-sm-4 pt-5 pb-3 text-center">
     <p class="eyebrow mb-3">
         SOLEA / YOUR PERSONAL EDIT
     </p>
+    <button type="button" id="openContact" class="btn btn-dark">
+  Contact a stylist
+</button>
 
     <h1 class="page-title studio-title mb-3">
         Find the pair that feels like you.
@@ -854,6 +858,51 @@
         selectionSection.classList.add('pt-3', 'pb-5');
     }
 </script>
+
+<dialog id="contactDialog" aria-labelledby="contactTitle">
+  <button type="button" id="closeContact" aria-label="Close">
+    &times;
+  </button>
+
+  <h2 id="contactTitle">Contact a stylist</h2>
+
+  <form id="stylistForm">
+    <label for="stylistName">Your name</label>
+    <input
+      id="stylistName"
+      name="name"
+      type="text"
+      class="form-control mb-3"
+      required
+    >
+
+    <label for="stylistEmail">Email</label>
+    <input
+      id="stylistEmail"
+      name="email"
+      type="email"
+      class="form-control mb-3"
+      required
+    >
+
+    <label for="stylistMessage">Message</label>
+    <textarea
+      id="stylistMessage"
+      name="message"
+      class="form-control mb-3"
+      rows="3"
+      required
+    ></textarea>
+
+    <button type="submit" class="btn btn-dark">
+      Preview request
+    </button>
+
+    <p id="contactStatus" role="status"></p>
+  </form>
+</dialog>
+
+<script src="design-popup.js"></script>
 </body>
 </html>
 
