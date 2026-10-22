@@ -1,0 +1,34 @@
+/* Ardak Korabay — Assignment 4. Shared by About Us and Size Guide. */
+body { transition: background-color .4s ease; }
+.solea-interactive { color: #171717; background: var(--solea-surface, #f8f6f1); padding: 64px max(6vw, 20px); transition: background-color .4s ease; }
+.solea-interactive h2 { font-size: clamp(26px, 4vw, 40px); letter-spacing: .04em; margin: 14px 0 20px; }
+.solea-eyebrow { font: 12px/1.5 Arial, sans-serif; letter-spacing: .2em; color: #6a5843; }
+.solea-button { display: inline-block; background: #161616; border: 1px solid #161616; color: white; padding: 14px 22px; font: 12px/1.5 Arial, sans-serif; letter-spacing: .09em; cursor: pointer; }
+.solea-button:hover { background: #3c3328; color: white; }
+.solea-button:focus-visible, .solea-faq-toggle:focus-visible, .solea-close:focus-visible { outline: 3px solid #98744d; outline-offset: 4px; }
+.solea-tools { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #d6cfc3; padding-top: 28px; padding-bottom: 28px; }
+.solea-tools p { margin: 6px 0 0; }
+.solea-clock { font: 13px/1.8 Arial, sans-serif; }
+.solea-faq-item { border-bottom: 1px solid #cfc8be; max-width: 1000px; margin: auto; }
+.solea-faq h3 { margin: 0; }
+.solea-faq-toggle { width: 100%; padding: 23px 0; background: transparent; border: 0; text-align: left; color: #171717; display: flex; justify-content: space-between; align-items: center; gap: 20px; font: 18px/1.5 Arial, sans-serif; }
+.solea-faq-toggle span { font-size: 25px; }
+.solea-faq-answer { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .3s ease, visibility .3s; }
+.solea-faq-answer > div { overflow: hidden; min-height: 0; }
+.solea-faq-answer p { margin: 0; padding-bottom: 24px; max-width: 760px; line-height: 1.8; }
+.solea-faq-answer.is-open { grid-template-rows: 1fr; visibility: visible; }
+.solea-invitation { text-align: center; }
+.solea-dialog { border: 1px solid #b6a58d; padding: 0; width: min(520px, calc(100% - 32px)); max-height: 90dvh; color: #171717; background: #faf8f4; }
+.solea-dialog::backdrop { background: rgb(0 0 0 / 65%); }
+.solea-dialog-content { padding: 38px; position: relative; }
+.solea-dialog h2 { font-size: 30px; margin: 16px 0; }
+.solea-close { position: absolute; top: 8px; right: 14px; background: none; border: 0; font-size: 30px; cursor: pointer; }
+.solea-dialog label { display: block; margin-top: 12px; font-size: 14px; }
+.solea-dialog input { width: 100%; padding: 11px; border: 1px solid #a69e92; background: white; border-radius: 0; }
+.solea-dialog small { display: block; font-size: 12px; line-height: 1.6; margin: 8px 0; }
+.solea-error { color: #a11c29; font: 13px/1.5 Arial, sans-serif; margin: 5px 0 10px; }
+.solea-error:empty { display: none; }
+[data-solea-form] [aria-invalid="true"] { border: 2px solid #a11c29; }
+.solea-form-status { font-size: 14px; line-height: 1.6; margin-top: 18px; }
+@media (max-width: 700px) { .solea-tools { flex-direction: column; align-items: flex-start; } .solea-dialog-content { padding: 30px 22px; } }
+@media (prefers-reduced-motion: reduce) { body, .solea-interactive, .solea-faq-answer { transition: none; } }

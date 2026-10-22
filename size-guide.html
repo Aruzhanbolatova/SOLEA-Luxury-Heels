@@ -312,9 +312,6 @@
         ===================================================== */
 
         @media (max-width: 576px) {
-            .assignment3 {
-                color:red;
-            }
 
             .assignment3 h1 {
                 font-size: 30px;
@@ -385,6 +382,7 @@
 
     </style>
 
+<link rel="stylesheet" href="css/about-sizeguide.css">
 </head>
 
 
@@ -913,7 +911,7 @@
 
 
 
-                    <form class="size-form">
+                    <form class="size-form" data-solea-form novalidate>
 
 
                         <!-- NAME -->
@@ -931,10 +929,10 @@
                             <input
                                 type="text"
                                 class="form-control"
-                                id="customerName"
+                                id="customerName" required data-rule="name" aria-describedby="customerName-error"
                                 name="customerName"
                                 placeholder="Enter your name"
-                            >
+                            ><p class="solea-error" id="customerName-error"></p>
 
                         </div>
 
@@ -955,10 +953,10 @@
                             <input
                                 type="email"
                                 class="form-control"
-                                id="customerEmail"
+                                id="customerEmail" required data-rule="email" aria-describedby="customerEmail-error"
                                 name="customerEmail"
                                 placeholder="Enter your email"
-                            >
+                            ><p class="solea-error" id="customerEmail-error"></p>
 
                         </div>
 
@@ -978,11 +976,11 @@
 
                             <select
                                 class="form-select"
-                                id="shoeSize"
+                                id="shoeSize" required data-rule="size" aria-describedby="shoeSize-error"
                                 name="shoeSize"
                             >
 
-                                <option selected>
+                                <option value="" selected>
                                     Choose your size
                                 </option>
 
@@ -1018,7 +1016,7 @@
                                     42
                                 </option>
 
-                            </select>
+                            </select><p class="solea-error" id="shoeSize-error"></p>
 
                         </div>
 
@@ -1037,12 +1035,12 @@
 
 
                             <input
-                                type="text"
+                                type="number" min="15" max="35" step="0.1"
                                 class="form-control"
-                                id="footLength"
+                                id="footLength" required data-rule="length" aria-describedby="footLength-error"
                                 name="footLength"
-                                placeholder="For example: 24.5 cm"
-                            >
+                                placeholder="Foot length in cm, e.g. 24.5"
+                            ><p class="solea-error" id="footLength-error"></p>
 
                         </div>
 
@@ -1062,11 +1060,11 @@
 
                             <textarea
                                 class="form-control"
-                                id="question"
+                                id="question" required data-rule="question" aria-describedby="question-error"
                                 name="question"
                                 rows="4"
                                 placeholder="Tell us how we can help"
-                            ></textarea>
+                            ></textarea><p class="solea-error" id="question-error"></p>
 
                         </div>
 
@@ -1082,7 +1080,7 @@
                         </button>
 
 
-                    </form>
+                    <p class="solea-form-status" role="status"></p><small>Demo only: your request is validated locally and is not sent.</small></form>
 
 
                 </div>
@@ -1124,7 +1122,28 @@
         </section>
 
 
-    </main>
+
+<section class="solea-interactive solea-faq" aria-labelledby="fit-faq-title">
+  <span class="solea-eyebrow">A LITTLE GUIDANCE</span>
+  <h2 id="fit-faq-title">YOUR FIT, EXPLAINED</h2>
+  <p>Small details that make every step feel better.</p>
+<div class="solea-faq-item">
+    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-0" id="fit-question-0">How do I measure my feet?<span aria-hidden="true">+</span></button></h3>
+    <div class="solea-faq-answer" id="fit-answer-0" role="region" aria-labelledby="fit-question-0" inert><div><p>Stand on a sheet of paper and mark your heel and longest toe. Measure the distance in centimetres. Measure both feet and use the larger measurement with the size chart above.</p></div></div></div><div class="solea-faq-item">
+    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-1" id="fit-question-1">What if I am between two sizes?<span aria-hidden="true">+</span></button></h3>
+    <div class="solea-faq-answer" id="fit-answer-1" role="region" aria-labelledby="fit-question-1" inert><div><p>Compare your measurements with the chart and consider the shape of the shoe. If you are between sizes, ask for individual fit advice before choosing your pair.</p></div></div></div><div class="solea-faq-item">
+    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-2" id="fit-question-2">Does every designer use the same sizing?<span aria-hidden="true">+</span></button></h3>
+    <div class="solea-faq-answer" id="fit-answer-2" role="region" aria-labelledby="fit-question-2" inert><div><p>No. The conversion chart is a general guide. The fit can vary by designer, toe shape and material, so check the product details before ordering.</p></div></div></div><div class="solea-faq-item">
+    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-3" id="fit-question-3">How should heels feel when I try them on?<span aria-hidden="true">+</span></button></h3>
+    <div class="solea-faq-answer" id="fit-answer-3" role="region" aria-labelledby="fit-question-3" inert><div><p>Your heel should stay secure and your toes should have room without being squeezed. Try both shoes on a clean surface and walk a few steps to check the fit.</p></div></div></div></section>
+<section class="solea-interactive solea-tools" aria-label="Page preferences">
+  <div><span class="solea-eyebrow">MAKE YOURSELF AT HOME</span>
+  <p>Choose the shade of your SOLEA experience.</p></div>
+  <button type="button" class="solea-button" data-change-background>CHANGE BACKGROUND · IVORY</button>
+  <p class="solea-clock">Your local time<br><time data-live-clock></time></p>
+</section>
+
+</main>
 
 
 
@@ -1171,6 +1190,7 @@
 ></script>
 
 
+<script src="about-sizeguide.js" defer></script>
 </body>
 
 </html>
