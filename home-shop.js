@@ -88,7 +88,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let submitted = false;
 
         function validateForm() {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailPattern =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
 
             const errors = {
                 name: "",
@@ -101,11 +102,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 errors.name = "Please enter your full name.";
             }
 
-            if (fields.email.value.trim() === "") {
-                errors.email = "Please enter your email.";
-            } else if (!emailPattern.test(fields.email.value.trim())) {
-                errors.email = "Enter a valid email, for example name@example.com.";
-            }
+           const email = fields.email.value.trim();
+const localPart = email.split("@")[0];
+
+if (email === "") {
+    errors.email = "Please enter your email.";
+} else if (
+    !emailPattern.test(email) ||
+    email.length > 254 ||
+    localPart.length > 64 ||
+    localPart.startsWith(".") ||
+    localPart.endsWith(".") ||
+    localPart.includes("..")
+) {
+    errors.email = "Enter a valid email, for example name@gmail.com.";
+}
 
             if (fields.password.value.length < 8) {
                 errors.password = "Password must contain at least 8 characters.";
