@@ -18,371 +18,10 @@
     >
 
 
-    <style>
-
-        /* =====================================================
-           ASSIGNMENT 3 — RESPONSIVE TYPOGRAPHY
-        ===================================================== */
-
-        /* DESKTOP */
-
-        .assignment3 h1 {
-            font-size: 48px;
-            line-height: 1.1;
-        }
-
-        .assignment3 h2 {
-            font-size: 34px;
-            line-height: 1.2;
-        }
-
-        .assignment3 h3 {
-            font-size: 22px;
-            line-height: 1.3;
-        }
-
-        .assignment3 p,
-        .assignment3 label,
-        .assignment3 input,
-        .assignment3 select,
-        .assignment3 textarea,
-        .assignment3 button {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-
-
-        /* =====================================================
-           ASSIGNMENT 3 — SIZE CONTENT
-        ===================================================== */
-
-        .size-guide-a3 .size-content {
-            display: block;
-            width: 100%;
-        }
-
-
-        .size-guide-a3 .a3-size-container {
-            width: 100%;
-        }
-
-
-        .size-guide-a3 .a3-size-row {
-            width: 100%;
-        }
-
-
-        .size-guide-a3 .measurement-column,
-        .size-guide-a3 .table-column {
-            min-width: 0;
-        }
-
-
-
-        /* =====================================================
-           MEASUREMENT CARD
-        ===================================================== */
-
-        .size-guide-a3 .measurement-card {
-         width: 100%;
-         min-height: 0;
-          height: auto;
-
-         padding: 35px;
-
-         background: #333333;
-         color: #ffffff;
-
-        border: none;
-        }
-
-
-        .size-guide-a3 .measurement-card h3 {
-            margin-bottom: 25px;
-            color: #ffffff;
-        }
-
-
-        .size-guide-a3 .measurement-steps {
-            padding-left: 25px;
-
-            margin-bottom: 0;
-        }
-
-
-        .size-guide-a3 .measurement-steps li {
-            margin-bottom: 18px;
-
-            line-height: 1.7;
-            color: #ffffff;
-        }
-
-
-        .size-guide-a3 .measurement-tip {
-            margin-top: 25px;
-
-            padding: 18px;
-
-            background: #444444;
-            color: #ffffff;
-
-            border-left: 3px solid #ffffff;
-        }
-
-
-
-        /* =====================================================
-           RESPONSIVE TABLE
-        ===================================================== */
-
-        .size-guide-a3 .table-responsive {
-            width: 100%;
-
-            overflow-x: auto;
-        }
-
-
-        .size-guide-a3 .table-responsive table {
-            width: 100%;
-
-            min-width: 500px;
-        }
-
-
-
-        /* =====================================================
-           BOOTSTRAP TABLE
-        ===================================================== */
-
-        .size-guide-a3 .table {
-            margin-bottom: 0;
-
-            background: #ffffff;
-        }
-
-
-        .size-guide-a3 .table th {
-            background: #111111;
-
-            color: #ffffff;
-
-            text-align: center;
-
-            white-space: nowrap;
-        }
-
-
-        .size-guide-a3 .table td {
-            text-align: center;
-
-            vertical-align: middle;
-        }
-
-
-
-        /* =====================================================
-           FORM
-        ===================================================== */
-
-        .size-guide-a3 .size-form-section {
-            margin-top: 60px;
-
-            padding: 0 5%;
-        }
-
-
-        .size-guide-a3 .size-form-container {
-            max-width: 800px;
-
-            margin: 0 auto;
-        }
-
-
-        .size-guide-a3 .size-form {
-            margin-top: 30px;
-        }
-
-
-        .size-guide-a3 .size-form .form-label {
-            font-weight: 600;
-        }
-
-
-        .size-guide-a3 .size-form .form-control,
-        .size-guide-a3 .size-form .form-select {
-            width: 100%;
-
-            box-sizing: border-box;
-        }
-
-
-        .size-guide-a3 .size-form textarea {
-            resize: vertical;
-        }
-
-
-        .size-guide-a3 .size-form .btn {
-            padding: 12px 28px;
-
-            letter-spacing: 1px;
-        }
-
-
-
-        /* =====================================================
-           ACCESSIBILITY
-        ===================================================== */
-
-        .size-guide-a3 input:focus,
-        .size-guide-a3 select:focus,
-        .size-guide-a3 textarea:focus,
-        .size-guide-a3 button:focus {
-            outline: 2px solid #111111;
-
-            outline-offset: 2px;
-        }
-
-
-        .size-guide-a3 img {
-            max-width: 100%;
-
-            height: auto;
-        }
-
-
-        /* Prevent overflow */
-
-        .size-guide-a3 {
-            overflow-x: hidden;
-        }
-
-
-        .size-guide-a3 .container,
-        .size-guide-a3 .container-fluid,
-        .size-guide-a3 .row,
-        .size-guide-a3 .col,
-        .size-guide-a3 [class*="col-"] {
-            min-width: 0;
-        }
-
-
-
-        /* =====================================================
-           TABLET
-        ===================================================== */
-
-        @media (max-width: 991px) {
-
-            .assignment3 h1 {
-                font-size: 40px;
-            }
-
-
-            .assignment3 h2 {
-                font-size: 30px;
-            }
-
-
-            .assignment3 h3 {
-                font-size: 20px;
-            }
-
-
-            .assignment3 p,
-            .assignment3 label,
-            .assignment3 input,
-            .assignment3 select,
-            .assignment3 textarea,
-            .assignment3 button {
-                font-size: 15px;
-            }
-
-
-            .size-guide-a3 .measurement-card {
-                padding: 25px;
-            }
-
-        }
-
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media (max-width: 576px) {
-
-            .assignment3 h1 {
-                font-size: 30px;
-            }
-
-
-            .assignment3 h2 {
-                font-size: 25px;
-            }
-
-
-            .assignment3 h3 {
-                font-size: 18px;
-            }
-
-
-            .assignment3 p,
-            .assignment3 label,
-            .assignment3 input,
-            .assignment3 select,
-            .assignment3 textarea,
-            .assignment3 button {
-                font-size: 14px;
-            }
-
-
-            .size-guide-a3 .measurement-card {
-                padding: 20px;
-            }
-
-
-            .size-guide-a3 .size-form-section {
-                margin-top: 40px;
-
-                padding: 0 20px;
-            }
-
-
-            .size-guide-a3 .table-responsive table {
-                min-width: 450px;
-            }
-
-        }
-
-
-
-        /* =====================================================
-           VERY SMALL SCREEN
-        ===================================================== */
-
-        @media (max-width: 400px) {
-
-            .assignment3 h1 {
-                font-size: 27px;
-            }
-
-
-            .assignment3 h2 {
-                font-size: 22px;
-            }
-
-
-            .assignment3 h3 {
-                font-size: 17px;
-            }
-
-        }
-
-    </style>
+    
 
 <link rel="stylesheet" href="css/about-sizeguide.css">
+
 </head>
 
 
@@ -889,7 +528,44 @@
              BOOTSTRAP FORM
         ================================================= -->
 
-        <section class="size-form-section">
+        
+<section class="a5-section" aria-labelledby="finder-title">
+ <div class="a5-inner">
+  <span class="a5-eyebrow">THREE SMALL STEPS</span>
+  <h2 id="finder-title">FIND YOUR SOLEA FIT</h2>
+  <p>A quick starting point based on our size chart. Designer sizing may vary; check the specific style before ordering.</p>
+  <form id="solea-fit-finder" class="a5-form" novalidate>
+   <p id="finder-progress" class="a5-eyebrow" role="status">STEP 1 OF 3</p>
+   <section data-fit-step>
+    <h3 tabindex="-1">Measure your foot</h3>
+    <label for="finder-length">Foot length in centimetres</label>
+    <input id="finder-length" name="length" type="number" min="22.5" max="26.5" step="0.1" required placeholder="For example, 24.5" aria-describedby="finder-length-hint finder-error">
+    <p id="finder-length-hint">Measure both feet and use the larger value. This chart covers 22.5–26.5 cm.</p>
+    <p id="finder-error" class="a5-error" role="alert"></p>
+   </section>
+   <section data-fit-step hidden>
+    <h3 tabindex="-1">Make it personal</h3>
+    <label for="finder-width">Foot width</label>
+    <select id="finder-width" name="width"><option value="standard">Standard</option><option value="wide">Wide</option></select>
+    <label for="finder-occasion">Where will you wear your heels?</label>
+    <select id="finder-occasion" name="occasion"><option value="everyday">Everyday</option><option value="office">Office</option><option value="evening">Evening</option></select>
+   </section>
+   <section data-fit-step hidden>
+    <h3 tabindex="-1">Your starting point</h3>
+    <p id="finder-result" class="a5-result"></p>
+    <p>This is general guidance, not a guaranteed fit. Contact the team if you are unsure.</p>
+   </section>
+   <div class="a5-actions">
+    <button class="a5-button a5-button-secondary" type="button" data-fit-back hidden>BACK</button>
+    <button class="a5-button" type="button" data-fit-next>NEXT</button>
+    <button class="a5-button" type="button" data-fit-reset hidden>START AGAIN</button>
+   </div>
+  </form>
+  <div class="a5-sound"><button class="a5-button a5-button-secondary" type="button" data-play-chime>PLAY SOLEA CHIME</button><p class="a5-sound-status" data-sound-status role="status"></p></div>
+ </div>
+</section>
+
+<section class="size-form-section">
 
 
             <div class="container-fluid">
@@ -1191,6 +867,7 @@
 
 
 <script src="about-sizeguide.js" defer></script>
+
 </body>
 
 </html>

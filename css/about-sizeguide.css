@@ -1,3 +1,1148 @@
+/* Page styles scoped to prevent About Us and Size Guide from affecting each other. */
+
+body.about-page {
+            margin: 0;
+
+            overflow-x: hidden;
+
+            background: #050505;
+
+            color: #111111;
+        }
+body.about-page img {
+            max-width: 100%;
+        }
+body.about-page #main-header {
+            background: #050505;
+
+            border-bottom: 1px solid #222;
+        }
+body.about-page #main-header a {
+            color: #ffffff;
+        }
+body.about-page .about-hero-new {
+            position: relative;
+
+            min-height: 700px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 80px 8%;
+
+            overflow: hidden;
+
+            background: #050505;
+
+            color: #ffffff;
+        }
+body.about-page .about-hero-new > img {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: 0.4;
+
+            z-index: 0;
+        }
+body.about-page .about-hero-new::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.55);
+
+            z-index: 1;
+        }
+body.about-page .about-hero-new > *:not(img) {
+            position: relative;
+
+            z-index: 2;
+        }
+body.about-page .hero-small-text {
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #d0d0d0;
+
+            margin-bottom: 30px;
+        }
+body.about-page .about-hero-new h1 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(55px, 9vw, 130px);
+
+            font-weight: 400;
+
+            line-height: 0.9;
+
+            letter-spacing: -5px;
+
+            margin: 0;
+
+            text-transform: uppercase;
+        }
+body.about-page .hero-description {
+            max-width: 450px;
+
+            margin-top: 40px;
+
+            color: #cccccc;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+body.about-page .hero-button {
+            margin-top: 30px;
+
+            display: inline-block;
+
+            padding: 13px 30px;
+
+            border: 1px solid #ffffff;
+
+            border-radius: 30px;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+body.about-page .hero-button:hover {
+            background: #ffffff;
+
+            color: #000000;
+        }
+body.about-page .about-intro {
+    width: 100%;
+
+    padding: 120px 8%;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("images/фонabout.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+        }
+body.about-page .about-intro-a3 {
+            max-width: 1400px;
+
+            margin: 0 auto;
+        }
+body.about-page .about-history-text {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+body.about-page .about-label {
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: #777777;
+
+            margin-bottom: 30px;
+        }
+body.about-page .about-intro h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(55px, 7vw, 100px);
+
+            font-weight: 300;
+
+            line-height: 0.88;
+
+            letter-spacing: -5px;
+
+            margin: 0 0 35px;
+
+            text-transform: uppercase;
+            color: #ffffff !important;
+        }
+body.about-page .about-text p {
+            max-width: 500px;
+
+            color: #555555;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+
+            color: #eeeeee !important;
+        }
+body.about-page .about-history-background {
+            min-height: 500px;
+            background-image: url("images/фонabout.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+body.about-page .about-intro .stat {
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+body.about-page .about-intro .stat-number {
+    color: #ffffff !important;
+}
+body.about-page .about-intro .stat-title {
+    color: #dddddd !important;
+}
+body.about-page .statistics {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 30px;
+
+            margin-top: 40px;
+        }
+body.about-page .stat {
+            border-top: 1px solid #cccccc;
+
+            padding-top: 18px;
+        }
+body.about-page .stat-number {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 45px;
+
+            color: #111111;
+
+            margin-bottom: 8px;
+        }
+body.about-page .stat-title {
+            font-size: 10px;
+
+            color: #777777;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+body.about-page .team-new {
+            background: #f8f6f1;
+
+            color: #111111;
+
+            padding: 100px 5% 120px;
+
+            overflow: hidden;
+        }
+body.about-page .team-title {
+            max-width: 1500px;
+
+            margin: 0 auto 50px;
+        }
+body.about-page .team-title .about-label {
+            margin-bottom: 25px;
+
+            color: #8c8174;
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+        }
+body.about-page .team-title h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(65px, 7vw, 110px);
+
+            font-weight: 400;
+
+            line-height: 0.9;
+
+            letter-spacing: -5px;
+
+            color: #111111;
+
+            margin: 0 0 20px;
+
+            text-transform: uppercase;
+        }
+body.about-page .team-title > p:last-child {
+            max-width: 850px;
+
+            color: #77716a;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 18px;
+
+            line-height: 1.5;
+
+            margin: 0;
+        }
+body.about-page .team-new .container-fluid {
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            padding: 0;
+        }
+body.about-page .team-new .row {
+            --bs-gutter-x: 14px;
+
+            --bs-gutter-y: 20px;
+        }
+body.about-page .team-card {
+            position: relative;
+
+            width: 100%;
+
+            height: 525px;
+
+            display: grid !important;
+
+            grid-template-columns: 52% 48%;
+
+            overflow: hidden;
+
+            padding: 0 !important;
+
+            border: 1px solid #cfc9c0 !important;
+
+            border-radius: 0 !important;
+
+            background: #faf9f6 !important;
+
+            box-shadow: none !important;
+
+            color: #111111;
+
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
+        }
+body.about-page .team-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #8d8275 !important;
+        }
+body.about-page .team-card .card-img-top {
+            display: block;
+
+            width: 100% !important;
+
+            height: 100% !important;
+
+            min-width: 0;
+
+            object-fit: cover !important;
+
+            object-position: center;
+
+            border: none !important;
+
+            border-radius: 0 !important;
+
+            background: #e8e3da;
+
+            padding: 28px 18px !important;
+
+            box-sizing: border-box;
+
+            clip-path: ellipse(
+                43% 43% at 50% 50%
+            );
+        }
+body.about-page .team-card .card-body {
+            position: relative;
+
+            min-width: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex !important;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            padding: 65px 30px 30px 5px !important;
+
+            box-sizing: border-box;
+
+            overflow: hidden;
+
+            background: transparent !important;
+        }
+body.about-page .team-star {
+            position: absolute;
+
+            top: 23px;
+
+            right: 24px;
+
+            font-size: 23px;
+
+            line-height: 1;
+
+            color: #8e8275;
+        }
+body.about-page .team-number {
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+            margin-bottom: 22px;
+        }
+body.about-page .team-number span {
+            flex-shrink: 0;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 46px;
+
+            font-style: italic;
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            color: #b5a288;
+        }
+body.about-page .team-number::after {
+            content: "";
+
+            width: 70px;
+
+            height: 1px;
+
+            background: #b5a288;
+
+            display: block;
+        }
+body.about-page .team-card .card-title {
+            width: 100% !important;
+
+            max-width: 100% !important;
+
+            font-family: Georgia, "Times New Roman", serif !important;
+
+            font-size: 30px !important;
+
+            font-weight: 400 !important;
+
+            line-height: 1.05 !important;
+
+            letter-spacing: normal !important;
+
+            word-break: normal !important;
+
+            overflow-wrap: normal !important;
+
+            white-space: normal !important;
+
+            color: #111111 !important;
+
+            margin: 0 0 20px !important;
+        }
+body.about-page .team-role {
+            width: 100%;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 10px;
+
+            line-height: 1.4;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #8b8175;
+
+            margin: 0 0 24px;
+
+            word-break: normal;
+
+            overflow-wrap: normal;
+        }
+body.about-page .team-card .card-text {
+            width: 100%;
+
+            max-width: 215px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            color: #6d6862;
+
+            margin: 0;
+
+            word-break: normal;
+
+            overflow-wrap: normal;
+        }
+body.about-page .team-socials {
+            display: flex;
+
+            gap: 11px;
+
+            margin-top: auto;
+
+            padding-top: 20px;
+        }
+body.about-page .team-social {
+            width: 38px;
+
+            height: 38px;
+
+            min-width: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid #aaa49b;
+
+            border-radius: 50%;
+
+            color: #333333;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            line-height: 1;
+
+            box-sizing: border-box;
+
+            transition: 0.25s;
+        }
+body.about-page .team-social:hover {
+            background: #111111;
+
+            color: #ffffff;
+
+            border-color: #111111;
+        }
+body.about-page .values-section {
+            background: #f5f5f5;
+
+            color: #111111;
+
+            padding: 100px 8%;
+        }
+body.about-page .values-title {
+            max-width: 1300px;
+
+            margin: 0 auto 45px;
+        }
+body.about-page .values-title h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 50px;
+
+            font-weight: 400;
+
+            margin: 0;
+
+            text-transform: uppercase;
+        }
+body.about-page .css-values-grid {
+            max-width: 1300px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+body.about-page .css-value-card {
+            min-width: 0;
+
+            min-height: 220px;
+
+            padding: 35px;
+
+            box-sizing: border-box;
+
+            background: #ffffff;
+
+            border: 1px solid #dddddd;
+
+            transition: 0.3s;
+        }
+body.about-page .css-value-card:hover {
+            transform: translateY(-5px);
+
+            border-color: #111111;
+        }
+body.about-page .css-value-number {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 40px;
+
+            margin-bottom: 20px;
+        }
+body.about-page .css-value-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 27px;
+
+            font-weight: 400;
+
+            margin-bottom: 15px;
+        }
+body.about-page .css-value-card p {
+            color: #666666;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            margin: 0;
+        }
+body.about-page .philosophy-new {
+            background: #050505;
+
+            color: #ffffff;
+
+            padding: 150px 8%;
+
+            border-top: 1px solid #222;
+        }
+body.about-page .philosophy-new h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(60px, 9vw, 125px);
+
+            font-weight: 400;
+
+            line-height: 0.85;
+
+            margin: 0 0 80px;
+
+            text-transform: uppercase;
+        }
+body.about-page .philosophy-bottom {
+            max-width: 1300px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 100px;
+
+            align-items: end;
+        }
+body.about-page .philosophy-quote {
+            max-width: 500px;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 24px;
+
+            line-height: 1.5;
+
+            color: #eeeeee;
+        }
+body.about-page .philosophy-description {
+            max-width: 430px;
+
+            color: #888888;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+body.about-page footer {
+            background: #050505;
+
+            color: #ffffff;
+
+            border-top: 1px solid #222;
+
+            text-align: center;
+
+            padding: 80px 20px;
+        }
+body.about-page footer h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 50px;
+
+            font-weight: 400;
+
+            letter-spacing: 8px;
+        }
+body.about-page footer p {
+            color: #777777;
+
+            font-size: 12px;
+
+            margin: 12px;
+        }
+body.about-page .assignment3 h1 {
+            font-size: 48px;
+        }
+body.about-page .assignment3 h2 {
+            font-size: 34px;
+        }
+body.about-page .assignment3 h3 {
+            font-size: 22px;
+        }
+body.about-page .assignment3 p {
+            line-height: 1.7;
+        }
+body.about-page .assignment3 :focus-visible {
+            outline: 2px solid #111111;
+
+            outline-offset: 3px;
+        }
+@media (max-width: 991px) {
+body.about-page .assignment3 h1 {
+                font-size: 40px;
+            }
+body.about-page .assignment3 h2 {
+                font-size: 30px;
+            }
+body.about-page .assignment3 h3 {
+                font-size: 20px;
+            }
+body.about-page .assignment3 p {
+                font-size: 15px;
+            }
+body.about-page .about-intro {
+                padding: 80px 6%;
+            }
+body.about-page .about-history-image {
+                min-height: 400px;
+            }
+body.about-page .team-new {
+                padding: 80px 5% 100px;
+            }
+body.about-page .team-card {
+                height: 500px;
+            }
+body.about-page .team-card .card-body {
+                padding: 55px 22px 25px 5px !important;
+            }
+body.about-page .team-card .card-title {
+                font-size: 26px !important;
+            }
+body.about-page .team-card .card-text {
+                font-size: 12px;
+            }
+body.about-page .css-values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+body.about-page .philosophy-new {
+                padding: 100px 6%;
+            }
+
+        }
+@media (max-width: 767px) {
+body.about-page .assignment3 h1 {
+                font-size: 32px;
+            }
+body.about-page .assignment3 h2 {
+                font-size: 26px;
+            }
+body.about-page .assignment3 h3 {
+                font-size: 18px;
+            }
+body.about-page .assignment3 p {
+                font-size: 14px;
+            }
+body.about-page .about-hero-new {
+                min-height: 560px;
+
+                padding: 70px 6%;
+            }
+body.about-page .about-hero-new h1 {
+                font-size: clamp(42px, 12vw, 70px);
+
+                letter-spacing: -2px;
+            }
+body.about-page .about-intro {
+                padding: 70px 6%;
+            }
+body.about-page .about-intro h2 {
+                font-size: clamp(48px, 14vw, 75px);
+
+                letter-spacing: -3px;
+            }
+body.about-page .about-history-image {
+                min-height: 300px;
+
+                max-height: 400px;
+            }
+body.about-page .statistics {
+                grid-template-columns: 1fr;
+            }
+body.about-page .team-new {
+                padding: 70px 5% 80px;
+            }
+body.about-page .team-title {
+                margin-bottom: 40px;
+            }
+body.about-page .team-title h2 {
+                font-size: 58px;
+
+                letter-spacing: -3px;
+            }
+body.about-page .team-title > p:last-child {
+                font-size: 15px;
+            }
+body.about-page .team-card {
+                height: 430px;
+            }
+body.about-page .team-card .card-img-top {
+                padding: 25px 10px !important;
+            }
+body.about-page .team-card .card-body {
+                padding: 45px 18px 20px 5px !important;
+            }
+body.about-page .team-number span {
+                font-size: 36px;
+            }
+body.about-page .team-number::after {
+                width: 45px;
+            }
+body.about-page .team-card .card-title {
+                font-size: 23px !important;
+            }
+body.about-page .team-role {
+                font-size: 8px;
+            }
+body.about-page .team-card .card-text {
+                font-size: 11px;
+            }
+body.about-page .team-star {
+                top: 18px;
+
+                right: 18px;
+
+                font-size: 19px;
+            }
+body.about-page .css-values-grid {
+                grid-template-columns: 1fr;
+            }
+body.about-page .css-value-card {
+                padding: 25px;
+            }
+body.about-page .philosophy-new {
+                padding: 80px 6%;
+            }
+body.about-page .philosophy-new h2 {
+                font-size: clamp(45px, 12vw, 75px);
+
+                margin-bottom: 50px;
+            }
+body.about-page .philosophy-bottom {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+body.about-page footer {
+                padding: 60px 20px;
+            }
+body.about-page footer h2 {
+                font-size: 40px;
+            }
+
+        }
+@media (max-width: 450px) {
+body.about-page .team-card {
+                height: 400px;
+            }
+body.about-page .team-card .card-title {
+                font-size: 20px !important;
+            }
+body.about-page .team-card .card-text {
+                font-size: 10px;
+            }
+body.about-page .team-number span {
+                font-size: 31px;
+            }
+body.about-page .team-social {
+                width: 31px;
+
+                height: 31px;
+
+                min-width: 31px;
+
+                font-size: 11px;
+            }
+
+        }
+
+
+body.size-guide-a3 .assignment3 h1 {
+            font-size: 48px;
+            line-height: 1.1;
+        }
+body.size-guide-a3 .assignment3 h2 {
+            font-size: 34px;
+            line-height: 1.2;
+        }
+body.size-guide-a3 .assignment3 h3 {
+            font-size: 22px;
+            line-height: 1.3;
+        }
+body.size-guide-a3 .assignment3 p,
+body.size-guide-a3 .assignment3 label,
+body.size-guide-a3 .assignment3 input,
+body.size-guide-a3 .assignment3 select,
+body.size-guide-a3 .assignment3 textarea,
+body.size-guide-a3 .assignment3 button {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+body.size-guide-a3 .size-content {
+            display: block;
+            width: 100%;
+        }
+body.size-guide-a3 .a3-size-container {
+            width: 100%;
+        }
+body.size-guide-a3 .a3-size-row {
+            width: 100%;
+        }
+body.size-guide-a3 .measurement-column,
+body.size-guide-a3 .table-column {
+            min-width: 0;
+        }
+body.size-guide-a3 .measurement-card {
+         width: 100%;
+         min-height: 0;
+          height: auto;
+
+         padding: 35px;
+
+         background: #333333;
+         color: #ffffff;
+
+        border: none;
+        }
+body.size-guide-a3 .measurement-card h3 {
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+body.size-guide-a3 .measurement-steps {
+            padding-left: 25px;
+
+            margin-bottom: 0;
+        }
+body.size-guide-a3 .measurement-steps li {
+            margin-bottom: 18px;
+
+            line-height: 1.7;
+            color: #ffffff;
+        }
+body.size-guide-a3 .measurement-tip {
+            margin-top: 25px;
+
+            padding: 18px;
+
+            background: #444444;
+            color: #ffffff;
+
+            border-left: 3px solid #ffffff;
+        }
+body.size-guide-a3 .table-responsive {
+            width: 100%;
+
+            overflow-x: auto;
+        }
+body.size-guide-a3 .table-responsive table {
+            width: 100%;
+
+            min-width: 500px;
+        }
+body.size-guide-a3 .table {
+            margin-bottom: 0;
+
+            background: #ffffff;
+        }
+body.size-guide-a3 .table th {
+            background: #111111;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            white-space: nowrap;
+        }
+body.size-guide-a3 .table td {
+            text-align: center;
+
+            vertical-align: middle;
+        }
+body.size-guide-a3 .size-form-section {
+            margin-top: 60px;
+
+            padding: 0 5%;
+        }
+body.size-guide-a3 .size-form-container {
+            max-width: 800px;
+
+            margin: 0 auto;
+        }
+body.size-guide-a3 .size-form {
+            margin-top: 30px;
+        }
+body.size-guide-a3 .size-form .form-label {
+            font-weight: 600;
+        }
+body.size-guide-a3 .size-form .form-control,
+body.size-guide-a3 .size-form .form-select {
+            width: 100%;
+
+            box-sizing: border-box;
+        }
+body.size-guide-a3 .size-form textarea {
+            resize: vertical;
+        }
+body.size-guide-a3 .size-form .btn {
+            padding: 12px 28px;
+
+            letter-spacing: 1px;
+        }
+body.size-guide-a3 input:focus,
+body.size-guide-a3 select:focus,
+body.size-guide-a3 textarea:focus,
+body.size-guide-a3 button:focus {
+            outline: 2px solid #111111;
+
+            outline-offset: 2px;
+        }
+body.size-guide-a3 img {
+            max-width: 100%;
+
+            height: auto;
+        }
+body.size-guide-a3 {
+            overflow-x: hidden;
+        }
+body.size-guide-a3 .container,
+body.size-guide-a3 .container-fluid,
+body.size-guide-a3 .row,
+body.size-guide-a3 .col,
+body.size-guide-a3 [class*="col-"] {
+            min-width: 0;
+        }
+@media (max-width: 991px) {
+body.size-guide-a3 .assignment3 h1 {
+                font-size: 40px;
+            }
+body.size-guide-a3 .assignment3 h2 {
+                font-size: 30px;
+            }
+body.size-guide-a3 .assignment3 h3 {
+                font-size: 20px;
+            }
+body.size-guide-a3 .assignment3 p,
+body.size-guide-a3 .assignment3 label,
+body.size-guide-a3 .assignment3 input,
+body.size-guide-a3 .assignment3 select,
+body.size-guide-a3 .assignment3 textarea,
+body.size-guide-a3 .assignment3 button {
+                font-size: 15px;
+            }
+body.size-guide-a3 .measurement-card {
+                padding: 25px;
+            }
+
+        }
+@media (max-width: 576px) {
+body.size-guide-a3 .assignment3 h1 {
+                font-size: 30px;
+            }
+body.size-guide-a3 .assignment3 h2 {
+                font-size: 25px;
+            }
+body.size-guide-a3 .assignment3 h3 {
+                font-size: 18px;
+            }
+body.size-guide-a3 .assignment3 p,
+body.size-guide-a3 .assignment3 label,
+body.size-guide-a3 .assignment3 input,
+body.size-guide-a3 .assignment3 select,
+body.size-guide-a3 .assignment3 textarea,
+body.size-guide-a3 .assignment3 button {
+                font-size: 14px;
+            }
+body.size-guide-a3 .measurement-card {
+                padding: 20px;
+            }
+body.size-guide-a3 .size-form-section {
+                margin-top: 40px;
+
+                padding: 0 20px;
+            }
+body.size-guide-a3 .table-responsive table {
+                min-width: 450px;
+            }
+
+        }
+@media (max-width: 400px) {
+body.size-guide-a3 .assignment3 h1 {
+                font-size: 27px;
+            }
+body.size-guide-a3 .assignment3 h2 {
+                font-size: 22px;
+            }
+body.size-guide-a3 .assignment3 h3 {
+                font-size: 17px;
+            }
+
+        }
+
 /* Ardak Korabay — Assignment 4. Shared by About Us and Size Guide. */
 body { transition: background-color .4s ease; }
 .solea-interactive { color: #171717; background: var(--solea-surface, #f8f6f1); padding: 64px max(6vw, 20px); transition: background-color .4s ease; }
@@ -32,3 +1177,37 @@ body { transition: background-color .4s ease; }
 .solea-form-status { font-size: 14px; line-height: 1.6; margin-top: 18px; }
 @media (max-width: 700px) { .solea-tools { flex-direction: column; align-items: flex-start; } .solea-dialog-content { padding: 30px 22px; } }
 @media (prefers-reduced-motion: reduce) { body, .solea-interactive, .solea-faq-answer { transition: none; } }
+
+/* Assignment 5 — shared additions. Existing SOLEA styling is preserved. */
+.a5-section { background: var(--solea-surface, #f8f6f1); color: #171717; padding: 64px max(6vw, 20px); border-top: 1px solid #d6cfc3; }
+.a5-inner { max-width: 980px; margin: 0 auto; }
+.a5-section h2 { font-size: clamp(27px, 4vw, 40px); margin: 15px 0 20px; letter-spacing: .04em; }
+.a5-section h3 { font-size: clamp(21px, 3vw, 27px); margin: 0 0 20px; }
+.a5-section p { line-height: 1.8; max-width: 760px; }
+.a5-eyebrow { font: 12px/1.6 Arial, sans-serif; letter-spacing: .18em; color: #6a5843; }
+.a5-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.a5-button { background: #171717; color: white; border: 1px solid #171717; padding: 13px 22px; font: 12px/1.5 Arial, sans-serif; letter-spacing: .08em; cursor: pointer; transition: background .2s, transform .2s; }
+.a5-button:hover { background: #4b3c2c; transform: translateY(-2px); }
+.a5-button:disabled { opacity: .6; cursor: wait; }
+.a5-button-secondary { background: transparent; color: #171717; }
+.a5-button-secondary:hover { color: white; }
+.a5-section :focus-visible { outline: 3px solid #926329; outline-offset: 4px; }
+.a5-section h3:focus { outline-offset: 5px; }
+.a5-section [hidden] { display: none !important; }
+.a5-form { max-width: 720px; border: 1px solid #cfc8be; background: rgba(255,255,255,.4); padding: 30px; margin-top: 26px; }
+.a5-form label { display: block; font-weight: 600; margin: 18px 0 8px; }
+.a5-form input, .a5-form select { width: 100%; max-width: 480px; padding: 12px; border: 1px solid #9f9587; background: white; color: #171717; border-radius: 0; }
+.a5-form [aria-invalid="true"] { border: 2px solid #a11c29; }
+.a5-error { color: #a11c29; font-size: 14px; }
+.a5-error:empty { display: none; }
+.a5-result { font-size: 19px; }
+.a5-stars { display: flex; gap: 8px; margin-top: 18px; }
+.a5-star { background: transparent; border: 1px solid #b6ad9f; color: #777; font-size: 32px; line-height: 1; padding: 10px; cursor: pointer; transition: color .2s, transform .2s; }
+.a5-star:hover { transform: scale(1.12); }
+.a5-star[aria-pressed="true"] { outline: 2px solid #926329; outline-offset: 2px; }
+.a5-sound { padding-top: 24px; margin-top: 30px; border-top: 1px solid #cfc8be; }
+.a5-sound-status { min-height: 1.5em; font-size: 13px; }
+.a5-reading { margin-top: 20px; }
+#solea-extra-story { display: none; }
+@media (max-width: 600px) { .a5-form { padding: 22px 18px; } .a5-star { font-size: 28px; padding: 9px; } }
+@media (prefers-reduced-motion: reduce) { .a5-button, .a5-star { transition: none; } .a5-button:hover, .a5-star:hover { transform: none; } }
