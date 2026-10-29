@@ -221,3 +221,349 @@ if (email === "") {
         setInterval(updateClock, 1000);
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Restart the animation when an interaction occurs.
+    function animateElement(element) {
+        element.classList.remove("a5-enter");
+        void element.offsetWidth;
+        element.classList.add("a5-enter");
+    }
+
+    // 1. HOME: READ MORE
+    const readMoreButton = document.querySelector("#read-more-button");
+    const extraStory = document.querySelector("#extra-story");
+
+    if (readMoreButton && extraStory) {
+        readMoreButton.addEventListener("click", function () {
+            const isOpen =
+                readMoreButton.getAttribute("aria-expanded") === "true";
+
+            extraStory.style.display = isOpen ? "none" : "block";
+            readMoreButton.textContent = isOpen ? "Read more" : "Read less";
+            readMoreButton.setAttribute("aria-expanded", String(!isOpen));
+
+            if (!isOpen) {
+                animateElement(extraStory);
+            }
+        });
+    }
+
+    // 2. BOTH PAGES: KEYBOARD NAVIGATION
+    const navigation = document.querySelector("#main-header .navbar");
+
+    if (navigation) {
+        navigation.addEventListener("keydown", function (event) {
+            if (
+                event.key !== "ArrowRight" &&
+                event.key !== "ArrowLeft"
+            ) {
+                return;
+            }
+
+            // Include only links currently visible in the menu.
+            const links = Array.from(
+                navigation.querySelectorAll("a[href]")
+            ).filter(function (link) {
+                return link.getClientRects().length > 0;
+            });
+
+            const currentIndex = links.indexOf(document.activeElement);
+
+            if (currentIndex === -1) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const direction = event.key === "ArrowRight" ? 1 : -1;
+            const nextIndex =
+                (currentIndex + direction + links.length) % links.length;
+
+            links[nextIndex].focus();
+        });
+    }
+
+    // 3. HOME: MULTI-STEP FORM, OBJECTS, ARRAYS AND CALLBACKS
+    const styleForm = document.querySelector("#style-form");
+
+    if (styleForm) {
+        const steps = Array.from(
+            styleForm.querySelectorAll(".a5-step")
+        );
+
+        const occasion = document.querySelector("#style-occasion");
+        const preference = document.querySelector("#style-preference");
+        const nextButton = document.querySelector("#finder-next");
+        const backButton = document.querySelector("#finder-back");
+        const restartButton = document.querySelector("#finder-restart");
+        const progress = document.querySelector("#finder-progress");
+        const error = document.querySelector("#finder-error");
+        const result = document.querySelector("#style-result");
+        const tipsList = document.querySelector("#style-tips");
+
+        let currentStep = 0;
+
+        // Object containing data and a method.
+        const stylist = {
+            occasions: {
+                everyday: "everyday wear",
+                evening: "an evening event",
+                celebration: "a celebration"
+            },
+
+            styles: {
+                classic: {
+                    title: "Classic Elegance",
+                    tips: [
+                        "Explore timeless pumps.",
+                        "Choose neutral shades.",
+                        "Pair with tailored pieces."
+                    ]
+                },
+
+                bold: {
+                    title: "Bold Statement",
+                    tips: [
+                        "Explore statement platforms.",
+                        "Try a rich accent color.",
+                        "Keep accessories simple."
+                    ]
+                },
+
+                romantic: {
+                    title: "Romantic Details",
+                    tips: [
+                        "Explore delicate straps.",
+                        "Try soft blush or pearl tones.",
+                        "Pair with flowing fabrics."
+                    ]
+                }
+            },
+
+            getRecommendation: function (occasionKey, styleKey) {
+                const selectedStyle = this.styles[styleKey];
+
+                return {
+                    message:
+                        selectedStyle.title + " for " +
+                        this.occasions[occasionKey] + ".",
+                    tips: selectedStyle.tips
+                };
+            }
+        };
+
+        function showRecommendation() {
+            const recommendation = stylist.getRecommendation(
+                occasion.value,
+                preference.value
+            );
+
+            result.textContent = recommendation.message;
+            tipsList.replaceChildren();
+
+            // Array + for loop + creating DOM elements.
+            for (let i = 0; i < recommendation.tips.length; i++) {
+                const item = document.createElement("li");
+                item.textContent = recommendation.tips[i];
+                tipsList.append(item);
+            }
+        }
+
+        function renderStep(index) {
+            steps.forEach(function (step, stepIndex) {
+                step.hidden = stepIndex !== index;
+            });
+
+            progress.textContent = "Step " + (index + 1) + " of 3";
+            backButton.hidden = index === 0;
+            nextButton.hidden = index === 2;
+            restartButton.hidden = index !== 2;
+
+            nextButton.textContent =
+                index === 1 ? "Show my style" : "Next";
+
+            error.textContent = "";
+
+            animateElement(steps[index]);
+        }
+
+        // Higher-order function: accepts another function as a callback.
+        function changeStep(index, callback) {
+            currentStep = index;
+            callback(currentStep);
+            steps[currentStep].querySelector("h3").focus();
+        }
+
+        function moveNext() {
+            if (currentStep === 0 && occasion.value === "") {
+                error.textContent = "Please choose an occasion.";
+                occasion.focus();
+                return;
+            }
+
+            if (currentStep === 1 && preference.value === "") {
+                error.textContent = "Please choose a style.";
+                preference.focus();
+                return;
+            }
+
+            if (currentStep === 1) {
+                showRecommendation();
+            }
+
+            if (currentStep < 2) {
+                changeStep(currentStep + 1, renderStep);
+            }
+        }
+
+        nextButton.addEventListener("click", moveNext);
+
+        backButton.addEventListener("click", function () {
+            if (currentStep > 0) {
+                changeStep(currentStep - 1, renderStep);
+            }
+        });
+
+        restartButton.addEventListener("click", function () {
+            styleForm.reset();
+            result.textContent = "";
+            tipsList.replaceChildren();
+            changeStep(0, renderStep);
+        });
+
+        styleForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            moveNext();
+        });
+
+        renderStep(0);
+    }
+
+    // 4. SHOP: PRICE FILTER WITH SWITCH
+    const priceFilter = document.querySelector("#price-filter");
+    const grid = document.querySelector("#product-grid");
+
+    if (priceFilter && grid) {
+        // Supports cards directly in the grid or inside Bootstrap columns.
+        const products = Array.from(grid.children).map(function (column) {
+            const card = column.matches(".product-card")
+                ? column
+                : column.querySelector(".product-card");
+
+            return {
+                column: column,
+                card: card,
+                price: card ? Number(card.dataset.price) : NaN
+            };
+        }).filter(function (product) {
+            return product.card !== null;
+        });
+
+        function matchesPrice(price, selectedRange) {
+            switch (selectedRange) {
+                case "under250":
+                    return price < 250;
+
+                case "250to300":
+                    return price >= 250 && price <= 300;
+
+                case "over300":
+                    return price > 300;
+
+                default:
+                    return true;
+            }
+        }
+
+        function filterProducts() {
+            let visibleCount = 0;
+
+            products.forEach(function (product) {
+                const visible = matchesPrice(
+                    product.price,
+                    priceFilter.value
+                );
+
+                product.column.hidden = !visible;
+
+                if (visible) {
+                    visibleCount++;
+                }
+            });
+
+            const count = document.querySelector("#product-count");
+
+            if (count) {
+                count.textContent =
+                    visibleCount + " of " + products.length + " products";
+            }
+
+            document.querySelector("#filter-message").textContent =
+                visibleCount === 0
+                    ? "No products match this price range."
+                    : "";
+
+            animateElement(grid);
+        }
+
+        priceFilter.addEventListener("change", filterProducts);
+        filterProducts();
+    }
+
+    // 5. HOME: SOUND ON BUTTON CLICK
+    const soundButton = document.querySelector("#play-chime");
+
+    if (soundButton) {
+        const soundStatus = document.querySelector("#sound-status");
+        let audioContext;
+
+        soundButton.addEventListener("click", async function () {
+            if (soundButton.disabled) {
+                return;
+            }
+
+            soundButton.disabled = true;
+            soundStatus.textContent = "Playing…";
+
+            try {
+                if (!audioContext) {
+                    audioContext = new window.AudioContext();
+                }
+
+                await audioContext.resume();
+
+                const oscillator = audioContext.createOscillator();
+                const volume = audioContext.createGain();
+                const start = audioContext.currentTime;
+
+                oscillator.type = "sine";
+                oscillator.frequency.setValueAtTime(660, start);
+                oscillator.frequency.setValueAtTime(880, start + 0.15);
+
+                volume.gain.setValueAtTime(0, start);
+                volume.gain.linearRampToValueAtTime(0.12, start + 0.02);
+                volume.gain.exponentialRampToValueAtTime(
+                    0.001,
+                    start + 0.4
+                );
+
+                oscillator.connect(volume);
+                volume.connect(audioContext.destination);
+
+                oscillator.onended = function () {
+                    oscillator.disconnect();
+                    volume.disconnect();
+                    soundButton.disabled = false;
+                    soundStatus.textContent = "Chime played.";
+                };
+
+                oscillator.start(start);
+                oscillator.stop(start + 0.45);
+            } catch (error) {
+                soundButton.disabled = false;
+                soundStatus.textContent =
+                    "Sound is unavailable in this browser.";
+            }
+        });
+    }
+});

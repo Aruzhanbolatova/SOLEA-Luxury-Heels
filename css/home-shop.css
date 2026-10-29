@@ -140,3 +140,166 @@ body:has(#subscription-dialog[open]) {
         transition: none;
     }
 }
+/* Home: Read more */
+.a5-extra-story {
+    display: none;
+    max-width: 650px;
+    margin: 20px auto;
+}
+
+/* Shared controls */
+.a5-button {
+    padding: 12px 20px;
+    border: 1px solid #850e20;
+    background: #850e20;
+    color: white;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.a5-button:hover {
+    background: #650b19;
+    transform: translateY(-2px);
+}
+
+.a5-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Home: multi-step style finder */
+.a5-panel {
+    max-width: 760px;
+    margin: 50px auto;
+    padding: 36px;
+    background: #faf8f5;
+    border: 1px solid #ded4ca;
+    color: #222;
+}
+
+.a5-panel h2,
+.a5-panel h3 {
+    color: #222;
+}
+
+.a5-panel p {
+    color: #444;
+}
+
+.a5-panel a {
+    color: #850e20;
+}
+
+.a5-step {
+    padding: 20px 0;
+}
+
+.a5-step[hidden],
+.a5-actions [hidden] {
+    display: none !important;
+}
+
+.a5-panel label,
+.a5-filter label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.a5-panel select,
+.a5-filter select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b6aaa0;
+    background: white;
+    color: #222;
+    font-size: 16px;
+}
+
+.a5-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#finder-error {
+    color: #a00020;
+}
+
+#style-tips {
+    padding-left: 22px;
+    line-height: 1.8;
+}
+
+.a5-sound {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #ded4ca;
+}
+
+/* Shop: filter */
+.a5-filter {
+    min-width: 180px;
+}
+
+#filter-message {
+    flex-basis: 100%;
+    margin: 0;
+}
+
+/* Hide the whole product column, including its spacing. */
+#product-grid > [hidden] {
+    display: none !important;
+}
+
+/* Keyboard focus */
+.a5-button:focus-visible,
+.a5-panel select:focus-visible,
+.a5-filter select:focus-visible,
+#main-header .navbar a:focus-visible {
+    outline: 3px solid #bd8a55;
+    outline-offset: 4px;
+}
+
+/* Animation triggered from JavaScript */
+.a5-enter {
+    animation: a5-appear 0.35s ease;
+}
+
+@keyframes a5-appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .a5-panel {
+        margin: 30px 16px;
+        padding: 24px 18px;
+    }
+
+    .a5-filter {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .a5-enter {
+        animation: none;
+    }
+
+    .a5-button {
+        transition: none;
+    }
+}
+.home-page .faq-size-link {
+    color: white;
+}

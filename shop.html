@@ -233,6 +233,18 @@
 
             <!-- TOOLBAR -->
             <div class="shop-toolbar">
+                <div class="a5-filter">
+    <label for="price-filter">Filter by price:</label>
+
+    <select id="price-filter">
+        <option value="all">All prices</option>
+        <option value="under250">Under $250</option>
+        <option value="250to300">$250–$300</option>
+        <option value="over300">Over $300</option>
+    </select>
+</div>
+
+<p id="filter-message" role="status"></p>
                 <span
                     id="product-count"
                     role="status"
