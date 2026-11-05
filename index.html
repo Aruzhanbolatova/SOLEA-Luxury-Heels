@@ -23,10 +23,13 @@
 
     <link rel="stylesheet" href="css/theme.css">
 <script src="theme.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script>
+        if (!window.jQuery) document.write('<script src="vendor/jquery-4.0.0.min.js"><\/script>');
+    </script>
+    <script defer src="script.js"></script>
 </head>
 <body class="home-page">
-
-
 <header id="main-header">
     <nav class="navbar navbar-expand-lg w-100" aria-label="Main navigation">
         <div class="container-fluid p-0">
@@ -382,6 +385,8 @@ $224
         <p id="sound-status" role="status"></p>
     </div>
 </section>
+<section class="designer-count text-center py-5"><h2>Our designer collection</h2>
+        <a href="brands.html"><strong id="designer-total" data-total="9">9</strong> designers</a></section>
 </main>
 
 <footer>

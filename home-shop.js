@@ -476,13 +476,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function filterProducts() {
+            const query = document.getElementById("collection-query").value.trim().toLowerCase();
             let visibleCount = 0;
 
             products.forEach(function (product) {
                 const visible = matchesPrice(
                     product.price,
                     priceFilter.value
-                );
+                ) && product.card.dataset.name.toLowerCase().includes(query);
 
                 product.column.hidden = !visible;
 
@@ -500,15 +501,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.querySelector("#filter-message").textContent =
                 visibleCount === 0
-                    ? "No products match this price range."
+                    ? "No products match these filters."
                     : "";
 
             animateElement(grid);
         }
 
+        const search = $('#collection-query');
+        const suggestions = $('#model-options');
+        function updateSuggestions() {
+          suggestions.empty();
+          const query = search.val().trim();
+          if (!query) return;
+          $('#product-grid .product-card').filter(function () {
+            return !this.closest('[hidden]');
+          }).slice(0, 6).each(function () {
+            $('<button>', { type: 'button', text: this.dataset.name }).appendTo(suggestions);
+          });
+        }
+        search.on('input', function () {
+          filterProducts();
+          updateSuggestions();
+        });
+        suggestions.on('click', 'button', function () {
+          search.val($(this).text()).trigger('input').trigger('focus');
+          suggestions.empty();
+        });
+        $('.collection-search').on('focusout', function (event) {
+          if (!this.contains(event.relatedTarget)) suggestions.empty();
+        });
+        search.on('keydown', function (event) {
+          if (event.key === 'Escape') suggestions.empty();
+          if (event.key === 'ArrowDown' && suggestions.children().length) {
+            event.preventDefault();
+            suggestions.children().first().trigger('focus');
+          }
+        });
+
         priceFilter.addEventListener("change", filterProducts);
         filterProducts();
     }
+
+  // Home: count the nine designers when the collection section is visible.
+  const total = $('#designer-total');
+  if (total.length && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const target = Number(total.attr('data-total'));
+    total.text(0);
+    const counter = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      counter.disconnect();
+      $({ value: 0 }).animate({ value: target }, {
+        duration: 1100,
+        step: function (value) { total.text(Math.floor(value)); },
+        complete: function () { total.text(target); }
+      });
+    });
+    counter.observe(total[0]);
+  }
 
     // 5. HOME: SOUND ON BUTTON CLICK
     const soundButton = document.querySelector("#play-chime");

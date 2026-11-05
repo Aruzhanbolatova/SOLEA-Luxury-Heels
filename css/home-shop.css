@@ -303,3 +303,12 @@ body:has(#subscription-dialog[open]) {
 .home-page .faq-size-link {
     color: white;
 }
+
+/* Assignment 6: catalogue search and designer count */
+.collection-search { position: relative; max-width: 30rem; margin: 1.25rem 0; }
+.collection-search label, .collection-search small { display: block; margin: .4rem 0; }
+.collection-search input { width: 100%; padding: .7rem 1rem; border: 1px solid #857674; background: white; color: #191414; }
+#model-options { position: absolute; z-index: 4; background: white; width: 100%; box-shadow: 0 5px 15px #0002; }
+#model-options button { display: block; width: 100%; background: white; color: #181414; text-align: left; padding: .55rem 1rem; border: 0; }
+#model-options button:hover, #model-options button:focus { background: #f4e8e3; }
+.designer-count strong { font-size: 2.4rem; font-variant-numeric: tabular-nums; }
