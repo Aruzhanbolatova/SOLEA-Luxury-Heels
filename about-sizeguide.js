@@ -331,3 +331,29 @@ document.addEventListener('keydown', function (event) {
 
     links[nextIndex].focus();
 }, true);
+
+function startClock() {
+  function updateClock() {
+    var clocks = document.querySelectorAll('.live-clock');
+
+    var time = new Date().toLocaleTimeString('en-GB', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+
+    clocks.forEach(function (clock) {
+      clock.textContent = 'Local time: ' + time;
+    });
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startClock);
+} else {
+  startClock();
+}
