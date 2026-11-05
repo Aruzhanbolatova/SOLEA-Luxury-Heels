@@ -1,0 +1,197 @@
+.theme-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1050;
+
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid #9c8467;
+  border-radius: 30px;
+
+  background: #faf7f1;
+  color: #211c17;
+  font: 600 12px Arial, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 18px rgb(0 0 0 / 20%);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid #ad793d;
+  outline-offset: 4px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --solea-surface: #1d1b19;
+  --bs-body-bg: #151413;
+  --bs-body-color: #f3eee7;
+  --bs-border-color: #544b42;
+}
+
+html[data-theme="dark"] body {
+  background-color: #151413 !important;
+  color: #f3eee7 !important;
+}
+
+html[data-theme="dark"] :is(
+  header,
+  #main-header,
+  header .navbar,
+  header .navbar-collapse
+) {
+  background-color: #191715 !important;
+  border-color: #544b42 !important;
+}
+
+html[data-theme="dark"] header a {
+  color: #f3eee7 !important;
+}
+
+html[data-theme="dark"] header a:hover,
+html[data-theme="dark"] header a.active {
+  color: #edc494 !important;
+}
+
+html[data-theme="dark"] .navbar-toggler {
+  border-color: #bcb0a1 !important;
+}
+
+html[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+html[data-theme="dark"] :is(
+  main,
+  .page-layout,
+  .size-main,
+  .size-sidebar
+) {
+  background-color: #151413 !important;
+}
+
+html[data-theme="dark"] section {
+  background-color: #1d1b19 !important;
+  color: #f3eee7 !important;
+}
+
+html[data-theme="dark"] :is(
+  .card,
+  .card-body,
+  .team-card,
+  .product-card,
+  .product-info,
+  .cat-card,
+  .mq-card,
+  .sidebar-box,
+  .sidebar-tip,
+  .measurement-card,
+  .measurement-tip,
+  .size-table,
+  .size-form-container,
+  .a5-form,
+  .review-card,
+  .faq-item,
+  .bg-white,
+  .bg-light,
+  dialog,
+  #contactDialog,
+  .solea-dialog
+) {
+  background-color: #25211e !important;
+  color: #f3eee7 !important;
+  border-color: #544b42 !important;
+}
+
+html[data-theme="dark"] :is(
+  h1, h2, h3, h4, h5, h6,
+  p, li, label, legend, small,
+  dt, dd, figcaption,
+  .card-title,
+  .card-text,
+  .text-dark,
+  .text-secondary,
+  .text-muted,
+  .solea-faq-toggle,
+  .brand-rating-status,
+  .price
+) {
+  color: #eee7de !important;
+}
+
+html[data-theme="dark"] :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea
+) {
+  background-color: #171513 !important;
+  color: #f3eee7 !important;
+  border-color: #8a7865 !important;
+}
+
+html[data-theme="dark"] ::placeholder {
+  color: #bbb0a3 !important;
+  opacity: 1;
+}
+
+html[data-theme="dark"] :is(
+  .btn,
+  .button,
+  .a5-button,
+  .solea-button,
+  .btn-outline,
+  .theme-toggle
+) {
+  background-color: #e5bd8b !important;
+  color: #201810 !important;
+  border-color: #e5bd8b !important;
+}
+
+html[data-theme="dark"] :is(
+  .btn,
+  .button,
+  .a5-button,
+  .solea-button,
+  .btn-outline,
+  .theme-toggle
+):hover {
+  background-color: #ffdaad !important;
+}
+
+html[data-theme="dark"] :is(
+  .solea-error,
+  .a5-error,
+  .invalid-feedback
+) {
+  color: #ffaaaa !important;
+}
+
+html[data-theme="dark"] :is(table, th, td) {
+  --bs-table-bg: #25211e;
+  --bs-table-color: #f3eee7;
+  --bs-table-hover-bg: #3b322a;
+  --bs-table-hover-color: #ffffff;
+
+  background-color: #25211e !important;
+  color: #f3eee7 !important;
+  border-color: #655647 !important;
+}
+
+html[data-theme="dark"] footer {
+  background-color: #100f0e !important;
+  color: #f3eee7 !important;
+}
+
+html[data-theme="dark"] footer a {
+  color: #edc494 !important;
+}
+
+@media (max-width: 600px) {
+  .theme-toggle {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 14px;
+  }
+}
