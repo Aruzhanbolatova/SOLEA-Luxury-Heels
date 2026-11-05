@@ -75,6 +75,7 @@
   });
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+    if (finish.disabled) return;
     if (step < 2) {
       if (validStep(step)) changeStep(step + 1, renderStep);
       return;
@@ -83,9 +84,17 @@
       changeStep(i, renderStep);
       if (!validStep(i)) return;
     }
-    form.reset();
-    changeStep(0, renderStep);
-    status.textContent = 'Preview complete. No data was sent and no appointment was booked.';
+    changeStep(2, renderStep);
+    const label = finish.textContent;
+    $(finish).prop('disabled', true).text('Please wait…').prepend('<span class="preview-spinner" aria-hidden="true"></span>');
+    back.disabled = true;
+    window.setTimeout(function () {
+      $(finish).prop('disabled', false).text(label);
+      back.disabled = false;
+      form.reset();
+      changeStep(0, renderStep);
+      status.textContent = 'Preview complete. No data was sent and no appointment was booked.';
+    }, 1400);
   });
   renderStep();
 })();

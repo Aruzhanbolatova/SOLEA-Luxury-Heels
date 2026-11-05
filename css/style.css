@@ -2775,3 +2775,10 @@ DESIGNERS PAGE
 .brand-rating-status { margin: 6px 0; color: #181818; }
 .brand-rating small { color: #595959; }
 @media (prefers-reduced-motion: reduce) { .brand-rating-star { transition: none; } }
+
+/* Brands ratings and Design preview */
+.preview-spinner { display: inline-block; width: 1em; height: 1em; margin-right: .5em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: preview-spin .7s linear infinite; }
+@keyframes preview-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .preview-spinner { animation: none; } }
+#rating-toast { display: none; position: fixed; right: 1rem; bottom: 1rem; z-index: 1080; max-width: calc(100% - 2rem); padding: .9rem 1.3rem; background: #2d2023; color: white; }
+.brand-photo[data-src] { background: #faf8f5; }
