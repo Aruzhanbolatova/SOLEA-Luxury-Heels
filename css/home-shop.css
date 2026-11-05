@@ -311,4 +311,22 @@ body:has(#subscription-dialog[open]) {
 #model-options { position: absolute; z-index: 4; background: white; width: 100%; box-shadow: 0 5px 15px #0002; }
 #model-options button { display: block; width: 100%; background: white; color: #181414; text-align: left; padding: .55rem 1rem; border: 0; }
 #model-options button:hover, #model-options button:focus { background: #f4e8e3; }
-.designer-count strong { font-size: 2.4rem; font-variant-numeric: tabular-nums; }
+.designer-count-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .75rem;
+    color: inherit;
+    text-decoration: none;
+}
+.designer-count-link:hover { text-decoration: underline; }
+#designer-total {
+    display: block;
+    overflow: hidden;
+    height: 1em;
+    min-width: 1ch;
+    font: normal clamp(4rem, 10vw, 7rem)/1 Georgia, serif;
+    font-variant-numeric: lining-nums tabular-nums;
+}
+.designer-count-reel, .designer-count-reel > span { display: block; }
+.designer-count-reel > span { height: 1em; }

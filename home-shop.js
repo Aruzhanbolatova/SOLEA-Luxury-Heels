@@ -542,22 +542,35 @@ document.addEventListener("DOMContentLoaded", function () {
         filterProducts();
     }
 
-  // Home: count the nine designers when the collection section is visible.
-  const total = $('#designer-total');
-  if (total.length && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const target = Number(total.attr('data-total'));
-    total.text(0);
-    const counter = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting) return;
-      counter.disconnect();
-      $({ value: 0 }).animate({ value: target }, {
-        duration: 1100,
-        step: function (value) { total.text(Math.floor(value)); },
-        complete: function () { total.text(target); }
-      });
-    });
-    counter.observe(total[0]);
-  }
+    // Roll one digit into view at a time when the collection is on screen.
+    const total = document.getElementById('designer-total');
+    if (total && window.jQuery && 'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const target = Number(total.textContent);
+        const reel = $('<span>', { class: 'designer-count-reel' });
+        for (let digit = 0; digit <= target; digit++) {
+            $('<span>').text(digit).appendTo(reel);
+        }
+        $(total).empty().append(reel);
+        const animation = $({ position: 0 });
+        const observer = new IntersectionObserver(function (entries) {
+            const entry = entries[entries.length - 1];
+            if (entry.intersectionRatio >= 0.75) {
+                animation.stop().animate({ position: target }, {
+                    duration: 2200,
+                    easing: 'swing',
+                    step: function (position) {
+                        reel.css('transform', 'translateY(-' + position + 'em)');
+                    }
+                });
+            } else if (!entry.isIntersecting) {
+                animation.stop();
+                animation[0].position = 0;
+                reel.css('transform', 'translateY(0)');
+            }
+        }, { threshold: [0, 0.75] });
+        observer.observe(total);
+    }
 
     // 5. HOME: SOUND ON BUTTON CLICK
     const soundButton = document.querySelector("#play-chime");

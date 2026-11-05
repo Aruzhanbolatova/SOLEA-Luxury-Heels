@@ -385,8 +385,13 @@ $224
         <p id="sound-status" role="status"></p>
     </div>
 </section>
-<section class="designer-count text-center py-5"><h2>Our designer collection</h2>
-        <a href="brands.html"><strong id="designer-total" data-total="9">9</strong> designers</a></section>
+<section class="designer-count text-center py-5" aria-labelledby="collection-heading">
+    <h2 id="collection-heading">Our designer collection</h2>
+    <a class="designer-count-link" href="brands.html" aria-label="Explore our 9 designers">
+        <span id="designer-total" aria-hidden="true">9</span>
+        <span>Designers <span aria-hidden="true">→</span></span>
+    </a>
+</section>
 </main>
 
 <footer>
