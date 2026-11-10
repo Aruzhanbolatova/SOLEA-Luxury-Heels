@@ -1,10 +1,9 @@
 ﻿$(document).ready(function () {
   'use strict';
-  console.log('jQuery is ready!');
   if (document.getElementById('jq-solea')) return;
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Tasks 1тАУ3: a searchable collection of SOLEA help articles.
+  // Tasks 1–3: a searchable collection of SOLEA help articles.
   var articles = [
     { title: 'About SOLEA', text: 'SOLEA brings together elegance, creativity and individuality.' },
     { title: 'Our team', text: 'Aruzhan Bolatova, Ardak Korabay and Aiym Rakhat created the six SOLEA pages together.' },
@@ -158,8 +157,8 @@
     var $button = $(this).find('[type="submit"]');
     if ($button.prop('disabled')) return;
     $button.prop('disabled', true).attr('aria-busy', 'true')
-      .html('<span class="jq-spinner" aria-hidden="true"></span> Please waitтАж');
-    $('#jq-form-status').text('Preparing your local previewтАж');
+      .html('<span class="jq-spinner" aria-hidden="true"></span> Please wait…');
+    $('#jq-form-status').text('Preparing your local preview…');
     setTimeout(function () {
       $button.prop('disabled', false).removeAttr('aria-busy').text('Preview reminder');
       $('#jq-form-status').text('Preview ready: measure both feet before choosing your size. No email was sent.');
@@ -175,7 +174,7 @@
       if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText($('#jq-copy-text').text());
       clearTimeout(copyTimer);
-      $button.text('тЬУ Copied');
+      $button.text('✓ Copied');
       $('#jq-copy-feedback').text('Copied to clipboard!').prop('hidden', false);
       notify('Fit note copied to clipboard!');
       copyTimer = setTimeout(function () {

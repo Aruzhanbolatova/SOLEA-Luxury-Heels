@@ -1,1213 +1,192 @@
-/* Page styles scoped to prevent About Us and Size Guide from affecting each other. */
-
-body.about-page {
-            margin: 0;
-
-            overflow-x: hidden;
-
-            background: #050505;
-
-            color: #111111;
-        }
-body.about-page img {
-            max-width: 100%;
-        }
-body.about-page #main-header {
-            background: #050505;
-
-            border-bottom: 1px solid #222;
-        }
-body.about-page #main-header a {
-            color: #ffffff;
-        }
-body.about-page .about-hero-new {
-            position: relative;
-
-            min-height: 700px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            padding: 80px 8%;
-
-            overflow: hidden;
-
-            background: #050505;
-
-            color: #ffffff;
-        }
-body.about-page .about-hero-new > img {
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            opacity: 0.4;
-
-            z-index: 0;
-        }
-body.about-page .about-hero-new::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background: rgba(0, 0, 0, 0.55);
-
-            z-index: 1;
-        }
-body.about-page .about-hero-new > *:not(img) {
-            position: relative;
-
-            z-index: 2;
-        }
-body.about-page .hero-small-text {
-            font-size: 12px;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            color: #d0d0d0;
-
-            margin-bottom: 30px;
-        }
-body.about-page .about-hero-new h1 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: clamp(55px, 9vw, 130px);
-
-            font-weight: 400;
-
-            line-height: 0.9;
-
-            letter-spacing: -5px;
-
-            margin: 0;
-
-            text-transform: uppercase;
-        }
-body.about-page .hero-description {
-            max-width: 450px;
-
-            margin-top: 40px;
-
-            color: #cccccc;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-body.about-page .hero-button {
-            margin-top: 30px;
-
-            display: inline-block;
-
-            padding: 13px 30px;
-
-            border: 1px solid #ffffff;
-
-            border-radius: 30px;
-
-            color: #ffffff;
-
-            text-decoration: none;
-
-            font-size: 11px;
-
-            letter-spacing: 1px;
-
-            transition: 0.3s;
-        }
-body.about-page .hero-button:hover {
-            background: #ffffff;
-
-            color: #000000;
-        }
-body.about-page .about-intro {
-    width: 100%;
-
-    padding: 120px 8%;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.45)
-        ),
-        url("images/фонabout.png");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    color: #ffffff;
-        }
-body.about-page .about-intro-a3 {
-            max-width: 1400px;
-
-            margin: 0 auto;
-        }
-body.about-page .about-history-text {
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-        }
-body.about-page .about-label {
-            font-size: 11px;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            color: #777777;
-
-            margin-bottom: 30px;
-        }
-body.about-page .about-intro h2 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: clamp(55px, 7vw, 100px);
-
-            font-weight: 300;
-
-            line-height: 0.88;
-
-            letter-spacing: -5px;
-
-            margin: 0 0 35px;
-
-            text-transform: uppercase;
-            color: #ffffff !important;
-        }
-body.about-page .about-text p {
-            max-width: 500px;
-
-            color: #555555;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-
-            margin-bottom: 18px;
-
-            color: #eeeeee !important;
-        }
-body.about-page .about-history-background {
-            min-height: 500px;
-            background-image: url("images/фонabout.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-body.about-page .about-intro .stat {
-    border-top: 1px solid rgba(255,255,255,0.5);
-}
-body.about-page .about-intro .stat-number {
-    color: #ffffff !important;
-}
-body.about-page .about-intro .stat-title {
-    color: #dddddd !important;
-}
-body.about-page .statistics {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 30px;
-
-            margin-top: 40px;
-        }
-body.about-page .stat {
-            border-top: 1px solid #cccccc;
-
-            padding-top: 18px;
-        }
-body.about-page .stat-number {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 45px;
-
-            color: #111111;
-
-            margin-bottom: 8px;
-        }
-body.about-page .stat-title {
-            font-size: 10px;
-
-            color: #777777;
-
-            text-transform: uppercase;
-
-            letter-spacing: 2px;
-        }
-body.about-page .team-new {
-            background: #f8f6f1;
-
-            color: #111111;
-
-            padding: 100px 5% 120px;
-
-            overflow: hidden;
-        }
-body.about-page .team-title {
-            max-width: 1500px;
-
-            margin: 0 auto 50px;
-        }
-body.about-page .team-title .about-label {
-            margin-bottom: 25px;
-
-            color: #8c8174;
-
-            font-size: 12px;
-
-            letter-spacing: 5px;
-        }
-body.about-page .team-title h2 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: clamp(65px, 7vw, 110px);
-
-            font-weight: 400;
-
-            line-height: 0.9;
-
-            letter-spacing: -5px;
-
-            color: #111111;
-
-            margin: 0 0 20px;
-
-            text-transform: uppercase;
-        }
-body.about-page .team-title > p:last-child {
-            max-width: 850px;
-
-            color: #77716a;
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 18px;
-
-            line-height: 1.5;
-
-            margin: 0;
-        }
-body.about-page .team-new .container-fluid {
-            max-width: 1500px;
-
-            margin: 0 auto;
-
-            padding: 0;
-        }
-body.about-page .team-new .row {
-            --bs-gutter-x: 14px;
-
-            --bs-gutter-y: 20px;
-        }
-body.about-page .team-card {
-            position: relative;
-
-            width: 100%;
-
-            height: 525px;
-
-            display: grid !important;
-
-            grid-template-columns: 52% 48%;
-
-            overflow: hidden;
-
-            padding: 0 !important;
-
-            border: 1px solid #cfc9c0 !important;
-
-            border-radius: 0 !important;
-
-            background: #faf9f6 !important;
-
-            box-shadow: none !important;
-
-            color: #111111;
-
-            transition: transform 0.3s ease,
-                        border-color 0.3s ease;
-        }
-body.about-page .team-card:hover {
-            transform: translateY(-4px);
-
-            border-color: #8d8275 !important;
-        }
-body.about-page .team-card .card-img-top {
-            display: block;
-
-            width: 100% !important;
-
-            height: 100% !important;
-
-            min-width: 0;
-
-            object-fit: cover !important;
-
-            object-position: center;
-
-            border: none !important;
-
-            border-radius: 0 !important;
-
-            background: #e8e3da;
-
-            padding: 28px 18px !important;
-
-            box-sizing: border-box;
-
-            clip-path: ellipse(
-                43% 43% at 50% 50%
-            );
-        }
-body.about-page .team-card .card-body {
-            position: relative;
-
-            min-width: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            display: flex !important;
-
-            flex-direction: column;
-
-            align-items: flex-start;
-
-            padding: 65px 30px 30px 5px !important;
-
-            box-sizing: border-box;
-
-            overflow: hidden;
-
-            background: transparent !important;
-        }
-body.about-page .team-star {
-            position: absolute;
-
-            top: 23px;
-
-            right: 24px;
-
-            font-size: 23px;
-
-            line-height: 1;
-
-            color: #8e8275;
-        }
-body.about-page .team-number {
-            width: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 16px;
-
-            margin-bottom: 22px;
-        }
-body.about-page .team-number span {
-            flex-shrink: 0;
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 46px;
-
-            font-style: italic;
-
-            font-weight: 400;
-
-            line-height: 1;
-
-            color: #b5a288;
-        }
-body.about-page .team-number::after {
-            content: "";
-
-            width: 70px;
-
-            height: 1px;
-
-            background: #b5a288;
-
-            display: block;
-        }
-body.about-page .team-card .card-title {
-            width: 100% !important;
-
-            max-width: 100% !important;
-
-            font-family: Georgia, "Times New Roman", serif !important;
-
-            font-size: 30px !important;
-
-            font-weight: 400 !important;
-
-            line-height: 1.05 !important;
-
-            letter-spacing: normal !important;
-
-            word-break: normal !important;
-
-            overflow-wrap: normal !important;
-
-            white-space: normal !important;
-
-            color: #111111 !important;
-
-            margin: 0 0 20px !important;
-        }
-body.about-page .team-role {
-            width: 100%;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 10px;
-
-            line-height: 1.4;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            color: #8b8175;
-
-            margin: 0 0 24px;
-
-            word-break: normal;
-
-            overflow-wrap: normal;
-        }
-body.about-page .team-card .card-text {
-            width: 100%;
-
-            max-width: 215px;
-
-            font-family: Arial, Helvetica, sans-serif;
-
-            font-size: 13px;
-
-            line-height: 1.6;
-
-            color: #6d6862;
-
-            margin: 0;
-
-            word-break: normal;
-
-            overflow-wrap: normal;
-        }
-body.about-page .team-socials {
-            display: flex;
-
-            gap: 11px;
-
-            margin-top: auto;
-
-            padding-top: 20px;
-        }
-body.about-page .team-social {
-            width: 38px;
-
-            height: 38px;
-
-            min-width: 38px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border: 1px solid #aaa49b;
-
-            border-radius: 50%;
-
-            color: #333333;
-
-            text-decoration: none;
-
-            font-size: 13px;
-
-            line-height: 1;
-
-            box-sizing: border-box;
-
-            transition: 0.25s;
-        }
-body.about-page .team-social:hover {
-            background: #111111;
-
-            color: #ffffff;
-
-            border-color: #111111;
-        }
-body.about-page .values-section {
-            background: #f5f5f5;
-
-            color: #111111;
-
-            padding: 100px 8%;
-        }
-body.about-page .values-title {
-            max-width: 1300px;
-
-            margin: 0 auto 45px;
-        }
-body.about-page .values-title h2 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 50px;
-
-            font-weight: 400;
-
-            margin: 0;
-
-            text-transform: uppercase;
-        }
-body.about-page .css-values-grid {
-            max-width: 1300px;
-
-            margin: 0 auto;
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 25px;
-        }
-body.about-page .css-value-card {
-            min-width: 0;
-
-            min-height: 220px;
-
-            padding: 35px;
-
-            box-sizing: border-box;
-
-            background: #ffffff;
-
-            border: 1px solid #dddddd;
-
-            transition: 0.3s;
-        }
-body.about-page .css-value-card:hover {
-            transform: translateY(-5px);
-
-            border-color: #111111;
-        }
-body.about-page .css-value-number {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 40px;
-
-            margin-bottom: 20px;
-        }
-body.about-page .css-value-card h3 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 27px;
-
-            font-weight: 400;
-
-            margin-bottom: 15px;
-        }
-body.about-page .css-value-card p {
-            color: #666666;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-
-            margin: 0;
-        }
-body.about-page .philosophy-new {
-            background: #050505;
-
-            color: #ffffff;
-
-            padding: 150px 8%;
-
-            border-top: 1px solid #222;
-        }
-body.about-page .philosophy-new h2 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: clamp(60px, 9vw, 125px);
-
-            font-weight: 400;
-
-            line-height: 0.85;
-
-            margin: 0 0 80px;
-
-            text-transform: uppercase;
-        }
-body.about-page .philosophy-bottom {
-            max-width: 1300px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 100px;
-
-            align-items: end;
-        }
-body.about-page .philosophy-quote {
-            max-width: 500px;
-
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 24px;
-
-            line-height: 1.5;
-
-            color: #eeeeee;
-        }
-body.about-page .philosophy-description {
-            max-width: 430px;
-
-            color: #888888;
-
-            font-size: 13px;
-
-            line-height: 1.8;
-        }
-body.about-page footer {
-            background: #050505;
-
-            color: #ffffff;
-
-            border-top: 1px solid #222;
-
-            text-align: center;
-
-            padding: 80px 20px;
-        }
-body.about-page footer h2 {
-            font-family: Georgia, "Times New Roman", serif;
-
-            font-size: 50px;
-
-            font-weight: 400;
-
-            letter-spacing: 8px;
-        }
-body.about-page footer p {
-            color: #777777;
-
-            font-size: 12px;
-
-            margin: 12px;
-        }
-body.about-page .assignment3 h1 {
-            font-size: 48px;
-        }
-body.about-page .assignment3 h2 {
-            font-size: 34px;
-        }
-body.about-page .assignment3 h3 {
-            font-size: 22px;
-        }
-body.about-page .assignment3 p {
-            line-height: 1.7;
-        }
-body.about-page .assignment3 :focus-visible {
-            outline: 2px solid #111111;
-
-            outline-offset: 3px;
-        }
-@media (max-width: 991px) {
-body.about-page .assignment3 h1 {
-                font-size: 40px;
-            }
-body.about-page .assignment3 h2 {
-                font-size: 30px;
-            }
-body.about-page .assignment3 h3 {
-                font-size: 20px;
-            }
-body.about-page .assignment3 p {
-                font-size: 15px;
-            }
-body.about-page .about-intro {
-                padding: 80px 6%;
-            }
-body.about-page .about-history-image {
-                min-height: 400px;
-            }
-body.about-page .team-new {
-                padding: 80px 5% 100px;
-            }
-body.about-page .team-card {
-                height: 500px;
-            }
-body.about-page .team-card .card-body {
-                padding: 55px 22px 25px 5px !important;
-            }
-body.about-page .team-card .card-title {
-                font-size: 26px !important;
-            }
-body.about-page .team-card .card-text {
-                font-size: 12px;
-            }
-body.about-page .css-values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-body.about-page .philosophy-new {
-                padding: 100px 6%;
-            }
-
-        }
-@media (max-width: 767px) {
-body.about-page .assignment3 h1 {
-                font-size: 32px;
-            }
-body.about-page .assignment3 h2 {
-                font-size: 26px;
-            }
-body.about-page .assignment3 h3 {
-                font-size: 18px;
-            }
-body.about-page .assignment3 p {
-                font-size: 14px;
-            }
-body.about-page .about-hero-new {
-                min-height: 560px;
-
-                padding: 70px 6%;
-            }
-body.about-page .about-hero-new h1 {
-                font-size: clamp(42px, 12vw, 70px);
-
-                letter-spacing: -2px;
-            }
-body.about-page .about-intro {
-                padding: 70px 6%;
-            }
-body.about-page .about-intro h2 {
-                font-size: clamp(48px, 14vw, 75px);
-
-                letter-spacing: -3px;
-            }
-body.about-page .about-history-image {
-                min-height: 300px;
-
-                max-height: 400px;
-            }
-body.about-page .statistics {
-                grid-template-columns: 1fr;
-            }
-body.about-page .team-new {
-                padding: 70px 5% 80px;
-            }
-body.about-page .team-title {
-                margin-bottom: 40px;
-            }
-body.about-page .team-title h2 {
-                font-size: 58px;
-
-                letter-spacing: -3px;
-            }
-body.about-page .team-title > p:last-child {
-                font-size: 15px;
-            }
-body.about-page .team-card {
-                height: 430px;
-            }
-body.about-page .team-card .card-img-top {
-                padding: 25px 10px !important;
-            }
-body.about-page .team-card .card-body {
-                padding: 45px 18px 20px 5px !important;
-            }
-body.about-page .team-number span {
-                font-size: 36px;
-            }
-body.about-page .team-number::after {
-                width: 45px;
-            }
-body.about-page .team-card .card-title {
-                font-size: 23px !important;
-            }
-body.about-page .team-role {
-                font-size: 8px;
-            }
-body.about-page .team-card .card-text {
-                font-size: 11px;
-            }
-body.about-page .team-star {
-                top: 18px;
-
-                right: 18px;
-
-                font-size: 19px;
-            }
-body.about-page .css-values-grid {
-                grid-template-columns: 1fr;
-            }
-body.about-page .css-value-card {
-                padding: 25px;
-            }
-body.about-page .philosophy-new {
-                padding: 80px 6%;
-            }
-body.about-page .philosophy-new h2 {
-                font-size: clamp(45px, 12vw, 75px);
-
-                margin-bottom: 50px;
-            }
-body.about-page .philosophy-bottom {
-                grid-template-columns: 1fr;
-
-                gap: 40px;
-            }
-body.about-page footer {
-                padding: 60px 20px;
-            }
-body.about-page footer h2 {
-                font-size: 40px;
-            }
-
-        }
-@media (max-width: 450px) {
-body.about-page .team-card {
-                height: 400px;
-            }
-body.about-page .team-card .card-title {
-                font-size: 20px !important;
-            }
-body.about-page .team-card .card-text {
-                font-size: 10px;
-            }
-body.about-page .team-number span {
-                font-size: 31px;
-            }
-body.about-page .team-social {
-                width: 31px;
-
-                height: 31px;
-
-                min-width: 31px;
-
-                font-size: 11px;
-            }
-
-        }
-
-
-body.size-guide-a3 .assignment3 h1 {
-            font-size: 48px;
-            line-height: 1.1;
-        }
-body.size-guide-a3 .assignment3 h2 {
-            font-size: 34px;
-            line-height: 1.2;
-        }
-body.size-guide-a3 .assignment3 h3 {
-            font-size: 22px;
-            line-height: 1.3;
-        }
-body.size-guide-a3 .assignment3 p,
-body.size-guide-a3 .assignment3 label,
-body.size-guide-a3 .assignment3 input,
-body.size-guide-a3 .assignment3 select,
-body.size-guide-a3 .assignment3 textarea,
-body.size-guide-a3 .assignment3 button {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-body.size-guide-a3 .size-content {
-            display: block;
-            width: 100%;
-        }
-body.size-guide-a3 .a3-size-container {
-            width: 100%;
-        }
-body.size-guide-a3 .a3-size-row {
-            width: 100%;
-        }
-body.size-guide-a3 .measurement-column,
-body.size-guide-a3 .table-column {
-            min-width: 0;
-        }
-body.size-guide-a3 .measurement-card {
-         width: 100%;
-         min-height: 0;
-          height: auto;
-
-         padding: 35px;
-
-         background: #333333;
-         color: #ffffff;
-
-        border: none;
-        }
-body.size-guide-a3 .measurement-card h3 {
-            margin-bottom: 25px;
-            color: #ffffff;
-        }
-body.size-guide-a3 .measurement-steps {
-            padding-left: 25px;
-
-            margin-bottom: 0;
-        }
-body.size-guide-a3 .measurement-steps li {
-            margin-bottom: 18px;
-
-            line-height: 1.7;
-            color: #ffffff;
-        }
-body.size-guide-a3 .measurement-tip {
-            margin-top: 25px;
-
-            padding: 18px;
-
-            background: #444444;
-            color: #ffffff;
-
-            border-left: 3px solid #ffffff;
-        }
-body.size-guide-a3 .table-responsive {
-            width: 100%;
-
-            overflow-x: auto;
-        }
-body.size-guide-a3 .table-responsive table {
-            width: 100%;
-
-            min-width: 500px;
-        }
-body.size-guide-a3 .table {
-            margin-bottom: 0;
-
-            background: #ffffff;
-        }
-body.size-guide-a3 .table th {
-            background: #111111;
-
-            color: #ffffff;
-
-            text-align: center;
-
-            white-space: nowrap;
-        }
-body.size-guide-a3 .table td {
-            text-align: center;
-
-            vertical-align: middle;
-        }
-body.size-guide-a3 .size-form-section {
-            margin-top: 60px;
-
-            padding: 0 5%;
-        }
-body.size-guide-a3 .size-form-container {
-            max-width: 800px;
-
-            margin: 0 auto;
-        }
-body.size-guide-a3 .size-form {
-            margin-top: 30px;
-        }
-body.size-guide-a3 .size-form .form-label {
-            font-weight: 600;
-        }
-body.size-guide-a3 .size-form .form-control,
-body.size-guide-a3 .size-form .form-select {
-            width: 100%;
-
-            box-sizing: border-box;
-        }
-body.size-guide-a3 .size-form textarea {
-            resize: vertical;
-        }
-body.size-guide-a3 .size-form .btn {
-            padding: 12px 28px;
-
-            letter-spacing: 1px;
-        }
-body.size-guide-a3 input:focus,
-body.size-guide-a3 select:focus,
-body.size-guide-a3 textarea:focus,
-body.size-guide-a3 button:focus {
-            outline: 2px solid #111111;
-
-            outline-offset: 2px;
-        }
-body.size-guide-a3 img {
-            max-width: 100%;
-
-            height: auto;
-        }
-body.size-guide-a3 {
-            overflow-x: hidden;
-        }
-body.size-guide-a3 .container,
-body.size-guide-a3 .container-fluid,
-body.size-guide-a3 .row,
-body.size-guide-a3 .col,
-body.size-guide-a3 [class*="col-"] {
-            min-width: 0;
-        }
-@media (max-width: 991px) {
-body.size-guide-a3 .assignment3 h1 {
-                font-size: 40px;
-            }
-body.size-guide-a3 .assignment3 h2 {
-                font-size: 30px;
-            }
-body.size-guide-a3 .assignment3 h3 {
-                font-size: 20px;
-            }
-body.size-guide-a3 .assignment3 p,
-body.size-guide-a3 .assignment3 label,
-body.size-guide-a3 .assignment3 input,
-body.size-guide-a3 .assignment3 select,
-body.size-guide-a3 .assignment3 textarea,
-body.size-guide-a3 .assignment3 button {
-                font-size: 15px;
-            }
-body.size-guide-a3 .measurement-card {
-                padding: 25px;
-            }
-
-        }
-@media (max-width: 576px) {
-body.size-guide-a3 .assignment3 h1 {
-                font-size: 30px;
-            }
-body.size-guide-a3 .assignment3 h2 {
-                font-size: 25px;
-            }
-body.size-guide-a3 .assignment3 h3 {
-                font-size: 18px;
-            }
-body.size-guide-a3 .assignment3 p,
-body.size-guide-a3 .assignment3 label,
-body.size-guide-a3 .assignment3 input,
-body.size-guide-a3 .assignment3 select,
-body.size-guide-a3 .assignment3 textarea,
-body.size-guide-a3 .assignment3 button {
-                font-size: 14px;
-            }
-body.size-guide-a3 .measurement-card {
-                padding: 20px;
-            }
-body.size-guide-a3 .size-form-section {
-                margin-top: 40px;
-
-                padding: 0 20px;
-            }
-body.size-guide-a3 .table-responsive table {
-                min-width: 450px;
-            }
-
-        }
-@media (max-width: 400px) {
-body.size-guide-a3 .assignment3 h1 {
-                font-size: 27px;
-            }
-body.size-guide-a3 .assignment3 h2 {
-                font-size: 22px;
-            }
-body.size-guide-a3 .assignment3 h3 {
-                font-size: 17px;
-            }
-
-        }
-
-/* Ardak Korabay — Assignment 4. Shared by About Us and Size Guide. */
-body { transition: background-color .4s ease; }
-.solea-interactive { color: #171717; background: var(--solea-surface, #f8f6f1); padding: 64px max(6vw, 20px); transition: background-color .4s ease; }
-.solea-interactive h2 { font-size: clamp(26px, 4vw, 40px); letter-spacing: .04em; margin: 14px 0 20px; }
-.solea-eyebrow { font: 12px/1.5 Arial, sans-serif; letter-spacing: .2em; color: #6a5843; }
-.solea-button { display: inline-block; background: #161616; border: 1px solid #161616; color: white; padding: 14px 22px; font: 12px/1.5 Arial, sans-serif; letter-spacing: .09em; cursor: pointer; }
-.solea-button:hover { background: #3c3328; color: white; }
-.solea-button:focus-visible, .solea-faq-toggle:focus-visible, .solea-close:focus-visible { outline: 3px solid #98744d; outline-offset: 4px; }
-.solea-tools { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid #d6cfc3; padding-top: 28px; padding-bottom: 28px; }
-.solea-tools p { margin: 6px 0 0; }
-.solea-clock { font: 13px/1.8 Arial, sans-serif; }
-.solea-faq-item { border-bottom: 1px solid #cfc8be; max-width: 1000px; margin: auto; }
-.solea-faq h3 { margin: 0; }
-.solea-faq-toggle { width: 100%; padding: 23px 0; background: transparent; border: 0; text-align: left; color: #171717; display: flex; justify-content: space-between; align-items: center; gap: 20px; font: 18px/1.5 Arial, sans-serif; }
-.solea-faq-toggle span { font-size: 25px; }
-.solea-faq-answer { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .3s ease, visibility .3s; }
-.solea-faq-answer > div { overflow: hidden; min-height: 0; }
-.solea-faq-answer p { margin: 0; padding-bottom: 24px; max-width: 760px; line-height: 1.8; }
-.solea-faq-answer.is-open { grid-template-rows: 1fr; visibility: visible; }
-.solea-invitation { text-align: center; }
-.solea-dialog { border: 1px solid #b6a58d; padding: 0; width: min(520px, calc(100% - 32px)); max-height: 90dvh; color: #171717; background: #faf8f4; }
-.solea-dialog::backdrop { background: rgb(0 0 0 / 65%); }
-.solea-dialog-content { padding: 38px; position: relative; }
-.solea-dialog h2 { font-size: 30px; margin: 16px 0; }
-.solea-close { position: absolute; top: 8px; right: 14px; background: none; border: 0; font-size: 30px; cursor: pointer; }
-.solea-dialog label { display: block; margin-top: 12px; font-size: 14px; }
-.solea-dialog input { width: 100%; padding: 11px; border: 1px solid #a69e92; background: white; border-radius: 0; }
-.solea-dialog small { display: block; font-size: 12px; line-height: 1.6; margin: 8px 0; }
-.solea-error { color: #a11c29; font: 13px/1.5 Arial, sans-serif; margin: 5px 0 10px; }
-.solea-error:empty { display: none; }
-[data-solea-form] [aria-invalid="true"] { border: 2px solid #a11c29; }
-.solea-form-status { font-size: 14px; line-height: 1.6; margin-top: 18px; }
-@media (max-width: 700px) { .solea-tools { flex-direction: column; align-items: flex-start; } .solea-dialog-content { padding: 30px 22px; } }
-@media (prefers-reduced-motion: reduce) { body, .solea-interactive, .solea-faq-answer { transition: none; } }
-
-/* Assignment 5 — shared additions. Existing SOLEA styling is preserved. */
-.a5-section { background: var(--solea-surface, #f8f6f1); color: #171717; padding: 64px max(6vw, 20px); border-top: 1px solid #d6cfc3; }
-.a5-inner { max-width: 980px; margin: 0 auto; }
-.a5-section h2 { font-size: clamp(27px, 4vw, 40px); margin: 15px 0 20px; letter-spacing: .04em; }
-.a5-section h3 { font-size: clamp(21px, 3vw, 27px); margin: 0 0 20px; }
-.a5-section p { line-height: 1.8; max-width: 760px; }
-.a5-eyebrow { font: 12px/1.6 Arial, sans-serif; letter-spacing: .18em; color: #6a5843; }
-.a5-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
-.a5-button { background: #171717; color: white; border: 1px solid #171717; padding: 13px 22px; font: 12px/1.5 Arial, sans-serif; letter-spacing: .08em; cursor: pointer; transition: background .2s, transform .2s; }
-.a5-button:hover { background: #4b3c2c; transform: translateY(-2px); }
-.a5-button:disabled { opacity: .6; cursor: wait; }
-.a5-button-secondary { background: transparent; color: #171717; }
-.a5-button-secondary:hover { color: white; }
-.a5-section :focus-visible { outline: 3px solid #926329; outline-offset: 4px; }
-.a5-section h3:focus { outline-offset: 5px; }
-.a5-section [hidden] { display: none !important; }
-.a5-form { max-width: 720px; border: 1px solid #cfc8be; background: rgba(255,255,255,.4); padding: 30px; margin-top: 26px; }
-.a5-form label { display: block; font-weight: 600; margin: 18px 0 8px; }
-.a5-form input, .a5-form select { width: 100%; max-width: 480px; padding: 12px; border: 1px solid #9f9587; background: white; color: #171717; border-radius: 0; }
-.a5-form [aria-invalid="true"] { border: 2px solid #a11c29; }
-.a5-error { color: #a11c29; font-size: 14px; }
-.a5-error:empty { display: none; }
-.a5-result { font-size: 19px; }
-.a5-stars { display: flex; gap: 8px; margin-top: 18px; }
-.a5-star { background: transparent; border: 1px solid #b6ad9f; color: #777; font-size: 32px; line-height: 1; padding: 10px; cursor: pointer; transition: color .2s, transform .2s; }
-.a5-star:hover { transform: scale(1.12); }
-.a5-star[aria-pressed="true"] { outline: 2px solid #926329; outline-offset: 2px; }
-.a5-sound { padding-top: 24px; margin-top: 30px; border-top: 1px solid #cfc8be; }
-.a5-sound-status { min-height: 1.5em; font-size: 13px; }
-.a5-reading { margin-top: 20px; }
+/* SOLEA: styles used only by About Us and Size Guide. */
+:root { --solea-surface: #f8f6f1; --ink: #24201e; --muted: #69615c; --line: #ded7ce; --accent: #791e32; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--solea-surface); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(40px, 6vw, 80px); letter-spacing: -.045em; }
+h2 { font-size: clamp(29px, 3.5vw, 46px); letter-spacing: -.025em; }
+h3 { font-size: 24px; }
+p { color: var(--muted); }
+a { color: var(--accent); text-underline-offset: 5px; }
+img { max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: wait; opacity: .6; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #ad783d; outline-offset: 5px; }
+section, [id] { scroll-margin-top: 24px; }
+.skip-link { position: absolute; left: 16px; top: -100px; padding: 12px 22px; z-index: 1200; background: white; color: var(--ink); }
+.skip-link:focus { top: 12px; }
+#main-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 24px max(5vw, 20px); background: #fffdf9; border-bottom: 1px solid var(--line); }
+.solea-wordmark { font: 32px/1 Georgia, serif; letter-spacing: .24em; color: var(--ink); text-decoration: none; }
+#main-header .navbar { display: flex; flex-wrap: wrap; gap: 24px; padding: 0; }
+#main-header .navbar a { padding: 10px 0; color: var(--ink); text-decoration: none; text-transform: uppercase; font-size: 11px; letter-spacing: .1em; }
+#main-header .navbar a:is(:hover,.active) { color: var(--accent); text-decoration: underline; text-underline-offset: 8px; }
+.menu-toggle { display: none; min-height: 44px; padding: 8px 15px; border: 1px solid var(--line); background: transparent; color: inherit; }
+.menu-toggle span { margin-left: 10px; }
+.about-label, .hero-small-text, .a5-eyebrow, .solea-eyebrow { display: block; color: var(--accent); font: 11px/1.6 Arial, sans-serif; letter-spacing: .19em; text-transform: uppercase; }
+.hero-button, .button, .solea-button, .a5-button, .size-form .btn { display: inline-block; min-height: 46px; padding: 14px 24px; border: 1px solid var(--ink); border-radius: 0; background: var(--ink); color: white; text-decoration: none; font: 11px/1.5 Arial, sans-serif; letter-spacing: .1em; transition: background .2s, color .2s; }
+:is(.hero-button,.button,.solea-button,.a5-button,.size-form .btn):hover { background: var(--accent); border-color: var(--accent); color: white; }
+.a5-button-secondary { background: transparent; color: var(--ink); }
+footer { padding: 60px 24px; background: #191615; color: white; text-align: center; }
+footer h2 { font-size: 38px; letter-spacing: .25em; }
+footer p { max-width: 700px; margin: 10px auto; color: #c7bfb9; font-size: 12px; }
+/* About: editorial opening, complete story grid, and readable team cards. */
+.about-hero-new { position: relative; isolation: isolate; min-height: min(700px, 88svh); padding: 96px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; text-align: center; color: white; background: #211b18; }
+.about-hero-new > img { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.about-hero-new::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #191310bb, #19131066); }
+.about-hero-new h1 { max-width: 900px; font-size: clamp(43px, 7.7vw, 108px); color: white; line-height: 1.03; margin: 8px 0 20px; }
+.about-hero-new .hero-small-text { color: #f0d9c1; }
+.about-hero-new .hero-description { max-width: 470px; color: #f3eee7; font-size: 15px; }
+.about-hero-new .hero-button { margin-top: 20px; background: #fffdf9; color: var(--ink); border-color: #fffdf9; }
+.about-hero-new .hero-button:hover { background: var(--accent); color: white; border-color: var(--accent); }
+.about-intro, .team-new, .values-section, .philosophy-new { padding: clamp(60px, 7vw, 100px) max(6vw, 20px); }
+.about-intro-a3, .team-new > .container-fluid, .css-values-grid, .philosophy-bottom { max-width: 1200px; margin-inline: auto; }
+.about-intro h2 { font-size: clamp(38px, 4vw, 56px); margin: 20px 0 24px; }
+.about-text { padding-top: 20px; }
+.about-text p { font-size: 15px; }
+.statistics { clear: both; display: flex; gap: 42px; padding-top: 28px; margin-top: 30px; border-top: 1px solid var(--line); }
+.stat-number { font: 32px Georgia, serif; }
+.stat-title { font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+.story-image { margin: 0; padding: 20px; background: #ede8e0; }
+.story-image img { display: block; width: 100%; height: 380px; object-fit: contain; }
+.story-image figcaption { margin-top: 20px; font-size: 11px; text-align: center; color: var(--muted); }
+.team-new { border-block: 1px solid var(--line); background: #f0ebe4; }
+.team-title, .values-title { text-align: center; max-width: 600px; margin: 0 auto 40px; }
+.team-title > p:last-child { max-width: 500px; margin: 20px auto 0; }
+.team-card { width: 100%; height: 100%; border: 1px solid var(--line); border-radius: 0; background: #fffdf9; }
+.team-card .card-img-top { width: 100%; height: 260px; object-fit: contain; padding: 20px; background: #e7e0d7; border-radius: 0; }
+.team-card .card-body { position: relative; padding: 28px; }
+.team-star { position: absolute; right: 28px; top: 28px; color: var(--accent); }
+.team-number { color: var(--muted); font-size: 11px; letter-spacing: .1em; margin-bottom: 20px; }
+.team-card .card-title { font-size: 29px; margin-bottom: 14px; }
+.team-role { color: var(--accent); font-size: 10px; text-transform: uppercase; letter-spacing: .12em; }
+.team-card .card-text { font-size: 14px; margin-bottom: 0; }
+.css-values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.css-value-card { border-top: 1px solid var(--line); padding: 24px 0 0; }
+.css-value-number { font-size: 11px; color: var(--accent); margin-bottom: 28px; }
+.css-value-card p { font-size: 14px; max-width: 320px; }
+.philosophy-new { background: #24201e; color: white; }
+.philosophy-new .about-label { color: #e2bb95; }
+.philosophy-new h2 { font-size: clamp(42px, 6vw, 82px); line-height: 1.05; margin: 24px 0 42px; }
+.philosophy-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.philosophy-quote { color: #f0e4d8; font: 24px/1.5 Georgia, serif; }
+.philosophy-description { color: #d0c7bf; font-size: 14px; }
+/* Size Guide: navigation, instructions, chart and calculator. */
+.page-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); max-width: 1600px; margin: auto; }
+.page-layout #main-header, .page-layout footer { grid-column: 1 / -1; }
+.size-sidebar { align-self: start; position: sticky; top: 24px; padding: 44px 22px; }
+.size-sidebar a { display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 11px; color: var(--accent); text-decoration: none; }
+.size-sidebar a span { color: var(--ink); }
+.sidebar-tip { margin-top: 28px; font-size: 12px; }
+.size-main { min-width: 0; border-left: 1px solid var(--line); }
+.size-hero { padding: 70px clamp(22px, 4vw, 60px) 52px; background: #eee7de; }
+.size-hero .subtitle { font-size: 11px; color: var(--accent); letter-spacing: .2em; }
+.size-hero h1 { font-size: clamp(38px, 5vw, 68px); }
+.size-hero p:last-child { max-width: 500px; font-size: 15px; }
+.size-content { padding: 48px clamp(20px, 3vw, 48px); }
+.a3-size-container { padding: 0; }
+.measurement-card { height: 100%; padding: 28px; background: #eee8df; border: 1px solid var(--line); }
+.measurement-card h2, .measurement-card h3, .size-table h2 { font-size: 26px; }
+.measurement-steps { padding-left: 20px; margin: 24px 0; }
+.measurement-steps li { padding-left: 5px; margin-bottom: 16px; color: var(--muted); font-size: 14px; }
+.measurement-tip { border-top: 1px solid #cabeb1; padding-top: 20px; color: var(--muted); font-size: 13px; }
+.size-table { width: 100%; }
+.table-responsive { overflow-x: auto; }
+.size-table table { width: 100%; margin: 20px 0 0; background: #fffdf9; border-collapse: collapse; }
+.size-table caption { caption-side: bottom; padding: 15px 0; font-size: 11px; color: var(--muted); text-align: left; }
+.size-table th { padding: 14px 8px; background: var(--ink); color: white; font-size: 11px; letter-spacing: .06em; text-align: center; white-space: nowrap; }
+.size-table td { padding: 12px 8px; font-size: 13px; text-align: center; border-bottom: 1px solid var(--line); }
+.size-table .recommended-size > td { background: #f0ddc1; color: #492a08; font-weight: 700; box-shadow: inset 0 1px #b59061, inset 0 -1px #b59061; }
+.size-form-section { padding: 56px clamp(20px, 4vw, 60px); border-top: 1px solid var(--line); }
+.size-form-container { max-width: 760px; margin: auto; }
+.size-form-container h2 { font-size: 32px; }
+.size-form-container > p { max-width: 600px; font-size: 14px; }
+.size-form { margin-top: 28px; }
+.size-form label { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.size-form :is(input,select,textarea), .a5-form :is(input,select), .solea-dialog input { border: 1px solid #a69a8b; border-radius: 0; padding: 12px; background: #fffdf9; color: var(--ink); font-size: 16px; }
+.size-form textarea { resize: vertical; }
+.size-form small { color: var(--muted); display: block; margin-top: 12px; }
+.fit-banner { padding: 48px 24px; background: #eae1d6; text-align: center; }
+.fit-banner h2 { font-size: 30px; }
+.fit-banner p { max-width: 520px; margin: 20px auto; }
+/* Shared interactive coursework features. */
+.a5-section, .solea-interactive { padding: 56px max(5vw, 20px); background: var(--solea-surface); border-top: 1px solid var(--line); }
+.a5-inner { max-width: 980px; margin: auto; }
+.a5-section h2, .solea-interactive h2 { margin: 14px 0 22px; font-size: clamp(28px, 3vw, 40px); }
+.a5-section p { max-width: 720px; }
+.a5-form { padding: 28px; margin-top: 28px; max-width: 720px; border: 1px solid var(--line); background: #fffdf9; }
+.a5-form h3 { font-size: 25px; margin-bottom: 24px; }
+.a5-form label { display: block; margin: 20px 0 8px; font-size: 13px; font-weight: 600; }
+.a5-form :is(input,select) { width: 100%; }
+.a5-form section p { font-size: 13px; margin-top: 16px; }
+.a5-form section .a5-result { font: 23px/1.6 Georgia, serif; }
+.a5-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.solea-error, .a5-error { color: #a11c29; font-size: 13px; margin: 6px 0 12px; }
+:is(.solea-error,.a5-error):empty { display: none; }
+[aria-invalid='true'] { border: 2px solid #a11c29 !important; }
+.solea-form-status { font-size: 14px; margin: 18px 0 0; }
+.a5-stars { display: flex; gap: 8px; margin: 20px 0; }
+.a5-star { min-width: 44px; min-height: 44px; border: 1px solid var(--line); background: transparent; color: #777; font-size: 27px; }
+.a5-star[aria-pressed='true'] { outline: 2px solid #926329; outline-offset: 2px; }
+.a5-reading { margin-top: 30px; }
 #solea-extra-story { display: none; }
-@media (max-width: 600px) { .a5-form { padding: 22px 18px; } .a5-star { font-size: 28px; padding: 9px; } }
-@media (prefers-reduced-motion: reduce) { .a5-button, .a5-star { transition: none; } .a5-button:hover, .a5-star:hover { transform: none; } }
+.a5-sound { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 24px; }
+.a5-sound-status { font-size: 12px; margin-bottom: 0; }
+.solea-invitation { text-align: center; background: #eae1d6; }
+.solea-invitation p { max-width: 520px; margin: 0 auto 28px; }
+.solea-dialog { width: min(520px, calc(100% - 32px)); max-height: 90dvh; padding: 0; border: 1px solid #b6a58d; background: #faf8f4; color: var(--ink); }
+.solea-dialog::backdrop { background: #15110ed9; }
+.solea-dialog-content { padding: 38px; position: relative; }
+.solea-dialog h2 { font-size: 32px; margin: 14px 0; }
+.solea-close { position: absolute; top: 5px; right: 8px; min-width: 44px; min-height: 44px; border: 0; background: transparent; color: inherit; font-size: 28px; }
+.solea-dialog label { display: block; font-size: 13px; margin: 12px 0 8px; }
+.solea-dialog input { width: 100%; }
+.solea-dialog small { display: block; margin: 10px 0; font-size: 12px; line-height: 1.6; }
+.solea-dialog .solea-button { margin-top: 16px; }
+.solea-tools { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.solea-tools p { font-size: 12px; margin: 8px 0 0; }
+.solea-clock { font-size: 11px; }
+.solea-faq-item { max-width: 1000px; margin: auto; border-bottom: 1px solid var(--line); }
+.solea-faq h3 { margin: 0; }
+.solea-faq-toggle { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; padding: 23px 0; border: 0; background: transparent; text-align: left; color: var(--ink); font: 16px/1.6 Arial, sans-serif; }
+.solea-faq-toggle span { font-size: 24px; }
+.solea-faq-answer { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .25s, visibility .25s; }
+.solea-faq-answer > div { min-height: 0; overflow: hidden; }
+.solea-faq-answer p { margin: 0; padding-bottom: 24px; max-width: 760px; font-size: 14px; }
+.solea-faq-answer.is-open { grid-template-rows: 1fr; visibility: visible; }
+/* Theme additions for components specific to these pages. */
+html[data-theme='dark'] .menu-toggle, html[data-theme='dark'] .size-sidebar a span { color: #f3eee7; }
+html[data-theme='dark'] .recommended-size > td { background: #4d3927 !important; color: #ffe2b9 !important; }
+html[data-theme='dark'] .jq-tooltip { color: #fff7ed; background: #31251b; }
+@media (max-width: 1199px) { .page-layout { grid-template-columns: 180px minmax(0,1fr); } }
+@media (max-width: 991px) {
+  #main-header { gap: 16px; padding-block: 18px; }
+  .menu-toggle { display: block; }
+  #main-header .navbar { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; }
+  #main-header .navbar.is-open { display: flex; }
+  #main-header .navbar a { padding: 13px 0; border-top: 1px solid var(--line); }
+  .page-layout { display: block; }
+  .size-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 20px; border-bottom: 1px solid var(--line); }
+  .size-sidebar .about-label, .sidebar-tip { display: none; }
+  .size-sidebar a { padding: 7px 0; border: 0; }
+  .size-main { border-left: 0; }
+  .about-hero-new { min-height: 560px; }
+}
+@media (max-width: 767px) {
+  .about-intro h2 { float: none; width: auto; margin: 20px 0; }
+  .about-text { padding-top: 0; }
+  .statistics { gap: 30px; }
+  .story-image img { height: 300px; }
+  .team-card .card-img-top { height: 280px; }
+  .css-values-grid, .philosophy-bottom { grid-template-columns: minmax(0,1fr); gap: 24px; }
+  .css-value-card p { max-width: none; }
+  .size-hero { padding-top: 48px; }
+  .size-content { padding-block: 32px; }
+  .a5-form { padding: 22px 18px; }
+  .solea-dialog-content { padding: 36px 22px 24px; }
+  .solea-tools { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }

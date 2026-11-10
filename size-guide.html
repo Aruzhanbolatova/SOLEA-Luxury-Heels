@@ -1,881 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SOLEA | Size Guide</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- BOOTSTRAP -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-
-    
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Measure your feet, compare EU, US and UK sizes, and find a starting size with the SOLEA fit finder.">
+<title>SOLEA | Size Guide</title>
+<link rel="stylesheet" href="vendor/bootstrap-5.3.3.min.css">
 <link rel="stylesheet" href="css/about-sizeguide.css">
+<link rel="stylesheet" href="css/jquery-features.css">
 <link rel="stylesheet" href="css/theme.css">
 <script src="theme.js"></script>
-
-<link rel="stylesheet" href="css/jquery-features.css">
-<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-<script src="about-sizeguide-jquery.js"></script>
-
+<script defer src="vendor/jquery-4.0.0.min.js"></script>
+<script defer src="about-sizeguide-jquery.js"></script>
+<script defer src="about-sizeguide.js"></script>
 </head>
-
-
-
 <body class="assignment3 size-guide-a3">
-
-
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="page-layout">
-
-
-    <!-- =====================================================
-         HEADER
-    ===================================================== -->
-
-    <header id="main-header">
-
-        <div class="logo">
-
-            <a href="index.html">
-                SOLEA
-            </a>
-
-        </div>
-
-
-        <nav class="navbar">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="shop.html">
-                Shop
-            </a>
-
-            <a href="brands.html">
-                Brands
-            </a>
-
-            <a href="design.html">
-                Design your pair
-            </a>
-
-            <a href="size-guide.html" class="active">
-                Size Guide
-            </a>
-
-            <a href="about.html">
-                About us
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         SIDEBAR
-    ===================================================== -->
-
-    <aside class="size-sidebar">
-
-
-        <div class="sidebar-box">
-
-            <span class="sidebar-number">
-                01
-            </span>
-
-
-            <h3>
-                Measure Your Foot
-            </h3>
-
-
-            <p>
-                Place your foot on a piece of paper
-                and measure from heel to toe.
-            </p>
-
-        </div>
-
-
-
-        <div class="sidebar-box">
-
-            <span class="sidebar-number">
-                02
-            </span>
-
-
-            <h3>
-                Compare
-            </h3>
-
-
-            <p>
-                Compare your measurement with
-                our SOLEA size chart.
-            </p>
-
-        </div>
-
-
-
-        <div class="sidebar-box">
-
-            <span class="sidebar-number">
-                03
-            </span>
-
-
-            <h3>
-                Choose
-            </h3>
-
-
-            <p>
-                Select the size that matches
-                your foot length.
-            </p>
-
-        </div>
-
-
-
-        <div class="sidebar-tip">
-
-            <strong>
-                TIP
-            </strong>
-
-
-            <p>
-                If you are between two sizes,
-                we recommend choosing the larger size.
-            </p>
-
-        </div>
-
-
-    </aside>
-
-
-
-    <!-- =====================================================
-         MAIN CONTENT
-    ===================================================== -->
-
-    <main class="size-main">
-
-
-        <!-- =================================================
-             HERO
-        ================================================= -->
-
-        <section class="size-hero">
-
-            <p class="subtitle">
-                PERFECT FIT
-            </p>
-
-
-            <h1>
-                FIND YOUR SIZE
-            </h1>
-
-
-            <p>
-                The perfect heel starts with the perfect fit.
-                Use our guide to choose your ideal size.
-            </p>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SIZE CONTENT
-             BOOTSTRAP GRID
-        ================================================= -->
-
-        <section class="size-content">
-
-            <div class="container-fluid a3-size-container">
-
-                <div class="row g-4 a3-size-row">
-
-
-                    <!-- =====================================
-                         LEFT BOOTSTRAP COLUMN
-                         INSTRUCTIONS
-                    ====================================== -->
-
-                    <div class="col-lg-6 measurement-column">
-
-                        <div class="measurement-card">
-
-
-                            <h3>
-                                HOW TO MEASURE YOUR FOOT
-                            </h3>
-
-
-                            <ol class="measurement-steps">
-
-                                <li>
-                                    Place your foot on a piece
-                                    of paper.
-                                </li>
-
-
-                                <li>
-                                    Mark the longest point of
-                                    your foot from heel to toe.
-                                </li>
-
-
-                                <li>
-                                    Measure the distance between
-                                    the heel and the longest toe.
-                                </li>
-
-
-                                <li>
-                                    Compare your measurement
-                                    with the SOLEA size chart.
-                                </li>
-
-
-                            </ol>
-
-
-                            <div class="measurement-tip">
-
-                                <strong>
-                                    TIP:
-                                </strong>
-
-                                If you are between two sizes,
-                                choose the larger size for
-                                a more comfortable fit.
-
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- =====================================
-                         RIGHT BOOTSTRAP COLUMN
-                         SIZE TABLE
-                    ====================================== -->
-
-                    <div class="col-lg-6 table-column">
-
-
-                        <div class="size-table">
-
-
-                            <h2>
-                                SOLEA SIZE GUIDE
-                            </h2>
-
-
-                            <div class="table-responsive">
-
-
-                                <table class="table table-bordered table-hover">
-
-
-                                    <thead>
-
-                                        <tr>
-
-                                            <th scope="col">
-                                                EU
-                                            </th>
-
-                                            <th scope="col">
-                                                US
-                                            </th>
-
-                                            <th scope="col">
-                                                UK
-                                            </th>
-
-                                            <th scope="col">
-                                                FOOT LENGTH
-                                            </th>
-
-                                        </tr>
-
-                                    </thead>
-
-
-
-                                    <tbody>
-
-
-                                        <tr>
-
-                                            <td>
-                                                35
-                                            </td>
-
-                                            <td>
-                                                5
-                                            </td>
-
-                                            <td>
-                                                2
-                                            </td>
-
-                                            <td>
-                                                22.5 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                36
-                                            </td>
-
-                                            <td>
-                                                6
-                                            </td>
-
-                                            <td>
-                                                3
-                                            </td>
-
-                                            <td>
-                                                23 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                37
-                                            </td>
-
-                                            <td>
-                                                7
-                                            </td>
-
-                                            <td>
-                                                4
-                                            </td>
-
-                                            <td>
-                                                23.5 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                38
-                                            </td>
-
-                                            <td>
-                                                8
-                                            </td>
-
-                                            <td>
-                                                5
-                                            </td>
-
-                                            <td>
-                                                24 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                39
-                                            </td>
-
-                                            <td>
-                                                9
-                                            </td>
-
-                                            <td>
-                                                6
-                                            </td>
-
-                                            <td>
-                                                25 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                40
-                                            </td>
-
-                                            <td>
-                                                10
-                                            </td>
-
-                                            <td>
-                                                7
-                                            </td>
-
-                                            <td>
-                                                25.5 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                41
-                                            </td>
-
-                                            <td>
-                                                11
-                                            </td>
-
-                                            <td>
-                                                8
-                                            </td>
-
-                                            <td>
-                                                26 cm
-                                            </td>
-
-                                        </tr>
-
-
-
-                                        <tr>
-
-                                            <td>
-                                                42
-                                            </td>
-
-                                            <td>
-                                                12
-                                            </td>
-
-                                            <td>
-                                                9
-                                            </td>
-
-                                            <td>
-                                                26.5 cm
-                                            </td>
-
-                                        </tr>
-
-
-                                    </tbody>
-
-
-                                </table>
-
-
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             BOOTSTRAP FORM
-        ================================================= -->
-
-        
-<section class="a5-section" aria-labelledby="finder-title">
- <div class="a5-inner">
-  <span class="a5-eyebrow">THREE SMALL STEPS</span>
-  <h2 id="finder-title">FIND YOUR SOLEA FIT</h2>
-  <p>A quick starting point based on our size chart. Designer sizing may vary; check the specific style before ordering.</p>
-  <form id="solea-fit-finder" class="a5-form" novalidate>
-   <p id="finder-progress" class="a5-eyebrow" role="status">STEP 1 OF 3</p>
-   <section data-fit-step>
-    <h3 tabindex="-1">Measure your foot</h3>
-    <label for="finder-length">Foot length in centimetres</label>
-    <input id="finder-length" name="length" type="number" min="22.5" max="26.5" step="0.1" required placeholder="For example, 24.5" aria-describedby="finder-length-hint finder-error">
-    <p id="finder-length-hint">Measure both feet and use the larger value. This chart covers 22.5–26.5 cm.</p>
-    <p id="finder-error" class="a5-error" role="alert"></p>
-   </section>
-   <section data-fit-step hidden>
-    <h3 tabindex="-1">Make it personal</h3>
-    <label for="finder-width">Foot width</label>
-    <select id="finder-width" name="width"><option value="standard">Standard</option><option value="wide">Wide</option></select>
-    <label for="finder-occasion">Where will you wear your heels?</label>
-    <select id="finder-occasion" name="occasion"><option value="everyday">Everyday</option><option value="office">Office</option><option value="evening">Evening</option></select>
-   </section>
-   <section data-fit-step hidden>
-    <h3 tabindex="-1">Your starting point</h3>
-    <p id="finder-result" class="a5-result"></p>
-    <p>This is general guidance, not a guaranteed fit. Contact the team if you are unsure.</p>
-   </section>
-   <div class="a5-actions">
-    <button class="a5-button a5-button-secondary" type="button" data-fit-back hidden>BACK</button>
-    <button class="a5-button" type="button" data-fit-next>NEXT</button>
-    <button class="a5-button" type="button" data-fit-reset hidden>START AGAIN</button>
-   </div>
-  </form>
-  <div class="a5-sound"><button class="a5-button a5-button-secondary" type="button" data-play-chime>PLAY SOLEA CHIME</button><p class="a5-sound-status" data-sound-status role="status"></p></div>
- </div>
+<header id="main-header">
+<a class="solea-wordmark" href="index.html" aria-label="SOLEA home">SOLEA</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="page-navigation">Menu <span aria-hidden="true">☰</span></button>
+<nav class="navbar" id="page-navigation" aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="brands.html">Brands</a>
+<a href="design.html">Design your pair</a>
+<a href="size-guide.html" class="active" aria-current="page">Size Guide</a>
+<a href="about.html">About us</a>
+</nav>
+</header>
+<aside class="size-sidebar" aria-label="Size guide sections">
+<p class="about-label">YOUR FIT GUIDE</p>
+<a href="#measure">01 <span>How to measure</span></a>
+<a href="#size-chart">02 <span>Size chart</span></a>
+<a href="#fit-finder">03 <span>Find your fit</span></a>
+<a href="#fit-help">04 <span>Fit advice</span></a>
+<a href="#fit-faq-title">05 <span>Common questions</span></a>
+<p class="sidebar-tip">Measure both feet. Use the larger measurement as your starting point.</p>
+</aside>
+<main class="size-main" id="main-content">
+<section class="size-hero">
+<p class="subtitle">
+PERFECT FIT
+</p>
+<h1>
+FIND YOUR SIZE
+</h1>
+<p>
+The perfect heel starts with the perfect fit.
+Use our guide to choose your ideal size.
+</p>
 </section>
-
-<section class="size-form-section">
-
-
-            <div class="container-fluid">
-
-
-                <div class="size-form-container">
-
-
-                    <h2>
-                        FIND YOUR PERFECT FIT
-                    </h2>
-
-
-                    <p>
-                        Need help choosing your size?
-                        Send us your measurements and
-                        our team will help you.
-                    </p>
-
-
-
-                    <form class="size-form" data-solea-form novalidate>
-
-
-                        <!-- NAME -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="customerName"
-                                class="form-label"
-                            >
-                                Your Name
-                            </label>
-
-
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="customerName" required data-rule="name" aria-describedby="customerName-error"
-                                name="customerName"
-                                placeholder="Enter your name"
-                            ><p class="solea-error" id="customerName-error"></p>
-
-                        </div>
-
-
-
-                        <!-- EMAIL -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="customerEmail"
-                                class="form-label"
-                            >
-                                Email
-                            </label>
-
-
-                            <input
-                                type="email"
-                                class="form-control"
-                                id="customerEmail" required data-rule="email" aria-describedby="customerEmail-error"
-                                name="customerEmail"
-                                placeholder="Enter your email"
-                            ><p class="solea-error" id="customerEmail-error"></p>
-
-                        </div>
-
-
-
-                        <!-- SIZE SELECT -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="shoeSize"
-                                class="form-label"
-                            >
-                                Your EU Size
-                            </label>
-
-
-                            <select
-                                class="form-select"
-                                id="shoeSize" required data-rule="size" aria-describedby="shoeSize-error"
-                                name="shoeSize"
-                            >
-
-                                <option value="" selected>
-                                    Choose your size
-                                </option>
-
-                                <option value="35">
-                                    35
-                                </option>
-
-                                <option value="36">
-                                    36
-                                </option>
-
-                                <option value="37">
-                                    37
-                                </option>
-
-                                <option value="38">
-                                    38
-                                </option>
-
-                                <option value="39">
-                                    39
-                                </option>
-
-                                <option value="40">
-                                    40
-                                </option>
-
-                                <option value="41">
-                                    41
-                                </option>
-
-                                <option value="42">
-                                    42
-                                </option>
-
-                            </select><p class="solea-error" id="shoeSize-error"></p>
-
-                        </div>
-
-
-
-                        <!-- FOOT LENGTH -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="footLength"
-                                class="form-label"
-                            >
-                                Foot Length
-                            </label>
-
-
-                            <input
-                                type="number" min="15" max="35" step="0.1"
-                                class="form-control"
-                                id="footLength" required data-rule="length" aria-describedby="footLength-error"
-                                name="footLength"
-                                placeholder="Foot length in cm, e.g. 24.5"
-                            ><p class="solea-error" id="footLength-error"></p>
-
-                        </div>
-
-
-
-                        <!-- QUESTION -->
-
-                        <div class="mb-3">
-
-                            <label
-                                for="question"
-                                class="form-label"
-                            >
-                                Your Question
-                            </label>
-
-
-                            <textarea
-                                class="form-control"
-                                id="question" required data-rule="question" aria-describedby="question-error"
-                                name="question"
-                                rows="4"
-                                placeholder="Tell us how we can help"
-                            ></textarea><p class="solea-error" id="question-error"></p>
-
-                        </div>
-
-
-
-                        <!-- BUTTON -->
-
-                        <button
-                            type="submit"
-                            class="btn btn-dark"
-                        >
-                            SEND REQUEST
-                        </button>
-
-
-                    <p class="solea-form-status" role="status"></p><small>Demo only: your request is validated locally and is not sent.</small></form>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             CTA
-        ================================================= -->
-
-        <section class="fit-banner">
-
-
-            <h2>
-                NEED HELP?
-            </h2>
-
-
-            <p>
-                Our team will help you find the perfect fit
-                before creating your SOLEA pair.
-            </p>
-
-
-            <a
-                href="about.html"
-                class="button"
-            >
-                CONTACT US
-            </a>
-
-
-        </section>
-
-
-
-<section class="solea-interactive solea-faq" aria-labelledby="fit-faq-title">
-  <span class="solea-eyebrow">A LITTLE GUIDANCE</span>
-  <h2 id="fit-faq-title">YOUR FIT, EXPLAINED</h2>
-  <p>Small details that make every step feel better.</p>
-<div class="solea-faq-item">
-    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-0" id="fit-question-0">How do I measure my feet?<span aria-hidden="true">+</span></button></h3>
-    <div class="solea-faq-answer" id="fit-answer-0" role="region" aria-labelledby="fit-question-0" inert><div><p>Stand on a sheet of paper and mark your heel and longest toe. Measure the distance in centimetres. Measure both feet and use the larger measurement with the size chart above.</p></div></div></div><div class="solea-faq-item">
-    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-1" id="fit-question-1">What if I am between two sizes?<span aria-hidden="true">+</span></button></h3>
-    <div class="solea-faq-answer" id="fit-answer-1" role="region" aria-labelledby="fit-question-1" inert><div><p>Compare your measurements with the chart and consider the shape of the shoe. If you are between sizes, ask for individual fit advice before choosing your pair.</p></div></div></div><div class="solea-faq-item">
-    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-2" id="fit-question-2">Does every designer use the same sizing?<span aria-hidden="true">+</span></button></h3>
-    <div class="solea-faq-answer" id="fit-answer-2" role="region" aria-labelledby="fit-question-2" inert><div><p>No. The conversion chart is a general guide. The fit can vary by designer, toe shape and material, so check the product details before ordering.</p></div></div></div><div class="solea-faq-item">
-    <h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-3" id="fit-question-3">How should heels feel when I try them on?<span aria-hidden="true">+</span></button></h3>
-    <div class="solea-faq-answer" id="fit-answer-3" role="region" aria-labelledby="fit-question-3" inert><div><p>Your heel should stay secure and your toes should have room without being squeezed. Try both shoes on a clean surface and walk a few steps to check the fit.</p></div></div></div></section>
-<section class="solea-interactive solea-tools" aria-label="Page preferences">
-  <div><span class="solea-eyebrow">MAKE YOURSELF AT HOME</span>
-  <p>Choose the shade of your SOLEA experience.</p></div>
-  <button type="button" class="solea-button" data-change-background>CHANGE BACKGROUND · IVORY</button>
-  <p class="solea-clock">Your local time<br><time data-live-clock></time></p>
-</section>
-
-</main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ===================================================== -->
-
-    <footer>
-
-
-        <h2>
-            SOLEA
-        </h2>
-
-
-        <p>
-            Luxury heels created for your story.
-        </p>
-
-
-        <p>
-            Team members:
-            Aruzhan Bolatova,
-            Ardak Korabay,
-            Aiym Rakhat
-        </p>
-
-
-        <p>
-            © 2026 SOLEA
-        </p>
-
-        <p class="live-clock" role="timer" aria-label="Current local time"></p>
-
-
-    </footer>
-
-
+<section class="size-content" id="measure" aria-label="Measuring instructions and size chart">
+<div class="container-fluid a3-size-container">
+<div class="row g-4 a3-size-row">
+<div class="col-lg-6 measurement-column">
+<div class="measurement-card">
+<h2>How to measure your foot</h2>
+<ol class="measurement-steps">
+<li>
+Place your foot on a piece
+of paper.
+</li>
+<li>
+Mark the longest point of
+your foot from heel to toe.
+</li>
+<li>
+Measure the distance between
+the heel and the longest toe.
+</li>
+<li>
+Compare your measurement
+with the SOLEA size chart.
+</li>
+</ol>
+<div class="measurement-tip">
+<strong>
+TIP:
+</strong>
+If your measurement falls between chart entries, start with the next listed size.
+Check the specific designer’s guide, as fit varies by style.
 </div>
-
-
-<!-- BOOTSTRAP JS -->
-
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-></script>
-
-
-<script src="about-sizeguide.js" defer></script>
-
+</div>
+</div>
+<div class="col-lg-6 table-column">
+<div class="size-table" id="size-chart">
+<h2>
+SOLEA SIZE GUIDE
+</h2>
+<div class="table-responsive">
+<table id="size-conversion-table" class="table table-bordered table-hover">
+<caption>SOLEA reference chart · approximate conversions; sizing varies by designer.</caption>
+<thead>
+<tr>
+<th scope="col">
+EU
+</th>
+<th scope="col">
+US
+</th>
+<th scope="col">
+UK
+</th>
+<th scope="col">
+FOOT LENGTH
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+35
+</td>
+<td>
+5
+</td>
+<td>
+2
+</td>
+<td>
+22.5 cm
+</td>
+</tr>
+<tr>
+<td>
+36
+</td>
+<td>
+6
+</td>
+<td>
+3
+</td>
+<td>
+23 cm
+</td>
+</tr>
+<tr>
+<td>
+37
+</td>
+<td>
+7
+</td>
+<td>
+4
+</td>
+<td>
+23.5 cm
+</td>
+</tr>
+<tr>
+<td>
+38
+</td>
+<td>
+8
+</td>
+<td>
+5
+</td>
+<td>
+24 cm
+</td>
+</tr>
+<tr>
+<td>
+39
+</td>
+<td>
+9
+</td>
+<td>
+6
+</td>
+<td>
+25 cm
+</td>
+</tr>
+<tr>
+<td>
+40
+</td>
+<td>
+10
+</td>
+<td>
+7
+</td>
+<td>
+25.5 cm
+</td>
+</tr>
+<tr>
+<td>
+41
+</td>
+<td>
+11
+</td>
+<td>
+8
+</td>
+<td>
+26 cm
+</td>
+</tr>
+<tr>
+<td>
+42
+</td>
+<td>
+12
+</td>
+<td>
+9
+</td>
+<td>
+26.5 cm
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="a5-section" id="fit-finder" aria-labelledby="finder-title">
+<div class="a5-inner">
+<span class="a5-eyebrow">THREE SMALL STEPS</span>
+<h2 id="finder-title">FIND YOUR SOLEA FIT</h2>
+<p>A quick starting point based on our size chart. Designer sizing may vary; check the specific style before ordering.</p>
+<form id="solea-fit-finder" class="a5-form" novalidate>
+<p id="finder-progress" class="a5-eyebrow" role="status">STEP 1 OF 3</p>
+<section data-fit-step>
+<h3 tabindex="-1">Measure your foot</h3>
+<label for="finder-length">Foot length in centimetres</label>
+<input id="finder-length" name="length" type="number" min="22.5" max="26.5" step="0.1" required placeholder="For example, 24.5" aria-describedby="finder-length-hint finder-error">
+<p id="finder-length-hint">Measure both feet and use the larger value. This chart covers 22.5–26.5 cm.</p>
+<p id="finder-error" class="a5-error" role="alert"></p>
+</section>
+<section data-fit-step hidden>
+<h3 tabindex="-1">Make it personal</h3>
+<label for="finder-width">Foot width</label>
+<select id="finder-width" name="width"><option value="standard">Standard</option><option value="wide">Wide</option></select>
+<label for="finder-occasion">Where will you wear your heels?</label>
+<select id="finder-occasion" name="occasion"><option value="everyday">Everyday</option><option value="office">Office</option><option value="evening">Evening</option></select>
+</section>
+<section data-fit-step hidden>
+<h3 tabindex="-1">Your starting point</h3>
+<p id="finder-result" class="a5-result"></p><a href="#size-chart" class="fit-chart-link">See your size in the chart →</a>
+<p>This is general guidance, not a guaranteed fit. Compare the specific designer’s size guide before choosing your pair.</p>
+</section>
+<div class="a5-actions">
+<button class="a5-button a5-button-secondary" type="button" data-fit-back hidden>BACK</button>
+<button class="a5-button" type="button" data-fit-next>NEXT</button>
+<button class="a5-button" type="button" data-fit-reset hidden>START AGAIN</button>
+</div>
+</form>
+<div class="a5-sound"><button class="a5-button a5-button-secondary" type="button" data-play-chime>PLAY SOLEA CHIME</button><p class="a5-sound-status" data-sound-status role="status"></p></div>
+</div>
+</section>
+<section class="size-form-section" id="fit-help">
+<div class="container-fluid">
+<div class="size-form-container">
+<h2>
+FIND YOUR PERFECT FIT
+</h2>
+<p>
+Try a fit advice request. Use sample details to preview the form; nothing is sent or saved.
+</p>
+<form class="size-form" data-solea-form novalidate>
+<div class="mb-3">
+<label
+for="customerName"
+class="form-label"
+>
+Your Name
+</label>
+<input
+type="text"
+class="form-control"
+id="customerName" required data-rule="name" aria-describedby="customerName-error"
+name="customerName" autocomplete="name" maxlength="80"
+placeholder="Enter your name"
+><p class="solea-error" id="customerName-error"></p>
+</div>
+<div class="mb-3">
+<label
+for="customerEmail"
+class="form-label"
+>
+Email
+</label>
+<input
+type="email"
+class="form-control"
+id="customerEmail" required data-rule="email" aria-describedby="customerEmail-error"
+name="customerEmail" autocomplete="email" maxlength="254"
+placeholder="Enter your email"
+><p class="solea-error" id="customerEmail-error"></p>
+</div>
+<div class="mb-3">
+<label
+for="shoeSize"
+class="form-label"
+>
+Your EU Size
+</label>
+<select
+class="form-select"
+id="shoeSize" required data-rule="size" aria-describedby="shoeSize-error"
+name="shoeSize"
+>
+<option value="" selected>
+Choose your size
+</option>
+<option value="35">
+35
+</option>
+<option value="36">
+36
+</option>
+<option value="37">
+37
+</option>
+<option value="38">
+38
+</option>
+<option value="39">
+39
+</option>
+<option value="40">
+40
+</option>
+<option value="41">
+41
+</option>
+<option value="42">
+42
+</option>
+</select><p class="solea-error" id="shoeSize-error"></p>
+</div>
+<div class="mb-3">
+<label
+for="footLength"
+class="form-label"
+>
+Foot Length
+</label>
+<input
+type="number" min="15" max="35" step="0.1"
+class="form-control"
+id="footLength" required data-rule="length" aria-describedby="footLength-error"
+name="footLength"
+placeholder="Foot length in cm, e.g. 24.5"
+><p class="solea-error" id="footLength-error"></p>
+</div>
+<div class="mb-3">
+<label
+for="question"
+class="form-label"
+>
+Your Question
+</label>
+<textarea
+class="form-control"
+id="question" required data-rule="question" aria-describedby="question-error"
+name="question" minlength="10" maxlength="1000"
+rows="4"
+placeholder="Tell us how we can help"
+></textarea><p class="solea-error" id="question-error"></p>
+</div>
+<button
+type="submit"
+class="btn btn-dark"
+>
+PREVIEW REQUEST
+</button>
+<p class="solea-form-status" role="status"></p><small>Demo only: your request is validated locally and is not sent.</small></form>
+</div>
+</div>
+</section>
+<section class="fit-banner">
+<h2>
+NEED HELP?
+</h2>
+<p>
+Review your measurements and explore fit advice before choosing your SOLEA pair.
+</p>
+<a
+href="#fit-help"
+class="button"
+>
+EXPLORE FIT ADVICE
+</a>
+</section>
+<section class="solea-interactive solea-faq" aria-labelledby="fit-faq-title">
+<span class="solea-eyebrow">A LITTLE GUIDANCE</span>
+<h2 id="fit-faq-title">YOUR FIT, EXPLAINED</h2>
+<p>Small details that make every step feel better.</p>
+<div class="solea-faq-item">
+<h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-0" id="fit-question-0">How do I measure my feet?<span aria-hidden="true">+</span></button></h3>
+<div class="solea-faq-answer" id="fit-answer-0" role="region" aria-labelledby="fit-question-0" inert><div><p>Stand on a sheet of paper and mark your heel and longest toe. Measure the distance in centimetres. Measure both feet and use the larger measurement with the size chart above.</p></div></div></div><div class="solea-faq-item">
+<h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-1" id="fit-question-1">What if I am between two sizes?<span aria-hidden="true">+</span></button></h3>
+<div class="solea-faq-answer" id="fit-answer-1" role="region" aria-labelledby="fit-question-1" inert><div><p>Compare your measurements with the chart and consider the shape of the shoe. If you are between sizes, ask for individual fit advice before choosing your pair.</p></div></div></div><div class="solea-faq-item">
+<h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-2" id="fit-question-2">Does every designer use the same sizing?<span aria-hidden="true">+</span></button></h3>
+<div class="solea-faq-answer" id="fit-answer-2" role="region" aria-labelledby="fit-question-2" inert><div><p>No. The conversion chart is a general guide. The fit can vary by designer, toe shape and material, so check the product details before ordering.</p></div></div></div><div class="solea-faq-item">
+<h3><button type="button" class="solea-faq-toggle" aria-expanded="false" aria-controls="fit-answer-3" id="fit-question-3">How should heels feel when I try them on?<span aria-hidden="true">+</span></button></h3>
+<div class="solea-faq-answer" id="fit-answer-3" role="region" aria-labelledby="fit-question-3" inert><div><p>Your heel should stay secure and your toes should have room without being squeezed. Try both shoes on a clean surface and walk a few steps to check the fit.</p></div></div></div></section>
+<section class="solea-interactive solea-tools" aria-label="Page preferences">
+<div><span class="solea-eyebrow">MAKE YOURSELF AT HOME</span>
+<p>Choose the shade of your SOLEA experience.</p></div>
+<button type="button" class="solea-button" data-change-background>CHANGE BACKGROUND · IVORY</button>
+<p class="solea-clock">Your local time<br><time data-live-clock></time></p>
+</section>
+</main>
+<footer>
+<h2>
+SOLEA
+</h2>
+<p>
+Luxury heels created for your story.
+</p>
+<p>
+Team members:
+Aruzhan Bolatova,
+Ardak Korabay,
+Aiym Rakhat
+</p>
+<p>
+© 2026 SOLEA
+</p>
+</footer>
+</div>
 </body>
-
 </html>

@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     updateClock();
-    window.setInterval(updateClock, 1000);
+    if (document.querySelector('[data-live-clock]')) window.setInterval(updateClock, 1000);
 });
 
 
@@ -227,10 +227,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Objects and methods hold the chart and recommendation logic.
     const fitGuide = {
-        chart: [
-            { eu: 35, cm: 22.5 }, { eu: 36, cm: 23 }, { eu: 37, cm: 23.5 }, { eu: 38, cm: 24 },
-            { eu: 39, cm: 25 }, { eu: 40, cm: 25.5 }, { eu: 41, cm: 26 }, { eu: 42, cm: 26.5 }
-        ],
+        chart: Array.from(document.querySelectorAll('#size-conversion-table tbody tr')).map(function (row) {
+            const cells = row.querySelectorAll('td');
+            return { eu: Number(cells[0].textContent.trim()), us: cells[1].textContent.trim(), uk: cells[2].textContent.trim(), cm: parseFloat(cells[3].textContent) };
+        }),
         findSize(length) {
             // Explicit for loop demonstrates iteration over the array of objects.
             for (let i = 0; i < this.chart.length; i++) {
@@ -289,16 +289,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 const size = fitGuide.findSize(Number(length.value));
                 const width = form.elements.width.value;
                 const occasion = form.elements.occasion.value;
-                result.textContent = 'Start with EU ' + size + '. ' + fitGuide.occasionTip(occasion) +
+                const match = fitGuide.chart.find(item => item.eu === size);
+                document.querySelectorAll('#size-conversion-table tbody tr').forEach(function (row) {
+                    row.classList.toggle('recommended-size', Number(row.cells[0].textContent.trim()) === size);
+                });
+                result.textContent = 'Start with EU ' + size + ' · US ' + match.us + ' · UK ' + match.uk + '. ' +
+                    (Number(length.value) !== match.cm ? 'Your measurement falls between chart entries; this is the next listed size. ' : '') + fitGuide.occasionTip(occasion) +
                     (width === 'wide' ? ' For a wider foot, ask about the fit of the specific style.' : ' Check that your heel stays secure.');
             }
             if (state.step < 2) moveTo(state.step + 1, renderStep);
         }
         next.addEventListener('click', advance);
         form.addEventListener('submit', function (event) { event.preventDefault(); advance(); });
-        back.addEventListener('click', function () { if (state.step > 0) moveTo(state.step - 1, renderStep); });
+        back.addEventListener('click', function () { if (state.step > 0) {
+                document.querySelectorAll('.recommended-size').forEach(row => row.classList.remove('recommended-size'));
+                moveTo(state.step - 1, renderStep);
+            } });
         reset.addEventListener('click', function () {
             form.reset(); error.textContent = ''; result.textContent = '';
+            document.querySelectorAll('.recommended-size').forEach(row => row.classList.remove('recommended-size'));
             length.removeAttribute('aria-invalid');
             moveTo(0, renderStep);
         });
@@ -308,52 +317,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.addEventListener('keydown', function (event) {
-    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
-        return;
+// Mobile navigation: retain ordinary links and full keyboard access.
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('page-navigation');
+    function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('is-open');
     }
-
-    const links = Array.from(
-        document.querySelectorAll('#main-header .navbar a[href]')
-    );
-
-    const index = links.indexOf(document.activeElement);
-
-    // Стрелки работают, только когда выделена ссылка меню.
-    if (index === -1) return;
-
-    event.preventDefault();
-    event.stopImmediatePropagation();
-
-    const direction = event.key === 'ArrowRight' ? 1 : -1;
-    const nextIndex =
-        (index + direction + links.length) % links.length;
-
-    links[nextIndex].focus();
-}, true);
-
-function startClock() {
-  function updateClock() {
-    var clocks = document.querySelectorAll('.live-clock');
-
-    var time = new Date().toLocaleTimeString('en-GB', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: false
+    toggle.addEventListener('click', function () {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('is-open', open);
     });
-
-    clocks.forEach(function (clock) {
-      clock.textContent = 'Local time: ' + time;
+    menu.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') { closeMenu(); toggle.focus(); }
     });
-  }
-
-  updateClock();
-  setInterval(updateClock, 1000);
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startClock);
-} else {
-  startClock();
-}
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.matchMedia('(min-width: 992px)').addEventListener('change', closeMenu);
+});
