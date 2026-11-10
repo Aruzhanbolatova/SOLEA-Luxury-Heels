@@ -2456,6 +2456,93 @@ DESIGNERS PAGE
     color: #181818;
 }
 
+/* Shared editorial header used on the updated team pages. */
+.a3-page #main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px max(5vw, 20px);
+    background: #fffdf9;
+    border-bottom: 1px solid #ded7ce;
+}
+
+.a3-page .solea-wordmark {
+    color: #24201e;
+    font: 32px/1 Georgia, "Times New Roman", serif;
+    letter-spacing: .24em;
+    text-decoration: none;
+}
+
+.a3-page #main-header .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0;
+}
+
+.a3-page #main-header .navbar a {
+    padding: 10px 0;
+    color: #24201e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .1em;
+}
+
+.a3-page #main-header .navbar a:hover,
+.a3-page #main-header .navbar a.active {
+    color: #791e32;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.a3-page .menu-toggle {
+    display: none;
+    min-height: 44px;
+    padding: 8px 15px;
+    border: 1px solid #ded7ce;
+    background: transparent;
+    color: #24201e;
+}
+
+.a3-page .menu-toggle span { margin-left: 10px; }
+
+.a3-page .skip-link {
+    position: absolute;
+    z-index: 1200;
+    top: -100px;
+    left: 16px;
+    padding: 12px 22px;
+    background: #fffdf9;
+    color: #24201e;
+}
+
+.a3-page .skip-link:focus { top: 12px; }
+
+html[data-theme="dark"] .a3-page .menu-toggle {
+    color: #f3eee7;
+    border-color: #544b42;
+}
+
+@media (max-width: 991px) {
+    .a3-page #main-header { gap: 16px; padding-block: 18px; }
+    .a3-page .menu-toggle { display: block; }
+    .a3-page #main-header .navbar {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    .a3-page #main-header .navbar.is-open { display: flex; }
+    .a3-page #main-header .navbar a {
+        padding: 13px 0;
+        border-top: 1px solid #ded7ce;
+    }
+}
+
 .a3-page h1,
 .a3-page h2,
 .a3-page h3 {

@@ -1,6 +1,33 @@
 $(document).ready(function () {
   console.log("jQuery is ready!");
 
+  // Responsive navigation shared by Aruzhan's Brands and Design pages.
+  const menuButton = document.querySelector('.a3-page .menu-toggle');
+  const pageNavigation = document.querySelector('.a3-page #page-navigation');
+  if (menuButton && pageNavigation) {
+    function closePageNavigation() {
+      menuButton.setAttribute('aria-expanded', 'false');
+      pageNavigation.classList.remove('is-open');
+    }
+
+    menuButton.addEventListener('click', function () {
+      const isOpen = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      pageNavigation.classList.toggle('is-open', isOpen);
+    });
+
+    pageNavigation.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closePageNavigation();
+        menuButton.focus();
+      }
+    });
+
+    pageNavigation.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closePageNavigation);
+    });
+  }
+
   // Brands: confirm a rating and discard any earlier notification timer.
   $(document).on('click', '.brand-rating-star', function () {
     const card = $(this).closest('.brand-card');

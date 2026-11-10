@@ -24,55 +24,22 @@
 
 <body class="a3-page">
 
-<a class="visually-hidden-focusable d-inline-block bg-white text-dark p-3"
-   href="#main-content">
+<a class="skip-link" href="#main-content">
     Skip to content
 </a>
 
-<header class="bg-white border-bottom">
-    <nav class="navbar navbar-expand-lg bg-white py-3 py-lg-4"
-         aria-label="Main navigation">
-
-        <div class="container px-3 px-sm-4">
-            <a class="navbar-brand solea-logo me-4" href="index.html">
-                SOLEA
-            </a>
-
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#soleaNav"
-                    aria-controls="soleaNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="soleaNav">
-                <ul class="navbar-nav ms-auto gap-lg-3 pt-3 pt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="brands.html">Brands</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active"
-                           href="design.html"
-                           aria-current="page">Design your pair</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="size-guide.html">Size Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<header id="main-header">
+    <a class="solea-wordmark" href="index.html" aria-label="SOLEA home">SOLEA</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="page-navigation">
+        Menu <span aria-hidden="true">☰</span>
+    </button>
+    <nav class="navbar" id="page-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="brands.html">Brands</a>
+        <a href="design.html" class="active" aria-current="page">Design your pair</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="about.html">About us</a>
     </nav>
 </header>
 
