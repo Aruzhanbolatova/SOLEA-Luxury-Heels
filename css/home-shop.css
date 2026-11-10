@@ -418,34 +418,8 @@ body:has(#subscription-dialog[open]) {
     white-space: nowrap;
 }
 
-/* Task 5: counters */
-.stats-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 25px;
-    padding: 60px 5vw;
-    background: #f8f6f2;
-    color: #211c17;
-    text-align: center;
-}
-.stat-item { flex: 1 1 180px; }
-.stat-item strong {
-    display: block;
-    font: normal clamp(2.5rem, 6vw, 4rem)/1.1 Georgia, serif;
-    font-variant-numeric: tabular-nums;
-}
-.stat-item span:last-child { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.8rem; }
-html[data-theme="dark"] .stats-section { background: #1d1b19; color: #f3eee7; }
 
-/* Task 9: lazy images fade in */
-img.lazy-img { opacity: 0; transition: opacity 0.6s; }
-img.lazy-img.lazy-loaded { opacity: 1; }
 
 /* Task 3: highlighted search text */
 .product-card mark { background: #ffe089; color: #20170b; padding: 0 2px; }
 
-@media (prefers-reduced-motion: reduce) {
-    #scroll-progress span, .solea-spinner { animation: none; }
-    img.lazy-img { transition: none; }
-}

@@ -630,7 +630,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Assignment 6: jQuery features for the Home and Shop pages.
 $(document).ready(function () {
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- TASK 7: toast notification ----------
   const $toast = $('<div>', { id: 'solea-toast', role: 'status', 'aria-live': 'polite' })
@@ -654,69 +653,6 @@ $(document).ready(function () {
   $(window).on('scroll resize', updateProgress);
   updateProgress();
 
-  // ---------- TASK 9: lazy loading (Home) ----------
-  const $lazyImages = $('img.lazy-img[data-src]');
-
-  function loadVisibleImages() {
-    const viewportBottom = $(window).scrollTop() + $(window).height() + 200;
-
-    $lazyImages.filter('[data-src]').each(function () {
-      const $img = $(this);
-
-      if ($img.offset().top < viewportBottom) {
-        $img.one('load', function () { $img.addClass('lazy-loaded'); });
-        $img.attr('src', $img.attr('data-src')).removeAttr('data-src');
-      }
-    });
-  }
-
-  if ($lazyImages.length) {
-    $(window).on('scroll resize', loadVisibleImages);
-    loadVisibleImages();
-  }
-
-  // ---------- TASK 5: animated number counter (Home) ----------
-  const $stats = $('#stats');
-
-  if ($stats.length) {
-    let counted = false;
-
-    function startCounters() {
-      counted = true;
-
-      $('.stat-number').each(function () {
-        const $number = $(this);
-        const target = Number($number.attr('data-target'));
-
-        if (reduceMotion) {
-          $number.text(target.toLocaleString('en-US'));
-          return;
-        }
-
-        $({ value: 0 }).animate({ value: target }, {
-          duration: 2000,
-          easing: 'swing',
-          step: function (now) {
-            $number.text(Math.floor(now).toLocaleString('en-US'));
-          },
-          complete: function () {
-            $number.text(target.toLocaleString('en-US'));
-          }
-        });
-      });
-    }
-
-    function checkStats() {
-      const visibleBottom = $(window).scrollTop() + $(window).height();
-
-      if (!counted && visibleBottom > $stats.offset().top + 80) {
-        startCounters();
-      }
-    }
-
-    $(window).on('scroll resize', checkStats);
-    checkStats();
-  }
 
   // ---------- TASK 6: spinner on submit (Home subscription form) ----------
   $('#subscription-form').on('validated', function () {
