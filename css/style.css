@@ -2521,6 +2521,22 @@ DESIGNERS PAGE
 
 .a3-page .skip-link:focus { top: 12px; }
 
+.a3-page .a3-scroll-progress {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 5px;
+    z-index: 2000;
+    background: #43382c;
+    pointer-events: none;
+}
+
+.a3-page .a3-scroll-progress span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #ad753d, #efc783, #d390a0);
+}
+
 html[data-theme="dark"] .a3-page .menu-toggle {
     color: #f3eee7;
     border-color: #544b42;

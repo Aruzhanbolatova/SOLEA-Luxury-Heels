@@ -28,6 +28,26 @@ $(document).ready(function () {
     });
   }
 
+  // Assignment 6: show how far the visitor has scrolled on Brands and Design.
+  if ($('body').hasClass('a3-page')) {
+    const $progress = $('<div class="a3-scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"><span></span></div>')
+      .appendTo('body');
+
+    function updateScrollProgress() {
+      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = pageHeight > 0
+        ? Math.min(100, Math.max(0, window.scrollY / pageHeight * 100))
+        : 100;
+      $progress.attr('aria-valuenow', Math.round(percent))
+        .children('span')
+        .css('width', percent + '%');
+    }
+
+    $(window).on('scroll resize load', updateScrollProgress);
+    if (window.ResizeObserver) new ResizeObserver(updateScrollProgress).observe(document.body);
+    updateScrollProgress();
+  }
+
   // Brands: confirm a rating and discard any earlier notification timer.
   $(document).on('click', '.brand-rating-star', function () {
     const card = $(this).closest('.brand-card');
