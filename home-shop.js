@@ -158,11 +158,10 @@ if (email === "") {
                 return;
             }
 
-            result.textContent =
-                "Validation successful! Demo only: no account or subscription was created.";
-
-            form.reset();
             submitted = false;
+
+// jQuery (home-shop-jquery.js) shows the spinner and the toast.
+$(form).trigger("validated");
         });
 
         // Update errors as the user corrects their input.
@@ -628,4 +627,195 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+});
+// Assignment 6: jQuery features for the Home and Shop pages.
+$(document).ready(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- TASK 7: toast notification ----------
+  const $toast = $('<div>', { id: 'solea-toast', role: 'status', 'aria-live': 'polite' })
+    .hide()
+    .appendTo('body');
+
+  function showToast(message) {
+    $toast.stop(true, true).text(message).fadeIn(200).delay(2500).fadeOut(400);
+  }
+
+  // ---------- TASK 4: scroll progress bar ----------
+  const $progress = $('<div id="scroll-progress" aria-hidden="true"><span></span></div>')
+    .prependTo('body');
+
+  function updateProgress() {
+    const scrollable = $(document).height() - $(window).height();
+    const percent = scrollable > 0 ? ($(window).scrollTop() / scrollable) * 100 : 0;
+    $progress.children().css('width', percent + '%');
+  }
+
+  $(window).on('scroll resize', updateProgress);
+  updateProgress();
+
+  // ---------- TASK 9: lazy loading (Home) ----------
+  const $lazyImages = $('img.lazy-img[data-src]');
+
+  function loadVisibleImages() {
+    const viewportBottom = $(window).scrollTop() + $(window).height() + 200;
+
+    $lazyImages.filter('[data-src]').each(function () {
+      const $img = $(this);
+
+      if ($img.offset().top < viewportBottom) {
+        $img.one('load', function () { $img.addClass('lazy-loaded'); });
+        $img.attr('src', $img.attr('data-src')).removeAttr('data-src');
+      }
+    });
+  }
+
+  if ($lazyImages.length) {
+    $(window).on('scroll resize', loadVisibleImages);
+    loadVisibleImages();
+  }
+
+  // ---------- TASK 5: animated number counter (Home) ----------
+  const $stats = $('#stats');
+
+  if ($stats.length) {
+    let counted = false;
+
+    function startCounters() {
+      counted = true;
+
+      $('.stat-number').each(function () {
+        const $number = $(this);
+        const target = Number($number.attr('data-target'));
+
+        if (reduceMotion) {
+          $number.text(target.toLocaleString('en-US'));
+          return;
+        }
+
+        $({ value: 0 }).animate({ value: target }, {
+          duration: 2000,
+          easing: 'swing',
+          step: function (now) {
+            $number.text(Math.floor(now).toLocaleString('en-US'));
+          },
+          complete: function () {
+            $number.text(target.toLocaleString('en-US'));
+          }
+        });
+      });
+    }
+
+    function checkStats() {
+      const visibleBottom = $(window).scrollTop() + $(window).height();
+
+      if (!counted && visibleBottom > $stats.offset().top + 80) {
+        startCounters();
+      }
+    }
+
+    $(window).on('scroll resize', checkStats);
+    checkStats();
+  }
+
+  // ---------- TASK 6: spinner on submit (Home subscription form) ----------
+  $('#subscription-form').on('validated', function () {
+    const $form = $(this);
+    const $button = $form.find('button[type="submit"]');
+    const originalText = $button.text();
+
+    $button
+      .prop('disabled', true)
+      .html('<span class="solea-spinner" aria-hidden="true"></span>Please wait…');
+
+    // Simulated server call.
+    setTimeout(function () {
+      $button.prop('disabled', false).text(originalText);
+      $form[0].reset();
+      $('#subscription-result').text('Welcome to the SOLEA Club! Demo only: nothing was saved.');
+      showToast('Successfully subscribed to the SOLEA Club!');
+    }, 2000);
+  });
+
+  // ---------- TASK 8: copy to clipboard (Home promo code) ----------
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+
+    return new Promise(function (resolve, reject) {
+      const $temp = $('<textarea>').val(text).css({ position: 'fixed', opacity: 0 }).appendTo('body');
+      $temp[0].select();
+      const ok = document.execCommand('copy');
+      $temp.remove();
+      ok ? resolve() : reject();
+    });
+  }
+
+  function confirmCopy($button) {
+    const $icon = $button.find('.copy-icon');
+    const $tooltip = $button.siblings('.copy-tooltip');
+
+    $icon.text('✓');
+    $button.addClass('copied');
+    $tooltip.stop(true, true).fadeIn(150).delay(1600).fadeOut(200, function () {
+      $icon.text('⧉');
+      $button.removeClass('copied');
+    });
+    showToast('Promo code copied!');
+  }
+
+  $('.copy-btn').on('click', function () {
+    const $button = $(this);
+    const text = $($button.data('target')).text().trim();
+
+    copyText(text).then(function () {
+      confirmCopy($button);
+    }).catch(function () {
+      showToast('Copy failed. Select the code and press Ctrl+C.');
+    });
+  });
+
+  // Also react when the code is copied manually (Ctrl+C / right-click).
+  $('#promo-code').on('copy', function () {
+    confirmCopy($('.copy-btn'));
+  });
+
+  // ---------- TASK 3: search highlighting (Shop) ----------
+  const $search = $('#collection-query');
+
+  if ($search.length) {
+    const $titles = $('#product-grid .card-title');
+
+    $titles.each(function () {
+      $(this).data('original', $(this).text());
+    });
+
+    function highlightMatches() {
+      const query = $search.val().trim();
+      const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+      $titles.each(function () {
+        const $title = $(this);
+        const original = $title.data('original');
+
+        if (query === '') {
+          $title.text(original);
+        } else {
+          $title.html(original.replace(new RegExp('(' + safeQuery + ')', 'gi'), '<mark>$1</mark>'));
+        }
+      });
+    }
+
+    $search.on('input', highlightMatches);
+  }
+
+  // ---------- TASK 7: toast on Shop ----------
+  $('#change-background').on('click', function () {
+    showToast('Background color changed');
+  });
+
+  $('#price-filter, #sort-select').on('change', function () {
+    showToast('Product list updated');
+  });
 });
