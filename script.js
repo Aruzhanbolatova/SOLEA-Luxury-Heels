@@ -20,5 +20,10 @@ $(document).ready(function () {
       });
     });
     photos.each(function () { observer.observe(this); });
+  } else {
+    photos.each(function () {
+      const image = $(this);
+      image.attr('src', image.attr('data-src')).removeAttr('data-src');
+    });
   }
 });
