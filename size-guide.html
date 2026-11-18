@@ -254,7 +254,12 @@ FOOT LENGTH
 </section>
 <section data-fit-step hidden>
 <h3 tabindex="-1">Your starting point</h3>
-<p id="finder-result" class="a5-result"></p><a href="#size-chart" class="fit-chart-link">See your size in the chart →</a>
+<p id="finder-result" class="a5-result"></p>
+<div class="fit-save-actions">
+<button class="a5-button" type="button" id="save-fit-result" disabled>SAVE MY SIZE</button>
+<p id="fit-save-status" class="fit-save-status" role="status" aria-live="polite"></p>
+</div>
+<a href="#size-chart" class="fit-chart-link">See your size in the chart →</a>
 <p>This is general guidance, not a guaranteed fit. Compare the specific designer’s size guide before choosing your pair.</p>
 </section>
 <div class="a5-actions">
@@ -263,6 +268,11 @@ FOOT LENGTH
 <button class="a5-button" type="button" data-fit-reset hidden>START AGAIN</button>
 </div>
 </form>
+<div id="saved-fit-card" class="saved-fit-card" hidden>
+<p class="a5-eyebrow">YOUR SAVED SIZE</p>
+<p id="saved-fit-details"></p>
+<button type="button" id="clear-saved-fit" class="a5-button a5-button-secondary">CLEAR SAVED SIZE</button>
+</div>
 <div class="a5-sound"><button class="a5-button a5-button-secondary" type="button" data-play-chime>PLAY SOLEA CHIME</button><p class="a5-sound-status" data-sound-status role="status"></p></div>
 </div>
 </section>

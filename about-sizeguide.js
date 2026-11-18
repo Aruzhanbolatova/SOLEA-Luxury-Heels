@@ -267,7 +267,32 @@ document.addEventListener('DOMContentLoaded', function () {
         const length = document.getElementById('finder-length');
         const error = document.getElementById('finder-error');
         const result = document.getElementById('finder-result');
+        const saveButton = document.getElementById('save-fit-result');
+        const saveStatus = document.getElementById('fit-save-status');
+        const savedCard = document.getElementById('saved-fit-card');
+        const savedDetails = document.getElementById('saved-fit-details');
+        const clearSavedButton = document.getElementById('clear-saved-fit');
         const state = { step: 0 };
+        let latestFit = null;
+
+        function showSavedFit() {
+            try {
+                const savedFit = JSON.parse(localStorage.getItem('solea-saved-fit'));
+                if (!savedFit || !savedFit.eu) {
+                    savedCard.hidden = true;
+                    return;
+                }
+                savedDetails.textContent = 'EU ' + savedFit.eu +
+                    ' · US ' + savedFit.us +
+                    ' · UK ' + savedFit.uk +
+                    ' · Foot length: ' + savedFit.length + ' cm';
+                savedCard.hidden = false;
+            } catch (error) {
+                savedCard.hidden = true;
+            }
+        }
+
+        showSavedFit();
 
         function renderStep() {
             panels.forEach(function (panel, index) { panel.hidden = index !== state.step; });
@@ -299,6 +324,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 const width = form.elements.width.value;
                 const occasion = form.elements.occasion.value;
                 const match = fitGuide.chart.find(item => item.eu === size);
+                latestFit = {
+                    eu: size,
+                    us: match.us,
+                    uk: match.uk,
+                    length: Number(length.value)
+                };
+                saveButton.disabled = false;
+                saveStatus.textContent = '';
                 document.querySelectorAll('#size-conversion-table tbody tr').forEach(function (row) {
                     row.classList.toggle('recommended-size', Number(row.cells[0].textContent.trim()) === size);
                 });
@@ -309,6 +342,25 @@ document.addEventListener('DOMContentLoaded', function () {
             if (state.step < 2) moveTo(state.step + 1, renderStep);
         }
         next.addEventListener('click', advance);
+        saveButton.addEventListener('click', function () {
+            if (!latestFit) return;
+            try {
+                localStorage.setItem('solea-saved-fit', JSON.stringify(latestFit));
+                saveStatus.textContent = 'Your size has been saved in this browser.';
+                showSavedFit();
+            } catch (error) {
+                saveStatus.textContent = 'Could not save your size in this browser.';
+            }
+        });
+        clearSavedButton.addEventListener('click', function () {
+            try {
+                localStorage.removeItem('solea-saved-fit');
+            } catch (error) {
+                // Storage may be unavailable in the current browser.
+            }
+            savedCard.hidden = true;
+            saveStatus.textContent = 'Saved size cleared.';
+        });
         form.addEventListener('submit', function (event) { event.preventDefault(); advance(); });
         back.addEventListener('click', function () { if (state.step > 0) {
                 document.querySelectorAll('.recommended-size').forEach(row => row.classList.remove('recommended-size'));
@@ -316,6 +368,9 @@ document.addEventListener('DOMContentLoaded', function () {
             } });
         reset.addEventListener('click', function () {
             form.reset(); error.textContent = ''; result.textContent = '';
+            latestFit = null;
+            saveButton.disabled = true;
+            saveStatus.textContent = '';
             document.querySelectorAll('.recommended-size').forEach(row => row.classList.remove('recommended-size'));
             length.removeAttribute('aria-invalid');
             moveTo(0, renderStep);
