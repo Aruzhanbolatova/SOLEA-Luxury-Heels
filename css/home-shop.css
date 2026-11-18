@@ -68,6 +68,7 @@ body:has(#subscription-dialog[open]) {
 
 #subscription-title {
     font-size: 28px;
+    margin: 8px 44px 16px 0;
 }
 
 #subscription-dialog .demo-note {
@@ -99,11 +100,6 @@ body:has(#subscription-dialog[open]) {
     font-size: 13px;
 }
 
-#subscription-result {
-    margin-top: 16px;
-    color: #294d35;
-}
-
 /* Shop: background and clock */
 .shop-page {
     transition: background-color 0.35s ease;
@@ -114,7 +110,7 @@ body:has(#subscription-dialog[open]) {
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
-    margin-top: 28px;
+    margin-top: 14px;
     font-size: 14px;
 }
 
@@ -201,14 +197,12 @@ body:has(#subscription-dialog[open]) {
     display: none !important;
 }
 
-.a5-panel label,
-.a5-filter label {
+.a5-panel label {
     display: block;
     margin-bottom: 8px;
 }
 
-.a5-panel select,
-.a5-filter select {
+.a5-panel select {
     width: 100%;
     padding: 12px;
     border: 1px solid #b6aaa0;
@@ -239,16 +233,6 @@ body:has(#subscription-dialog[open]) {
     border-top: 1px solid #ded4ca;
 }
 
-/* Shop: filter */
-.a5-filter {
-    min-width: 180px;
-}
-
-#filter-message {
-    flex-basis: 100%;
-    margin: 0;
-}
-
 /* Hide the whole product column, including its spacing. */
 #product-grid > [hidden] {
     display: none !important;
@@ -257,7 +241,6 @@ body:has(#subscription-dialog[open]) {
 /* Keyboard focus */
 .a5-button:focus-visible,
 .a5-panel select:focus-visible,
-.a5-filter select:focus-visible,
 #main-header .navbar a:focus-visible {
     outline: 3px solid #bd8a55;
     outline-offset: 4px;
@@ -285,10 +268,6 @@ body:has(#subscription-dialog[open]) {
         margin: 30px 16px;
         padding: 24px 18px;
     }
-
-    .a5-filter {
-        width: 100%;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -304,32 +283,187 @@ body:has(#subscription-dialog[open]) {
     color: white;
 }
 
-/* Assignment 6: catalogue search and designer count */
-.collection-search { position: relative; max-width: 30rem; margin: 1.25rem 0; }
-.collection-search label, .collection-search small { display: block; margin: .4rem 0; }
-.collection-search input { width: 100%; padding: .7rem 1rem; border: 1px solid #857674; background: white; color: #191414; }
+/* Shop: catalog layout */
+.shop-hero,
+.shop-grid-section,
+.shop-display-options {
+    max-width: 86rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 4rem);
+}
+
+.shop-hero {
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.shop-hero h1 {
+    margin: 0;
+    font-size: clamp(2.125rem, 5vw, 3.75rem);
+    letter-spacing: .02em;
+}
+
+.shop-grid-section {
+    padding-bottom: clamp(2.5rem, 7vw, 5rem);
+}
+
+.shop-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(10rem, 1fr) minmax(12rem, 1fr);
+    align-items: end;
+    gap: .875rem 1.25rem;
+    padding-block: 1rem;
+    border-block: 1px solid var(--bs-border-color, #d7cdc3);
+}
+
+.shop-toolbar label {
+    display: block;
+    margin-bottom: .375rem;
+    font-size: .875rem;
+    font-weight: 600;
+}
+
+.shop-toolbar :is(input, select) {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: .625rem .75rem;
+    border: 1px solid #b6aaa0;
+    border-radius: 0;
+    background-color: white;
+    color: #191414;
+    font-size: 1rem;
+}
+
+.shop-toolbar select {
+    cursor: pointer;
+}
+
+#product-count {
+    margin: .875rem 0 1.25rem;
+    font-size: .875rem;
+}
+
+#product-count:empty {
+    display: none;
+}
+
+#filter-message {
+    padding: 1.5rem;
+    border: 1px solid var(--bs-border-color, #d7cdc3);
+}
+
+.shop-display-options {
+    padding-block: 1rem 1.5rem;
+    font-size: .875rem;
+}
+
+.shop-display-options summary {
+    width: fit-content;
+    cursor: pointer;
+}
+
+.collection-search {
+    position: relative;
+}
+
 #model-options { position: absolute; z-index: 4; background: white; width: 100%; box-shadow: 0 5px 15px #0002; }
 #model-options button { display: block; width: 100%; background: white; color: #181414; text-align: left; padding: .55rem 1rem; border: 0; }
 #model-options button:hover, #model-options button:focus { background: #f4e8e3; }
+
+@media (max-width: 700px) {
+    .shop-toolbar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .collection-search {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 440px) {
+    .shop-toolbar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Home: designer collection below the hero */
+.designer-count {
+    background: #f1eae1;
+    border-bottom: 1px solid #d9cbbd;
+}
+
+.designer-count-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2.5rem;
+    max-width: 86rem;
+    margin-inline: auto;
+    padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1rem, 5vw, 5rem);
+}
+
+.designer-count h2 {
+    margin-bottom: .375rem;
+    font-size: clamp(1.875rem, 4vw, 2.875rem);
+    letter-spacing: .015em;
+}
+
+.designer-count p {
+    margin: 0;
+}
+
 .designer-count-link {
     display: inline-flex;
-    flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
-    gap: .75rem;
-    color: inherit;
+    gap: 1rem;
+    padding-inline-start: clamp(1rem, 3vw, 2.5rem);
+    border-inline-start: 1px solid #d9cbbd;
+    color: #782237;
+    font-size: .9375rem;
+    font-weight: 600;
     text-decoration: none;
 }
-.designer-count-link:hover { text-decoration: underline; }
+
+.designer-count-link:hover {
+    color: #541727;
+    text-decoration: underline;
+}
+
 #designer-total {
     display: block;
     overflow: hidden;
     height: 1em;
     min-width: 1ch;
-    font: normal clamp(4rem, 10vw, 7rem)/1 Georgia, serif;
+    font: normal clamp(3rem, 6vw, 4.25rem)/1 Georgia, serif;
     font-variant-numeric: lining-nums tabular-nums;
 }
 .designer-count-reel, .designer-count-reel > span { display: block; }
 .designer-count-reel > span { height: 1em; }
+
+html[data-theme="dark"] .designer-count,
+html[data-theme="dark"] .designer-count-link {
+    border-color: #544b42;
+}
+
+html[data-theme="dark"] .designer-count-link {
+    color: #edc494;
+}
+
+@media (max-width: 600px) {
+    .designer-count-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .designer-count-link {
+        padding-inline-start: 0;
+        padding-block-start: .75rem;
+        border-inline-start: 0;
+        border-top: 1px solid #d9cbbd;
+    }
+}
+
 /* ===== Assignment 6: jQuery features (Home + Shop) ===== */
 
 /* Task 4: scroll progress bar */
@@ -382,40 +516,72 @@ body:has(#subscription-dialog[open]) {
 @keyframes solea-spin { to { transform: rotate(360deg); } }
 #subscription-form button[type="submit"]:disabled { opacity: 0.7; cursor: wait; }
 
-/* Task 8: copy button */
+/* Home: welcome code after signup */
+#subscription-result > p:first-child {
+    margin-bottom: .5rem;
+}
+
 .promo-box {
-    position: relative;
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
-    margin-top: 22px;
-    padding: 10px 14px;
-    border: 1px dashed #d4a373;
+    justify-content: space-between;
+    gap: .75rem;
+    padding: .625rem .875rem;
+    border: 1px solid #d7cdc3;
+    background: #f2ebe4;
 }
-.promo-label { color: #bbb; }
-#promo-code { color: #f3d9a4; font-size: 1.1rem; letter-spacing: 2px; user-select: all; }
+
+#promo-code {
+    color: #782237;
+    font-size: 1.125rem;
+    letter-spacing: .12em;
+    user-select: all;
+}
+
 .copy-btn {
-    min-width: 36px;
-    min-height: 36px;
-    border: 1px solid #d4a373;
+    min-height: 44px;
+    padding-inline: .875rem;
+    border: 1px solid currentColor;
     background: transparent;
-    color: #f3d9a4;
+    color: #782237;
+    font-size: .875rem;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
 }
-.copy-btn:hover, .copy-btn:focus-visible { background: #d4a373; color: #211c17; }
-.copy-btn.copied { background: #2e7d32; border-color: #2e7d32; color: #fff; }
-.copy-tooltip {
-    display: none;
-    position: absolute;
-    bottom: calc(100% + 8px);
-    right: 0;
-    padding: 6px 10px;
-    border-radius: 4px;
-    background: #f3d9a4;
-    color: #211c17;
-    font-size: 0.8rem;
-    white-space: nowrap;
+
+.copy-btn:hover {
+    background: #782237;
+    color: white;
+}
+
+#promo-copy-status {
+    min-height: 1.5em;
+    margin: .5rem 0 .875rem;
+    font-size: .875rem;
+}
+
+#subscription-result .club-button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+html[data-theme="dark"] .promo-box {
+    background: #1d1b19;
+    border-color: #544b42;
+}
+
+html[data-theme="dark"] #promo-code,
+html[data-theme="dark"] .copy-btn {
+    color: #edc494;
+}
+
+html[data-theme="dark"] .copy-btn:hover {
+    background: #edc494;
+    color: #201810;
+}
+
+html[data-theme="dark"] #subscription-form .field-error {
+    color: #ffaaaa !important;
 }
 
 
