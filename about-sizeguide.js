@@ -316,23 +316,3 @@ document.addEventListener('DOMContentLoaded', function () {
         back.hidden = true; reset.hidden = true;
     }
 });
-
-// Mobile navigation: retain ordinary links and full keyboard access.
-document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.getElementById('page-navigation');
-    function closeMenu() {
-        toggle.setAttribute('aria-expanded', 'false');
-        menu.classList.remove('is-open');
-    }
-    toggle.addEventListener('click', function () {
-        const open = toggle.getAttribute('aria-expanded') !== 'true';
-        toggle.setAttribute('aria-expanded', String(open));
-        menu.classList.toggle('is-open', open);
-    });
-    menu.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') { closeMenu(); toggle.focus(); }
-    });
-    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-    window.matchMedia('(min-width: 992px)').addEventListener('change', closeMenu);
-});

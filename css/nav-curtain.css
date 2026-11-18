@@ -1,0 +1,147 @@
+/* SOLEA shared curtain navigation */
+#main-header {
+  position: relative;
+  z-index: 1100;
+  isolation: isolate;
+  min-width: 0;
+}
+#main-header .solea-wordmark,
+#main-header .logo a {
+  color: var(--solea-ink, #24201e);
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(25px, 3vw, 34px);
+  letter-spacing: .24em;
+  line-height: 1;
+}
+#main-header .menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 44px;
+  padding: 10px 0 10px 16px;
+  border: 0;
+  border-left: 1px solid #cfc5b9;
+  border-radius: 0;
+  background: transparent;
+  color: #24201e;
+  font: 11px/1 Arial, sans-serif;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#main-header .menu-toggle-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  font: 26px/1 Arial, sans-serif;
+  letter-spacing: 0;
+  transition: transform .45s cubic-bezier(.2,.75,.25,1);
+}
+#main-header .menu-toggle[aria-expanded="true"] .menu-toggle-icon { transform: rotate(45deg); }
+#main-header .navbar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1099;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(24px, 6vw, 100px);
+  width: 100%;
+  max-height: 0;
+  padding: 0 clamp(24px, 8vw, 120px);
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-14px);
+  transform-origin: top center;
+  background: #f8f5ef;
+  border-top: 0 solid #e1d9cf;
+  box-shadow: 0 22px 35px rgb(32 25 20 / 12%);
+  transition: max-height .65s cubic-bezier(.2,.75,.25,1), padding .55s ease,
+    opacity .35s ease, transform .55s cubic-bezier(.2,.75,.25,1), visibility .55s;
+}
+#main-header .navbar.is-open {
+  max-height: 420px;
+  padding-top: clamp(28px, 4vw, 54px);
+  padding-bottom: clamp(30px, 4.5vw, 60px);
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  border-top-width: 1px;
+}
+#main-header .navbar a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid #ded6cc;
+  color: #29231f;
+  text-decoration: none;
+  font: 12px/1.5 Arial, sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: color .25s ease, padding-left .25s ease;
+}
+#main-header .navbar a:hover,
+#main-header .navbar a:focus-visible,
+#main-header .navbar a.active { color: #8a263b; }
+#main-header .navbar a:hover { padding-left: 8px; }
+html[data-theme="dark"] #main-header .menu-toggle { color: #f3eee7; border-color: #665b50; }
+html[data-theme="dark"] #main-header .navbar { background: #201d1a; border-color: #51483f; }
+html[data-theme="dark"] #main-header .navbar a { color: #f3eee7; border-color: #51483f; }
+html[data-theme="dark"] #main-header .navbar a:hover,
+html[data-theme="dark"] #main-header .navbar a.active { color: #edc494; }
+@media (max-width: 700px) {
+  #main-header .navbar { grid-template-columns: 1fr 1fr; gap: 0 22px; padding-inline: 22px; }
+  #main-header .navbar.is-open { max-height: 520px; }
+  #main-header .navbar a { padding: 14px 0; font-size: 10px; }
+  #main-header .menu-toggle { gap: 10px; padding-left: 12px; }
+}
+@media (max-width: 390px) {
+  #main-header .solea-wordmark { font-size: 22px; letter-spacing: .18em; }
+  #main-header .navbar { grid-template-columns: 1fr; }
+  #main-header .navbar.is-open { max-height: 650px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #main-header .navbar, #main-header .menu-toggle-icon, #main-header .navbar a { transition: none; }
+}
+
+/* High-specificity reset: the original page styles had different mobile nav rules. */
+body #main-header .navbar#page-navigation {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex-direction: initial;
+  flex-wrap: initial;
+  align-items: stretch;
+  justify-content: initial;
+  gap: 0 clamp(24px, 6vw, 100px);
+  width: 100%;
+}
+body #main-header .navbar#page-navigation.is-open {
+  display: grid !important;
+  max-height: 420px;
+}
+@media (max-width: 700px) {
+  body #main-header .navbar#page-navigation { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 390px) {
+  body #main-header .navbar#page-navigation { grid-template-columns: 1fr; }
+}
+.a3-page #main-header .menu-toggle span,
+.assignment3 #main-header .menu-toggle span { margin-left: 0; }
+
+
+#main-header .menu-toggle {
+    color: #111111;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+/* Keep MENU readable in dark mode */
+html[data-theme="dark"] #main-header .menu-toggle {
+    color: #ffffff;
+}
