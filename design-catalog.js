@@ -95,23 +95,72 @@
             price: "$305",
             type: "Boots",
             color: "Black"
+        },
+        {
+            id: "champagne-wings.jpg",
+            name: "Champagne Wings",
+            image: "images/champagne-wings.jpg",
+            price: "$365",
+            type: "Sandals",
+            color: "Blush"
+        },
+        {
+            id: "ruby-noir.jpg",
+            name: "Ruby Noir",
+            image: "images/ruby-noir.jpg",
+            price: "$385",
+            type: "Sandals",
+            color: "Black / Red"
+        },
+        {
+            id: "paradise-bloom.jpg",
+            name: "Paradise Bloom",
+            image: "images/paradise-bloom.jpg",
+            price: "$315",
+            type: "Sandals",
+            color: "Green"
+        },
+        {
+            id: "midnight-lace.jpg",
+            name: "Midnight Lace",
+            image: "images/midnight-lace.jpg",
+            price: "$285",
+            type: "Sandals",
+            color: "Black"
+        },
+        {
+            id: "fuchsia-petal.jpg",
+            name: "Fuchsia Petal",
+            image: "images/fuchsia-petal.jpg",
+            price: "$345",
+            type: "Sandals",
+            color: "Pink"
+        },
+        {
+            id: "prism-drops.jpg",
+            name: "Prism Drops",
+            image: "images/prism-drops.jpg",
+            price: "$380",
+            type: "Sandals",
+            color: "Black / Multicolor"
+        },
+        {
+            id: "baroque-tassel.jpg",
+            name: "Baroque Tassel",
+            image: "images/baroque-tassel.jpg",
+            price: "$355",
+            type: "Sandals",
+            color: "Black / Gold"
+        },
+        {
+            id: "violet-dagger.jpg",
+            name: "Violet Dagger",
+            image: "images/violet-dagger.jpg",
+            price: "$245",
+            type: "Sandals",
+            color: "Black / Purple"
         }
     ];
-
-    const categories = {
-        "c11.jpg": ["Sandals", "Black"],
-        "c12.jpeg": ["Sandals", "Black / Gold"],
-        "c13.jpeg": ["Sandals", "Black"],
-        "c14.jpeg": ["Sandals", "Black / Red"],
-        "c15.jpeg": ["Pumps", "Black / Gold"],
-        "c16.jpeg": ["Pumps", "Pink"],
-        "c17.jpeg": ["Pumps", "Black / Gold"],
-        "c18.jpeg": ["Sandals", "Red"],
-        "c19.jpeg": ["Sandals", "Nude"],
-        "c120.jpeg": ["Slingbacks", "Black"],
-        "121.jpeg": ["Sandals", "Black"],
-        "122.jpeg": ["Boots", "Black"]
-    };
 
     const typeSelect = document.querySelector('#pair-type');
     const colorSelect = document.querySelector('#pair-color');
@@ -264,15 +313,13 @@
                     if (!image || !name) return null;
 
                     const id = decodeURIComponent(image.split('/').pop());
-
-                    const [type, color] =
-                        categories[id] || ['Other', 'Not specified'];
+                    const savedProduct = fallbackProducts.find(product => product.id === id);
 
                     return {
                         id,
                         name,
-                        type,
-                        color,
+                        type: savedProduct?.type ?? 'Other',
+                        color: savedProduct?.color ?? 'Not specified',
                         image: new URL(
                             image,
                             response.url || location.href

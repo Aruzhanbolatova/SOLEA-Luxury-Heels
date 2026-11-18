@@ -45,9 +45,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dialog) {
         const openButton = document.getElementById("open-subscription");
         const closeButton = document.getElementById("close-subscription");
+        const title = document.getElementById("subscription-title");
+        const result = document.getElementById("subscription-result");
 
         openButton.addEventListener("click", function () {
             dialog.showModal();
+
+            if (!result.hidden) {
+                document.getElementById("promo-copy-status").textContent = "";
+                title.focus();
+            }
         });
 
         closeButton.addEventListener("click", function () {
@@ -76,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // TASK 1: Form validation
         const form = document.getElementById("subscription-form");
-        const result = document.getElementById("subscription-result");
+        const submitButton = form.querySelector('button[type="submit"]');
 
         const fields = {
             name: document.getElementById("club-name"),
@@ -88,8 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let submitted = false;
 
         function validateForm() {
-            const emailPattern =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
+            const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?)*\.[a-zA-Z]{2,}$/;
 
             const errors = {
                 name: "",
@@ -102,21 +108,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 errors.name = "Please enter your full name.";
             }
 
-           const email = fields.email.value.trim();
-const localPart = email.split("@")[0];
+            const email = fields.email.value.trim();
+            const localPart = email.split("@")[0];
 
-if (email === "") {
-    errors.email = "Please enter your email.";
-} else if (
-    !emailPattern.test(email) ||
-    email.length > 254 ||
-    localPart.length > 64 ||
-    localPart.startsWith(".") ||
-    localPart.endsWith(".") ||
-    localPart.includes("..")
-) {
-    errors.email = "Enter a valid email, for example name@gmail.com.";
-}
+            if (email === "") {
+                errors.email = "Please enter your email.";
+            } else if (
+                !emailPattern.test(email) ||
+                email.length > 254 ||
+                localPart.length > 64 ||
+                localPart.startsWith(".") ||
+                localPart.endsWith(".") ||
+                localPart.includes("..")
+            ) {
+                errors.email = "Enter a valid email, for example name@example.com.";
+            }
 
             if (fields.password.value.length < 8) {
                 errors.password = "Password must contain at least 8 characters.";
@@ -148,8 +154,10 @@ if (email === "") {
 
         form.addEventListener("submit", function (event) {
             event.preventDefault();
+
+            if (submitButton.disabled) return;
+
             submitted = true;
-            result.textContent = "";
 
             const invalidField = validateForm();
 
@@ -159,15 +167,11 @@ if (email === "") {
             }
 
             submitted = false;
-
-// jQuery (home-shop-jquery.js) shows the spinner and the toast.
-$(form).trigger("validated");
+            $(form).trigger("validated");
         });
 
         // Update errors as the user corrects their input.
         form.addEventListener("input", function () {
-            result.textContent = "";
-
             if (submitted) {
                 validateForm();
             }
@@ -443,6 +447,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const grid = document.querySelector("#product-grid");
 
     if (priceFilter && grid) {
+        const searchInput = document.getElementById("collection-query");
+        const count = document.getElementById("product-count");
+        const emptyMessage = document.getElementById("filter-message");
+
         // Supports cards directly in the grid or inside Bootstrap columns.
         const products = Array.from(grid.children).map(function (column) {
             const card = column.matches(".product-card")
@@ -475,7 +483,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function filterProducts() {
-            const query = document.getElementById("collection-query").value.trim().toLowerCase();
+            const query = searchInput.value.trim().toLowerCase();
             let visibleCount = 0;
 
             products.forEach(function (product) {
@@ -491,22 +499,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            const count = document.querySelector("#product-count");
-
-            if (count) {
-                count.textContent =
-                    visibleCount + " of " + products.length + " products";
-            }
-
-            document.querySelector("#filter-message").textContent =
-                visibleCount === 0
-                    ? "No products match these filters."
-                    : "";
+            const productLabel = products.length === 1 ? " product" : " products";
+            count.textContent = visibleCount === products.length
+                ? visibleCount + productLabel
+                : visibleCount + " of " + products.length + productLabel;
+            emptyMessage.hidden = visibleCount !== 0;
 
             animateElement(grid);
         }
 
-        const search = $('#collection-query');
+        const search = $(searchInput);
         const suggestions = $('#model-options');
         function updateSuggestions() {
           suggestions.empty();
@@ -555,19 +557,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const observer = new IntersectionObserver(function (entries) {
             const entry = entries[entries.length - 1];
             if (entry.intersectionRatio >= 0.75) {
-                animation.stop().animate({ position: target }, {
-                    duration: 2200,
+                observer.unobserve(total);
+                animation.animate({ position: target }, {
+                    duration: 1000,
                     easing: 'swing',
                     step: function (position) {
                         reel.css('transform', 'translateY(-' + position + 'em)');
                     }
                 });
-            } else if (!entry.isIntersecting) {
-                animation.stop();
-                animation[0].position = 0;
-                reel.css('transform', 'translateY(0)');
             }
-        }, { threshold: [0, 0.75] });
+        }, { threshold: 0.75 });
         observer.observe(total);
     }
 
@@ -658,63 +657,60 @@ $(document).ready(function () {
   $('#subscription-form').on('validated', function () {
     const $form = $(this);
     const $button = $form.find('button[type="submit"]');
-    const originalText = $button.text();
+    const $title = $('#subscription-title');
+    const dialog = this.closest('dialog');
 
+    $form.attr('aria-busy', 'true');
+    $form.find('input').prop('readOnly', true);
     $button
       .prop('disabled', true)
-      .html('<span class="solea-spinner" aria-hidden="true"></span>Please wait…');
+      .html('<span class="solea-spinner" aria-hidden="true"></span>Joining…');
 
-    // Simulated server call.
+    // This student demo completes locally after validation.
     setTimeout(function () {
-      $button.prop('disabled', false).text(originalText);
       $form[0].reset();
-      $('#subscription-result').text('Welcome to the SOLEA Club! Demo only: nothing was saved.');
-      showToast('Successfully subscribed to the SOLEA Club!');
-    }, 2000);
+      $form.prop('hidden', true).removeAttr('aria-busy');
+      $title.text('Welcome to the SOLEA Club');
+      $('#subscription-result').prop('hidden', false);
+
+      if (dialog.open) $title[0].focus();
+    }, 700);
   });
 
   // ---------- TASK 8: copy to clipboard (Home promo code) ----------
-  function copyText(text) {
+  function copyText(text, button) {
     if (navigator.clipboard && window.isSecureContext) {
       return navigator.clipboard.writeText(text);
     }
 
-    return new Promise(function (resolve, reject) {
-      const $temp = $('<textarea>').val(text).css({ position: 'fixed', opacity: 0 }).appendTo('body');
-      $temp[0].select();
-      const ok = document.execCommand('copy');
-      $temp.remove();
-      ok ? resolve() : reject();
-    });
+    const field = document.createElement('textarea');
+    field.value = text;
+    field.readOnly = true;
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    button.closest('dialog').append(field);
+    field.select();
+
+    try {
+      if (!document.execCommand('copy')) throw new Error('Clipboard unavailable');
+    } finally {
+      field.remove();
+      button.focus();
+    }
   }
 
-  function confirmCopy($button) {
-    const $icon = $button.find('.copy-icon');
-    const $tooltip = $button.siblings('.copy-tooltip');
+  $('#copy-promo').on('click', async function () {
+    const status = document.getElementById('promo-copy-status');
+    const code = document.getElementById('promo-code').textContent.trim();
 
-    $icon.text('✓');
-    $button.addClass('copied');
-    $tooltip.stop(true, true).fadeIn(150).delay(1600).fadeOut(200, function () {
-      $icon.text('⧉');
-      $button.removeClass('copied');
-    });
-    showToast('Promo code copied!');
-  }
+    status.textContent = '';
 
-  $('.copy-btn').on('click', function () {
-    const $button = $(this);
-    const text = $($button.data('target')).text().trim();
-
-    copyText(text).then(function () {
-      confirmCopy($button);
-    }).catch(function () {
-      showToast('Copy failed. Select the code and press Ctrl+C.');
-    });
-  });
-
-  // Also react when the code is copied manually (Ctrl+C / right-click).
-  $('#promo-code').on('copy', function () {
-    confirmCopy($('.copy-btn'));
+    try {
+      await copyText(code, this);
+      status.textContent = 'Code copied.';
+    } catch (error) {
+      status.textContent = 'Select the code to copy it manually.';
+    }
   });
 
   // ---------- TASK 3: search highlighting (Shop) ----------
@@ -749,9 +745,5 @@ $(document).ready(function () {
   // ---------- TASK 7: toast on Shop ----------
   $('#change-background').on('click', function () {
     showToast('Background color changed');
-  });
-
-  $('#price-filter, #sort-select').on('change', function () {
-    showToast('Product list updated');
   });
 });
