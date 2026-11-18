@@ -4,97 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLEA Club</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/nav-curtain.css">
-    <link rel="stylesheet" href="css/club.css">
-    <script src="theme.js"></script>
-    <script defer src="nav-curtain.js"></script>
-    <script defer src="club.js"></script>
 </head>
-<body class="club-page">
-    <header id="main-header">
-        <a class="solea-wordmark" href="index.html" aria-label="SOLEA home">SOLEA</a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="page-navigation" aria-label="Open navigation menu">
-            <span class="menu-toggle-label">Menu</span><span class="menu-toggle-icon" aria-hidden="true">＋</span>
-        </button>
-        <nav class="navbar" id="page-navigation" aria-label="Main navigation" aria-hidden="true" inert>
-            <a href="index.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="brands.html">Brands</a>
-            <a href="design.html">Design your pair</a>
-            <a href="size-guide.html">Size Guide</a>
-            <a href="about.html">About us</a>
-        </nav>
-    </header>
-
-    <main class="club-main">
-        <section id="club-account" class="club-account" aria-labelledby="club-title">
-            <p class="club-brand">SOLEA Club</p>
-            <h1 id="club-title" tabindex="-1">Become a member</h1>
-            <p id="club-intro">Create your profile to unlock your welcome code.</p>
-            <p id="club-storage-status" role="status" hidden>Opening SOLEA Club…</p>
-            <noscript><p>Enable JavaScript to open your SOLEA Club profile.</p></noscript>
-
-            <p id="club-demo-note" class="club-demo-note" hidden>
-                Demo profiles are saved in this browser. Use a sample email and a unique demo password.
-            </p>
-            <p id="club-form-error" class="club-form-error" role="alert"></p>
-
-            <form id="club-register" aria-describedby="club-demo-note" hidden>
-                <fieldset>
-                    <label for="register-name">Full name</label>
-                    <input id="register-name" type="text" autocomplete="name" maxlength="80" required>
-
-                    <label for="register-email">Email</label>
-                    <input id="register-email" type="email" autocomplete="username" maxlength="254" required>
-
-                    <label for="register-password">Password</label>
-                    <input id="register-password" type="password" autocomplete="new-password"
-                           minlength="8" maxlength="128" aria-describedby="register-password-hint" required>
-                    <small id="register-password-hint">At least 8 characters</small>
-
-                    <label for="register-confirm">Confirm password</label>
-                    <input id="register-confirm" type="password" autocomplete="new-password" maxlength="128" required>
-
-                    <button type="submit" class="club-action">Create my profile</button>
-                </fieldset>
-                <p class="club-switch">Already a member? <a href="club.html?view=sign-in">Sign in</a></p>
-            </form>
-
-            <form id="club-sign-in" aria-describedby="club-demo-note" hidden>
-                <fieldset>
-                    <label for="sign-in-email">Email</label>
-                    <input id="sign-in-email" type="email" autocomplete="username" maxlength="254" required>
-
-                    <label for="sign-in-password">Password</label>
-                    <input id="sign-in-password" type="password" autocomplete="current-password" maxlength="128" required>
-
-                    <button type="submit" class="club-action">Sign in</button>
-                </fieldset>
-                <p class="club-switch">New to SOLEA Club? <a href="club.html">Become a member</a></p>
-            </form>
-
-            <div id="club-profile" hidden>
-                <dl class="club-profile-details">
-                    <div><dt>Name</dt><dd id="club-profile-name"></dd></div>
-                    <div><dt>Email</dt><dd id="club-profile-email"></dd></div>
-                </dl>
-                <p class="club-code-label">Your welcome code</p>
-                <div class="club-code">
-                    <code id="promo-code">SOLEA10</code>
-                    <button type="button" class="club-outline" id="copy-promo">Copy code</button>
-                </div>
-                <p id="club-copy-status" role="status"></p>
-                <div class="club-profile-actions">
-                    <a class="club-action" href="shop.html">Browse the collection</a>
-                    <button type="button" class="club-outline" id="club-sign-out">Sign out</button>
-                </div>
-            </div>
-        </section>
-        <figure class="club-photo">
-            <img src="images/champagne-wings.jpg" alt="" width="1200" height="1200">
-        </figure>
-    </main>
+<body>
+    <p><a href="index.html#solea-club">Open SOLEA Club on Home</a></p>
+    <script>
+        const destination = new URL('index.html', location.href);
+        const view = new URLSearchParams(location.search).get('view');
+        destination.searchParams.set('club', view === 'sign-in' ? 'sign-in' : 'register');
+        destination.hash = 'solea-club';
+        location.replace(destination);
+    </script>
 </body>
 </html>

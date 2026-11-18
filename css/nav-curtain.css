@@ -5,6 +5,9 @@
   isolation: isolate;
   min-width: 0;
 }
+html:not([data-theme="dark"]) #main-header {
+  background-color: #fff;
+}
 #main-header .solea-wordmark,
 #main-header .logo a {
   color: var(--solea-ink, #24201e);
@@ -58,7 +61,7 @@
   opacity: 0;
   transform: translateY(-14px);
   transform-origin: top center;
-  background: #f8f5ef;
+  background: #fff;
   border-top: 0 solid #e1d9cf;
   box-shadow: 0 22px 35px rgb(32 25 20 / 12%);
   transition: max-height .65s cubic-bezier(.2,.75,.25,1), padding .55s ease,
