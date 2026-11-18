@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (backgroundButton) {
         const colors = [
-            { name: "Ivory", value: "#f8f6f2" },
+            { name: "White", value: "#ffffff" },
             { name: "Blush", value: "#f3e3e5" },
             { name: "Sage", value: "#e4ebe1" },
             { name: "Sand", value: "#ede1cf" }
@@ -311,8 +311,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const searchInput = document.getElementById("collection-query");
         const count = document.getElementById("product-count");
         const emptyMessage = document.getElementById("filter-message");
+        const filtersToggle = document.getElementById("shop-filters-toggle");
+        const filtersPanel = document.getElementById("shop-filters");
+        const activeFilters = document.getElementById("shop-active-filters");
+        const clearFilters = document.getElementById("shop-clear-filters");
 
-        // Supports cards directly in the grid or inside Bootstrap columns.
+        // Supports cards directly in the grid or inside layout wrappers.
         const products = Array.from(grid.children).map(function (column) {
             const card = column.matches(".product-card")
                 ? column
@@ -343,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        function filterProducts() {
+        function filterProducts(animate = true) {
             const query = searchInput.value.trim().toLowerCase();
             let visibleCount = 0;
 
@@ -366,7 +370,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 : visibleCount + " of " + products.length + productLabel;
             emptyMessage.hidden = visibleCount !== 0;
 
-            animateElement(grid);
+            const applied = Number(query !== "") + Number(priceFilter.value !== "all");
+            activeFilters.textContent = applied;
+            activeFilters.hidden = applied === 0;
+            clearFilters.disabled = applied === 0;
+
+            if (animate) animateElement(grid);
         }
 
         const search = $(searchInput);
@@ -400,8 +409,23 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-        priceFilter.addEventListener("change", filterProducts);
-        filterProducts();
+        filtersToggle.addEventListener("click", function () {
+            const open = filtersPanel.hidden;
+            filtersPanel.hidden = !open;
+            filtersToggle.setAttribute("aria-expanded", String(open));
+            if (!open) suggestions.empty();
+        });
+
+        clearFilters.addEventListener("click", function () {
+            priceFilter.value = "all";
+            search.val("").trigger("input");
+            priceFilter.focus();
+        });
+
+        priceFilter.addEventListener("change", function () {
+            filterProducts();
+        });
+        filterProducts(false);
     }
 
     // Roll one digit into view at a time when the collection is on screen.
