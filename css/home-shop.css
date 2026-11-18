@@ -294,43 +294,9 @@ html[data-theme="dark"] .shop-page {
 
 .shop-toolbar-controls,
 .shop-sort,
-.shop-toolbar-start,
 .shop-view-controls {
     display: flex;
     align-items: center;
-}
-
-.shop-toolbar-start {
-    grid-area: filters;
-    flex-wrap: wrap;
-    gap: .4rem;
-}
-
-#shop-currency {
-    min-height: 44px;
-    padding: .375rem .25rem;
-    border: 1px solid var(--shop-line);
-    border-radius: 0;
-    background: transparent;
-    color: inherit;
-    font-size: .8125rem;
-    cursor: pointer;
-}
-
-#shop-rate-status {
-    margin: 0;
-    color: var(--shop-muted);
-    font-size: .8125rem;
-    line-height: 1.5;
-}
-
-#shop-rate-status:not(:empty) {
-    margin-block: .7rem;
-}
-
-#shop-rate-status a {
-    color: var(--shop-accent);
-    text-underline-offset: .2em;
 }
 
 .shop-toolbar-controls {
@@ -381,6 +347,8 @@ html[data-theme="dark"] .shop-page {
 }
 
 .shop-filters-toggle {
+    grid-area: filters;
+    justify-self: start;
     display: inline-flex;
     align-items: center;
     gap: .625rem;
@@ -660,101 +628,6 @@ html[data-theme="dark"] .shop-page {
     cursor: pointer;
 }
 
-.shop-services {
-    border-block-start: 1px solid var(--shop-line);
-    padding: clamp(.75rem, 2vw, 1.75rem) clamp(1rem, 4vw, 4rem);
-    background: var(--shop-panel);
-}
-
-.shop-services ul {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    max-width: 86rem;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-}
-
-.shop-services li + li {
-    border-inline-start: 1px solid var(--shop-line);
-}
-
-.shop-services a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .65rem;
-    min-height: 105px;
-    padding: 1rem .5rem;
-    color: inherit;
-    font: 400 clamp(1rem, 1.6vw, 1.2rem)/1.35 Georgia, serif;
-    text-align: center;
-    text-decoration: none;
-}
-
-.shop-services a:hover {
-    color: var(--shop-accent);
-    text-decoration: underline;
-    text-underline-offset: .22em;
-}
-
-.shop-service-icon {
-    position: relative;
-    width: 34px;
-    height: 34px;
-    color: var(--shop-accent);
-}
-
-.shop-service-icon::before {
-    content: "";
-    position: absolute;
-    border: 1.5px solid currentColor;
-    border-radius: 2px;
-}
-
-.shop-service-icon-delivery::before {
-    inset: 4px 3px 3px;
-    background:
-        linear-gradient(currentColor, currentColor) left 7px / 100% 1px no-repeat,
-        linear-gradient(currentColor, currentColor) center top / 1px 14px no-repeat;
-}
-
-.shop-service-icon-size::before {
-    inset: 10px 0;
-    transform: rotate(-32deg);
-    background: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 5px)
-        center top / 76% 5px no-repeat;
-}
-
-.shop-service-icon-club::before {
-    inset: 10px 4px 3px;
-    background:
-        linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat,
-        linear-gradient(currentColor, currentColor) left 5px / 100% 1px no-repeat;
-}
-
-.shop-service-icon-club::after {
-    content: "";
-    position: absolute;
-    inset: 3px 9px auto;
-    height: 8px;
-    border: 1.5px solid currentColor;
-    border-radius: 60% 60% 0 0;
-    background: linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat;
-}
-
-@media (max-width: 640px) {
-    .shop-services ul {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .shop-services li + li {
-        border-inline-start: 0;
-        border-block-start: 1px solid var(--shop-line);
-    }
-}
-
 @media (min-width: 760px) {
     .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -797,11 +670,6 @@ html[data-theme="dark"] .shop-page {
 }
 
 @media (max-width: 540px) {
-    .shop-filters-toggle {
-        padding-inline: .55rem;
-        gap: .4rem;
-    }
-
     .shop-sort {
         flex-direction: column;
         align-items: flex-end;
