@@ -21,7 +21,9 @@
     </script>
     <script defer src="script.js"></script>
 <link rel="stylesheet" href="css/nav-curtain.css">
+<link rel="stylesheet" href="css/club.css">
 <script defer src="nav-curtain.js"></script>
+<script defer src="club.js"></script>
 </head>
 
 <body class="shop-page">
@@ -29,11 +31,15 @@
 <div class="shop-page-layout">
 
     <!-- HEADER -->
-    <header id="main-header">
+    <header id="main-header" class="club-header">
         <a class="solea-wordmark" href="index.html" aria-label="SOLEA home">SOLEA</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="page-navigation" aria-label="Open navigation menu">
             <span class="menu-toggle-label">Menu</span><span class="menu-toggle-icon" aria-hidden="true">＋</span>
         </button>
+        <div class="club-header-actions">
+            <a class="club-signin-link" href="club.html?view=sign-in" data-club-guest>Sign in</a>
+            <a class="club-action" href="club.html" data-club-account="Join SOLEA Club">Join SOLEA Club</a>
+        </div>
         <nav class="navbar" id="page-navigation" aria-label="Main navigation" aria-hidden="true" inert>
             <a href="index.html">Home</a>
             <a href="shop.html" class="active" aria-current="page">Shop</a>

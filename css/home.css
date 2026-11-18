@@ -313,19 +313,15 @@ min-width: 0;
     color: #666;
 }
 
-/* ---------- FAQ + Newsletter ---------- */
-.faq-newsletter {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 40px;
-
+/* ---------- FAQ ---------- */
+.faq-section {
     background-color: #111;
     color: #fff;
-    padding: 60px;
+    padding: clamp(2.5rem, 6vw, 3.75rem) clamp(1.25rem, 5vw, 3.75rem);
 }
-.faq-newsletter .faq-col,
-.faq-newsletter .newsletter-col {
-    min-width: 0;
+.faq-section .faq-col {
+    max-width: 56rem;
+    margin-inline: auto;
 }
 .faq-item {
     border-bottom: 1px solid #333;
@@ -356,33 +352,6 @@ min-width: 0;
     max-height: 200px;
     margin-top: 10px;
 }
-.newsletter-col p {
-    color: #bbb;
-}
-.newsletter-form {
-    display: flex;
-    margin-top: 15px;
-}
-.newsletter-form input {
-    flex: 1;
-    padding: 14px;
-    border: 1px solid #444;
-    background-color: #1a1a1a;
-    color: #fff;
-}
-.newsletter-form button {
-    padding: 14px 25px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-.newsletter-form button:hover {
-    background-color: darkred;
-    color: #fff;
-}
-
 /* ---------- Big footer ---------- */
 .big-footer {
     background-color: #000;
@@ -459,10 +428,6 @@ min-width: 0;
     border: 0;
 }
 
-.newsletter-form input {
-    min-width: 0;
-}
-
 /* Планшеты */
 @media (max-width: 1000px) {
     .carousel-wrapper {
@@ -472,11 +437,6 @@ min-width: 0;
     .reviews-grid {
         padding: 0 24px;
         gap: 16px;
-    }
-
-    .faq-newsletter {
-        padding: 50px 24px;
-        gap: 30px;
     }
 }
 
@@ -498,8 +458,7 @@ min-width: 0;
     }
 
     .split-banner,
-    .reviews-grid,
-    .faq-newsletter {
+    .reviews-grid {
         grid-template-columns: minmax(0, 1fr);
     }
 
@@ -537,11 +496,6 @@ min-width: 0;
         padding-left: 24px;
         padding-right: 24px;
         gap: 20px;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .home-page footer {
