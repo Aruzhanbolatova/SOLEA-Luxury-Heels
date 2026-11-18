@@ -32,3 +32,7 @@ html[data-theme="dark"] :is(.jq-solea,.jq-card,.jq-suggestions) { background: #2
 html[data-theme="dark"] .jq-button { background: #e5bd8b; color: #201810; border-color: #e5bd8b; }
 @media (max-width: 760px) { .jq-grid,.jq-gallery { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .jq-spinner { animation: none; } .jq-gallery img { transition: none; } }
+
+.jq-error { color: #a11c29; font-size: 13px; margin: 6px 0 12px; }
+.jq-error:empty { display: none; }
+html[data-theme='dark'] .jq-error { color: #ffaaaa; }

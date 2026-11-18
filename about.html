@@ -33,7 +33,7 @@
 <main id="main-content">
 <section class="about-hero-new">
 <img
-src="images/about фон.jpg"
+src="images/about-hero.jpg"
 alt="" fetchpriority="high"
 >
 <p class="hero-small-text">
@@ -348,7 +348,7 @@ uniquely yours.
 <button class="a5-star" type="button" data-rating="4" aria-label="Rate 4 out of 5" aria-pressed="false">★</button>
 <button class="a5-star" type="button" data-rating="5" aria-label="Rate 5 out of 5" aria-pressed="false">★</button>
 </div>
-<p id="solea-rating-message" role="status">Select a star to share your rating. This demo rating stays on this page until you reload.</p>
+<p id="solea-rating-message" role="status">Select a star to share your rating. Your choice is saved in this browser for your next visit.</p>
 <div class="a5-sound"><button class="a5-button a5-button-secondary" type="button" data-play-chime>PLAY SOLEA CHIME</button><p class="a5-sound-status" data-sound-status role="status"></p></div>
 </div>
 </section>
@@ -366,17 +366,21 @@ uniquely yours.
 <p>Create your demo membership. All fields are required.</p>
 <form data-solea-form novalidate>
 <label for="circleName">Your name</label>
-<input id="circleName" name="name" autocomplete="name" required maxlength="80" data-rule="name" aria-describedby="circleName-error">
+<input id="circleName" name="name" autocomplete="name" data-rule="name" aria-describedby="circleName-error">
 <p class="solea-error" id="circleName-error"></p>
 <label for="circleEmail">Email</label>
-<input id="circleEmail" name="email" type="email" autocomplete="email" required data-rule="email" aria-describedby="circleEmail-error">
+<input id="circleEmail" name="email" type="text" inputmode="email" autocomplete="email" data-rule="email" aria-describedby="circleEmail-error">
 <p class="solea-error" id="circleEmail-error"></p>
+<label for="circlePhone">Phone number</label>
+<input id="circlePhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 777 123 45 67" data-rule="phone" aria-describedby="circlePhone-hint circlePhone-error">
+<small id="circlePhone-hint">Include your country code, for example +7 777 123 45 67.</small>
+<p class="solea-error" id="circlePhone-error"></p>
 <label for="circlePassword">Password</label>
-<input id="circlePassword" name="password" type="password" autocomplete="new-password" required minlength="8" data-rule="password" aria-describedby="password-hint circlePassword-error">
-<small id="password-hint">Use at least 8 characters. Please use a sample password for this demo.</small>
+<input id="circlePassword" name="password" type="password" autocomplete="new-password" data-rule="password" aria-describedby="password-hint circlePassword-error">
+<small id="password-hint">At least 8 characters, including uppercase, lowercase and a number. Use a sample password for this demo.</small>
 <p class="solea-error" id="circlePassword-error"></p>
 <label for="circleConfirm">Confirm password</label>
-<input id="circleConfirm" name="confirmPassword" type="password" autocomplete="new-password" required data-rule="confirm" aria-describedby="circleConfirm-error">
+<input id="circleConfirm" name="confirmPassword" type="password" autocomplete="new-password" data-rule="confirm" aria-describedby="circleConfirm-error">
 <p class="solea-error" id="circleConfirm-error"></p>
 <button type="submit" class="solea-button">VALIDATE MEMBERSHIP</button>
 <p class="solea-form-status" role="status"></p>

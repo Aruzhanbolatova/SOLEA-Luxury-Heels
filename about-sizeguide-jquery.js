@@ -32,11 +32,12 @@
       <p id="jq-copy-text">Measure both feet and compare the larger measurement with the SOLEA size chart.</p>
       <button type="button" id="jq-copy" class="jq-button" aria-describedby="jq-copy-feedback">Copy fit note</button>
       <span id="jq-copy-feedback" class="jq-tooltip" role="status" hidden></span>
-      <form id="jq-form">
+      <form id="jq-form" novalidate>
         <h3>Try a private fit reminder</h3>
         <p>Demo only: your email stays on this page. Nothing is sent or saved.</p>
         <label for="jq-email">Email</label>
-        <input id="jq-email" type="email" required autocomplete="email" placeholder="you@example.com">
+        <input id="jq-email" type="text" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-describedby="jq-email-error">
+        <p id="jq-email-error" class="jq-error" role="alert"></p>
         <button type="submit" class="jq-button">Preview reminder</button>
         <p id="jq-form-status" role="status" aria-live="polite"></p>
       </form>
@@ -90,7 +91,11 @@
     $('#jq-count').text(count ? count + ' articles found' : 'No matches. Try feet, team or sizes.');
     $suggestions.prop('hidden', !(showSuggestions && query && count));
   }
-  $('#jq-search').on('input', function () { search(true); });
+  try { $('#jq-search').val(localStorage.getItem('solea-about-search') || ''); } catch (error) { /* Storage may be unavailable. */ }
+  $('#jq-search').on('input', function () {
+    try { localStorage.setItem('solea-about-search', $(this).val()); } catch (error) { /* Search still works without storage. */ }
+    search(true);
+  });
   $('#jq-search').on('keydown', function (event) {
     if (event.key === 'Escape') $('#jq-suggestions').prop('hidden', true);
     if (event.key === 'ArrowDown' && !$('#jq-suggestions').prop('hidden')) {
@@ -151,9 +156,18 @@
     toastTimer = setTimeout(function () { $toast.fadeOut(reducedMotion ? 0 : 350); }, 3500);
   }
 
-  // Task 6: native email validation runs before the submit event.
+  // Task 6: custom email validation; native browser validation is disabled.
   $('#jq-form').on('submit', function (event) {
     event.preventDefault();
+    var email = $('#jq-email').val().trim();
+    var validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    $('#jq-email-error').text(validEmail ? '' : 'Please enter a valid email address, for example name@example.com.');
+    $('#jq-email').attr('aria-invalid', String(!validEmail));
+    if (!validEmail) {
+      $('#jq-form-status').text('Please correct the email address.');
+      $('#jq-email').trigger('focus');
+      return;
+    }
     var $button = $(this).find('[type="submit"]');
     if ($button.prop('disabled')) return;
     $button.prop('disabled', true).attr('aria-busy', 'true')

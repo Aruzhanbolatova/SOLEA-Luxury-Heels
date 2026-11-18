@@ -1,5 +1,5 @@
 /* Ardak Korabay | SE-2501 | Assignment 4
-   Browser-only demo: passwords and form data are never saved or transmitted. */
+   Browser-only demo: membership credentials and form data are never saved or transmitted. */
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!value) error = 'Please complete this field.';
             else if (field.dataset.rule === 'name' && value.length < 2) error = 'Please enter at least 2 characters.';
             else if (field.dataset.rule === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = 'Enter a valid email address, for example name@example.com.';
-            else if (field.dataset.rule === 'password' && field.value.length < 8) error = 'Your password must contain at least 8 characters.';
+            else if (field.dataset.rule === 'phone' && (!/^\+?[0-9\s()-]+$/.test(value) || value.replace(/\D/g, '').length < 7 || value.replace(/\D/g, '').length > 15)) error = 'Enter a valid phone number with 7–15 digits, including your country code.';
+            else if (field.dataset.rule === 'password' && (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(field.value))) error = 'Use at least 8 characters, including an uppercase letter, a lowercase letter and a number.';
             else if (field.dataset.rule === 'confirm' && field.value !== form.querySelector('[data-rule="password"]').value) error = 'Passwords do not match.';
             else if (field.dataset.rule === 'size' && !['35','36','37','38','39','40','41','42'].includes(value)) error = 'Please select your EU size.';
             else if (field.dataset.rule === 'length' && (!Number.isFinite(Number(value)) || Number(value) < 15 || Number(value) > 35 || field.validity.stepMismatch)) error = 'Enter a foot length from 15 to 35 cm, using at most one decimal place.';
@@ -222,8 +223,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
     document.querySelectorAll('[data-rating]').forEach(function (button) {
-        button.addEventListener('click', function () { rating.select(Number(button.dataset.rating)); });
+        button.addEventListener('click', function () {
+            rating.select(Number(button.dataset.rating));
+            try { localStorage.setItem('solea-about-rating', String(rating.value)); }
+            catch (error) { /* Rating remains interactive if storage is unavailable. */ }
+        });
     });
+    try {
+        const savedRating = Number(localStorage.getItem('solea-about-rating'));
+        if (savedRating >= 1 && savedRating <= 5) rating.select(savedRating);
+    } catch (error) { /* Rating starts at zero when storage is unavailable. */ }
 
     // Objects and methods hold the chart and recommendation logic.
     const fitGuide = {
