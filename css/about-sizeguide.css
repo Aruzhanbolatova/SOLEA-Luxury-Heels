@@ -70,7 +70,7 @@ footer p { max-width: 700px; margin: 10px auto; color: #c7bfb9; font-size: 12px;
 .css-value-card { border-top: 1px solid var(--line); padding: 24px 0 0; }
 .css-value-number { font-size: 11px; color: var(--accent); margin-bottom: 28px; }
 .css-value-card p { font-size: 14px; max-width: 320px; }
-.philosophy-new { background: #24201e; color: white; }
+.philosophy-new { background: hwb(341 1% 86%); color: #fffaf5; }
 .philosophy-new .about-label { color: #e2bb95; }
 .philosophy-new h2 { font-size: clamp(42px, 6vw, 82px); line-height: 1.05; margin: 24px 0 42px; }
 .philosophy-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
