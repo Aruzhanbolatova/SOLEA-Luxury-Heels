@@ -29,14 +29,20 @@
     </script>
     <script defer src="script.js"></script>
 <link rel="stylesheet" href="css/nav-curtain.css">
+<link rel="stylesheet" href="css/club.css">
 <script defer src="nav-curtain.js"></script>
+<script defer src="club.js"></script>
 </head>
 <body class="home-page">
-<header id="main-header">
+<header id="main-header" class="club-header">
     <a class="solea-wordmark" href="index.html" aria-label="SOLEA home">SOLEA</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="page-navigation" aria-label="Open navigation menu">
         <span class="menu-toggle-label">Menu</span><span class="menu-toggle-icon" aria-hidden="true">＋</span>
     </button>
+    <div class="club-header-actions">
+        <a class="club-signin-link" href="club.html?view=sign-in" data-club-guest>Sign in</a>
+        <a class="club-action" href="club.html" data-club-account="Join SOLEA Club">Join SOLEA Club</a>
+    </div>
     <nav class="navbar" id="page-navigation" aria-label="Main navigation" aria-hidden="true" inert>
         <a href="index.html" class="active" aria-current="page">Home</a>
         <a href="shop.html">Shop</a>
@@ -69,6 +75,19 @@
             <span id="designer-total" aria-hidden="true">9</span>
             <span>Explore designers <span aria-hidden="true">→</span></span>
         </a>
+    </div>
+</section>
+
+<section class="club-invite" aria-labelledby="club-invite-title">
+    <div class="club-invite-inner">
+        <div>
+            <h2 id="club-invite-title">SOLEA Club</h2>
+            <p id="club-invite-copy">Become a member to unlock your welcome code.</p>
+        </div>
+        <div class="club-invite-actions">
+            <a class="club-action" href="club.html" data-club-account="Become a member">Become a member</a>
+            <a class="club-signin-link" href="club.html?view=sign-in" data-club-guest>Already a member? Sign in</a>
+        </div>
     </div>
 </section>
 
@@ -284,8 +303,8 @@ $224
 </div>
 </section>
 
-<!-- ============ FAQ + NEWSLETTER ============ -->
-<section class="faq-newsletter">
+<!-- ============ FAQ ============ -->
+<section class="faq-section">
 <div class="faq-col">
 <h2>FAQ</h2>
 
@@ -310,13 +329,6 @@ $224
 </div>
 </div>
 
-<div class="newsletter-col">
-<h2>Join the SOLEA Club</h2>
-<p>Sign up for collection news and unlock your welcome code.</p>
-<button type="button" id="open-subscription" class="club-button">
-    JOIN THE CLUB
-</button>
-</div>
 </section>
 <section id="style-finder" class="a5-panel" aria-labelledby="finder-title">
     <h2 id="finder-title">Find Your SOLEA Style</h2>
@@ -409,71 +421,6 @@ Aiym Rakhat
 
 
 </footer>
-<dialog id="subscription-dialog" aria-labelledby="subscription-title">
-    <button type="button" id="close-subscription" aria-label="Close form">
-        &times;
-    </button>
-
-    <h2 id="subscription-title" tabindex="-1">Join the SOLEA Club</h2>
-
-    <form id="subscription-form" novalidate>
-        <p class="demo-note">Student demo. Use sample details. The form runs locally.</p>
-
-        <label for="club-name">Full name</label>
-        <input
-            id="club-name"
-            type="text"
-            autocomplete="name"
-            aria-describedby="name-error"
-            autofocus
-            required
-        >
-        <p id="name-error" class="field-error"></p>
-
-        <label for="club-email">Email</label>
-        <input
-            id="club-email"
-            type="email"
-            autocomplete="email"
-            aria-describedby="email-error"
-            required
-        >
-        <p id="email-error" class="field-error"></p>
-
-        <label for="club-password">Password — at least 8 characters</label>
-        <input
-            id="club-password"
-            type="password"
-            autocomplete="new-password"
-            minlength="8"
-            aria-describedby="password-error"
-            required
-        >
-        <p id="password-error" class="field-error"></p>
-
-        <label for="club-confirm">Confirm password</label>
-        <input
-            id="club-confirm"
-            type="password"
-            autocomplete="new-password"
-            aria-describedby="confirm-error"
-            required
-        >
-        <p id="confirm-error" class="field-error"></p>
-
-        <button type="submit" class="club-button">JOIN THE CLUB</button>
-    </form>
-
-    <div id="subscription-result" hidden>
-        <p>Your welcome code</p>
-        <div class="promo-box">
-            <code id="promo-code">SOLEA10</code>
-            <button type="button" id="copy-promo" class="copy-btn">Copy code</button>
-        </div>
-        <p id="promo-copy-status" role="status"></p>
-        <a href="shop.html" class="club-button">Browse the collection</a>
-    </div>
-</dialog>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="home-shop.js"></script>
 </body>

@@ -21,7 +21,7 @@
     visibility: visible;
 }
 
-/* Buttons used on Home and Shop */
+/* Shop: display button */
 .club-button {
     padding: 14px 22px;
     border: 1px solid #850e20;
@@ -34,70 +34,6 @@
 
 .club-button:hover {
     background: #650b19;
-}
-
-/* Home: popup */
-#subscription-dialog {
-    width: min(500px, calc(100% - 32px));
-    max-height: calc(100dvh - 32px);
-    margin: auto;
-    padding: 28px;
-    overflow-y: auto;
-    border: 1px solid #d7cdc3;
-    background: #faf8f5;
-    color: #181818;
-}
-
-#subscription-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.65);
-}
-
-body:has(#subscription-dialog[open]) {
-    overflow: hidden;
-}
-
-#close-subscription {
-    float: right;
-    min-width: 44px;
-    min-height: 44px;
-    border: 0;
-    background: transparent;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-#subscription-title {
-    font-size: 28px;
-    margin: 8px 44px 16px 0;
-}
-
-#subscription-dialog .demo-note {
-    font-size: 13px;
-    color: #555;
-}
-
-#subscription-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-}
-
-#subscription-form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #b6aaa0;
-    background: white;
-    font-size: 16px;
-}
-
-#subscription-form input[aria-invalid="true"] {
-    border-color: #a00020;
-}
-
-#subscription-form .field-error {
-    margin: 5px 0 14px;
-    color: #a00020;
-    font-size: 13px;
 }
 
 /* Shop: background and clock */
@@ -122,12 +58,6 @@ body:has(#subscription-dialog[open]) {
 .shop-page :focus-visible {
     outline: 3px solid #bd8a55;
     outline-offset: 4px;
-}
-
-@media (max-width: 480px) {
-    #subscription-dialog {
-        padding: 20px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -520,91 +450,6 @@ html[data-theme="dark"] .designer-count-link {
     color: #fff7ed;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
-
-/* Task 6: spinner */
-.solea-spinner {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-right: 8px;
-    border: 2px solid currentColor;
-    border-right-color: transparent;
-    border-radius: 50%;
-    vertical-align: -2px;
-    animation: solea-spin 0.7s linear infinite;
-}
-@keyframes solea-spin { to { transform: rotate(360deg); } }
-#subscription-form button[type="submit"]:disabled { opacity: 0.7; cursor: wait; }
-
-/* Home: welcome code after signup */
-#subscription-result > p:first-child {
-    margin-bottom: .5rem;
-}
-
-.promo-box {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: .75rem;
-    padding: .625rem .875rem;
-    border: 1px solid #d7cdc3;
-    background: #f2ebe4;
-}
-
-#promo-code {
-    color: #782237;
-    font-size: 1.125rem;
-    letter-spacing: .12em;
-    user-select: all;
-}
-
-.copy-btn {
-    min-height: 44px;
-    padding-inline: .875rem;
-    border: 1px solid currentColor;
-    background: transparent;
-    color: #782237;
-    font-size: .875rem;
-    cursor: pointer;
-}
-
-.copy-btn:hover {
-    background: #782237;
-    color: white;
-}
-
-#promo-copy-status {
-    min-height: 1.5em;
-    margin: .5rem 0 .875rem;
-    font-size: .875rem;
-}
-
-#subscription-result .club-button {
-    display: inline-block;
-    text-decoration: none;
-}
-
-html[data-theme="dark"] .promo-box {
-    background: #1d1b19;
-    border-color: #544b42;
-}
-
-html[data-theme="dark"] #promo-code,
-html[data-theme="dark"] .copy-btn {
-    color: #edc494;
-}
-
-html[data-theme="dark"] .copy-btn:hover {
-    background: #edc494;
-    color: #201810;
-}
-
-html[data-theme="dark"] #subscription-form .field-error {
-    color: #ffaaaa !important;
-}
-
-
 
 /* Task 3: highlighted search text */
 .product-card mark { background: #ffe089; color: #20170b; padding: 0 2px; }
