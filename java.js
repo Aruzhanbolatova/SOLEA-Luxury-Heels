@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-// Shop: sort Bootstrap columns without breaking the card layout.
+// Shop: keep the selected order when switching between catalog views.
 document.addEventListener("DOMContentLoaded", function () {
     const grid = document.getElementById("product-grid");
     const select = document.getElementById("sort-select");
@@ -80,6 +80,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     select.addEventListener("change", function () {
         sortProducts(select.value);
+    });
+
+    const views = document.querySelectorAll("[data-shop-view]");
+    views.forEach(function (button) {
+        button.addEventListener("click", function () {
+            grid.dataset.view = button.dataset.shopView;
+            views.forEach(function (viewButton) {
+                viewButton.setAttribute("aria-pressed", String(viewButton === button));
+            });
+        });
     });
 
     if (select.value !== "featured") {
