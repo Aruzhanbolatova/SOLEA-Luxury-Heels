@@ -190,3 +190,4 @@ html[data-theme='dark'] .jq-tooltip { color: #fff7ed; background: #31251b; }
   .solea-tools { align-items: flex-start; flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+
