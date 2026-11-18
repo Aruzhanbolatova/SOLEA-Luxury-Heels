@@ -306,6 +306,26 @@ body:has(#subscription-dialog[open]) {
     padding-bottom: clamp(2.5rem, 7vw, 5rem);
 }
 
+/* Tighter framing for product photos with generous margins. */
+.product-image img:is(.catalog-photo-portrait, .catalog-photo-wide) {
+    height: auto;
+    object-fit: cover;
+}
+
+.product-image img.catalog-photo-portrait {
+    width: min(80%, 13rem);
+    aspect-ratio: 4 / 5;
+}
+
+.product-image img.catalog-photo-wide {
+    width: min(80%, 18rem);
+    aspect-ratio: 6 / 5;
+}
+
+.product-image img.catalog-photo-bottom {
+    object-position: center bottom;
+}
+
 .shop-toolbar {
     display: grid;
     grid-template-columns: minmax(0, 2fr) minmax(10rem, 1fr) minmax(12rem, 1fr);
