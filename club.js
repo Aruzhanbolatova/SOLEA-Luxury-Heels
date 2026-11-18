@@ -1,35 +1,30 @@
 (() => {
-    const sessionKey = 'solea-club-active-profile';
-    const invite = document.getElementById('club-invite-copy');
-    const signedOutInvite = invite?.textContent;
+    const dialog = document.getElementById('club-account');
+    if (!dialog) return;
 
-    function updateClubLinks() {
+    const sessionKey = 'solea-club-active-profile';
+    const joinButton = document.querySelector('[data-club-open="register"]');
+    const signInButton = document.querySelector('[data-club-open="sign-in"]');
+    const signedOutLabel = joinButton.textContent;
+    const invite = document.getElementById('club-invite-copy');
+    const signedOutInvite = invite.textContent;
+
+    function updateInvitation() {
         let signedIn = false;
         try {
             signedIn = Boolean(sessionStorage.getItem(sessionKey));
         } catch {
-            // Keep the public club links when browser storage is unavailable.
+            // Keep the guest invitation when browser storage is unavailable.
         }
 
-        document.querySelectorAll('[data-club-account]').forEach(link => {
-            link.textContent = signedIn ? 'My profile' : link.dataset.clubAccount;
-        });
-        document.querySelectorAll('[data-club-guest]').forEach(link => {
-            link.hidden = signedIn;
-        });
-
-        if (invite) {
-            invite.textContent = signedIn
-                ? 'Find your welcome code in your profile.'
-                : signedOutInvite;
-        }
+        joinButton.textContent = signedIn ? 'My profile' : signedOutLabel;
+        signInButton.hidden = signedIn;
+        invite.textContent = signedIn
+            ? 'Find your welcome code in your profile.'
+            : signedOutInvite;
     }
 
-    updateClubLinks();
-    window.addEventListener('pageshow', updateClubLinks);
-
-    const account = document.getElementById('club-account');
-    if (!account) return;
+    updateInvitation();
 
     const storeName = 'profiles';
     const iterations = 600_000;
@@ -45,6 +40,10 @@
     const formError = document.getElementById('club-form-error');
     const copyStatus = document.getElementById('club-copy-status');
     let database;
+    let currentView = 'register';
+    let currentMember = null;
+    let opener = null;
+    let ready = false;
     let busy = false;
 
     function openProfiles() {
@@ -103,7 +102,8 @@
     }
 
     function renderAccount(member, moveFocus = false) {
-        const signInView = new URLSearchParams(location.search).get('view') === 'sign-in';
+        currentMember = member;
+        const signInView = currentView === 'sign-in';
         const signedIn = Boolean(member);
 
         registerForm.hidden = signedIn || signInView;
@@ -127,20 +127,63 @@
                 : 'Create your profile to unlock your welcome code.';
         }
 
-        updateClubLinks();
-        if (moveFocus) title.focus();
+        updateInvitation();
+        if (moveFocus && dialog.open) title.focus();
     }
 
     async function restoreAccount() {
         const email = sessionStorage.getItem(sessionKey);
         const member = email ? await useProfiles('readonly', store => store.get(email)) : null;
         if (email && !member) sessionStorage.removeItem(sessionKey);
-        renderAccount(member);
+        ready = true;
+        renderAccount(member, true);
     }
+
+    function openClub(trigger) {
+        if (dialog.open) return;
+
+        opener = trigger;
+        if (!busy) {
+            currentView = trigger.dataset.clubOpen;
+            if (ready) renderAccount(currentMember);
+        }
+
+        dialog.showModal();
+        title.focus();
+    }
+
+    joinButton.addEventListener('click', () => openClub(joinButton));
+    signInButton.addEventListener('click', () => openClub(signInButton));
+    dialog.querySelector('.club-dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+        if (event.target !== dialog) return;
+        const { left, right, top, bottom } = dialog.getBoundingClientRect();
+        const outside = event.clientX < left || event.clientX > right
+            || event.clientY < top || event.clientY > bottom;
+        if (outside) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+        if (dialog.open) return;
+        registerForm.reset();
+        signInForm.reset();
+        const returnTo = opener && !opener.hidden ? opener : joinButton;
+        returnTo.focus({ preventScroll: true });
+        opener = null;
+    });
+
+    dialog.querySelectorAll('[data-club-view]').forEach(button => {
+        button.addEventListener('click', () => {
+            if (busy) return;
+            currentView = button.dataset.clubView;
+            registerForm.reset();
+            signInForm.reset();
+            renderAccount(currentMember, true);
+        });
+    });
 
     async function submit(event) {
         event.preventDefault();
-        if (busy) return;
+        if (busy || !dialog.open) return;
 
         const form = event.currentTarget;
         const isRegistration = form === registerForm;
@@ -200,7 +243,7 @@
 
     document.getElementById('club-sign-out').addEventListener('click', () => {
         sessionStorage.removeItem(sessionKey);
-        history.replaceState(null, '', 'club.html?view=sign-in');
+        currentView = 'sign-in';
         renderAccount(null, true);
     });
 
@@ -215,6 +258,7 @@
     });
 
     function showStorageError() {
+        ready = false;
         renderAccount(null);
         registerForm.hidden = true;
         signInForm.hidden = true;
@@ -240,8 +284,16 @@
     }
 
     window.addEventListener('pageshow', event => {
-        if (event.persisted && database) restoreAccount().catch(showStorageError);
+        if (event.persisted && database && !busy) restoreAccount().catch(showStorageError);
     });
 
     initialize();
+
+    const url = new URL(location.href);
+    const requestedView = url.searchParams.get('club');
+    if (requestedView === 'register' || requestedView === 'sign-in') {
+        url.searchParams.delete('club');
+        history.replaceState(history.state, '', url);
+        openClub(requestedView === 'sign-in' ? signInButton : joinButton);
+    }
 })();

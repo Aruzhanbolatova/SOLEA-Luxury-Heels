@@ -4,18 +4,6 @@
     --club-border: #d7cdc3;
 }
 
-/* Club links on Home and Shop */
-#main-header.club-header {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
-    column-gap: clamp(1rem, 3vw, 2.25rem);
-}
-
-#main-header.club-header .solea-wordmark {
-    justify-self: start;
-}
-
-.club-header-actions,
 .club-invite-actions,
 .club-profile-actions {
     display: flex;
@@ -61,35 +49,25 @@
     color: white;
 }
 
-.club-signin-link {
+.club-text-button {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     color: inherit;
-    font-size: .875rem;
+    font: inherit;
     font-weight: 600;
+    font-size: .875rem;
+    text-decoration: underline;
     text-underline-offset: .2em;
+    cursor: pointer;
 }
 
 [data-club-guest][hidden],
 .club-account [hidden] {
     display: none;
-}
-
-@media (max-width: 540px) {
-    #main-header.club-header {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: .625rem 1rem;
-        padding-block: .75rem;
-    }
-
-    .club-header-actions {
-        grid-column: 1 / -1;
-    }
-
-    .club-header-actions .club-action {
-        flex: 1;
-    }
 }
 
 /* Invitation below the designer collection */
@@ -131,28 +109,60 @@
     background: #fff1e4;
 }
 
-/* Account page */
-.club-page #main-header {
-    justify-content: space-between;
-}
-
-.club-main {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    max-width: 76rem;
-    margin: clamp(1rem, 5vw, 4rem) auto;
-    padding: 0 clamp(.875rem, 4vw, 2rem) 3rem;
+/* Account dialog */
+body:has(.club-account[open]) {
+    overflow: hidden;
 }
 
 .club-account {
-    min-width: 0;
-    padding: clamp(1.25rem, 4vw, 3rem);
+    width: min(31rem, calc(100% - 2rem));
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: clamp(1.125rem, 4vw, 2rem);
+    overflow-y: auto;
     border: 1px solid var(--club-border);
     background: #fffaf5;
+    color: #211c17;
+}
+
+.club-account::backdrop {
+    background: rgb(28 18 21 / 63%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .club-account[open] {
+        animation: club-dialog-appear 160ms ease-out;
+    }
+}
+
+@keyframes club-dialog-appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.club-dialog-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .35rem;
+}
+
+.club-dialog-close {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font: 1.5rem/1 Arial, sans-serif;
+    cursor: pointer;
 }
 
 .club-account .club-brand {
-    margin: 0 0 .5rem;
+    margin: 0;
     color: var(--club-accent);
     font-size: .75rem;
     font-weight: 700;
@@ -160,27 +170,12 @@
     text-transform: uppercase;
 }
 
-.club-account h1 {
+.club-account h2 {
     margin: 0 0 .5rem;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.875rem, 5vw, 2.5rem);
     line-height: 1.08;
     letter-spacing: .01em;
     overflow-wrap: anywhere;
-}
-
-.club-photo {
-    display: grid;
-    place-items: center;
-    min-width: 0;
-    margin: 0;
-    padding: clamp(1.25rem, 4vw, 3rem);
-    background: #efe5db;
-}
-
-.club-photo img {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 .club-account #club-intro {
@@ -236,10 +231,8 @@
     font-size: .875rem;
 }
 
-.club-switch a {
+.club-switch .club-text-button {
     color: var(--club-accent);
-    font-weight: 600;
-    text-underline-offset: .2em;
 }
 
 .club-form-error {
@@ -297,11 +290,6 @@
     font-size: .8125rem;
 }
 
-.club-page :focus-visible {
-    outline: 3px solid #bd8a55;
-    outline-offset: 4px;
-}
-
 html[data-theme="dark"] .club-invite {
     background: #4b1425 !important;
 }
@@ -310,23 +298,22 @@ html[data-theme="dark"] :is(.club-account, .club-code) {
     border-color: #544b42;
 }
 
-html[data-theme="dark"] .club-photo,
 html[data-theme="dark"] .club-code {
     background: #29231f;
 }
 
-html[data-theme="dark"] :is(.club-page, .club-header) .club-action {
+html[data-theme="dark"] .club-account .club-action {
     border-color: #e5bd8b;
     background: #e5bd8b;
     color: #201810 !important;
 }
 
-html[data-theme="dark"] :is(.club-page, .club-header) .club-action:hover {
+html[data-theme="dark"] .club-account .club-action:hover {
     border-color: #ffdaad;
     background: #ffdaad;
 }
 
-html[data-theme="dark"] :is(.club-outline, .club-switch a, .club-code code) {
+html[data-theme="dark"] :is(.club-outline, .club-switch .club-text-button, .club-code code) {
     border-color: #edc494;
     color: #edc494;
 }
@@ -338,15 +325,4 @@ html[data-theme="dark"] .club-outline:hover {
 
 html[data-theme="dark"] .club-account .club-form-error {
     color: #ffaaaa !important;
-}
-
-@media (max-width: 740px) {
-    .club-main {
-        grid-template-columns: minmax(0, 1fr);
-        max-width: 32rem;
-    }
-
-    .club-photo {
-        display: none;
-    }
 }
