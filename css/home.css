@@ -45,7 +45,6 @@
 }
 .hero-banner h1 {
     color: #fff;
-    font-size: 46px;
     margin-bottom: 20px;
 }
 .hero-banner .button {
@@ -447,10 +446,6 @@ min-width: 0;
 
     .hero-banner .hero-content {
         padding: 40px 24px;
-    }
-
-    .hero-banner h1 {
-        font-size: clamp(32px, 7vw, 46px);
     }
 
     .carousel-card {

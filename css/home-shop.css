@@ -246,9 +246,6 @@ html[data-theme="dark"] .shop-page {
 
 .shop-hero h1 {
     margin: 0 0 clamp(1rem, 2vw, 1.75rem);
-    padding-inline-start: .18em;
-    font: 400 clamp(3.5rem, 8.4vw, 6.875rem)/1 Georgia, serif;
-    letter-spacing: .18em;
 }
 
 .shop-hero p {
