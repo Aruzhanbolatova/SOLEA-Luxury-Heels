@@ -15,10 +15,6 @@ h1.page-heading {
     text-wrap: balance;
 }
 
-.hero-banner .page-heading {
-    --page-heading-size: clamp(3.75rem, 6.5vw, 6.25rem);
-}
-
 .shop-hero .page-heading,
 .brands-intro .page-heading {
     --page-heading-size: clamp(6rem, 16vw, 11rem);
