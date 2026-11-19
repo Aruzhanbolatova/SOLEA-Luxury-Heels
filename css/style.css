@@ -2519,3 +2519,16 @@ html[data-theme="dark"] .a3-page .menu-toggle {
 @media (prefers-reduced-motion: reduce) { .preview-spinner { animation: none; } }
 #rating-toast { display: none; position: fixed; right: 1rem; bottom: 1rem; z-index: 1080; max-width: calc(100% - 2rem); padding: .9rem 1.3rem; background: #2d2023; color: white; }
 .brand-photo[data-src] { background: #faf8f5; }
+
+
+
+/* White page canvas in light mode across every SOLEA page. */
+html:not([data-theme="dark"]) body,
+html:not([data-theme="dark"]) body > main,
+html:not([data-theme="dark"]) body > .page-layout,
+html:not([data-theme="dark"]) body > .shop-page-layout,
+html:not([data-theme="dark"]) body main > section,
+html:not([data-theme="dark"]) body .page-layout > main,
+html:not([data-theme="dark"]) body .shop-page-layout > main {
+    background-color: #fff !important;
+}

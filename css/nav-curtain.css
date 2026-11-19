@@ -148,3 +148,24 @@ body #main-header .navbar#page-navigation.is-open {
 html[data-theme="dark"] #main-header .menu-toggle {
     color: #ffffff;
 }
+
+/* Header shortcuts matching the supplied search, account and bag reference. */
+#main-header .solea-header-actions {
+  display: flex; align-items: center; justify-content: center; gap: clamp(24px, 4vw, 62px);
+  margin-left: auto; padding: 0 clamp(18px, 4vw, 54px);
+}
+#main-header .solea-header-actions a {
+  display: grid; place-items: center; width: 42px; height: 46px; color: #24201e;
+  text-decoration: none; transition: transform .2s ease, color .2s ease;
+}
+#main-header .solea-header-actions a:hover { color: #95684f; transform: translateY(-2px); }
+#main-header .solea-header-actions svg {
+  display: block; width: 32px; height: 32px; fill: none; stroke: currentColor;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+html[data-theme="dark"] #main-header .solea-header-actions a { color: #f3eee7; }
+@media (max-width: 700px) {
+  #main-header .solea-header-actions { gap: 12px; padding: 0 10px; }
+  #main-header .solea-header-actions a { width: 34px; height: 42px; }
+  #main-header .solea-header-actions svg { width: 25px; height: 25px; }
+}

@@ -10,10 +10,13 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
-
-    <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/brands-catalog.css?v=2">
 <script src="theme.js"></script>
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
     <script>
@@ -45,363 +48,74 @@
     </nav>
 </header>
 
-<main id="main-content">
-
-    <section class="container text-center py-5 px-3 px-sm-4">
-        <p class="eyebrow mb-3">THE SOLEA EDIT</p>
-        <h1 class="page-title mb-3">Iconic designers.</h1>
-        <button type="button" id ="changeBackground" class="btn btn-dark">
-            Change background
-        </button>
-
-        <p class="intro-copy text-secondary mb-4">
-            Discover a signature in every silhouette.
-        </p>
-
-        <a class="btn btn-dark btn-lg rounded-0 px-4" href="#designers">
-            Explore and rate designers
-        </a>
+<main id="main-content" class="brands-page">
+    <nav class="brands-breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Brands</span></nav>
+    <section class="brands-intro" aria-labelledby="brands-title">
+        <p class="brands-kicker">THE SOLEA DESIGNER EDIT</p>
+        <h1 id="brands-title">Brands</h1>
+        <p class="brands-description">Explore a considered collection of iconic shoe designers, signature silhouettes and standout details, brought together by SOLEA.</p>
     </section>
-
-    <!-- Bootstrap layout: two columns on large screens -->
-    <section class="container px-3 px-sm-4 py-5">
-    <div class="row g-4 g-lg-5 align-items-center">
-
-        <div class="col-12 col-lg-6">
-            <p class="eyebrow mb-4">
-                SOLEA / THE DESIGNER EDIT
-            </p>
-
-            <h1 class="page-title mb-4">
-                A signature<br>
-                in every step.
-            </h1>
-
-            <p class="intro-copy text-secondary mb-4">
-                Meet the designers behind the details.
-                Discover timeless shapes, unexpected accents
-                and your next favourite pair.
-            </p>
-
-            <a href="#designers"
-               class="btn btn-dark btn-lg px-4 py-3">
-                Discover the designers →
-            </a>
-
-            <p class="hero-note text-secondary mt-4 mb-0">
-                09 designers · One considered collection
-            </p>
-        </div>
-
-        <div class="col-12 col-lg-6">
-            <figure class="mb-0 bg-white border p-3 p-lg-4">
-
-                <img
-                    src="images/Valentino Garavani.jpg"
-                    class="editorial-photo"
-                    alt="Valentino Garavani heels from the SOLEA designer collection"
-                >
-
-                <figcaption class="d-flex justify-content-between gap-3 border-top pt-3 mt-3 small">
-                    <span>Valentino Garavani</span>
-                    <span class="text-secondary">THE DESIGNER EDIT</span>
-                </figcaption>
-
-            </figure>
-        </div>
-
-    </div>
-</section>
-    <section id="designers"
-             class="container px-3 px-sm-4 pb-5"
-             aria-labelledby="designers-title">
-
-        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
-            <h2 id="designers-title" class="section-title mb-0">
-                The designer collection
-            </h2>
-
-            <div class="btn-group" role="group" aria-label="Filter designers">
-                <button class="btn btn-outline-dark active"
-                        type="button"
-                        data-filter="all"
-                        aria-pressed="true">
-                    All
-                </button>
-
-                <button class="btn btn-outline-dark"
-                        type="button"
-                        data-filter="classic"
-                        aria-pressed="false">
-                    Classic
-                </button>
-
-                <button class="btn btn-outline-dark"
-                        type="button"
-                        data-filter="statement"
-                        aria-pressed="false">
-                    Statement
-                </button>
+    <section class="brands-catalog" aria-label="Designer shoe collection">
+        <div class="brands-toolbar">
+            <div class="brands-toolbar-left"><button class="brands-filter-toggle" id="brands-filter-toggle" type="button" aria-expanded="false" aria-controls="brands-filters">Filters <span aria-hidden="true">+</span></button><span class="brands-count" id="brands-count" role="status" aria-live="polite">11 designers</span></div>
+            <div class="brands-toolbar-right">
+                <label class="brands-search-label" for="brands-search">Search</label><input class="brands-search" id="brands-search" type="search" placeholder="Find a designer" autocomplete="off">
+                <label for="brands-sort">Sort by</label><select id="brands-sort" aria-label="Sort designers"><option value="featured">Featured</option><option value="name">Name A–Z</option><option value="price-low">Price low to high</option><option value="price-high">Price high to low</option></select>
+                <div class="brands-view" role="group" aria-label="Product view">
+                    <button type="button" class="brands-view-button" data-view="gallery" aria-pressed="false" aria-label="Gallery view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2h9v9H2zM13 2h9v9h-9zM2 13h9v9H2zM13 13h9v9h-9z"/></svg><span>Gallery</span></button>
+                    <button type="button" class="brands-view-button is-active" data-view="grid" aria-pressed="true" aria-label="Grid view"><svg viewBox="0 0 32 24" aria-hidden="true"><path d="M1 1h6v9H1zM9 1h6v9H9zM17 1h6v9h-6zM25 1h6v9h-6zM1 14h6v9H1zM9 14h6v9H9zM17 14h6v9h-6zM25 14h6v9h-6z"/></svg><span>Grid</span></button>
+                </div>
             </div>
         </div>
-
-        <p id="brand-count" class="small text-secondary mb-4" role="status">
-            9 designers
-        </p>
-
-        <!-- Bootstrap cards: 1 / 2 / 3 columns -->
-        <div class="card-group row g-4">
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="classic">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/louboutin.jpg"
-                         alt="Christian Louboutin heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/louboutin.jpg"
-                         alt="Christian Louboutin heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">CLASSIC</p>
-                        <h3 class="card-title h4 mb-3">Christian Louboutin</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Famous for iconic red soles and unforgettable luxury heels.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="statement">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/jimmy chooo.jpq.jpg"
-                         alt="Jimmy Choo heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/jimmy chooo.jpq.jpg"
-                         alt="Jimmy Choo heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">STATEMENT</p>
-                        <h3 class="card-title h4 mb-3">Jimmy Choo</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Elegant designs created for modern glamour.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="classic">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/Manolo blahnik.jpg"
-                         alt="Manolo Blahnik heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/Manolo blahnik.jpg"
-                         alt="Manolo Blahnik heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">CLASSIC</p>
-                        <h3 class="card-title h4 mb-3">Manolo Blahnik</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Timeless shoes with elegant silhouettes.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="statement">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/caovilla.jpg"
-                         alt="René Caovilla heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/caovilla.jpg"
-                         alt="René Caovilla heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">STATEMENT</p>
-                        <h3 class="card-title h4 mb-3">René Caovilla</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Italian luxury footwear with artistic details.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="statement">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/aquazzura.jpg"
-                         alt="Aquazzura heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/aquazzura.jpg"
-                         alt="Aquazzura heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">STATEMENT</p>
-                        <h3 class="card-title h4 mb-3">Aquazzura</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Contemporary heels inspired by feminine elegance.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="classic">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/Valentino Garavani.jpg"
-                         alt="Valentino Garavani heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/Valentino Garavani.jpg"
-                         alt="Valentino Garavani heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">CLASSIC</p>
-                        <h3 class="card-title h4 mb-3">Valentino Garavani</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Italian fashion heritage and iconic luxury style.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="classic">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/Gianvito Rossi.jpg"
-                         alt="Gianvito Rossi heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/Gianvito Rossi.jpg"
-                         alt="Gianvito Rossi heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">CLASSIC</p>
-                        <h3 class="card-title h4 mb-3">Gianvito Rossi</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Minimal Italian design with refined proportions.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="statement">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/Amina Muaddi.jpg"
-                         alt="Amina Muaddi heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/Amina Muaddi.jpg"
-                         alt="Amina Muaddi heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">STATEMENT</p>
-                        <h3 class="card-title h4 mb-3">Amina Muaddi</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Distinctive heels and modern shapes.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4" data-brand-category="classic">
-                <article class="card h-100 rounded-0 brand-card">
-                    <img class="card-img-top rounded-0 brand-photo"
-                         data-src="images/Stuart Weitzman .jpg"
-                         alt="Stuart Weitzman heels"
-                         width="480" height="360"><noscript><img class="card-img-top rounded-0 brand-photo"
-                         src="images/Stuart Weitzman .jpg"
-                         alt="Stuart Weitzman heels"
-                         loading="lazy"></noscript>
-
-                    <div class="card-body d-flex flex-column p-4">
-                        <p class="eyebrow small mb-2">CLASSIC</p>
-                        <h3 class="card-title h4 mb-3">Stuart Weitzman</h3>
-                        <p class="card-text text-secondary mb-4">
-                            Luxury footwear combining comfort and fashion.
-                        </p>
-                        <a class="btn btn-outline-dark rounded-0 mt-auto" href="shop.html">
-                            Explore the shop
-                        </a>
-                    </div>
-                </article>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Custom CSS Grid with media queries, without Bootstrap columns -->
-    <section class="container px-3 px-sm-4 py-5 border-top"
-             aria-labelledby="edit-title">
-
-        <p class="eyebrow mb-2">THREE WAYS TO BEGIN</p>
-        <h2 class="section-title mb-4" id="edit-title">
-            Choose your occasion.
-        </h2>
-
-        <div class="mq-card-list">
-            <article class="mq-card">
-                <img src="images/manolo.jpg"
-                     alt="Everyday elegance heels"
-                     loading="lazy">
-                <h3>Everyday elegance</h3>
-                <p>A classic silhouette for a considered wardrobe.</p>
-                <a href="design.html">Find your pair →</a>
+        <div class="brands-filters" id="brands-filters" hidden><label>Style<select id="brands-category"><option value="all">All styles</option><option value="pumps">Pumps</option><option value="stilettos">Stilettos</option><option value="sandals">Sandals</option></select></label><button type="button" id="brands-clear">Clear all</button></div>
+        <p class="brands-empty" id="brands-empty" hidden>No designers match your search. Try another name or style.</p>
+        <div class="brands-products" id="brands-products" data-view="grid">
+            <article class="brand-product" data-name="Christian Louboutin" data-price="685000" data-category="pumps">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Christian Louboutin styles"><img src="images/louboutin.jpg" alt="Christian Louboutin designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Christian Louboutin</h2><p class="brand-product-description">Black leather pumps</p><p class="brand-product-price">From KZT 685,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
             </article>
-
-            <article class="mq-card">
-                <img src="images/caovilla.jpg"
-                     alt="After dark heels"
-                     loading="lazy">
-                <h3>After dark</h3>
-                <p>Expressive details for evenings to remember.</p>
-                <a href="design.html">Find your pair →</a>
+            <article class="brand-product" data-name="Jimmy Choo" data-price="720000" data-category="stilettos">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Jimmy Choo styles"><img src="images/jimmy chooo.jpq.jpg" alt="Jimmy Choo designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Jimmy Choo</h2><p class="brand-product-description">Crystal evening heels</p><p class="brand-product-price">From KZT 720,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
             </article>
-
-            <article class="mq-card">
-                <img src="images/Amina Muaddi.jpg"
-                     alt="Make a statement heels"
-                     loading="lazy">
-                <h3>Make a statement</h3>
-                <p>A distinctive shape to make the look your own.</p>
-                <a href="design.html">Find your pair →</a>
+            <article class="brand-product" data-name="Manolo Blahnik" data-price="760000" data-category="pumps">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Manolo Blahnik styles"><img src="images/Manolo blahnik.jpg" alt="Manolo Blahnik designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Manolo Blahnik</h2><p class="brand-product-description">Signature satin pumps</p><p class="brand-product-price">From KZT 760,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="René Caovilla" data-price="785000" data-category="sandals">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore René Caovilla styles"><img src="images/caovilla.jpg" alt="René Caovilla designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>René Caovilla</h2><p class="brand-product-description">Embellished evening sandals</p><p class="brand-product-price">From KZT 785,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Aquazzura" data-price="650000" data-category="sandals">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Aquazzura styles"><img src="images/aquazzura.jpg" alt="Aquazzura designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Aquazzura</h2><p class="brand-product-description">Modern strappy heels</p><p class="brand-product-price">From KZT 650,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Valentino Garavani" data-price="690000" data-category="stilettos">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Valentino Garavani styles"><img src="images/Valentino Garavani.jpg" alt="Valentino Garavani designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Valentino Garavani</h2><p class="brand-product-description">Rockstud statement heels</p><p class="brand-product-price">From KZT 690,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Gianvito Rossi" data-price="645000" data-category="sandals">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Gianvito Rossi styles"><img src="images/Gianvito Rossi.jpg" alt="Gianvito Rossi designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Gianvito Rossi</h2><p class="brand-product-description">Minimal leather sandals</p><p class="brand-product-price">From KZT 645,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Amina Muaddi" data-price="720000" data-category="sandals">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Amina Muaddi styles"><img src="images/Amina Muaddi.jpg" alt="Amina Muaddi designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Amina Muaddi</h2><p class="brand-product-description">Sculptural signature heels</p><p class="brand-product-price">From KZT 720,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Stuart Weitzman" data-price="590000" data-category="pumps">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Stuart Weitzman styles"><img src="images/Stuart Weitzman .jpg" alt="Stuart Weitzman designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Stuart Weitzman</h2><p class="brand-product-description">Classic evening pumps</p><p class="brand-product-price">From KZT 590,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Balenciaga" data-price="850000" data-category="sandals">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Balenciaga styles"><img src="images/c120.jpeg" alt="Balenciaga designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Balenciaga</h2><p class="brand-product-description">Crystal-embellished sandals</p><p class="brand-product-price">From KZT 850,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
+            </article>
+            <article class="brand-product" data-name="Versace" data-price="890000" data-category="sandals">
+                <a class="brand-product-image" href="shop.html" aria-label="Explore Versace styles"><img src="images/121.jpeg" alt="Versace designer shoes" loading="lazy"></a>
+                <div class="brand-product-details"><p class="brand-product-label">DESIGNER EDIT</p><h2>Versace</h2><p class="brand-product-description">Medusa-inspired strappy heels</p><p class="brand-product-price">From KZT 890,000</p><a class="brand-product-link" href="shop.html">Explore collection</a></div>
             </article>
         </div>
     </section>
-
-<div id="rating-toast" role="status"></div>
 </main>
 
 <footer class="bg-dark text-white text-center py-5 mt-5">
@@ -418,8 +132,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<script src="brands.js"></script>
-<script src="brands-filter.js"></script>
-<script src="brands-rating.js"></script>
+
+
+
+<script defer src="brands-catalog.js?v=2"></script>
 </body>
 </html>
