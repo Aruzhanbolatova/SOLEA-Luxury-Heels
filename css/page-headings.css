@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Mrs Saint Delafield";
+    src: url("../vendor/mrs-saint-delafield-latin.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+h1.page-heading {
+    font-family: "Mrs Saint Delafield", "Brush Script MT", cursive;
+    font-size: var(--page-heading-size, clamp(3.75rem, 8vw, 8rem));
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.12;
+    text-wrap: balance;
+}
+
+.hero-banner .page-heading {
+    --page-heading-size: clamp(3.75rem, 6.5vw, 6.25rem);
+}
+
+.shop-hero .page-heading,
+.brands-intro .page-heading {
+    --page-heading-size: clamp(6rem, 16vw, 11rem);
+}
+
+.studio-title.page-heading {
+    --page-heading-size: clamp(3.5rem, 7.5vw, 7rem);
+    margin-top: 0.3em;
+}
+
+.about-hero-new .page-heading {
+    --page-heading-size: clamp(3.75rem, 8.5vw, 8.5rem);
+}
