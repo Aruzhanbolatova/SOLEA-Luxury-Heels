@@ -407,12 +407,12 @@ min-width: 0;
 #design-section {
     padding: 65px 24px;
     text-align: center;
-    background: #111;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
 }
 
 #design-section p {
-    color: #ddd;
+    color: inherit;
 }
 
 /* Фотографии покупателей */
