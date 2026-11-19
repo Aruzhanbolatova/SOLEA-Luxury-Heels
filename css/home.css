@@ -311,8 +311,8 @@ min-width: 0;
 
 /* ---------- FAQ ---------- */
 .faq-section {
-    background-color: #111;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     padding: clamp(2.5rem, 6vw, 3.75rem) clamp(1.25rem, 5vw, 3.75rem);
 }
 .faq-section .faq-col {
@@ -322,6 +322,9 @@ min-width: 0;
 .faq-item {
     border-bottom: 1px solid #333;
     padding: 16px 0;
+}
+.faq-section .faq-item :is(.faq-question, .faq-answer p, .faq-size-link) {
+    color: inherit;
 }
 .faq-question {
     display: flex;
@@ -341,7 +344,6 @@ min-width: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    color: #bbb;
     font-size: 15px;
 }
 .faq-item.open .faq-answer {
