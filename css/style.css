@@ -2527,7 +2527,7 @@ html:not([data-theme="dark"]) body,
 html:not([data-theme="dark"]) body > main,
 html:not([data-theme="dark"]) body > .page-layout,
 html:not([data-theme="dark"]) body > .shop-page-layout,
-html:not([data-theme="dark"]) body main > section,
+html:not([data-theme="dark"]) body main > section:not(.hero-banner, .club-invite),
 html:not([data-theme="dark"]) body .page-layout > main,
 html:not([data-theme="dark"]) body .shop-page-layout > main {
     background-color: #fff !important;
